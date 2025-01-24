@@ -1,0 +1,391 @@
+
+/* Importando as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap');
+
+/* Reset de margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo e fonte geral */
+body {
+    background-color: #111;
+    font-family: 'Open Sans', sans-serif; /* Fonte para o corpo do texto */
+    color: #fff;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #fed83c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+    padding: 0 3rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif; /* Fonte para o cabeçalho */
+    position: sticky; /* Torna o cabeçalho fixo */
+    top: 0; /* Fixa o cabeçalho no topo da página */
+    z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Outras classes permanecem inalteradas */
+.headerFilho {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* Logo sobre a imagem de fundo */
+.logo {
+    width: 13rem;
+    max-width: 100%;
+    transition: transform 0.3s ease;
+    margin-top: 5rem;
+    position: absolute; /* Coloca a logo acima da imagem */
+    top: 5%; /* Ajuste a posição de acordo com a sua necessidade */
+    left: 3%; /* Ajuste a posição de acordo com a sua necessidade */
+    z-index: 1; /* Garante que a logo fique acima da imagem */
+    margin-top: -1rem;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 16rem;
+}
+
+.sub_titulo {
+    margin-top: -0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.headerFilhoBusca {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.busca {
+    background-color: #222;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 8px 16px;
+    width: 25rem;
+    transition: all 0.3s ease;
+}
+
+.busca:hover {
+    background-color: #333;
+    border: solid 2px #fed83c;
+}
+
+input {
+    background: none;
+    border: none;
+    color: #fff;
+    width: 20rem;
+    height: 2rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif; /* Fonte para os inputs */
+}
+
+input:focus {
+    outline: none;
+}
+
+i {
+    color: #fff;
+}
+
+.bi-person-fill {
+    font-size: 2.7rem;
+    color: #222;
+}
+
+.bi-bag-fill {
+    font-size: 2rem;
+    color: #222;
+}
+
+.burger {
+    color: #fed83c;
+    font-size: 2rem;
+}
+
+
+/* Seção Principal */
+.pai {
+    width: 100%; /* Garante que a seção ocupe 100% da largura */
+    height: 88vh; /* Mantém a altura da seção */
+    background: url('https://cdn.goomer.com.br/website/base/fe1/31d/7f5/jonathan-borba-8l8yl2ruusg-unsplash-scaled.jpg') no-repeat center center/cover; /* Imagem de fundo */
+    background-attachment: fixed; /* Efeito parallax */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    position: relative; /* Necessário para posicionar as logos acima da imagem de fundo */
+    overflow: hidden; /* Impede que a imagem saia da seção */
+}
+
+.pai::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay preto com transparência */
+    z-index: 0; /* Coloca o overlay abaixo do conteúdo */
+}
+
+.textos {
+    margin-left: 3rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1; /* Garantindo que o texto fique sobre o overlay */
+    color: #fff; /* Garantindo boa legibilidade */
+    font-family: 'Open Sans', sans-serif;
+    max-width: 100%; /* Garante que o texto ocupe toda a largura disponível */
+}
+
+
+.barra {
+    display: flex;
+    justify-content: center;
+    background-color: #fed83c;
+    height: 7rem;
+}
+
+/* Logo na barra sobre a imagem de fundo */
+.logoBarra {
+    
+    width: 13rem;
+    height: 13rem;
+    margin-top: -3rem;
+    position: absolute; /* Coloca a logoBarra acima da imagem */
+    top: 99%; /* Ajuste a posição de acordo com a sua necessidade */
+    right: 44.5%; /* Ajuste a posição de acordo com a sua necessidade */
+    z-index: 1; /* Garante que a logoBarra fique acima da imagem */
+}
+
+.cardapio {
+    color: white;
+    text-align: center;
+    margin-top: 5rem;
+    font-family: 'Montserrat', sans-serif; /* Fonte para o título do cardápio */
+    font-size: 3rem;
+    text-decoration: underline;
+    font-weight: lighter;
+}
+
+/* Quem Somos */
+.quem {
+    width: 100%;
+    background: url('https://invexo.com.br/blog/wp-content/uploads/2021/06/Hamburgueria-da-Alf%C3%A2ndega-Ipanema.jpg') no-repeat center center/cover; /* Imagem de fundo */
+    padding: 5rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    background-attachment: fixed; /* Efeito de parallax */
+    margin-top: 5rem;
+}
+
+.quem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay preto com transparência */
+    z-index: 0; /* Colocando o overlay abaixo dos textos */
+}
+
+.quemFilho {
+    display: flex;
+    justify-content: center;
+    margin: 0 5rem;
+    font-family: 'Poppins', sans-serif; /* Fonte para o conteúdo de "Quem Somos" */
+    gap: 5rem;
+    position: relative;
+    z-index: 1; /* Garantindo que o texto fique sobre o overlay */
+}
+
+.foto {
+    width: 34rem;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.texto {
+    font-size: 2rem;
+    color: #fff; /* Mudando a cor para garantir boa legibilidade */
+    line-height: 1.6;
+    max-width: 45rem;
+    position: relative;
+    z-index: 1;
+    font-family: 'Open Sans', sans-serif; /* Fonte para o texto */
+}
+
+.quemSomos {
+    text-decoration: underline;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif; /* Fonte para o título "Quem Somos" */
+}
+
+.textoQuem {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    color: #fff;
+    text-align: left;
+}
+
+/* Efeito de animação de entrada */
+.quemFilho {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botão de chamada para ação (CTA) */
+.cta {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 3rem;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+}
+
+.cta:hover {
+    background-color: darken(var(--cor-primaria), 10%);
+}
+
+.contato{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.logosContatos{
+    display: flex;
+    gap: 10rem;
+}
+
+.contatos{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 15px;
+}
+
+.mais{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.imgsMais{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 5rem;
+}
+
+.sessoes{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.titulosCardapio{
+    text-align: center;
+    margin-top: 5rem;
+    text-decoration: underline;
+}
+
+.produtos{
+    margin-top: 5rem;
+    background-color: #fed83c;
+    width: 50rem;
+    border-radius: 0.5rem;
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+    gap: 5rem;
+}
+
+.tituloPro{
+    color: #111;
+    font-size: 1.5rem;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.descricao{
+    font-size: 1rem;
+    color: #333;
+}
+
+.preco{
+    color: #111;
+}
+
+.imagemPro{
+    width: 15rem;
+    height: 13rem;
+    border-radius: 1rem;
+    object-fit: cover;
+}
