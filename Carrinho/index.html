@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mix Burguer</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap");
+    </style>
+
+    <link rel="shortcut icon" href="/image/image.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="logoCarrinho">
+        <img src="http://127.0.0.1:5500/IMGS/Logo.png" alt="" />
+      </div>
+      <div class="meuCarrinho">Meu Carrinho:</div>
+    </header>
+    <div class="lancheCarrinho">
+      <div class="imagemLanche">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/brendi-app.appspot.com/o/public%2Fstores%2FliDYZPGpWDhaJHW0sWIk%2Fimages%2Fproducts%2Fresized%2FgvGEiOdReVw4lycHtukd_900x900.webp?alt=media&token=4c8eca87-503e-4844-af35-c11571fb9e23"
+          alt="imagemDoLanche"
+          class="imagemLanche"
+        />
+      </div>
+      <div class="nomeLancheCarrinho">
+        1 X Top Onion
+
+        <div class="ObservaçõesLancheCarrinho">
+          <input
+            type="text"
+            placeholder="adicionar observação(ex: Retirar cebola):"
+            class="inputObservação"
+          />
+        </div>
+      </div>
+      <div class="removerLancheCarrinho">
+        <button class="RemoverLanche">Remover Do Carrinho</button>
+      </div>
+    </div>
+    <div class="finalizarPedidoCarrinho">
+      <div id="PreçoTotalCarrinho">R$00,00</div>
+      <button id="FinalizarMeuPedidoCarrinhoTexto">
+        Finalizar meu pedido!
+      </button>
+      <button id="FinalizarMeuPedidoCarrinhoTexto" onclick="btnVoltar()">
+        Voltar
+      </button>
+    </div>
+
+    <script src="/Carrinho/script.js"></script>
+  </body>
+</html>
