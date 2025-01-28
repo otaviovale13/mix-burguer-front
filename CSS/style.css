@@ -1,391 +1,660 @@
-
 /* Importando as fontes do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap");
 
 /* Reset de margens e padding */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Fundo e fonte geral */
 body {
-    background-color: #111;
-    font-family: 'Open Sans', sans-serif; /* Fonte para o corpo do texto */
-    color: #fff;
+  background-color: #111;
+  font-family: "Open Sans", sans-serif; /* Fonte para o corpo do texto */
+  color: #fff;
 }
 
 /* Cabeçalho */
 header {
-    background-color: #fed83c;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 7rem;
-    padding: 0 3rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Montserrat', sans-serif; /* Fonte para o cabeçalho */
-    position: sticky; /* Torna o cabeçalho fixo */
-    top: 0; /* Fixa o cabeçalho no topo da página */
-    z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
+  background-color: #fed83c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7rem;
+  padding: 0 3rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Montserrat", sans-serif; /* Fonte para o cabeçalho */
+  position: sticky; /* Torna o cabeçalho fixo */
+  top: 0; /* Fixa o cabeçalho no topo da página */
+  z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
 }
 
 /* Outras classes permanecem inalteradas */
 .headerFilho {
-    display: flex;
-    gap: 3rem;
-    align-items: center;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
 }
 
 /* Logo sobre a imagem de fundo */
 .logo {
-    width: 13rem;
-    max-width: 100%;
-    transition: transform 0.3s ease;
-    margin-top: 5rem;
-    position: absolute; /* Coloca a logo acima da imagem */
-    top: 5%; /* Ajuste a posição de acordo com a sua necessidade */
-    left: 3%; /* Ajuste a posição de acordo com a sua necessidade */
-    z-index: 1; /* Garante que a logo fique acima da imagem */
-    margin-top: -1rem;
+  width: 13rem;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+  margin-top: 5rem;
+  position: absolute; /* Coloca a logo acima da imagem */
+  top: 5%; /* Ajuste a posição de acordo com a sua necessidade */
+  left: 3%; /* Ajuste a posição de acordo com a sua necessidade */
+  z-index: 1; /* Garante que a logo fique acima da imagem */
+  margin-top: -1rem;
 }
 
 .logo:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-left: 16rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 16rem;
 }
 
 .sub_titulo {
-    margin-top: -0.5rem;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 600;
+  margin-top: -0.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .headerFilhoBusca {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .busca {
-    background-color: #222;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 8px 16px;
-    width: 25rem;
-    transition: all 0.3s ease;
+  background-color: #222;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 8px 16px;
+  width: 25rem;
+  transition: all 0.3s ease;
 }
 
 .busca:hover {
-    background-color: #333;
-    border: solid 2px #fed83c;
+  background-color: #333;
+  border: solid 2px #fed83c;
 }
 
 input {
-    background: none;
-    border: none;
-    color: #fff;
-    width: 20rem;
-    height: 2rem;
-    font-size: 1rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    font-family: 'Open Sans', sans-serif; /* Fonte para os inputs */
+  background: none;
+  border: none;
+  color: #fff;
+  width: 20rem;
+  height: 2rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif; /* Fonte para os inputs */
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 i {
-    color: #fff;
+  color: #fff;
 }
 
 .bi-person-fill {
-    font-size: 2.7rem;
-    color: #222;
+  font-size: 2.7rem;
+  color: #222;
 }
 
 .bi-bag-fill {
-    font-size: 2rem;
-    color: #222;
+  font-size: 2rem;
+  color: #222;
 }
 
 .burger {
-    color: #fed83c;
-    font-size: 2rem;
+  color: #fed83c;
+  font-size: 2rem;
 }
-
 
 /* Seção Principal */
 .pai {
-    width: 100%; /* Garante que a seção ocupe 100% da largura */
-    height: 88vh; /* Mantém a altura da seção */
-    background: url('https://cdn.goomer.com.br/website/base/fe1/31d/7f5/jonathan-borba-8l8yl2ruusg-unsplash-scaled.jpg') no-repeat center center/cover; /* Imagem de fundo */
-    background-attachment: fixed; /* Efeito parallax */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    position: relative; /* Necessário para posicionar as logos acima da imagem de fundo */
-    overflow: hidden; /* Impede que a imagem saia da seção */
+  width: 100%; /* Garante que a seção ocupe 100% da largura */
+  height: 88vh; /* Mantém a altura da seção */
+  background: url("https://cdn.goomer.com.br/website/base/fe1/31d/7f5/jonathan-borba-8l8yl2ruusg-unsplash-scaled.jpg")
+    no-repeat center center/cover; /* Imagem de fundo */
+  background-attachment: fixed; /* Efeito parallax */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  position: relative; /* Necessário para posicionar as logos acima da imagem de fundo */
+  overflow: hidden; /* Impede que a imagem saia da seção */
 }
 
 .pai::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Overlay preto com transparência */
-    z-index: 0; /* Coloca o overlay abaixo do conteúdo */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Overlay preto com transparência */
+  z-index: 0; /* Coloca o overlay abaixo do conteúdo */
 }
 
 .textos {
-    margin-left: 3rem;
-    line-height: 1.6;
-    position: relative;
-    z-index: 1; /* Garantindo que o texto fique sobre o overlay */
-    color: #fff; /* Garantindo boa legibilidade */
-    font-family: 'Open Sans', sans-serif;
-    max-width: 100%; /* Garante que o texto ocupe toda a largura disponível */
+  margin-left: 3rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1; /* Garantindo que o texto fique sobre o overlay */
+  color: #fff; /* Garantindo boa legibilidade */
+  font-family: "Open Sans", sans-serif;
+  max-width: 100%; /* Garante que o texto ocupe toda a largura disponível */
 }
 
-
 .barra {
-    display: flex;
-    justify-content: center;
-    background-color: #fed83c;
-    height: 7rem;
+  display: flex;
+  justify-content: center;
+  background-color: #fed83c;
+  height: 7rem;
 }
 
 /* Logo na barra sobre a imagem de fundo */
 .logoBarra {
-    
-    width: 13rem;
-    height: 13rem;
-    margin-top: -3rem;
-    position: absolute; /* Coloca a logoBarra acima da imagem */
-    top: 99%; /* Ajuste a posição de acordo com a sua necessidade */
-    right: 44.5%; /* Ajuste a posição de acordo com a sua necessidade */
-    z-index: 1; /* Garante que a logoBarra fique acima da imagem */
+  width: 13rem;
+  height: 13rem;
+  margin-top: -3rem;
+  position: absolute; /* Coloca a logoBarra acima da imagem */
+  top: 99%; /* Ajuste a posição de acordo com a sua necessidade */
+  right: 44.5%; /* Ajuste a posição de acordo com a sua necessidade */
+  z-index: 1; /* Garante que a logoBarra fique acima da imagem */
 }
 
 .cardapio {
-    color: white;
-    text-align: center;
-    margin-top: 5rem;
-    font-family: 'Montserrat', sans-serif; /* Fonte para o título do cardápio */
-    font-size: 3rem;
-    text-decoration: underline;
-    font-weight: lighter;
+  color: white;
+  text-align: center;
+  margin-top: 5rem;
+  font-family: "Montserrat", sans-serif; /* Fonte para o título do cardápio */
+  font-size: 3rem;
+  text-decoration: underline;
+  font-weight: lighter;
 }
 
 /* Quem Somos */
 .quem {
-    width: 100%;
-    background: url('https://invexo.com.br/blog/wp-content/uploads/2021/06/Hamburgueria-da-Alf%C3%A2ndega-Ipanema.jpg') no-repeat center center/cover; /* Imagem de fundo */
-    padding: 5rem 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    position: relative;
-    background-attachment: fixed; /* Efeito de parallax */
-    margin-top: 5rem;
+  width: 100%;
+  background: url("https://invexo.com.br/blog/wp-content/uploads/2021/06/Hamburgueria-da-Alf%C3%A2ndega-Ipanema.jpg")
+    no-repeat center center/cover; /* Imagem de fundo */
+  padding: 5rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  background-attachment: fixed; /* Efeito de parallax */
+  margin-top: 5rem;
 }
 
 .quem::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Overlay preto com transparência */
-    z-index: 0; /* Colocando o overlay abaixo dos textos */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Overlay preto com transparência */
+  z-index: 0; /* Colocando o overlay abaixo dos textos */
 }
 
 .quemFilho {
-    display: flex;
-    justify-content: center;
-    margin: 0 5rem;
-    font-family: 'Poppins', sans-serif; /* Fonte para o conteúdo de "Quem Somos" */
-    gap: 5rem;
-    position: relative;
-    z-index: 1; /* Garantindo que o texto fique sobre o overlay */
+  display: flex;
+  justify-content: center;
+  margin: 0 5rem;
+  font-family: "Poppins", sans-serif; /* Fonte para o conteúdo de "Quem Somos" */
+  gap: 5rem;
+  position: relative;
+  z-index: 1; /* Garantindo que o texto fique sobre o overlay */
 }
 
 .foto {
-    width: 34rem;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 34rem;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .foto:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .texto {
-    font-size: 2rem;
-    color: #fff; /* Mudando a cor para garantir boa legibilidade */
-    line-height: 1.6;
-    max-width: 45rem;
-    position: relative;
-    z-index: 1;
-    font-family: 'Open Sans', sans-serif; /* Fonte para o texto */
+  font-size: 2rem;
+  color: #fff; /* Mudando a cor para garantir boa legibilidade */
+  line-height: 1.6;
+  max-width: 45rem;
+  position: relative;
+  z-index: 1;
+  font-family: "Open Sans", sans-serif; /* Fonte para o texto */
 }
 
 .quemSomos {
-    text-decoration: underline;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-    font-family: 'Montserrat', sans-serif; /* Fonte para o título "Quem Somos" */
+  text-decoration: underline;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif; /* Fonte para o título "Quem Somos" */
 }
 
 .textoQuem {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    color: #fff;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  color: #fff;
+  text-align: left;
 }
 
 /* Efeito de animação de entrada */
 .quemFilho {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s forwards;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
 }
 
 @keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Botão de chamada para ação (CTA) */
 .cta {
-    background-color: var(--cor-primaria);
-    color: var(--cor-fundo);
-    font-size: 1.2rem;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 3rem;
-    transition: background-color 0.3s ease;
-    font-family: 'Poppins', sans-serif; /* Fonte para botões */
+  background-color: var(--cor-primaria);
+  color: var(--cor-fundo);
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 3rem;
+  transition: background-color 0.3s ease;
+  font-family: "Poppins", sans-serif; /* Fonte para botões */
 }
 
 .cta:hover {
-    background-color: darken(var(--cor-primaria), 10%);
+  background-color: darken(var(--cor-primaria), 10%);
 }
 
-.contato{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-top: 5rem;
+.contato {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 5rem;
 }
 
-.logosContatos{
-    display: flex;
-    gap: 10rem;
+.logosContatos {
+  display: flex;
+  gap: 10rem;
 }
 
-.contatos{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 15px;
+.contatos {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 15px;
 }
 
-.mais{
-    margin-top: 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+.mais {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
-.imgsMais{
-    display: flex;
-    justify-content: center;
-    gap: 5rem;
-    margin-top: 5rem;
+.imgsMais {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 5rem;
 }
 
-.sessoes{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5rem;
+.categoria {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
 }
 
-.titulosCardapio{
+.titulosCardapio {
     text-align: center;
     margin-top: 5rem;
     text-decoration: underline;
-}
-
-.produtos{
-    margin-top: 5rem;
-    background-color: #fed83c;
-    width: 50rem;
-    border-radius: 0.5rem;
     display: flex;
-    padding: 2rem;
+    justify-content: center;
     align-items: center;
-    gap: 5rem;
+    width: 100%; /* Isso vai garantir que ocupe toda a largura da tela */
+  }
+  
+
+.produtos {
+  background-color: #fed83c;
+  width: 50rem;
+  border-radius: 0.5rem;
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  gap: 5rem;
 }
 
-.tituloPro{
-    color: #111;
-    font-size: 1.5rem;
+.item {
+  color: #111;
+  font-size: 1.5rem;
 }
 
-.info{
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.descricao {
+  font-size: 1rem;
+  color: #333;
+}
+
+.preco {
+  color: #111;
+}
+
+.imagemPro {
+  width: 15rem;
+  height: 13rem;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.popUps {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Adiciona um índice para garantir que fique acima de outros conteúdos */
+}
+
+.popUp {
+    background-image: url(https://cdn.discordapp.com/attachments/1330955985006886983/1331714443624845353/vecteezy_vector-vintage-fast-food-seamless-pattern-hand-drawn_14469007.jpg?ex=67949979&is=679347f9&hm=d745ec47210efc67634120541b91207b7bea16d7e4f03c10b60671c34b9a4e10&);
+    border: 5px solid yellow;
+    width: 80rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 90%; /* Para evitar que o pop-up ocupe toda a tela em dispositivos menores */
+    max-height: 80%; /* Para manter um bom espaço ao redor */
+    overflow-y: auto; /* Caso o conteúdo ultrapasse o tamanho da tela */
+}
+
+.popUp h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+footer {
+    display: block;
+    font-family: Arial, sans-serif;
+    margin-top: 5rem;
+  }
+
+  .amarelo {
+    background-color: #FED83C;
+    padding: 10px 20px;
+    text-align: left;
     display: flex;
-    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+  }
+
+  .amarelo .logo2 {
+    max-width: 70px; 
+  }
+
+  .amarelo .text2 {
+    margin-left: 10px;
+  }
+
+  .amarelo .titulo {
+    font-size: 20px; 
+    color: #000000;
+    margin: 0;
+    margin-right: 100rem; 
+  }
+
+  .amarelo .sub_titulo {
+    font-size: 14px; 
+    color: #000000;
+    margin: 5px 0 0 0;
+  }
+
+  .amarelo .btn {
+    margin-left: 20px;
+  }
+
+  .amarelo .btn2 {
+    background-color: #000000;
+    color: #FED83C;
+    border: none;
+    padding: 8px 16px; 
+    cursor: pointer;
+    font-size: 14px; 
+    border-radius: 5px;
+  }
+
+  .amarelo .btn2:hover {
+    background-color: #FED83C;
+    color: #000000;
+    border: 1px solid #000000;
+  }
+
+  .preto {
+    background-color: #000000;
+    color: #FED83C;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .preto .text4 {
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .preto .text5 {
+    font-size: 18px;
+    text-align: center; 
+  }
+
+  .preto .text5 div {
+    margin-top: 5px;
+  }
+
+  .preto .icons {
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: end;
+    margin-right: 18rem;
+    gap: 2rem;
+    font-size: 2.2rem;
+  }
+
+
+/* SAMUEL */
+
+.mainSamu{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 60rem;
+    background-blend-mode: overlay;
+    background-size: cover;
+}
+
+.imagemLancheMenuLanche {
+    width: 40rem;
+    height: 20rem;
+    object-fit: cover;
+    border-bottom-right-radius: 10px;
+}
+.menuLanche {
+    display: flex;
     gap: 1rem;
 }
 
-.descricao{
-    font-size: 1rem;
-    color: #333;
+.nomeLancheMenuLanche{
+    margin-top: 1rem;
+    margin-left: 6rem;
 }
 
-.preco{
-    color: #111;
+.descriçãoLanche {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-family: "Days One";
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem; 
+    border-radius: 10px;
+    width: 24rem;
+}
+.preçoLanche {
+    font-size: 36px;
+    color: rgb(254, 216, 60);
+    font-family: "Days One";
 }
 
-.imagemPro{
-    width: 15rem;
-    height: 13rem;
-    border-radius: 1rem;
-    object-fit: cover;
+.adicionaisMenuLanche {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center;     /* Alinha os itens verticalmente */
+    gap: 2rem;               /* Espaço entre os itens */
+    font-size: 36px;
+    color: white;
+    font-family: "Days One";
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-left: 5rem;
+    margin-right: 5rem;
+    flex-wrap: nowrap;        /* Impede que os itens quebrem para a próxima linha */
+}
+
+.adicionaisMenuLanche img {
+    width: 10rem;            /* Tamanho das imagens adicionais */
+}
+
+.adicionaisTurbinar{
+    text-align: center;
+    color: rgb(255, 230, 0);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2rem;
+}
+
+.batataMenuLanche, .AnelDeCebolaMenuLanche, .cocaColaMenuLanche {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: amaranth;
+    font-family: "Days One";
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.batataMenuLanche {
+    font-size: 36px;
+    font-family: "Pacifico";
+    justify-content: center;
+}
+.AnelDeCebolaMenuLanche {
+    font-size: 36px;
+    font-family: "Pacifico";
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+.cocaColaMenuLanche {
+    font-size: 36px;
+    font-family: "Pacifico";
+}
+.tituloLancheMenuLanche {
+    font-size: 48px;
+    color: rgb(254, 216, 60);
+    font-family: "Lily Script One";
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+button {
+    font-family: "Days One";
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: darkred;
+}
+#finalizarCarrinhoMenuLanche {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7rem;
+}
+#valorTotalMenuLanche {
+    font-size: 24px;
+    color: rgb(254, 216, 60);
+    font-family: "Days One";
+    margin-top: -5rem;
+}
+#botaoFinalizarMenuLanche {
+    font-family: "Days One";
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 1rem;
+}
+#botaoFinalizarMenuLanche:hover {
+    background-color: darkgreen;
+}
+.btnCardapio{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 1rem;
 }
