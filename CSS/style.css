@@ -179,16 +179,6 @@ i {
   z-index: 1; /* Garante que a logoBarra fique acima da imagem */
 }
 
-.cardapio {
-  color: white;
-  text-align: center;
-  margin-top: 5rem;
-  font-family: "Montserrat", sans-serif; /* Fonte para o título do cardápio */
-  font-size: 3rem;
-  text-decoration: underline;
-  font-weight: lighter;
-}
-
 /* Quem Somos */
 .quem {
   width: 100%;
@@ -336,62 +326,6 @@ i {
   margin-top: 5rem;
 }
 
-.categoria {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5rem;
-}
-
-.titulosCardapio {
-    text-align: center;
-    margin-top: 5rem;
-    text-decoration: underline;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Isso vai garantir que ocupe toda a largura da tela */
-  }
-  
-
-.produtos {
-  background-color: #fed83c;
-  width: 50rem;
-  border-radius: 0.5rem;
-  display: flex;
-  padding: 2rem;
-  align-items: center;
-  gap: 5rem;
-}
-
-.item {
-  color: #111;
-  font-size: 1.5rem;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.descricao {
-  font-size: 1rem;
-  color: #333;
-}
-
-.preco {
-  color: #111;
-}
-
-.imagemPro {
-  width: 15rem;
-  height: 13rem;
-  border-radius: 1rem;
-  object-fit: cover;
-}
-
 .popUps {
     position: fixed;
     top: 0;
@@ -406,7 +340,7 @@ i {
 }
 
 .popUp {
-    background-image: url(https://cdn.discordapp.com/attachments/1330955985006886983/1331714443624845353/vecteezy_vector-vintage-fast-food-seamless-pattern-hand-drawn_14469007.jpg?ex=67949979&is=679347f9&hm=d745ec47210efc67634120541b91207b7bea16d7e4f03c10b60671c34b9a4e10&);
+    background-image: url(https://cdn.discordapp.com/attachments/1330955985006886983/1331714443624845353/vecteezy_vector-vintage-fast-food-seamless-pattern-hand-drawn_14469007.jpg?ex=679a8839&is=679936b9&hm=d52efd5f617d56a7942e40394f44deb569599c2c5bdf2836b18251c79c37c687&);
     border: 5px solid yellow;
     width: 80rem;
     border-radius: 8px;
@@ -469,6 +403,7 @@ footer {
     cursor: pointer;
     font-size: 14px; 
     border-radius: 5px;
+    width: 10rem;
   }
 
   .amarelo .btn2:hover {
@@ -657,4 +592,66 @@ button:hover {
 .btnCardapio{
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 1rem;
+}
+
+.categoria{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 5em;
+  margin-bottom: 5rem
+}
+
+.produtos{
+  margin-top: 1rem;  
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  color: #000000;
+  width: 90%;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.produtos img {
+  width: 15rem;
+  height: 200px; 
+  object-fit: cover; 
+  border-radius: 8px; 
+}
+
+.divImg{
+  display: flex;
+  justify-content: right;
+  align-items: end;
+}
+
+.itemTitulo{
+  width: 25rem;
+}
+
+.descricao{
+  width: 90%;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.preco{
+  margin-top: 1rem;
+  color: red;
+}
+
+.voltarHome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+
+  button{
+    font-family: Arial, Helvetica, sans-serif;
+  }
 }
