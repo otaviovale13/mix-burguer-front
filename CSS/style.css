@@ -296,19 +296,60 @@ i {
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-top: 5rem;
+  padding: 4rem 1rem;
+  background-color: #fed83c;
+}
+
+.contatoFilho {
+  max-width: 1200px;
+  width: 100%;
 }
 
 .logosContatos {
   display: flex;
-  gap: 10rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contatoCategoria {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .contatos {
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 15px;
+  font-size: 1.2rem;
+  color: #555;
+  transition: all 0.3s ease-in-out;
+}
+
+.contatos i {
+  font-size: 4rem;
+  color: #000000; /* Cor dos ícones */
+}
+
+.contatos h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.h2Contatos{
+  color: #000000;
+  text-decoration: underline;
+  font-size: 3rem;
+}
+
+.contatos:hover {
+  transform: translateY(-5px); /* Efeito de hover para interação */
+  color: red; /* Mudança de cor ao passar o mouse */
+}
+
+.contatos i:hover {
+  color: red; /* Mudança de cor ao passar o mouse */
 }
 
 .mais {
@@ -320,15 +361,17 @@ i {
   margin-bottom: 5rem;
 }
 
-.videosMais {
+.imgsMais {
   display: flex;
   justify-content: center;
   gap: 2rem;
   margin-top: 2rem;
 }
 
-video{
-  border: solid 10px #fed83c;
+.maisImgsEVideos{
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
 }
 
 .popUps {
