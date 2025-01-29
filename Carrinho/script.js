@@ -1,3 +1,3 @@
 function btnVoltar(){
-    window.location.href = "/index.html"
+    window.location.href = "/cardapio.html"
 }
