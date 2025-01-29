@@ -317,13 +317,18 @@ i {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  margin-bottom: 5rem;
 }
 
-.imgsMais {
+.videosMais {
   display: flex;
   justify-content: center;
-  gap: 5rem;
-  margin-top: 5rem;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+video{
+  border: solid 10px #fed83c;
 }
 
 .popUps {
@@ -653,5 +658,14 @@ button:hover {
 
   button{
     font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+.alterações{
+  background-color: #fff;
+  color: #000000;
+  
+  input{
+    color: #000000;
   }
 }
