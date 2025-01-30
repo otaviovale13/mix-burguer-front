@@ -404,95 +404,96 @@ i {
 }
 
 footer {
-    display: block;
-    font-family: Arial, sans-serif;
-    margin-top: 5rem;
-  }
+  display: block;
+  font-family: Arial, sans-serif;
+}
 
-  .amarelo {
-    background-color: #FED83C;
-    padding: 10px 20px;
-    text-align: left;
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-  }
+/* Seção amarela */
+.amarelo {
+  background-color: #FED83C;
+  padding: 10px 20px; /* Diminuir altura */
+  text-align: left;
+  display: flex;
+  align-items: center; /* Alinha logo e texto verticalmente */
+  justify-content: center;
+}
 
-  .amarelo .logo2 {
-    max-width: 70px; 
-  }
+.amarelo .logo2 {
+  max-width: 70px; /* Diminuir o tamanho do logo */
+}
 
-  .amarelo .text2 {
-    margin-left: 10px;
-  }
+.amarelo .text2 {
+  margin-left: 10px;
+}
 
-  .amarelo .titulo {
-    font-size: 20px; 
-    color: #000000;
-    margin: 0;
-    margin-right: 100rem; 
-  }
+.amarelo .titulo {
+  font-size: 20px; /* Reduzir o tamanho do título */
+  color: #000000;
+  margin: 0;
+  /* margin-right: 100rem; */
+}
 
-  .amarelo .sub_titulo {
-    font-size: 14px; 
-    color: #000000;
-    margin: 5px 0 0 0;
-  }
+.amarelo .sub_titulo {
+  font-size: 14px; /* Reduzir o tamanho do subtítulo */
+  color: #000000;
+  margin: 5px 0 0 0;
+}
 
-  .amarelo .btn {
-    margin-left: 20px;
-  }
+.amarelo .btn {
+  margin-left: 20px;
+}
 
-  .amarelo .btn2 {
-    background-color: #000000;
-    color: #FED83C;
-    border: none;
-    padding: 8px 16px; 
-    cursor: pointer;
-    font-size: 14px; 
-    border-radius: 5px;
-    width: 10rem;
-  }
+.amarelo .btn2 {
+  background-color: #000000;
+  color: #FED83C;
+  border: none;
+  padding: 8px 16px; /* Diminuir o tamanho do botão */
+  cursor: pointer;
+  font-size: 14px; /* Reduzir o tamanho da fonte */
+  border-radius: 5px;
+}
 
-  .amarelo .btn2:hover {
-    background-color: #FED83C;
-    color: #000000;
-    border: 1px solid #000000;
-  }
+.amarelo .btn2:hover {
+  background-color: #FED83C;
+  color: #000000;
+  border: 1px solid #000000;
+}
 
-  .preto {
-    background-color: #000000;
-    color: #FED83C;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
+/* Seção preta */
+.preto {
+  background-color: #000000;
+  color: #FED83C;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Alinhar elementos na parte inferior */
+}
 
-  .preto .text4 {
-    font-size: 18px;
-    text-align: left;
-    margin-bottom: 0;
-  }
+.preto .text4 {
+  font-size: 18px; /* Diminuir o tamanho da fonte */
+  text-align: left; /* Alinhar à esquerda */
+  margin-bottom: 0; /* Remover margens extras */
+}
 
-  .preto .text5 {
-    font-size: 18px;
-    text-align: center; 
-  }
+.preto .text5 {
+  font-size: 18px; /* Diminuir o tamanho da fonte */
+  text-align: center; 
+}
 
-  .preto .text5 div {
-    margin-top: 5px;
-  }
+.preto .text5 div {
+  margin-top: 5px;
+}
 
-  .preto .icons {
-    display: flex;
-    color: white;
-    justify-content: center;
-    align-items: end;
-    margin-right: 18rem;
-    gap: 2rem;
-    font-size: 2.2rem;
-  }
+.preto .icons {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: end;
+  margin-right: 18rem;
+  gap: 2rem;
+  font-size: 2.2rem;
+
+}
 
 
 /* SAMUEL */
