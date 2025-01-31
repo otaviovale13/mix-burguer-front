@@ -333,7 +333,7 @@ i {
 .h2Contatos{
   color: #000000;
   text-decoration: underline;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .contatos:hover {
@@ -352,6 +352,9 @@ i {
   justify-content: center;
   text-align: center;
   margin-bottom: 5rem;
+}
+.quemSomos{
+  font-size: 2rem;
 }
 
 .imgsMais {
