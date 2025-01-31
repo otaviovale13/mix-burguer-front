@@ -1,17 +1,14 @@
-/* Importando as fontes do Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap");
 
-/* Reset de margens e padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fundo e fonte geral */
 body {
   background-color: #111;
-  font-family: "Open Sans", sans-serif; /* Fonte para o corpo do texto */
+  font-family: "Open Sans", sans-serif;
   color: #fff;
 }
 
@@ -24,29 +21,27 @@ header {
   height: 7rem;
   padding: 0 3rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-family: "Montserrat", sans-serif; /* Fonte para o cabeçalho */
-  position: sticky; /* Torna o cabeçalho fixo */
-  top: 0; /* Fixa o cabeçalho no topo da página */
-  z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
+  font-family: "Montserrat", sans-serif; 
+  position: sticky; 
+  top: 0; 
+  z-index: 100;
 }
 
-/* Outras classes permanecem inalteradas */
 .headerFilho {
   display: flex;
   gap: 3rem;
   align-items: center;
 }
 
-/* Logo sobre a imagem de fundo */
 .logo {
   width: 13rem;
   max-width: 100%;
   transition: transform 0.3s ease;
   margin-top: 5rem;
-  position: absolute; /* Coloca a logo acima da imagem */
-  top: 5%; /* Ajuste a posição de acordo com a sua necessidade */
-  left: 3%; /* Ajuste a posição de acordo com a sua necessidade */
-  z-index: 1; /* Garante que a logo fique acima da imagem */
+  position: absolute; 
+  top: 5%; 
+  left: 3%; 
+  z-index: 1; 
   margin-top: -1rem;
 }
 
@@ -99,7 +94,7 @@ input {
   font-size: 1rem;
   padding: 0.5rem;
   border-radius: 5px;
-  font-family: "Open Sans", sans-serif; /* Fonte para os inputs */
+  font-family: "Open Sans", sans-serif; 
 }
 
 input:focus {
@@ -125,19 +120,18 @@ i {
   font-size: 2rem;
 }
 
-/* Seção Principal */
 .pai {
-  width: 100%; /* Garante que a seção ocupe 100% da largura */
-  height: 88vh; /* Mantém a altura da seção */
+  width: 100%; 
+  height: 88vh;
   background: url("https://cdn.goomer.com.br/website/base/fe1/31d/7f5/jonathan-borba-8l8yl2ruusg-unsplash-scaled.jpg")
-    no-repeat center center/cover; /* Imagem de fundo */
-  background-attachment: fixed; /* Efeito parallax */
+    no-repeat center center/cover;
+  background-attachment: fixed; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  position: relative; /* Necessário para posicionar as logos acima da imagem de fundo */
-  overflow: hidden; /* Impede que a imagem saia da seção */
+  position: relative; 
+  overflow: hidden; 
 }
 
 .pai::before {
@@ -147,18 +141,18 @@ i {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Overlay preto com transparência */
-  z-index: 0; /* Coloca o overlay abaixo do conteúdo */
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 0;
 }
 
 .textos {
   margin-left: 3rem;
   line-height: 1.6;
   position: relative;
-  z-index: 1; /* Garantindo que o texto fique sobre o overlay */
-  color: #fff; /* Garantindo boa legibilidade */
+  z-index: 1; 
+  color: #fff; 
   font-family: "Open Sans", sans-serif;
-  max-width: 100%; /* Garante que o texto ocupe toda a largura disponível */
+  max-width: 100%; 
 }
 
 .barra {
@@ -168,29 +162,28 @@ i {
   height: 7rem;
 }
 
-/* Logo na barra sobre a imagem de fundo */
+
 .logoBarra {
   width: 13rem;
   height: 13rem;
   margin-top: -3rem;
-  position: absolute; /* Coloca a logoBarra acima da imagem */
-  top: 99%; /* Ajuste a posição de acordo com a sua necessidade */
-  right: 44.5%; /* Ajuste a posição de acordo com a sua necessidade */
-  z-index: 1; /* Garante que a logoBarra fique acima da imagem */
+  position: absolute; 
+  top: 99%; 
+  right: 44.5%;
+  z-index: 1;
 }
 
-/* Quem Somos */
 .quem {
   width: 100%;
   background: url("https://invexo.com.br/blog/wp-content/uploads/2021/06/Hamburgueria-da-Alf%C3%A2ndega-Ipanema.jpg")
-    no-repeat center center/cover; /* Imagem de fundo */
+    no-repeat center center/cover;
   padding: 5rem 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
   position: relative;
-  background-attachment: fixed; /* Efeito de parallax */
+  background-attachment: fixed;
   margin-top: 5rem;
 }
 
@@ -201,18 +194,18 @@ i {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Overlay preto com transparência */
-  z-index: 0; /* Colocando o overlay abaixo dos textos */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
 .quemFilho {
   display: flex;
   justify-content: center;
   margin: 0 5rem;
-  font-family: "Poppins", sans-serif; /* Fonte para o conteúdo de "Quem Somos" */
+  font-family: "Poppins", sans-serif;
   gap: 5rem;
   position: relative;
-  z-index: 1; /* Garantindo que o texto fique sobre o overlay */
+  z-index: 1;
 }
 
 .foto {
@@ -230,12 +223,12 @@ i {
 
 .texto {
   font-size: 2rem;
-  color: #fff; /* Mudando a cor para garantir boa legibilidade */
+  color: #fff;
   line-height: 1.6;
   max-width: 45rem;
   position: relative;
   z-index: 1;
-  font-family: "Open Sans", sans-serif; /* Fonte para o texto */
+  font-family: "Open Sans", sans-serif;
 }
 
 .quemSomos {
@@ -243,7 +236,7 @@ i {
   font-weight: 600;
   margin-bottom: 2rem;
   font-size: 2.5rem;
-  font-family: "Montserrat", sans-serif; /* Fonte para o título "Quem Somos" */
+  font-family: "Montserrat", sans-serif;
 }
 
 .textoQuem {
@@ -254,7 +247,7 @@ i {
   text-align: left;
 }
 
-/* Efeito de animação de entrada */
+
 .quemFilho {
   opacity: 0;
   transform: translateY(50px);
@@ -272,7 +265,7 @@ i {
   }
 }
 
-/* Botão de chamada para ação (CTA) */
+
 .cta {
   background-color: var(--cor-primaria);
   color: var(--cor-fundo);
@@ -285,7 +278,7 @@ i {
   display: inline-block;
   margin-top: 3rem;
   transition: background-color 0.3s ease;
-  font-family: "Poppins", sans-serif; /* Fonte para botões */
+  font-family: "Poppins", sans-serif;
 }
 
 .cta:hover {
@@ -329,7 +322,7 @@ i {
 
 .contatos i {
   font-size: 4rem;
-  color: #000000; /* Cor dos ícones */
+  color: #000000;
 }
 
 .contatos h2 {
@@ -344,12 +337,12 @@ i {
 }
 
 .contatos:hover {
-  transform: translateY(-5px); /* Efeito de hover para interação */
-  color: red; /* Mudança de cor ao passar o mouse */
+  transform: translateY(-5px);
+  color: red;
 }
 
 .contatos i:hover {
-  color: red; /* Mudança de cor ao passar o mouse */
+  color: red; 
 }
 
 .mais {
@@ -384,7 +377,7 @@ i {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Adiciona um índice para garantir que fique acima de outros conteúdos */
+    z-index: 1000;
 }
 
 .popUp {
@@ -393,9 +386,9 @@ i {
     width: 80rem;
     border-radius: 8px;
     text-align: center;
-    max-width: 90%; /* Para evitar que o pop-up ocupe toda a tela em dispositivos menores */
-    max-height: 80%; /* Para manter um bom espaço ao redor */
-    overflow-y: auto; /* Caso o conteúdo ultrapasse o tamanho da tela */
+    max-width: 90%;
+    max-height: 80%;
+    overflow-y: auto;
 }
 
 .popUp h1 {
@@ -408,18 +401,17 @@ footer {
   font-family: Arial, sans-serif;
 }
 
-/* Seção amarela */
 .amarelo {
   background-color: #FED83C;
-  padding: 10px 20px; /* Diminuir altura */
+  padding: 10px 20px;
   text-align: left;
   display: flex;
-  align-items: center; /* Alinha logo e texto verticalmente */
+  align-items: center;
   justify-content: center;
 }
 
 .amarelo .logo2 {
-  max-width: 70px; /* Diminuir o tamanho do logo */
+  max-width: 70px;
 }
 
 .amarelo .text2 {
@@ -427,14 +419,13 @@ footer {
 }
 
 .amarelo .titulo {
-  font-size: 20px; /* Reduzir o tamanho do título */
+  font-size: 20px;
   color: #000000;
   margin: 0;
-  /* margin-right: 100rem; */
 }
 
 .amarelo .sub_titulo {
-  font-size: 14px; /* Reduzir o tamanho do subtítulo */
+  font-size: 14px;
   color: #000000;
   margin: 5px 0 0 0;
 }
@@ -447,9 +438,9 @@ footer {
   background-color: #000000;
   color: #FED83C;
   border: none;
-  padding: 8px 16px; /* Diminuir o tamanho do botão */
+  padding: 8px 16px; 
   cursor: pointer;
-  font-size: 14px; /* Reduzir o tamanho da fonte */
+  font-size: 14px;
   border-radius: 5px;
 }
 
@@ -459,24 +450,23 @@ footer {
   border: 1px solid #000000;
 }
 
-/* Seção preta */
 .preto {
   background-color: #000000;
   color: #FED83C;
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end; /* Alinhar elementos na parte inferior */
+  align-items: flex-end; 
 }
 
 .preto .text4 {
-  font-size: 18px; /* Diminuir o tamanho da fonte */
-  text-align: left; /* Alinhar à esquerda */
-  margin-bottom: 0; /* Remover margens extras */
+  font-size: 18px; 
+  text-align: left; 
+  margin-bottom: 0;
 }
 
 .preto .text5 {
-  font-size: 18px; /* Diminuir o tamanho da fonte */
+  font-size: 18px;
   text-align: center; 
 }
 
@@ -494,8 +484,6 @@ footer {
   font-size: 2.2rem;
 
 }
-
-/* SAMUEL */
 
 .mainSamu{
     padding: 0;
@@ -540,20 +528,20 @@ footer {
 
 .adicionaisMenuLanche {
     display: flex;
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    align-items: center;     /* Alinha os itens verticalmente */
-    gap: 2rem;               /* Espaço entre os itens */
+    justify-content: center;
+    align-items: center;  
+    gap: 2rem;     
     font-size: 36px;
     color: white;
     font-family: "Days One";
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-left: 5rem;
     margin-right: 5rem;
-    flex-wrap: nowrap;        /* Impede que os itens quebrem para a próxima linha */
+    flex-wrap: nowrap;
 }
 
 .adicionaisMenuLanche img {
-    width: 10rem;            /* Tamanho das imagens adicionais */
+    width: 10rem;
 }
 
 .adicionaisTurbinar{
