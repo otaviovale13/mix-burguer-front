@@ -1,11 +1,11 @@
 function btnSacola(){
-  window.location.href = "/Carrinho/index.html"
+  window.location.href = "/carrinho.html"
 }
 
 function btnCardapio(){
-    window.location.href = "/Projeto Integrador 2025/pedido.html"
+    window.location.href = "/pedido.html"
   }
 
   function irSugestão(){
-    window.location.href = "/Projeto Integrador 2025/index.html"
+    window.location.href = "/sugestoes.html"
   }

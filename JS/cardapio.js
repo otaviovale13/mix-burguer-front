@@ -154,7 +154,7 @@ categorias.innerHTML = Object.keys(Categorias)
         }
         
         function btnSacola(){
-          window.location.href = "/Carrinho/index.html"
+          window.location.href = "/carrinho.html"
         }
 
         function voltarHome(){
