@@ -282,3 +282,164 @@ footer {
     font-size: 2.2rem;
 
   }
+
+  /* Ajustes para telas menores */
+@media (max-width: 768px) {
+  header {
+    padding: 0 1.5rem;
+    height: 6rem;
+  }
+
+  .headerFilho {
+    gap: 1rem;
+  }
+
+  .logo {
+    width: 10rem;
+    top: 3%;
+    left: 3%;
+  }
+
+  .text {
+    display: none;
+  }
+
+  .busca {
+    width: 18rem;
+  }
+
+  .headerFilhoBusca {
+    gap: 0.5rem;
+  }
+
+  .busca input {
+    width: 15rem;
+  }
+  
+  .bi-person-fill, .bi-bag-fill {
+    font-size: 1.8rem;
+  }
+
+  .logo {
+    width: 10rem; /* Reduz a largura da logo */
+    top: 3%; /* Ajuste a posição vertical da logo */
+    left: 50%; /* Centraliza a logo horizontalmente */
+    transform: translateX(-50%); /* Compensa o deslocamento da logo */
+  }
+}
+
+/* Ajustes para telas de tablets e celulares */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .logo {
+    width: 8rem;
+    top: 5%;
+    left: 5%;
+  }
+
+  .text {
+    display: none;
+  }
+
+  .headerFilhoBusca {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .busca {
+    width: 100%;
+    padding: 8px 12px;
+  }
+
+  .busca input {
+    width: 100%;
+  }
+
+  .bi-person-fill, .bi-bag-fill {
+    font-size: 1.5rem;
+  }
+
+  .burger {
+    font-size: 2.5rem;
+  }
+
+  .main {
+    height: auto;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .pai1 {
+    padding: 1rem;
+  }
+
+  .caixaTexto {
+    width: 90%;
+    height: auto;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .butao {
+    margin-top: 2rem;
+  }
+
+  .botao {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  /* Ajustes para a seção amarela */
+  .amarelo {
+    flex-direction: column;
+    padding: 5px 10px;
+    align-items: center;
+  }
+
+  .amarelo .logo2 {
+    max-width: 50px;
+  }
+
+  .amarelo .titulo {
+    font-size: 16px;
+  }
+
+  .amarelo .sub_titulo {
+    font-size: 12px;
+  }
+
+  .amarelo .btn2 {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .preto {
+    flex-direction: column;
+    padding: 15px;
+    align-items: center;
+  }
+
+  .preto .text4, .preto .text5 {
+    font-size: 14px;
+  }
+
+  .preto .icons {
+    font-size: 1.8rem;
+    margin-right: 0;
+    gap: 1rem;
+  }
+
+  .logo {
+    width: 8rem; /* Reduz ainda mais a largura da logo */
+    top: 5%; /* Ajuste a posição vertical */
+    left: 50%; /* Centraliza a logo horizontalmente */
+    transform: translateX(-50%); /* Compensa o deslocamento da logo */
+  }
+}
