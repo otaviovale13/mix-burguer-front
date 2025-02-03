@@ -1,136 +1,195 @@
-/* CARRINHO */
+/* CARRINHO RESPONSIVO */
 
 .pacifico-regular {
-    font-family: "Pacifico", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  .days-one-regular {
-    font-family: "Days One", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  body {
+  font-family: "Pacifico", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.days-one-regular {
+  font-family: "Days One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
   padding: 0;
   margin: 0;
-  background-image: url(https://cdn.discordapp.com/attachments/1330955985006886983/1331714443624845353/vecteezy_vector-vintage-fast-food-seamless-pattern-hand-drawn_14469007.jpg?ex=679a8839&is=679936b9&hm=d52efd5f617d56a7942e40394f44deb569599c2c5bdf2836b18251c79c37c687&&);
-  background-color: rgb(98, 98, 98, 9);
+  background-image: url(/IMGS/image.png);
+  background-color: rgba(98, 98, 98, 0.9);
   background-blend-mode: overlay;
   background-size: cover;
-  }
-  .logoCarrinho {
-  
+}
+
+.logoCarrinho {
   padding-top: 20px;
   margin: 0;
-  }
-  header {
+}
+
+header {
   display: flex;
   justify-content: center;
-  margin: 0;
   align-items: center;
   flex-direction: column;
-  }
-  .meuCarrinho{
-    color: rgb(254, 216, 60);
+  margin: 0;
+}
+
+.meuCarrinho {
+  color: rgb(254, 216, 60);
   font-family: "Pacifico";
   font-size: 64px;
   padding-top: 20px;
-  }
-  .imagemLanche{
-    height: 285px;
-    width: 320px;
-    object-fit: cover;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    
-  }
-  .lancheCarrinho{
+  text-align: center;
+}
+
+.lancheCarrinho {
   display: flex;
-  gap: 5rem;
-  }
-  .nomeLancheCarrinho{
-    font-size: 36px;
-    color: white;
-    font-family: "Days One";
-    align-self: top;
-  
-  
-  }
-  .ObservaçõesLancheCarrinho{
-    font-family: "Days One";
-  }
-  .inputObservação{
-    height: 100px;
-    width: 420px;
-    background-color: rgb(98, 98, 98, 0.85);
-    color: white;
-    font-size: 15px;
-    font-family: Days One;
-    border-radius: 15px;
-    margin-top: 50px;
-    padding-left: 8px;
-  }
-  ::placeholder{
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagemLanche {
+  height: 285px;
+  width: 320px;
+  object-fit: cover;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.nomeLancheCarrinho {
+  font-size: 36px;
+  color: white;
+  font-family: "Days One";
+  text-align: center;
+}
+
+.ObservaçõesLancheCarrinho {
+  font-family: "Days One";
+}
+
+.inputObservação {
+  height: 100px;
+  width: 90%;
+  max-width: 420px;
+  background-color: rgba(98, 98, 98, 0.85);
+  color: white;
+  font-size: 15px;
+  font-family: "Days One";
+  border-radius: 15px;
+  margin-top: 20px;
+  padding: 8px;
+}
+
+::placeholder {
   color: red;
   opacity: 1;
-  }
-  ::-ms-input-placeholder{
-  color: red;
-  }
-  .removerLancheCarrinho{
-    background-color: red;
-    width: 260px;
-    height: 40px;
-    align-self: center;
-    justify-self: end;
-    border-radius: 20px;
-    color: white;
-    font-family: "Days One";
-    align-items: center;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    margin-left: 40rem;
-    .RemoverLanche{
-    font-family: "Days One";
-    background-color: red;
-    border-radius: 10px;
-    color: white;
-    border: none;
-    font-size: 20px;
-    
-  }
-  }
-  .finalizarPedidoCarrinho{
-    margin-top: 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  #PreçoTotalCarrinho{
-  color: yellow;
-  font-family:"Days One";
-  font-size: 20px;
-  }
-  #FinalizarMeuPedidoCarrinhoTexto{
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    font-family:"Days One";
-    background-color: red;
-    border-radius: 10px;
-    height: 40px;
-    width: 240px;
-    border: none;
-  }
-  
-  i{
+}
+
+.removerLancheCarrinho {
+  background-color: red;
+  width: 100%;
+  max-width: 260px;
+  height: 40px;
+  border-radius: 20px;
   color: white;
-  font-size: 10rem;
+  font-family: "Days One";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.RemoverLanche {
+  font-family: "Days One";
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  font-size: 20px;
+}
+
+.finalizarPedidoCarrinho {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#PreçoTotalCarrinho {
+  color: yellow;
+  font-family: "Days One";
+  font-size: 20px;
+}
+
+#FinalizarMeuPedidoCarrinhoTexto {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-family: "Days One";
+  background-color: red;
+  border-radius: 10px;
+  height: 40px;
+  width: 240px;
+  border: none;
+}
+
+i {
+  color: white;
+  font-size: 6rem;
+}
+
+/* Responsividade */
+
+@media (max-width: 1024px) {
+  .meuCarrinho {
+      font-size: 48px;
   }
+  .lancheCarrinho {
+      flex-direction: column;
+      gap: 2rem;
+  }
+  .imagemLanche {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+  }
+  .nomeLancheCarrinho {
+      font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .meuCarrinho {
+      font-size: 36px;
+  }
+  .inputObservação {
+      width: 100%;
+      max-width: 320px;
+  }
+  i {
+      font-size: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .meuCarrinho {
+      font-size: 28px;
+  }
+  .inputObservação {
+      height: 80px;
+      font-size: 14px;
+  }
+  .removerLancheCarrinho {
+      max-width: 200px;
+  }
+  #FinalizarMeuPedidoCarrinhoTexto {
+      width: 200px;
+      font-size: 16px;
+  }
+}
