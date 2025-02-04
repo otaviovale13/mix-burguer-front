@@ -9,3 +9,7 @@ function btnCardapio(){
   function irSugestão(){
     window.location.href = "/sugestoes.html"
   }
+
+function btnCardapioModis(){
+  window.location.href = "/arielCardapio.html"
+}
