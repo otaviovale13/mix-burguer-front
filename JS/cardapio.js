@@ -86,22 +86,18 @@ categorias.innerHTML = Object.keys(Categorias)
               <div class="menuLanche">
                 <div class="imagemLancheMenuLanche">
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/brendi-app.appspot.com/o/public%2Fstores%2FliDYZPGpWDhaJHW0sWIk%2Fimages%2Fproducts%2Fresized%2FgvGEiOdReVw4lycHtukd_900x900.webp?alt=media&token=4c8eca87-503e-4844-af35-c11571fb9e23"
+                    src="${imagem}"
                     alt="ImagemDoLanche"
                     class="imagemLancheMenuLanche"
                   />
                 </div>
                 <div class="nomeLancheMenuLanche">
-                  <h1 class="tituloLancheMenuLanche">Top Onion</h1>
+                  <h1 class="tituloLancheMenuLanche">${nome}</h1>
                   <div class="descriçãoLanche">
                     <p>
-                      Descubra o Top Onion Burger da Mix Burguer em Itupeva: Carne smash
-                      suculenta, queijo derretido, 3 anéis de cebola crocantes e um
-                      delicioso molho barbecue, tudo servido em um pão brioche macio.
-                      Uma explosão de sabores e texturas, perfeita para quem busca um
-                      hambúrguer único e saboroso.
+                      ${descricao}
                     </p>
-                    <div class="preçoLanche"><p>R$ 25,95</p></div>
+                    <div class="preçoLanche"><p>${preco}</p></div>
                   </div>
                 </div>
               </div>
@@ -114,31 +110,31 @@ categorias.innerHTML = Object.keys(Categorias)
                         src="https://static.vecteezy.com/system/resources/thumbnails/024/508/765/small/french-fries-isolated-on-background-with-generative-ai-png.png"
                         alt="Batata"
                       />
-                      <p>Batata:R$ 8,90</p>
-                      <button>adicionar</button>
+                      <p>Batata:R$ <span id="valorBatata">8,90</span></p>
+                      <button onclick="AdicionarLanche('BatataMenuLancheFuncao')">adicionar</button>
                     </div>
                     <div class="anelDeCebolaMenuLanche">
                       <img
                         src="https://www.cerealistaexpress.com.br/media/tmp/webp/catalog/product/cache/1/image/420x545/9df78eab33525d08d6e5fb8d27136e95/a/r/aros-de-cebola-jpge.webp"
                         alt="Anel de Cebola"
                       />
-                      <p>Anel de Cebola:R$ 16,00</p>
-                      <button>adicionar</button>
+                      <p>Anel de Cebola:R$ <span id="valorCebola">16,00</span></p>
+                      <button onclick="AdicionarLanche('CebolaMenuLancheFuncao')">adicionar</button>
                     </div>
                     <div class="cocaColaMenuLanche">
                       <img
                         src="https://ibassets.com.br/ib.item.image.large/l-e6f31072323140d495404980871f7a15.png"
                         alt="Coca Cola"
                       />
-                      <p>Coca Cola:R$ 5,00</p>
-                      <button>adicionar</button>
+                      <p>Coca Cola:R$ <span id="valorCoca">5,00</span></p>
+                      <button onclick="AdicionarLanche('CocaMenuLancheFuncao')">adicionar</button>
                     </div>
                   </div>
                 </div>
               </div>
               <div id="finalizarCarrinhoMenuLanche">
-              <p id="valorTotalMenuLanche">Valor Total: R$ 0,00</p>
-              <button id="botaoFinalizarMenuLanche">Finalizar Carrinho</button>
+              <p id="valorTotalMenuLanche">Valor Total: R$ <span id="ValorTotal">0,00</span></p>
+              <button id="botaoFinalizarMenuLanche" onclick="AdicionarLanche('LancheMenuLancheFuncao')">Adicionar ao carrinho</button>
               <button id="botaoFinalizarMenuLanche"  onclick="fecharBtn()">Sair</button>
             </div>
             </div>
@@ -163,3 +159,30 @@ categorias.innerHTML = Object.keys(Categorias)
           function irSugestão(){
             window.location.href = "/sugestoes.html"
           }
+          function AdicionarLanche(LancheMenuLancheFuncao) {
+            let valorTotal = document.getElementById("ValorTotal").textContent;
+        
+            // Remove "R$" e espaços extras, depois substitui vírgula por ponto
+            valorTotal = valorTotal.replace("R$", "").trim().replace(",", ".");
+            let valorTotalFloat = parseFloat(valorTotal) || 0; // Se der NaN, assume 0
+        
+            let valorAdicional = 0;
+        
+            if (LancheMenuLancheFuncao === "BatataMenuLancheFuncao") {
+                valorAdicional = parseFloat(document.getElementById("valorBatata").textContent.replace(",", ".")) || 0;
+            } else if (LancheMenuLancheFuncao === "CebolaMenuLancheFuncao") {
+                valorAdicional = parseFloat(document.getElementById("valorCebola").textContent.replace(",", ".")) || 0;
+            } else if (LancheMenuLancheFuncao === "CocaMenuLancheFuncao") {
+                valorAdicional = parseFloat(document.getElementById("valorCoca").textContent.replace(",", ".")) || 0;
+            } else if (LancheMenuLancheFuncao === "LancheMenuLancheFuncao") {
+                // Pega o preço do lanche diretamente do pop-up
+                valorAdicional = parseFloat(document.querySelector(".preçoLanche p").textContent.replace("R$", "").trim().replace(",", ".")) || 0;
+            }
+        
+            // Soma os valores
+            valorTotalFloat += valorAdicional;
+        
+            // Formata corretamente como moeda brasileira
+            document.getElementById("ValorTotal").textContent = `R$ ${valorTotalFloat.toFixed(2).replace(".", ",")}`;
+        }
+        
