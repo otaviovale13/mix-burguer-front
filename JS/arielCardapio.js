@@ -50,8 +50,11 @@ categorias.innerHTML = Object.keys(Categorias)
                             <div class="btnsRemoveEEdit">
                               <button class="btnCardapio">Remover</button>
                               <button class="btnCardapio">Editar</button>
+                              <button class="btnCardapio">Adicionar Adicionais</button>
+                              <button class="btnCardapio">Remover Adicionais</button>
+                              <button class="btnCardapio">Editar Adicionais</button>
                             </div>
-                        `)
+                        `)  
                         .join("")}
                         <div class="btnsModis">
                           <button class="btnCardapio">Adicionar</button>
@@ -81,92 +84,164 @@ categorias.innerHTML = Object.keys(Categorias)
             });
         }
 
-        function popUp(nome, descricao, preco, imagem) {
-            const popUps = document.querySelector(".popUps");
-            popUps.innerHTML = "";
-        
-            const novaDiv = document.createElement("div");
-            novaDiv.className = "popUp";
-        
-            novaDiv.innerHTML = `
-            <div class="mainSamu">
-              <div class="menuLanche">
-                <div class="imagemLancheMenuLanche">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/brendi-app.appspot.com/o/public%2Fstores%2FliDYZPGpWDhaJHW0sWIk%2Fimages%2Fproducts%2Fresized%2FgvGEiOdReVw4lycHtukd_900x900.webp?alt=media&token=4c8eca87-503e-4844-af35-c11571fb9e23"
-                    alt="ImagemDoLanche"
-                    class="imagemLancheMenuLanche"
-                  />
-                </div>
-                <div class="nomeLancheMenuLanche">
-                  <h1 class="tituloLancheMenuLanche">Top Onion</h1>
-                  <div class="descriçãoLanche">
-                    <p>
-                      Descubra o Top Onion Burger da Mix Burguer em Itupeva: Carne smash
-                      suculenta, queijo derretido, 3 anéis de cebola crocantes e um
-                      delicioso molho barbecue, tudo servido em um pão brioche macio.
-                      Uma explosão de sabores e texturas, perfeita para quem busca um
-                      hambúrguer único e saboroso.
-                    </p>
-                    <div class="preçoLanche"><p>R$ 25,95</p></div>
-                  </div>
-                </div>
-              </div>
-              <div class="adicionaisPai">
-                <div>
-                  <p class="adicionaisTurbinar">Turbine seu Burguer! <br />(escolha até 10 opções)</p>
-                  <div class="adicionaisMenuLanche">
-                    <div class="batataMenuLanche">
-                      <img
-                        src="https://static.vecteezy.com/system/resources/thumbnails/024/508/765/small/french-fries-isolated-on-background-with-generative-ai-png.png"
-                        alt="Batata"
-                      />
-                      <p>Batata:R$ 8,90</p>
-                      <button>adicionar</button>
-                    </div>
-                    <div class="anelDeCebolaMenuLanche">
-                      <img
-                        src="https://www.cerealistaexpress.com.br/media/tmp/webp/catalog/product/cache/1/image/420x545/9df78eab33525d08d6e5fb8d27136e95/a/r/aros-de-cebola-jpge.webp"
-                        alt="Anel de Cebola"
-                      />
-                      <p>Anel de Cebola:R$ 16,00</p>
-                      <button>adicionar</button>
-                    </div>
-                    <div class="cocaColaMenuLanche">
-                      <img
-                        src="https://ibassets.com.br/ib.item.image.large/l-e6f31072323140d495404980871f7a15.png"
-                        alt="Coca Cola"
-                      />
-                      <p>Coca Cola:R$ 5,00</p>
-                      <button>adicionar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div id="finalizarCarrinhoMenuLanche">
-              <p id="valorTotalMenuLanche">Valor Total: R$ 0,00</p>
-              <button id="botaoFinalizarMenuLanche">Finalizar Carrinho</button>
-              <button id="botaoFinalizarMenuLanche"  onclick="fecharBtn()">Sair</button>
-            </div>
-            </div>
-            `;
-        
-            popUps.appendChild(novaDiv);
-            popUps.style.display = "flex";
-        }
+        function adicionarCate() {
+          const modal = document.getElementById("popUpsAdicionar");
+          modal.style.display = "flex"; // Exibe o modal
+      }
+      
+      // Criar modal dinamicamente
+function criarModal() {
+  const modal = document.createElement("div");
+  modal.id = "popUpsAdicionar";
+  modal.className = "popUpsAdicionar";
+  modal.style.display = "none"; // Inicialmente oculto
 
-        function fecharBtn() {
-            const popUps = document.querySelector(".popUps");
-            popUps.style.display = "none";
-        }
-        
-        function btnSacola(){
-          window.location.href = "/carrinho.html"
-        }
+  modal.innerHTML = `
+    <div class="popUp">
+    <div class="btnsInputs">
+      <label>Nome da Categoria:</label>
+      <input id="inputAdicionais" type="text" />
+    </div>
+    <div class="btnsSalvar">
+      <button onclick="salvarCategoria()">Salvar</button>
+      <button onclick="fecharModal()">Fechar</button>
+    </div>
+    </div>
+  `;
 
-        function voltarHome(){
-            window.location.href = "/index.html"
-          }
-          function irSugestão(){
-            window.location.href = "/sugestoes.html"
-          }
+  document.body.appendChild(modal);
+}
+
+// Salvar categoria
+function salvarCategoria() {
+  const inputAdicionais = document.getElementById("inputAdicionais").value.trim();
+
+  if (inputAdicionais !== "") {
+      if (!Categorias[inputAdicionais]) {
+          Categorias[inputAdicionais] = []; // Criar nova categoria
+          console.log("Categoria adicionada:", inputAdicionais);
+          fecharModal();
+          atualizarCategorias(); // Atualiza a interface
+      } else {
+          alert("Essa categoria já existe!");
+      }
+  } else {
+      alert("O nome da categoria não pode estar vazio!");
+  }
+}
+
+// Função para atualizar a exibição das categorias
+function atualizarCategorias() {
+    const categoriasDiv = document.getElementById("categorias");
+    categoriasDiv.innerHTML = Object.keys(Categorias)
+        .map(categoria => `
+            <div class="categoria">
+                <h1>${categoria}</h1>
+                ${Categorias[categoria]
+                    .map(item => `
+                        <div class="produtos" onclick="popUp('${item.Nome}', '${item.Descricao}', '${item.Preco}', '${item.Imagem}')"> 
+                            <div>
+                                <h2 class="itemTitulo">${item.Nome}</h2>
+                                <h3 class="descricao">${item.Descricao}</h3>
+                                <h2 class="preco">${item.Preco}</h2>
+                            </div>
+                            <div class="divImg">
+                                <img src="${item.Imagem}" />
+                            </div>
+                        </div>
+                        <div class="btnsRemoveEEdit">
+                            <button class="btnCardapio" onclick="removerItem('${categoria}', '${item.Nome}')">Remover</button>
+                            <button class="btnCardapio" onclick="editarItem('${categoria}', '${item.Nome}')">Editar</button>
+                            <button class="btnCardapio" onclick="adicionarAdicionais('${categoria}', '${item.Nome}')">Adicionar Adicionais</button>
+                            <button class="btnCardapio" onclick="removerAdicionais('${categoria}', '${item.Nome}')">Remover Adicionais</button>
+                            <button class="btnCardapio" onclick="editarAdicionais('${categoria}', '${item.Nome}')">Editar Adicionais</button>
+                        </div>
+                    `).join("")}
+            </div>
+        `).join("");
+}
+
+// Função para remover um item (abre o modal de confirmação)
+function removerItem(categoria, nomeItem) {
+  const modal = document.getElementById("popUpsAdicionar");
+  modal.style.display = "flex"; // Exibe o modal
+  modal.innerHTML = `
+      <div class="popUp">
+          <div class="btnsInputs">
+              <h1>Tem certeza que deseja remover "${nomeItem}"?</h1>
+          </div>
+          <div class="btnsSalvar">
+              <button onclick="confirmarRemocao('${categoria}', '${nomeItem}')">Sim</button>
+              <button onclick="fecharModal()">Não</button>
+          </div>
+      </div>
+  `;
+}
+
+// Função para confirmar remoção
+function confirmarRemocao(categoria, nomeItem) {
+  Categorias[categoria] = Categorias[categoria].filter(item => item.Nome !== nomeItem);
+  atualizarCategorias();
+  fecharModal();
+}
+
+// Criar o modal assim que a página carregar
+document.addEventListener("DOMContentLoaded", criarModal);
+
+// Fechar modal
+function fecharModal() {
+const modal = document.getElementById("popUpsAdicionar");
+modal.style.display = "none";
+}
+
+// Função para editar um item (abre um modal para editar o nome do item)
+function editarItem(categoria, nomeItem) {
+  const modal = document.getElementById("popUpsAdicionar");
+  modal.style.display = "flex"; // Exibe o modal
+  modal.innerHTML = `
+      <div class="popUp">
+          <div class="btnsInputs">
+              <h1>Editar o item "${nomeItem}"?</h1>
+          </div>
+          <div class="btnsInputs">
+              <label>Novo Nome:</label>
+              <input id="inputNovoNome" type="text" value="${nomeItem}" />
+          </div>
+          <div class="btnsSalvar">
+              <button onclick="confirmarEdição('${categoria}', '${nomeItem}')">Editar</button>
+              <button onclick="fecharModal()">Fechar</button>
+          </div>
+      </div>
+  `;
+}
+
+// Função para confirmar a edição de um item
+function confirmarEdição(categoria, nomeItem) {
+  const novoNome = document.getElementById("inputNovoNome").value.trim();
+
+  if (novoNome !== "") {
+    // Atualiza o nome do item na estrutura Categorias
+    const item = Categorias[categoria].find(item => item.Nome === nomeItem);
+    if (item) {
+      item.Nome = novoNome;
+      console.log(`Item "${nomeItem}" editado para "${novoNome}"`);
+    }
+    atualizarCategorias(); // Atualiza a exibição na página
+    fecharModal(); // Fecha o modal
+  } else {
+    alert("O nome do item não pode estar vazio!");
+  }
+}
+
+
+// Criar modal assim que a página carregar
+document.addEventListener("DOMContentLoaded", () => {
+    atualizarCategorias();
+    criarModal();
+});
+
+// Fechar modal
+function fecharModal() {
+  const modal = document.getElementById("popUpsAdicionar");
+  modal.style.display = "none";
+}
