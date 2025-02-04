@@ -352,7 +352,6 @@ a{
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-bottom: 5rem;
 }
 .quemSomos{
   font-size: 2rem;
@@ -369,6 +368,62 @@ a{
   width: 15rem;
   height: 15rem;
   object-fit: cover;
+}
+
+.videosmais1{
+  background-image: url(/IMGS/Captura\ de\ tela\ 2025-01-29\ 134946.png);
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  i{
+    color: #000000;
+    font-size: 7rem;
+  }
+}
+
+.videosmais2{
+  background-image: url(https://scontent.fcgh11-1.fna.fbcdn.net/v/t39.30808-6/462662881_527838376859035_8414204503142333280_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=TMULVD1qGYkQ7kNvgEyssO7&_nc_zt=23&_nc_ht=scontent.fcgh11-1.fna&_nc_gid=ARQI-cVd-5MB61w_C2IFqWZ&oh=00_AYDE9GLt4VU2OBAD6r4XuBMeY2uj47fxnIXQz9mbUBm3qg&oe=67A82A03);
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  i{
+    color: #000000;
+    font-size: 7rem;
+  }
+}
+
+.videosmais3{
+  background-image: url(https://scontent.fcgh37-1.fna.fbcdn.net/v/t51.75761-15/464754894_17965116746813748_861147819259864913_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=I_WloDBpnd4Q7kNvgHoaPI-&_nc_zt=23&_nc_ht=scontent.fcgh37-1.fna&_nc_gid=A1LZAyuVsp7UvxeXeJE5lKG&oh=00_AYCKDE11-e7vrPiZuFJ9Tg0wyLedzIjpf4Lkf1VeYwl8yA&oe=67A82CAC);
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  i{
+    color: #000000;
+    font-size: 7rem;
+  }
+}
+
+.videosmais4{
+  background-image: url(https://scontent.fcgh11-1.fna.fbcdn.net/v/t51.75761-15/463577372_17963794478813748_8504048681605474255_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=aBVfBPKVoHoQ7kNvgHLWxLj&_nc_zt=23&_nc_ht=scontent.fcgh11-1.fna&_nc_gid=A2dR74S11McErqj6xAnCWnA&oh=00_AYDzE5A2NUkvCn_w5ulY-m-DwuQCP5nJ_DHGQ5k6jxZSlg&oe=67A833D7);
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  i{
+    color: #000000;
+    font-size: 7rem;
+  }
 }
 
 .popUps {
@@ -403,6 +458,7 @@ a{
 footer {
   display: block;
   font-family: Arial, sans-serif;
+  margin-top: 5rem;
 }
 
 .amarelo {
@@ -1170,4 +1226,15 @@ button:hover {
     font-size: 1.8rem;
     gap: 1rem;
   }
+}
+
+/* ARIEL */
+
+.btnsModis{
+  display: flex;
+  justify-content: center;
+}
+
+.btnsRemoveEEdit{
+  
 }
