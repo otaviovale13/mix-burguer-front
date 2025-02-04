@@ -160,3 +160,6 @@ categorias.innerHTML = Object.keys(Categorias)
         function voltarHome(){
             window.location.href = "/index.html"
           }
+          function irSugestão(){
+            window.location.href = "/sugestoes.html"
+          }
