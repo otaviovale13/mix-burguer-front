@@ -1,0 +1,211 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 1920px;
+  height: 1080px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  
+  background-image: url(https://cdn.discordapp.com/attachments/1330955985006886983/1336391043578597448/fundo_mixburguer.jpg?ex=67a44b65&is=67a2f9e5&hm=8e6b8d7f0fa91226008bccb98179e80d44770ea95b888ac3d1e4b09d1fb95cbc&);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#caixaPreta{
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    width: 800px;
+    height: 950px;
+    background-color: rgba(0, 0, 0, 0.205);
+    position: relative;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    flex-direction: column;
+}
+#paiPagamento{
+   display: flex;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+}
+#DetalhesdoPagamento{
+    font-size: 48px;
+font-weight: bold;
+    margin-top: 20px;
+}
+#ValorTotalPagamento{
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 20px;
+    
+}
+#textoEntrega{
+    text-align: start;
+    display: flex;
+    
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+#FormadeEntrega{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-self: flex-start;
+    padding-left: 2.5rem;
+   
+}
+#filhoDoPai{
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-direction: column;
+}
+#filhoDoPai p {
+  margin: 0; 
+}
+#ReceberEmCasa{
+    font-size: 24px;
+}
+#endereçoPagamento{
+    font-size: 24px;
+}
+#FormasdePagamentoTexto{
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    padding: 0;
+} 
+#PagueOnline{
+    font-size: 32px;
+}
+
+#PagamentoOnline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0; 
+  padding: 0; 
+}
+
+#PagamentoOnlineOpcoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 260px;
+}
+
+#PagamentoOnlineOpcoes label {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+}
+
+#PagamentoOnlineOpcoes input[type="radio"] {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+#PagamentoOnlineOpcoes input[type="radio"]:checked {
+  accent-color: #333; 
+}
+
+#PagamentoEntrega {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; 
+  padding: 0; 
+}
+
+#PagamentoEntergaOpcoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  
+}
+
+#PagamentoEntergaOpcoes label {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+}
+
+#PagamentoEntergaOpcoes input[type="radio"] {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+#PagamentoEntergaOpcoes input[type="radio"]:checked {
+  accent-color: #333; 
+}
+
+#FinalizarPagamento {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+#FinalizarPagamento button {
+  width: 400px;
+  height: 70px;
+  font-size: 40px;
+  border-radius: 20px;
+  background-color:  rgb(255, 217, 32);
+  color: white;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#FinalizarPagamento button:hover {
+  background-color: rgb(255, 200, 0);
+  transform: scale(1.05);
+}
+
+#DetalhesdoPagamento p,
+#ValorTotalPagamento p,
+#textoEntrega,
+#ReceberEmCasa,
+#endereçoPagamento,
+#FormasdePagamentoTexto,
+#PagueOnline,
+#PagamentoOnlineOpcoes label,
+#PagamentoEntergaOpcoes label,
+#FinalizarPagamento button {
+  font-family: 'Inter', sans-serif;
+}
+
+#DetalhesdoPagamento p,
+#ValorTotalPagamento p,
+#textoEntrega,
+#ReceberEmCasa,
+#endereçoPagamento,
+#FormasdePagamentoTexto,
+#PagueOnline,
+#PagamentoOnlineOpcoes label,
+#PagamentoEntergaOpcoes label {
+  color: white;
+}
+
+#PagamentoEntrega p {
+  font-size: 32px;
+}
+
+#DetalhesdoPagamento p,
+#textoEntrega,
+#FormasdePagamentoTexto {
+  color: rgb(85, 82, 68);
+}
