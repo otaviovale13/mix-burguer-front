@@ -1,195 +1,163 @@
-/* CARRINHO RESPONSIVO */
+* {
+    margin: 0;
+    padding: 0;
+}
 
-.pacifico-regular {
-  font-family: "Pacifico", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.days-one-regular {
-  font-family: "Days One", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+/* html, body {
+    height: 100%;
+} */
 
 body {
-  padding: 0;
-  margin: 0;
-  background-image: url(/IMGS/image.png);
-  background-color: rgba(98, 98, 98, 0.9);
-  background-blend-mode: overlay;
-  background-size: cover;
+    background: url(/IMGS/fundoCarrinho.png);
+    /* no-repeat center center/cover ; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: auto;
+    
+    height: 100%;
 }
 
-.logoCarrinho {
-  padding-top: 20px;
-  margin: 0;
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 0;
+nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .logo {
+        display: flex;
+        width: 130px;
+        margin-top: 30px;
+        
+    }
+
+    h1 {
+        font-size: 60px;
+        color: white;
+        margin-top: 10px;
+        font-family: DM Sans;
+    }
 }
 
-.meuCarrinho {
-  color: rgb(254, 216, 60);
-  font-family: "Pacifico";
-  font-size: 64px;
-  padding-top: 20px;
-  text-align: center;
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    .quadrado {
+        display: flex;
+        align-items: center;
+        background-color: #FED83C;
+        width: 990px;
+        height: 215px;
+        margin-top: 10px;
+        border-radius: 5px;
+        
+
+
+        .text0 {
+            font-size: 35px;
+           margin-left: 50px;
+           font-family: DM Sans;
+
+
+        }
+
+        .textValue{
+            font-size: 35px;
+            margin-left: 150px;
+            font-family: DM Sans;
+
+        }
+
+        .img00 {
+            display: flex;
+            width: 190px;
+            height: 215px;
+            border-radius: 5px;
+
+        }
+       
+
+
+
+    }
+
+    .btnRemove0 {
+        background-color: #FED83C;
+        margin-left: 30px;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .btnRemove0:hover {
+        background-color: red;
+        color: white;
+    }
+    
+
+
+
+    
 }
 
-.lancheCarrinho {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
+.total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 200px;
+    height: 60px;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: DM Sans;
+
+
 }
 
-.imagemLanche {
-  height: 285px;
-  width: 320px;
-  object-fit: cover;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+.btnFinish {
+    width: 300px;
+    height: 60px;
+    background-color: #FED83C;
+    font-weight: bold;
+    border-radius: 5px;
+
+    color: black;
+    cursor: pointer;
+    margin-top: 5px;
+    font-size: 20px;
+
+
 }
 
-.nomeLancheCarrinho {
-  font-size: 36px;
-  color: white;
-  font-family: "Days One";
-  text-align: center;
+.btnFinish:hover {
+    background-color: green;
+    color: white;
 }
 
-.ObservaçõesLancheCarrinho {
-  font-family: "Days One";
-}
-
-.inputObservação {
-  height: 100px;
-  width: 90%;
-  max-width: 420px;
-  background-color: rgba(98, 98, 98, 0.85);
-  color: white;
-  font-size: 15px;
-  font-family: "Days One";
-  border-radius: 15px;
-  margin-top: 20px;
-  padding: 8px;
-}
-
-::placeholder {
-  color: red;
-  opacity: 1;
-}
-
-.removerLancheCarrinho {
-  background-color: red;
-  width: 100%;
-  max-width: 260px;
-  height: 40px;
-  border-radius: 20px;
-  color: white;
-  font-family: "Days One";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto;
-}
-
-.RemoverLanche {
-  font-family: "Days One";
-  background-color: red;
-  border-radius: 10px;
-  color: white;
-  border: none;
-  font-size: 20px;
-}
-
-.finalizarPedidoCarrinho {
-  margin-top: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-#PreçoTotalCarrinho {
-  color: yellow;
-  font-family: "Days One";
-  font-size: 20px;
-}
-
-#FinalizarMeuPedidoCarrinhoTexto {
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  font-family: "Days One";
-  background-color: red;
-  border-radius: 10px;
-  height: 40px;
-  width: 240px;
-  border: none;
-}
-
-i {
-  color: white;
-  font-size: 6rem;
-}
-
-/* Responsividade */
-
-@media (max-width: 1024px) {
-  .meuCarrinho {
-      font-size: 48px;
-  }
-  .lancheCarrinho {
-      flex-direction: column;
-      gap: 2rem;
-  }
-  .imagemLanche {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-  }
-  .nomeLancheCarrinho {
-      font-size: 28px;
-  }
-}
-
-@media (max-width: 768px) {
-  .meuCarrinho {
-      font-size: 36px;
-  }
-  .inputObservação {
-      width: 100%;
-      max-width: 320px;
-  }
-  i {
-      font-size: 4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .meuCarrinho {
-      font-size: 28px;
-  }
-  .inputObservação {
-      height: 80px;
-      font-size: 14px;
-  }
-  .removerLancheCarrinho {
-      max-width: 200px;
-  }
-  #FinalizarMeuPedidoCarrinhoTexto {
-      width: 200px;
-      font-size: 16px;
-  }
+.btnVoltar {
+    background-color: #FED83C;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 5px;
 }
