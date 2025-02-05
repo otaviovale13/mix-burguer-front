@@ -29,6 +29,8 @@ const Categorias = {
     ],
 }
 
+const carrinho = []
+
 const categorias = document.getElementById("categorias")
 
 categorias.innerHTML = Object.keys(Categorias)
@@ -134,7 +136,7 @@ categorias.innerHTML = Object.keys(Categorias)
               </div>
               <div id="finalizarCarrinhoMenuLanche">
               <p id="valorTotalMenuLanche">Valor Total: R$ <span id="ValorTotal">0,00</span></p>
-              <button id="botaoFinalizarMenuLanche" onclick="AdicionarLanche('LancheMenuLancheFuncao')">Adicionar ao carrinho</button>
+              <button id="botaoFinalizarMenuLanche" onclick="addProduto('${nome}', '${preco}')">Adicionar ao carrinho</button>
               <button id="botaoFinalizarMenuLanche"  onclick="fecharBtn()">Sair</button>
             </div>
             </div>
@@ -146,10 +148,6 @@ categorias.innerHTML = Object.keys(Categorias)
         function fecharBtn() {
             const popUps = document.querySelector(".popUps");
             popUps.style.display = "none";
-        }
-        
-        function btnSacola(){
-          window.location.href = "/carrinho.html"
         }
 
         function voltarHome(){
@@ -184,5 +182,22 @@ categorias.innerHTML = Object.keys(Categorias)
         
             // Formata corretamente como moeda brasileira
             document.getElementById("ValorTotal").textContent = `R$ ${valorTotalFloat.toFixed(2).replace(".", ",")}`;
+        }
+
+        function addProduto(nome, preco, ){
+          const produto = {
+            Nome: nome,
+            Preco: preco, 
+          }
+          carrinho.push(produto);
+
+          console.log("carrinho atualizado:", carrinho);
+
+          fecharBtn();
+        }
+
+        function salvarCarrinho(){
+          localStorage.setItem("carrinho", JSON.stringify(carrinho));
+          window.location.href = "/carrinho.html";
         }
         
