@@ -29,6 +29,24 @@ const Categorias = {
     ],
 }
 
+const Adicionais = [
+        { 
+            Nome: "Batata", 
+            Preco: "R$ 8,90",
+            Imagem: "IMGS/1738688942957-removebg.png",
+        },
+        { 
+            Nome: "Anel de Cebola", 
+            Preco: "R$ 16,00",
+            Imagem: "IMGS/1738688943009-removebg.png",
+        },
+        { 
+            Nome: "Coca Cola", 
+            Preco: "R$ 5,00",
+            Imagem: "IMGS/coca lata.png",
+        },
+    ]
+
 const categorias = document.getElementById("categorias")
 
 categorias.innerHTML = Object.keys(Categorias)
@@ -56,16 +74,16 @@ categorias.innerHTML = Object.keys(Categorias)
                             </div>
                         `)  
                         .join("")}
-                        <div class="btnsModis">
-                          <button class="btnCardapio">Adicionar</button>
+                        <div class="btnsRemoveEEdit">
+                              <button class="btnCardapio">Remover</button>
                         </div>
             </div>
         `)
         .join("")
 
         function buscarLanche(){
-            const inputBuscar = document.getElementById("inputBuscar").value.toLowerCase()
-            const categorias = document.querySelectorAll(".categoria")
+            const inputBuscar = document.getElementById("inputBuscar").value.toLowerCase();
+            const categorias = document.querySelectorAll(".categoria");
 
             categorias.forEach(categoria => {
                 const produtos = categoria.querySelectorAll(".produtos");
@@ -86,18 +104,17 @@ categorias.innerHTML = Object.keys(Categorias)
 
         function adicionarCate() {
           const modal = document.getElementById("popUpsAdicionar");
-          modal.style.display = "flex"; // Exibe o modal
+          modal.style.display = "flex";
       }
-      
-      // Criar modal dinamicamente
+
 function criarModal() {
   const modal = document.createElement("div");
   modal.id = "popUpsAdicionar";
   modal.className = "popUpsAdicionar";
-  modal.style.display = "none"; // Inicialmente oculto
+  modal.style.display = "none"; 
 
   modal.innerHTML = `
-    <div class="popUp">
+    <div class="popUpEdit">
     <div class="btnsInputs">
       <label>Nome da Categoria:</label>
       <input id="inputAdicionais" type="text" />
@@ -112,16 +129,16 @@ function criarModal() {
   document.body.appendChild(modal);
 }
 
-// Salvar categoria
+
 function salvarCategoria() {
   const inputAdicionais = document.getElementById("inputAdicionais").value.trim();
 
   if (inputAdicionais !== "") {
       if (!Categorias[inputAdicionais]) {
-          Categorias[inputAdicionais] = []; // Criar nova categoria
+          Categorias[inputAdicionais] = [];
           console.log("Categoria adicionada:", inputAdicionais);
           fecharModal();
-          atualizarCategorias(); // Atualiza a interface
+          atualizarCategorias();
       } else {
           alert("Essa categoria já existe!");
       }
@@ -130,7 +147,6 @@ function salvarCategoria() {
   }
 }
 
-// Função para atualizar a exibição das categorias
 function atualizarCategorias() {
     const categoriasDiv = document.getElementById("categorias");
     categoriasDiv.innerHTML = Object.keys(Categorias)
@@ -157,16 +173,18 @@ function atualizarCategorias() {
                             <button class="btnCardapio" onclick="editarAdicionais('${categoria}', '${item.Nome}')">Editar Adicionais</button>
                         </div>
                     `).join("")}
+                    <div class="btnsModis">
+                            <button class="btnCardapio">Adicionar Produto</button>
+                    </div>
             </div>
         `).join("");
 }
 
-// Função para remover um item (abre o modal de confirmação)
 function removerItem(categoria, nomeItem) {
   const modal = document.getElementById("popUpsAdicionar");
-  modal.style.display = "flex"; // Exibe o modal
+  modal.style.display = "flex";
   modal.innerHTML = `
-      <div class="popUp">
+      <div class="popUpEdit">
           <div class="btnsInputs">
               <h1>Tem certeza que deseja remover "${nomeItem}"?</h1>
           </div>
@@ -200,7 +218,7 @@ function editarItem(categoria, nomeItem, descricaoItem, precoItem, imagemItem) {
     modal.style.display = "flex"; // Exibe o modal
 
     modal.innerHTML = `
-        <div class="popUp">
+        <div class="popUpEdit">
             <h1 class="titulo">Editar "${nomeItem}"</h1>
             <div class="btnsInputs">
                 <label>Nome:</label>
@@ -270,16 +288,105 @@ function confirmarEdicao(categoria, nomeItem) {
     }
 }
 
-
-
-// Criar modal assim que a página carregar
 document.addEventListener("DOMContentLoaded", () => {
     atualizarCategorias();
     criarModal();
 });
 
-// Fechar modal
 function fecharModal() {
   const modal = document.getElementById("popUpsAdicionar");
   modal.style.display = "none";
+}
+
+function popUp(nome, descricao, preco, imagem) {
+    const popUps = document.querySelector(".popUps");
+    popUps.innerHTML = "";
+
+    const novaDiv = document.createElement("div");
+    novaDiv.className = "popUp";
+
+    novaDiv.innerHTML = `
+    <div class="mainSamu">
+      <div class="menuLanche">
+        <div class="imagemLancheMenuLanche">
+          <img
+            src="${imagem}"
+            alt="ImagemDoLanche"
+            class="imagemLancheMenuLanche"
+          />
+        </div>
+        <div class="nomeLancheMenuLanche">
+          <h1 class="tituloLancheMenuLanche">${nome}</h1>
+          <div class="descriçãoLanche">
+            <p>
+              ${descricao}
+            </p>
+            <div class="preçoLanche"><p>${preco}</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="adicionaisPai">
+        <div>
+          <p class="adicionaisTurbinar">Turbine seu Burguer! <br />(escolha até 10 opções)</p>
+          <div class="adicionaisMenuLanche">
+            <div class="novosAdicionais"></div>
+          </div>
+        </div>
+      </div>
+      <div id="finalizarCarrinhoMenuLanche">
+      <p id="valorTotalMenuLanche">Valor Total: R$ <span id="ValorTotal">0,00</span></p>
+      <button id="botaoFinalizarMenuLanche" onclick="AdicionarLanche('LancheMenuLancheFuncao')">Adicionar ao carrinho</button>
+      <button id="botaoFinalizarMenuLanche"  onclick="fecharBtn()">Sair</button>
+    </div>
+    </div>
+    `;
+    popUps.appendChild(novaDiv);
+    popUps.style.display = "flex";
+}
+
+function fecharBtn(){
+    const popUps = document.querySelector(".popUps");
+    popUps.style.display = "none"
+}
+
+function adicionarAdicionais(categoria, nomeItem){
+    const modal = document.getElementById("popUpsAdicionar");
+    modal.style.display = "flex";
+
+    modal.innerHTML = `
+      <div class="popUpEdit">
+        <h1 class="titulo">Adicionar Adicional a "${nomeItem}"</h1>
+        <div class="btnsInputs">
+          <label>Nome:</label>
+          <input id="inputAdicional" type="text" />
+        </div>
+        <div class="btnsInputs">
+          <label>Valor:</label>
+          <input id="inputAdicionalValor" type="text" />
+        </div>
+        <div class="btnsInputs">
+          <label>Imagem:</label>
+          <input id="inputAdicionalImagem" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
+       </div>
+       <div class="btnsSalvar">
+         <button onclick="salvarAdicional('${categoria}' '${nomeItem}')">Salvar</button>
+         <button onclick="fecharModal()">Cancelar</button>
+       </div>
+      </div>
+    `
+}
+
+function salvarAdicional(categoria, nomeItem){
+    const novosAdicionais = document.querySelector(".novosAdicionais")
+    const NovoAdicional = document.createElement("div")
+    NovoAdicional.innerHTML = `
+      <div class="novoItem">
+              <img
+                src=""
+                alt="Coca Cola"
+              />
+              <p>Coca Cola:R$ <span id="valorCoca">5,00</span></p>
+              <button onclick="AdicionarLanche('CocaMenuLancheFuncao')">adicionar</button>
+      </div>
+    `
 }
