@@ -158,6 +158,7 @@ categorias.innerHTML = Object.keys(Categorias)
           function irSugestão(){
             window.location.href = "/sugestoes.html"
           }
+          
           function AdicionarLanche(LancheMenuLancheFuncao) {
             let valorTotal = document.getElementById("ValorTotal").textContent;
         

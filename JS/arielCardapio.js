@@ -151,7 +151,7 @@ function atualizarCategorias() {
                         </div>
                         <div class="btnsRemoveEEdit">
                             <button class="btnCardapio" onclick="removerItem('${categoria}', '${item.Nome}')">Remover</button>
-                            <button class="btnCardapio" onclick="editarItem('${categoria}', '${item.Nome}')">Editar</button>
+                            <button class="btnCardapio" onclick="editarItem('${categoria}', '${item.Nome}', '${item.Descricao}', '${item.Preco}', '${item.Imagem}')">Editar</button>
                             <button class="btnCardapio" onclick="adicionarAdicionais('${categoria}', '${item.Nome}')">Adicionar Adicionais</button>
                             <button class="btnCardapio" onclick="removerAdicionais('${categoria}', '${item.Nome}')">Remover Adicionais</button>
                             <button class="btnCardapio" onclick="editarAdicionais('${categoria}', '${item.Nome}')">Editar Adicionais</button>
@@ -194,44 +194,82 @@ const modal = document.getElementById("popUpsAdicionar");
 modal.style.display = "none";
 }
 
-// Função para editar um item (abre um modal para editar o nome do item)
-function editarItem(categoria, nomeItem) {
-  const modal = document.getElementById("popUpsAdicionar");
-  modal.style.display = "flex"; // Exibe o modal
-  modal.innerHTML = `
-      <div class="popUp">
-          <div class="btnsInputs">
-              <h1>Editar o item "${nomeItem}"?</h1>
-          </div>
-          <div class="btnsInputs">
-              <label>Novo Nome:</label>
-              <input id="inputNovoNome" type="text" value="${nomeItem}" />
-          </div>
-          <div class="btnsSalvar">
-              <button onclick="confirmarEdição('${categoria}', '${nomeItem}')">Editar</button>
-              <button onclick="fecharModal()">Fechar</button>
-          </div>
-      </div>
-  `;
+// Função para editar um item (abre um modal para edição)
+function editarItem(categoria, nomeItem, descricaoItem, precoItem, imagemItem) {
+    const modal = document.getElementById("popUpsAdicionar");
+    modal.style.display = "flex"; // Exibe o modal
+
+    modal.innerHTML = `
+        <div class="popUp">
+            <h1 class="titulo">Editar "${nomeItem}"</h1>
+            <div class="btnsInputs">
+                <label>Nome:</label>
+                <input id="inputNovoNome" type="text" value="${nomeItem}" />
+            </div>
+            <div class="btnsInputs">
+                <label>Descrição:</label>
+                <textarea id="inputNovaDescricao" class="inputNovaDescricao">${descricaoItem}</textarea>
+            </div>
+            <div class="btnsInputs">
+                <label>Preço:</label>
+                <input id="inputNovoPreco" type="text" value="${precoItem}" />
+            </div>
+            <div class="btnsInputs">
+                <label>Imagem Atual:</label>
+                <img id="imagemPreview" src="${imagemItem}" class="imgPreview" />
+                <label>Nova Imagem:</label>
+                <input id="inputNovaImagem" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
+            </div>
+            <div class="btnsSalvar">
+                <button onclick="confirmarEdicao('${categoria}', '${nomeItem}')">Salvar</button>
+                <button onclick="fecharModal()">Cancelar</button>
+            </div>
+        </div>
+    `;
+}
+
+// Função para visualizar a nova imagem antes de salvar
+function previewNovaImagem(event) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        document.getElementById("imagemPreview").src = e.target.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
 }
 
 // Função para confirmar a edição de um item
-function confirmarEdição(categoria, nomeItem) {
-  const novoNome = document.getElementById("inputNovoNome").value.trim();
+function confirmarEdicao(categoria, nomeItem) {
+    const novoNome = document.getElementById("inputNovoNome").value.trim();
+    const novaDescricao = document.getElementById("inputNovaDescricao").value.trim();
+    const novoPreco = document.getElementById("inputNovoPreco").value.trim();
+    const novaImagemInput = document.getElementById("inputNovaImagem").files[0];
 
-  if (novoNome !== "") {
-    // Atualiza o nome do item na estrutura Categorias
+    if (!novoNome || !novaDescricao || !novoPreco) {
+        alert("Todos os campos devem ser preenchidos!");
+        return;
+    }
+
     const item = Categorias[categoria].find(item => item.Nome === nomeItem);
     if (item) {
-      item.Nome = novoNome;
-      console.log(`Item "${nomeItem}" editado para "${novoNome}"`);
+        item.Nome = novoNome;
+        item.Descricao = novaDescricao;
+        item.Preco = novoPreco;
+
+        if (novaImagemInput) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                item.Imagem = e.target.result;
+                atualizarCategorias();
+                fecharModal();
+            };
+            reader.readAsDataURL(novaImagemInput);
+        } else {
+            atualizarCategorias();
+            fecharModal();
+        }
     }
-    atualizarCategorias(); // Atualiza a exibição na página
-    fecharModal(); // Fecha o modal
-  } else {
-    alert("O nome do item não pode estar vazio!");
-  }
 }
+
 
 
 // Criar modal assim que a página carregar
