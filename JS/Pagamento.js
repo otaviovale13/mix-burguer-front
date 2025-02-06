@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let total = parseFloat(precoRealElement.textContent);
       total = total * 0.9;
       precoRealElement.textContent = total.toFixed(2);
-    } else {
+    } else if (cupom !== "") {
       alert("Cupom inválido.");
     }
   }
@@ -65,9 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
     option.addEventListener("change", () => {
       paymentOptions.forEach((opt) => {
         // Aplica uma animação de escala e sombra à opção selecionada
-        opt.parentElement.style.transform = opt.checked
-          ? "scale(1.1)"
-          : "scale(1)";
+        opt.parentElement.style.transition = "transform 0.3s, box-shadow 0.3s";
+        opt.parentElement.style.transform = opt.checked ? "scale(1.1)" : "scale(1)";
+        
       });
     });
   });
