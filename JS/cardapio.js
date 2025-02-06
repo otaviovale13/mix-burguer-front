@@ -29,6 +29,8 @@ const Categorias = {
     ],
 }
 
+const carrinho = []
+
 const categorias = document.getElementById("categorias")
 
 categorias.innerHTML = Object.keys(Categorias)
@@ -107,7 +109,7 @@ categorias.innerHTML = Object.keys(Categorias)
                   <div class="adicionaisMenuLanche">
                     <div class="batataMenuLanche">
                       <img
-                        src="https://static.vecteezy.com/system/resources/thumbnails/024/508/765/small/french-fries-isolated-on-background-with-generative-ai-png.png"
+                        src="IMGS/1738688942957-removebg.png"
                         alt="Batata"
                       />
                       <p>Batata:R$ <span id="valorBatata">8,90</span></p>
@@ -115,7 +117,7 @@ categorias.innerHTML = Object.keys(Categorias)
                     </div>
                     <div class="anelDeCebolaMenuLanche">
                       <img
-                        src="https://www.cerealistaexpress.com.br/media/tmp/webp/catalog/product/cache/1/image/420x545/9df78eab33525d08d6e5fb8d27136e95/a/r/aros-de-cebola-jpge.webp"
+                        src="IMGS/1738688943009-removebg.png"
                         alt="Anel de Cebola"
                       />
                       <p>Anel de Cebola:R$ <span id="valorCebola">16,00</span></p>
@@ -123,7 +125,7 @@ categorias.innerHTML = Object.keys(Categorias)
                     </div>
                     <div class="cocaColaMenuLanche">
                       <img
-                        src="https://ibassets.com.br/ib.item.image.large/l-e6f31072323140d495404980871f7a15.png"
+                        src="IMGS/coca lata.png"
                         alt="Coca Cola"
                       />
                       <p>Coca Cola:R$ <span id="valorCoca">5,00</span></p>
@@ -134,12 +136,11 @@ categorias.innerHTML = Object.keys(Categorias)
               </div>
               <div id="finalizarCarrinhoMenuLanche">
               <p id="valorTotalMenuLanche">Valor Total: R$ <span id="ValorTotal">0,00</span></p>
-              <button id="botaoFinalizarMenuLanche" onclick="AdicionarLanche('LancheMenuLancheFuncao')">Adicionar ao carrinho</button>
+              <button id="botaoFinalizarMenuLanche" onclick="addProduto('${nome}', '${preco}')">Adicionar ao carrinho</button>
               <button id="botaoFinalizarMenuLanche"  onclick="fecharBtn()">Sair</button>
             </div>
             </div>
             `;
-        
             popUps.appendChild(novaDiv);
             popUps.style.display = "flex";
         }
@@ -148,10 +149,6 @@ categorias.innerHTML = Object.keys(Categorias)
             const popUps = document.querySelector(".popUps");
             popUps.style.display = "none";
         }
-        
-        function btnSacola(){
-          window.location.href = "/carrinho.html"
-        }
 
         function voltarHome(){
             window.location.href = "/index.html"
@@ -159,6 +156,7 @@ categorias.innerHTML = Object.keys(Categorias)
           function irSugestão(){
             window.location.href = "/sugestoes.html"
           }
+          
           function AdicionarLanche(LancheMenuLancheFuncao) {
             let valorTotal = document.getElementById("ValorTotal").textContent;
         
@@ -184,5 +182,22 @@ categorias.innerHTML = Object.keys(Categorias)
         
             // Formata corretamente como moeda brasileira
             document.getElementById("ValorTotal").textContent = `R$ ${valorTotalFloat.toFixed(2).replace(".", ",")}`;
+        }
+
+        function addProduto(nome, preco, ){
+          const produto = {
+            Nome: nome,
+            Preco: preco, 
+          }
+          carrinho.push(produto);
+
+          console.log("carrinho atualizado:", carrinho);
+
+          fecharBtn();
+        }
+
+        function salvarCarrinho(){
+          localStorage.setItem("carrinho", JSON.stringify(carrinho));
+          window.location.href = "/carrinho.html";
         }
         

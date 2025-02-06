@@ -242,6 +242,9 @@ a{
 }
 
 .textoQuem {
+  background-color: #000000ce;
+  padding: 5rem;
+  border-radius: 5rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -352,7 +355,6 @@ a{
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-bottom: 5rem;
 }
 .quemSomos{
   font-size: 2rem;
@@ -371,6 +373,62 @@ a{
   object-fit: cover;
 }
 
+.videosmais1{
+  background-image: url(/IMGS/Captura\ de\ tela\ 2025-01-29\ 134946.png);
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  i{
+    color: #000000;
+    font-size: 7rem;
+  }
+}
+
+.videosmais2{
+  background-image: url(https://scontent.fcgh11-1.fna.fbcdn.net/v/t39.30808-6/462662881_527838376859035_8414204503142333280_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=TMULVD1qGYkQ7kNvgEyssO7&_nc_zt=23&_nc_ht=scontent.fcgh11-1.fna&_nc_gid=ARQI-cVd-5MB61w_C2IFqWZ&oh=00_AYDE9GLt4VU2OBAD6r4XuBMeY2uj47fxnIXQz9mbUBm3qg&oe=67A82A03);
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  i{
+    color: #000000;
+    font-size: 7rem;
+  }
+}
+
+.videosmais3{
+  background-image: url(https://scontent.fcgh37-1.fna.fbcdn.net/v/t51.75761-15/464754894_17965116746813748_861147819259864913_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=I_WloDBpnd4Q7kNvgHoaPI-&_nc_zt=23&_nc_ht=scontent.fcgh37-1.fna&_nc_gid=A1LZAyuVsp7UvxeXeJE5lKG&oh=00_AYCKDE11-e7vrPiZuFJ9Tg0wyLedzIjpf4Lkf1VeYwl8yA&oe=67A82CAC);
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  i{
+    color: #000000;
+    font-size: 7rem;
+  }
+}
+
+.videosmais4{
+  background-image: url(https://scontent.fcgh11-1.fna.fbcdn.net/v/t51.75761-15/463577372_17963794478813748_8504048681605474255_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=aBVfBPKVoHoQ7kNvgHLWxLj&_nc_zt=23&_nc_ht=scontent.fcgh11-1.fna&_nc_gid=A2dR74S11McErqj6xAnCWnA&oh=00_AYDzE5A2NUkvCn_w5ulY-m-DwuQCP5nJ_DHGQ5k6jxZSlg&oe=67A833D7);
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  i{
+    color: #000000;
+    font-size: 7rem;
+  }
+}
+
 .popUps {
     position: fixed;
     top: 0;
@@ -385,9 +443,10 @@ a{
 }
 
 .popUp {
-    background-image: url(/IMGS/image.png);
-    border: 5px solid yellow;
-    width: 80rem;
+    background-image: url(/IMGS/fundo_mixburguer.jpg);
+    object-fit: cover;
+    border: 5px solid;
+    width: 80rem; 
     border-radius: 8px;
     text-align: center;
     max-width: 90%;
@@ -398,11 +457,13 @@ a{
 .popUp h1 {
     margin: 0;
     font-size: 24px;
+    color: black;
 }
 
 footer {
   display: block;
   font-family: Arial, sans-serif;
+  margin-top: 5rem;
 }
 
 .amarelo {
@@ -499,10 +560,13 @@ footer {
 }
 
 .imagemLancheMenuLanche {
-    width: 40rem;
-    height: 20rem;
-    object-fit: cover;
-    border-bottom-right-radius: 10px;
+  display: flex;
+  margin-top: 1.4rem; 
+  margin-left: 4rem;
+ width: 20rem;
+  height: 15rem;
+  object-fit: cover;
+
 }
 .menuLanche {
     display: flex;
@@ -516,70 +580,29 @@ footer {
 
 .descriçãoLanche {
     font-size: 20px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-family: "Days One";
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #fed73ca6;
     padding: 1rem; 
     border-radius: 10px;
     width: 24rem;
+    margin-left: 16rem;
 }
 .preçoLanche {
     font-size: 36px;
-    color: rgb(254, 216, 60);
+    color: rgb(255, 255, 255);
     font-family: "Days One";
-}
-
-.adicionaisMenuLanche {
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-    gap: 2rem;     
-    font-size: 36px;
-    color: white;
-    font-family: "Days One";
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-left: 5rem;
-    margin-right: 5rem;
-    flex-wrap: nowrap;
-}
-
-.adicionaisMenuLanche img {
-    width: 10rem;
 }
 
 .adicionaisTurbinar{
     text-align: center;
-    color: rgb(255, 230, 0);
+    color: rgb(0, 0, 0);
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 2rem;
 }
 
-.batataMenuLanche, .AnelDeCebolaMenuLanche, .cocaColaMenuLanche {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: amaranth;
-    font-family: "Days One";
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-.batataMenuLanche {
-    font-size: 36px;
-    font-family: "Pacifico";
-    justify-content: center;
-}
-.AnelDeCebolaMenuLanche {
-    font-size: 36px;
-    font-family: "Pacifico";
-    justify-content: center;
-    text-align: center;
-    display: flex;
-}
-.cocaColaMenuLanche {
-    font-size: 36px;
-    font-family: "Pacifico";
-}
 .tituloLancheMenuLanche {
     font-size: 48px;
     color: rgb(254, 216, 60);
@@ -590,7 +613,7 @@ footer {
 }
 button {
     font-family: "Days One";
-    background-color: red;
+    background-color: #FED83C;
     border-radius: 10px;
     color: white;
     border: none;
@@ -599,7 +622,7 @@ button {
     transition: background-color 0.3s ease;
 }
 button:hover {
-    background-color: darkred;
+    background-color: #000000;
 }
 #finalizarCarrinhoMenuLanche {
     display: flex;
@@ -616,7 +639,7 @@ button:hover {
 }
 #botaoFinalizarMenuLanche {
     font-family: "Days One";
-    background-color: green;
+    background-color: rgb(0, 0, 0);
     border-radius: 10px;
     color: white;
     border: none;
@@ -627,7 +650,7 @@ button:hover {
     margin-top: 1rem;
 }
 #botaoFinalizarMenuLanche:hover {
-    background-color: darkgreen;
+    background-color: #FED83C;
 }
 .btnCardapio{
   font-family: Arial, Helvetica, sans-serif;
@@ -1169,5 +1192,86 @@ button:hover {
   .preto .icons {
     font-size: 1.8rem;
     gap: 1rem;
+  }
+}
+
+/* ARIEL */
+
+.btnsModis{
+  display: flex;
+  justify-content: center;
+}
+
+.btnsRemoveEEdit{
+  display: flex;
+  gap: 1rem;
+}
+
+.popUpsAdicionar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popUpEdit {
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  gap: 1rem;
+  border: none;
+  width: 35rem;
+
+  input{
+    text-align: center;
+    color: #000000;
+    border: solid 1px #000000;
+  }
+}
+
+.btnsSalvar{
+  display: flex;
+  gap: 2rem;
+}
+
+.btnsInputs{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgPreview{
+  width: 5rem;
+}
+
+.inputNovaDescricao{
+  width: 20rem;
+}
+
+.adicionaisMenuLanche{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.adicionais{
+  color: #000000;
+  font-size: 1.5rem;
+  img{
+    width: 5rem;
   }
 }
