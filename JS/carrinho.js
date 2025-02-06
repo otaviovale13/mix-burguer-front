@@ -22,10 +22,11 @@ if (carrinho.length === 0){
            <div class="content">
             <div class="quadrado">
               <div class="imgs">
-                <img class="img00" src="/IMGS/1738688942957.jpg" alt="" srcset="">
+                <img class="img00" src="${item.Imagem}" alt="" srcset="${item.Imagem}">
             </div>
             <div class="text0">
                 ${item.Nome}
+                <p class="descricaoCarrinho">${item.Descricao}</p>
             </div>
             <div class="textValue">
             ${item.Preco}
