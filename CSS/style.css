@@ -108,11 +108,13 @@ i {
 .bi-person-fill {
   font-size: 2.7rem;
   color: #222;
+  cursor: pointer;
 }
 
 .bi-bag-fill {
   font-size: 2rem;
   color: #222;
+  cursor: pointer;
 }
 
 .burger {
@@ -1200,6 +1202,7 @@ button:hover {
 .btnsModis{
   display: flex;
   justify-content: center;
+  gap: 1rem;
 }
 
 .btnsRemoveEEdit{
@@ -1274,4 +1277,8 @@ button:hover {
   img{
     width: 5rem;
   }
+}
+
+.descricaoCarrinho{
+  width: 1rem;
 }
