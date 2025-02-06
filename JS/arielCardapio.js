@@ -281,7 +281,7 @@ function fecharModal() {
   modal.style.display = "none";
 }
 
-function popUp(nome, descricao, preco, imagem) {
+function popUp( nome, descricao, preco, imagem) {
     const popUps = document.querySelector(".popUps");
     popUps.innerHTML = "";
 
@@ -571,3 +571,99 @@ function adicionarProduto(categoria) {
     fecharModal();
   }
   
+  function removerCate() {
+    const modal = document.getElementById("popUpsAdicionar");
+    modal.style.display = "flex";
+    modal.innerHTML = `
+        <div class="popUpEdit">
+            <div class="btnsInputs">
+                <h1>Deseja excluir qual Categoria?</h1>
+                <select id="selectCate" onchange="excluirSelecionadoCate()">
+                    <option value="" disabled selected>Selecione uma Categoria</option>
+                    ${Object.keys(Categorias).map(categoria => `
+                        <option value="${categoria}">${categoria}</option>
+                    `).join("")}
+                </select>
+            </div>
+            <div class="btnsSalvar">
+                <button onclick="confirmarRemocaoCate()">Sim</button>
+                <button onclick="fecharModal()">Não</button>
+            </div>
+        </div>
+    `;
+}
+
+function excluirSelecionadoCate() {
+    const selectCate = document.getElementById("selectCate");
+    const categoriaSelecionada = selectCate.value;
+    if (categoriaSelecionada) {
+        document.querySelector(".btnsSalvar button").disabled = false;
+    }
+}
+
+function confirmarRemocaoCate() {
+    const selectCate = document.getElementById("selectCate");
+    const categoriaSelecionada = selectCate.value;
+
+    if (categoriaSelecionada) {
+        delete Categorias[categoriaSelecionada]; 
+        atualizarCategorias(); 
+        fecharModal(); 
+    }
+}
+
+function editarCate() {
+  const modal = document.getElementById("popUpsAdicionar");
+  modal.style.display = "flex";
+
+  modal.innerHTML = `
+    <div class="popUpEdit">
+      <h1 class="titulo">Editar Categoria</h1>
+      <div class="btnsInputs">
+        <h1>Deseja editar qual Categoria?</h1>
+        <select id="selectCateEdit" onchange="preencherInputEditCate()">
+            <option value="" disabled selected>Selecione uma Categoria</option>
+            ${Object.keys(Categorias).map(categoria => `
+                <option value="${categoria}">${categoria}</option>
+            `).join("")}
+        </select>
+      </div>
+      <div class="btnsInputs">
+        <label>Nome:</label>
+        <input id="inputEditCate" type="text" />
+      </div>
+      <div class="btnsSalvar">
+        <button onclick="salvarNovaCategoria()">Salvar</button>
+        <button onclick="fecharModal()">Cancelar</button>
+      </div>
+    </div>
+  `;
+}
+
+function preencherInputEditCate() {
+  const selectCateEdit = document.getElementById("selectCateEdit");
+  const categoriaSelecionadaEdit = selectCateEdit.value;
+
+  if (categoriaSelecionadaEdit) {
+    // Preenche o campo de entrada com o nome da categoria selecionada
+    const inputEditCate = document.getElementById("inputEditCate");
+    inputEditCate.value = categoriaSelecionadaEdit;  // Aqui preenche com o nome da categoria
+    document.querySelector(".btnsSalvar button").disabled = false; // Habilita o botão "Salvar"
+  }
+}
+
+function salvarNovaCategoria() {
+  const selectCateEdit = document.getElementById("selectCateEdit");
+  const categoriaSelecionadaEdit = selectCateEdit.value;
+  const novoNomeCategoria = document.getElementById("inputEditCate").value;
+
+  if (categoriaSelecionadaEdit && novoNomeCategoria) {
+    // Atualiza a categoria no objeto com o novo nome
+    Categorias[novoNomeCategoria] = Categorias[categoriaSelecionadaEdit];
+    delete Categorias[categoriaSelecionadaEdit]; // Remove a categoria antiga
+
+    // Atualiza a interface de categorias
+    atualizarCategorias(); 
+    fecharModal();
+  }
+}

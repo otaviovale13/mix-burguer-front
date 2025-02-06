@@ -136,7 +136,7 @@ categorias.innerHTML = Object.keys(Categorias)
               </div>
               <div id="finalizarCarrinhoMenuLanche">
               <p id="valorTotalMenuLanche">Valor Total: R$ <span id="ValorTotal">0,00</span></p>
-              <button id="botaoFinalizarMenuLanche" onclick="addProduto('${nome}', '${preco}')">Adicionar ao carrinho</button>
+              <button id="botaoFinalizarMenuLanche" onclick="addProduto('${nome}', '${preco}', '${imagem}', '${descricao}')">Adicionar ao carrinho</button>
               <button id="botaoFinalizarMenuLanche"  onclick="fecharBtn()">Sair</button>
             </div>
             </div>
@@ -184,10 +184,12 @@ categorias.innerHTML = Object.keys(Categorias)
             document.getElementById("ValorTotal").textContent = `R$ ${valorTotalFloat.toFixed(2).replace(".", ",")}`;
         }
 
-        function addProduto(nome, preco, ){
+        function addProduto(nome, preco, imagem, descricao){
           const produto = {
             Nome: nome,
-            Preco: preco, 
+            Preco: preco,
+            Imagem: imagem, 
+            Descricao: descricao
           }
           carrinho.push(produto);
 

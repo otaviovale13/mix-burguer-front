@@ -161,3 +161,11 @@ nav {
     transition: background-color 0.3s ease, color 0.3s ease;
     margin-top: 5px;
 }
+
+
+.descricaoCarrinho{
+    white-space: nowrap; 
+    width: 25rem; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  }
