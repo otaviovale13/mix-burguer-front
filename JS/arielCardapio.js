@@ -81,23 +81,14 @@ categorias.innerHTML = Object.keys(Categorias)
         `)
         .join("")
 
-        function buscarLanche(){
+        function buscarLanche() {
             const inputBuscar = document.getElementById("inputBuscar").value.toLowerCase();
-            const categorias = document.querySelectorAll(".categoria");
-
-            categorias.forEach(categoria => {
-                const produtos = categoria.querySelectorAll(".produtos");
+            document.querySelectorAll(".categoria").forEach(categoria => {
                 let visibilidade = false;
-
-                produtos.forEach(item => {
-                    if(item.textContent.toLowerCase().includes(inputBuscar)){
-                        item.style.display = "";
-                        visibilidade = true;
-                    } else{
-                        item.style.display = "none";
-                    }
+                categoria.querySelectorAll(".produtos").forEach(item => {
+                    item.style.display = item.textContent.toLowerCase().includes(inputBuscar) ? "" : "none";
+                    if (item.style.display === "") visibilidade = true;
                 });
-
                 categoria.style.display = visibilidade ? "" : "none";
             });
         }
@@ -129,21 +120,19 @@ function criarModal() {
   document.body.appendChild(modal);
 }
 
-
-function salvarCategoria() {
+function salvarCategoria(){
   const inputAdicionais = document.getElementById("inputAdicionais").value.trim();
 
-  if (inputAdicionais !== "") {
-      if (!Categorias[inputAdicionais]) {
-          Categorias[inputAdicionais] = [];
-          console.log("Categoria adicionada:", inputAdicionais);
-          fecharModal();
-          atualizarCategorias();
-      } else {
-          alert("Essa categoria já existe!");
-      }
-  } else {
-      alert("O nome da categoria não pode estar vazio!");
+  if(inputAdicionais !== ""){
+    if(!Categorias[inputAdicionais]){
+      Categorias[inputAdicionais] = [];
+      fecharModal();
+      atualizarCategorias();
+    } else {
+      alert("Essa categoria já existe!")
+    }
+  } else{
+    alert("O nome da ctegoria não pode estar vazio!");
   }
 }
 
@@ -168,13 +157,13 @@ function atualizarCategorias() {
                         <div class="btnsRemoveEEdit">
                             <button class="btnCardapio" onclick="removerItem('${categoria}', '${item.Nome}')">Remover</button>
                             <button class="btnCardapio" onclick="editarItem('${categoria}', '${item.Nome}', '${item.Descricao}', '${item.Preco}', '${item.Imagem}')">Editar</button>
-                            <button class="btnCardapio" onclick="adicionarAdicionais('${categoria}', '${item.Nome}')">Adicionar Adicionais</button>
-                            <button class="btnCardapio" onclick="removerAdicionais('${categoria}', '${item.Nome}')">Remover Adicionais</button>
-                            <button class="btnCardapio" onclick="editarAdicionais('${categoria}', '${item.Nome}')">Editar Adicionais</button>
+                            <button class="btnCardapio" onclick="adicionarAdicionais('${item.Nome}')">Adicionar Adicionais</button>
+                            <button class="btnCardapio" onclick="removerAdicionais()">Remover Adicionais</button>
+                            <button class="btnCardapio" onclick="editarAdicionais()">Editar Adicionais</button>
                         </div>
                     `).join("")}
                     <div class="btnsModis">
-                            <button class="btnCardapio">Adicionar Produto</button>
+                            <button class="btnCardapio" onclick="adicionarProduto('${categoria}')">Adicionar Produto</button>
                     </div>
             </div>
         `).join("");
@@ -196,26 +185,22 @@ function removerItem(categoria, nomeItem) {
   `;
 }
 
-// Função para confirmar remoção
-function confirmarRemocao(categoria, nomeItem) {
+function confirmarRemocao(categoria, nomeItem){
   Categorias[categoria] = Categorias[categoria].filter(item => item.Nome !== nomeItem);
   atualizarCategorias();
   fecharModal();
 }
 
-// Criar o modal assim que a página carregar
 document.addEventListener("DOMContentLoaded", criarModal);
 
-// Fechar modal
-function fecharModal() {
-const modal = document.getElementById("popUpsAdicionar");
-modal.style.display = "none";
+function fecharModal(){
+  const modal = document.getElementById("popUpsAdicionar");
+  modal.style.display = "none";
 }
 
-// Função para editar um item (abre um modal para edição)
 function editarItem(categoria, nomeItem, descricaoItem, precoItem, imagemItem) {
     const modal = document.getElementById("popUpsAdicionar");
-    modal.style.display = "flex"; // Exibe o modal
+    modal.style.display = "flex";
 
     modal.innerHTML = `
         <div class="popUpEdit">
@@ -246,16 +231,14 @@ function editarItem(categoria, nomeItem, descricaoItem, precoItem, imagemItem) {
     `;
 }
 
-// Função para visualizar a nova imagem antes de salvar
-function previewNovaImagem(event) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-        document.getElementById("imagemPreview").src = e.target.result;
-    };
-    reader.readAsDataURL(event.target.files[0]);
+function previewNovaImagem(event){
+  const file = event.target.files[0];
+  if(file){
+    const url = URL.createObjectURL(file);
+    document.getElementById("imagemPreview").src = url;
+  }
 }
 
-// Função para confirmar a edição de um item
 function confirmarEdicao(categoria, nomeItem) {
     const novoNome = document.getElementById("inputNovoNome").value.trim();
     const novaDescricao = document.getElementById("inputNovaDescricao").value.trim();
@@ -325,11 +308,22 @@ function popUp(nome, descricao, preco, imagem) {
           </div>
         </div>
       </div>
-      <div class="adicionaisPai">
+      <div id="adicionaisPai" class="adicionaisPai">
         <div>
           <p class="adicionaisTurbinar">Turbine seu Burguer! <br />(escolha até 10 opções)</p>
           <div class="adicionaisMenuLanche">
-            <div class="novosAdicionais"></div>
+          ${Adicionais.map(itemAdd => `
+            <div class="adicionais">
+              <img
+                src="${itemAdd.Imagem}"
+                alt="Batata"
+              />
+              <p>${itemAdd.Nome}</p>
+              <p>${itemAdd.Preco}</p>
+              <button onclick="AdicionarLanche('BatataMenuLancheFuncao')">adicionar</button>
+            </div>
+          `
+        ).join("")}
           </div>
         </div>
       </div>
@@ -349,7 +343,7 @@ function fecharBtn(){
     popUps.style.display = "none"
 }
 
-function adicionarAdicionais(categoria, nomeItem){
+function adicionarAdicionais(nomeItem) {
     const modal = document.getElementById("popUpsAdicionar");
     modal.style.display = "flex";
 
@@ -369,24 +363,211 @@ function adicionarAdicionais(categoria, nomeItem){
           <input id="inputAdicionalImagem" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
        </div>
        <div class="btnsSalvar">
-         <button onclick="salvarAdicional('${categoria}' '${nomeItem}')">Salvar</button>
+         <button onclick="salvarAdicional()">Salvar</button>
          <button onclick="fecharModal()">Cancelar</button>
        </div>
       </div>
-    `
+    `;
 }
 
-function salvarAdicional(categoria, nomeItem){
-    const novosAdicionais = document.querySelector(".novosAdicionais")
-    const NovoAdicional = document.createElement("div")
-    NovoAdicional.innerHTML = `
-      <div class="novoItem">
-              <img
-                src=""
-                alt="Coca Cola"
-              />
-              <p>Coca Cola:R$ <span id="valorCoca">5,00</span></p>
-              <button onclick="AdicionarLanche('CocaMenuLancheFuncao')">adicionar</button>
-      </div>
-    `
+function salvarAdicional() {
+    const inputAdicional = document.getElementById("inputAdicional").value.trim();
+    const inputAdicionalValor = document.getElementById("inputAdicionalValor").value.trim();
+    const inputAdicionalImagem = document.getElementById("inputAdicionalImagem").files[0];
+
+    if (!inputAdicional || !inputAdicionalValor) {
+        alert("Todos os campos devem ser preenchidos!");
+        return;
+    }
+
+    const index = document.getElementById("selectAdicional")?.value;
+
+    if (index !== undefined && index !== "") {
+        Adicionais[index].Nome = inputAdicional;
+        Adicionais[index].Preco = inputAdicionalValor;
+
+        if (inputAdicionalImagem) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                Adicionais[index].Imagem = e.target.result;
+                fecharModal();
+            };
+            reader.readAsDataURL(inputAdicionalImagem);
+        } else {
+            fecharModal();
+        }
+    } else {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const novaImagem = e.target.result;
+
+            Adicionais.push({
+                Nome: inputAdicional,
+                Preco: inputAdicionalValor,
+                Imagem: novaImagem,
+            });
+
+            fecharModal();
+        };
+
+        if (inputAdicionalImagem) {
+            reader.readAsDataURL(inputAdicionalImagem);
+        } else {
+            Adicionais.push({
+                Nome: inputAdicional,
+                Preco: inputAdicionalValor,
+                Imagem: "IMGS/default.png",
+            });
+            fecharModal();
+        }
+    }
 }
+
+function removerAdicionais() {
+    const modal = document.getElementById("popUpsAdicionar");
+    modal.style.display = "flex";
+
+    modal.innerHTML = `
+      <div class="popUpEdit">
+        <h1 class="titulo">Remover Adicional</h1>
+        <div class="btnsInputs">
+        ${Adicionais.map((itemAdd, index) => `
+              <label>
+                  <input type="checkbox" name="adicionalRemover" value="${index}" />
+                  ${itemAdd.Nome} - ${itemAdd.Preco}
+              </label>
+            `).join("")}
+        </div>
+       <div class="btnsSalvar">
+         <button onclick="confirmarRemocaoAdicional()">Remover</button>
+         <button onclick="fecharModal()">Cancelar</button>
+       </div>
+      </div>
+    `;
+}
+
+function confirmarRemocaoAdicional() {
+    const selecionados = document.querySelectorAll("input[name='adicionalRemover']:checked");
+
+    if (selecionados.length > 0) {
+        const indicesParaRemover = Array.from(selecionados).map(input => parseInt(input.value)).sort((a, b) => b - a);
+        
+        indicesParaRemover.forEach(index => {
+            Adicionais.splice(index, 1);
+        });
+
+        alert(`Foram removidos ${indicesParaRemover.length} adicionais!`);
+        
+        fecharModal();
+
+        if(Adicionais.length === 0){
+            document.getElementById("adicionaisPai").style.display = "none"
+        }
+    } else {
+        alert("Selecione pelo menos um adicional para remover!");
+    }
+}
+
+function editarAdicionais() {
+    const modal = document.getElementById("popUpsAdicionar");
+    modal.style.display = "flex";
+
+    modal.innerHTML = `
+      <div class="popUpEdit">
+        <h1 class="titulo">Editar Adicional</h1>
+        <div class="btnsInputs">
+            <label>Editar Adicional:</label>
+            <select id="selectAdicional" onchange="preencherCamposAdicional()">
+                <option value="" disabled selected>Selecione um adicional</option>
+                ${Adicionais.map((itemEdit, index) => `
+                    <option value="${index}">${itemEdit.Nome}</option>
+                `).join("")}
+            </select>
+        </div>
+        <div class="btnsInputs">
+          <label>Nome:</label>
+          <input id="inputAdicional" type="text" />
+        </div>
+        <div class="btnsInputs">
+          <label>Valor:</label>
+          <input id="inputAdicionalValor" type="text" />
+        </div>
+        <div class="btnsInputs">
+          <label>Imagem:</label>
+          <input id="inputAdicionalImagem" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
+        </div>
+       <div class="btnsSalvar">
+         <button onclick="salvarAdicional()">Salvar</button>
+         <button onclick="fecharModal()">Cancelar</button>
+       </div>
+      </div>
+    `;
+}
+
+function preencherCamposAdicional() {
+    const select = document.getElementById("selectAdicional");
+    const index = select.value;
+    
+    if (index !== "") {
+        const adicional = Adicionais[index];
+        document.getElementById("inputAdicional").value = adicional.Nome;
+        document.getElementById("inputAdicionalValor").value = adicional.Preco;
+    }
+}
+
+function adicionarProduto(categoria) {
+    const modal = document.getElementById("popUpsAdicionar");
+    modal.style.display = "flex";
+  
+    modal.innerHTML = `
+      <div class="popUpEdit">
+        <h1>Adicionar Produto à Categoria "${categoria}"</h1>
+        <div class="btnsInputs">
+          <label>Nome do Produto:</label>
+          <input id="inputNomeProduto" type="text" />
+        </div>
+        <div class="btnsInputs">
+          <label>Descrição:</label>
+          <textarea id="inputDescricaoProduto"></textarea>
+        </div>
+        <div class="btnsInputs">
+          <label>Preço:</label>
+          <input id="inputPrecoProduto" type="text" />
+        </div>
+        <div class="btnsInputs">
+          <label>Imagem:</label>
+          <input id="inputImagemProduto" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
+        </div>
+        <div class="btnsSalvar">
+          <button onclick="salvarProduto('${categoria}')">Salvar</button>
+          <button onclick="fecharModal()">Cancelar</button>
+        </div>
+      </div>
+    `;
+  }
+  
+  function salvarProduto(categoria) {
+    const nomeProduto = document.getElementById("inputNomeProduto").value.trim();
+    const descricaoProduto = document.getElementById("inputDescricaoProduto").value.trim();
+    const precoProduto = document.getElementById("inputPrecoProduto").value.trim();
+    const imagemProduto = document.getElementById("inputImagemProduto").files[0];
+  
+    if (!nomeProduto || !descricaoProduto || !precoProduto) {
+      alert("Todos os campos devem ser preenchidos!");
+      return;
+    }
+  
+    const novoProduto = {
+      Nome: nomeProduto,
+      Descricao: descricaoProduto,
+      Preco: precoProduto,
+      Imagem: imagemProduto ? URL.createObjectURL(imagemProduto) : "IMGS/default.png",
+    };
+  
+    Categorias[categoria].push(novoProduto);
+  
+    atualizarCategorias();
+  
+    fecharModal();
+  }
+  
