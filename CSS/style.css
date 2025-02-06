@@ -595,24 +595,6 @@ footer {
     font-family: "Days One";
 }
 
-.adicionaisMenuLanche {
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-    gap: 2rem;     
-    font-size: 36px;
-    color: white;
-    font-family: "Days One";
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-left: 5rem;
-    margin-right: 5rem;
-    flex-wrap: nowrap;
-}
-
-.adicionaisMenuLanche img {
-    width: 10rem;
-}
-
 .adicionaisTurbinar{
     text-align: center;
     color: rgb(0, 0, 0);
@@ -621,31 +603,6 @@ footer {
     margin-top: 2rem;
 }
 
-.batataMenuLanche, .anelDeCebolaMenuLanche, .cocaColaMenuLanche {
-    display: flex;
-    flex-direction: column;
-    color: rgb(0, 0, 0);
-    align-items: center;
-    color: amaranth;
-    font-family: "Days One";
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-.batataMenuLanche {
-    font-size: 36px;
-    font-family: "Pacifico";
-    justify-content: center;
-}
-.AnelDeCebolaMenuLanche {
-    font-size: 36px;
-    font-family: "Pacifico";
-    justify-content: center;
-    text-align: center;
-    display: flex;
-}
-.cocaColaMenuLanche {
-    font-size: 36px;
-    font-family: "Pacifico";
-}
 .tituloLancheMenuLanche {
     font-size: 48px;
     color: rgb(254, 216, 60);
@@ -1303,4 +1260,18 @@ button:hover {
 
 .inputNovaDescricao{
   width: 20rem;
+}
+
+.adicionaisMenuLanche{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.adicionais{
+  color: #000000;
+  font-size: 1.5rem;
+  img{
+    width: 5rem;
+  }
 }
