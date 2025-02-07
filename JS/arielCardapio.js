@@ -1,4 +1,4 @@
-const Categorias = {
+let Categorias = {
     Destaques: [
         { 
             Nome: "COMBO CASAL", 
@@ -93,16 +93,18 @@ categorias.innerHTML = Object.keys(Categorias)
             });
         }
 
-        function adicionarCate() {
-          const modal = document.getElementById("popUpsAdicionar");
-          modal.style.display = "flex";
-      }
-
 function criarModal() {
   const modal = document.createElement("div");
   modal.id = "popUpsAdicionar";
   modal.className = "popUpsAdicionar";
   modal.style.display = "none"; 
+
+  document.body.appendChild(modal);
+}
+
+function adicionarCate() {
+  const modal = document.getElementById("popUpsAdicionar");
+  modal.style.display = "flex";
 
   modal.innerHTML = `
     <div class="popUpEdit">
@@ -116,8 +118,6 @@ function criarModal() {
     </div>
     </div>
   `;
-
-  document.body.appendChild(modal);
 }
 
 function salvarCategoria(){
@@ -655,15 +655,33 @@ function preencherInputEditCate() {
 function salvarNovaCategoria() {
   const selectCateEdit = document.getElementById("selectCateEdit");
   const categoriaSelecionadaEdit = selectCateEdit.value;
-  const novoNomeCategoria = document.getElementById("inputEditCate").value;
+  const novoNomeCategoria = document.getElementById("inputEditCate").value.trim();
 
-  if (categoriaSelecionadaEdit && novoNomeCategoria) {
-    // Atualiza a categoria no objeto com o novo nome
-    Categorias[novoNomeCategoria] = Categorias[categoriaSelecionadaEdit];
-    delete Categorias[categoriaSelecionadaEdit]; // Remove a categoria antiga
+  if (categoriaSelecionadaEdit && novoNomeCategoria && categoriaSelecionadaEdit !== novoNomeCategoria) {
+    // Criamos um array com a ordem original das categorias
+    let categoriasOrdenadas = Object.keys(Categorias);
 
-    // Atualiza a interface de categorias
-    atualizarCategorias(); 
+    // Criamos um novo objeto mantendo a ordem
+    let novaListaCategorias = {};
+
+    categoriasOrdenadas.forEach(categoria => {
+      if (categoria === categoriaSelecionadaEdit) {
+        // Renomeamos a categoria no mesmo local da lista
+        novaListaCategorias[novoNomeCategoria] = Categorias[categoria];
+      } else {
+        novaListaCategorias[categoria] = Categorias[categoria];
+      }
+    });
+
+    // Atualizamos o objeto original preservando a ordem
+    Categorias = novaListaCategorias;
+
+    // Atualiza a interface
+    atualizarCategorias();
     fecharModal();
   }
+}
+
+function voltarHome(){
+  window.location.href = "/arielHome.html"
 }
