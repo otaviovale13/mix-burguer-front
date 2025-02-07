@@ -673,7 +673,6 @@ function salvarNovaCategoria() {
       }
     });
 
-    // Atualizamos o objeto original preservando a ordem
     Categorias = novaListaCategorias;
 
     // Atualiza a interface
