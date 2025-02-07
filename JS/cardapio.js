@@ -31,6 +31,24 @@ const Categorias = {
 
 const carrinho = []
 
+const Adicionais = [
+  { 
+      Nome: "Batata", 
+      Preco: "R$ 8,90",
+      Imagem: "IMGS/1738688942957-removebg.png",
+  },
+  { 
+      Nome: "Anel de Cebola", 
+      Preco: "R$ 16,00",
+      Imagem: "IMGS/1738688943009-removebg.png",
+  },
+  { 
+      Nome: "Coca Cola", 
+      Preco: "R$ 5,00",
+      Imagem: "IMGS/coca lata.png",
+  },
+]
+
 const categorias = document.getElementById("categorias")
 
 categorias.innerHTML = Object.keys(Categorias)
@@ -76,74 +94,63 @@ categorias.innerHTML = Object.keys(Categorias)
             });
         }
 
-        function popUp(nome, descricao, preco, imagem) {
-            const popUps = document.querySelector(".popUps");
-            popUps.innerHTML = "";
-        
-            const novaDiv = document.createElement("div");
-            novaDiv.className = "popUp";
-        
-            novaDiv.innerHTML = `
-            <div class="mainSamu">
-              <div class="menuLanche">
-                <div class="imagemLancheMenuLanche">
-                  <img
-                    src="${imagem}"
-                    alt="ImagemDoLanche"
-                    class="imagemLancheMenuLanche"
-                  />
-                </div>
-                <div class="nomeLancheMenuLanche">
-                  <h1 class="tituloLancheMenuLanche">${nome}</h1>
-                  <div class="descriçãoLanche">
-                    <p>
-                      ${descricao}
-                    </p>
-                    <div class="preçoLanche"><p>${preco}</p></div>
-                  </div>
-                </div>
-              </div>
-              <div class="adicionaisPai">
-                <div>
-                  <p class="adicionaisTurbinar">Turbine seu Burguer! <br />(escolha até 10 opções)</p>
-                  <div class="adicionaisMenuLanche">
-                    <div class="batataMenuLanche">
-                      <img
-                        src="IMGS/1738688942957-removebg.png"
-                        alt="Batata"
-                      />
-                      <p>Batata:R$ <span id="valorBatata">8,90</span></p>
-                      <button onclick="AdicionarLanche('BatataMenuLancheFuncao')">adicionar</button>
-                    </div>
-                    <div class="anelDeCebolaMenuLanche">
-                      <img
-                        src="IMGS/1738688943009-removebg.png"
-                        alt="Anel de Cebola"
-                      />
-                      <p>Anel de Cebola:R$ <span id="valorCebola">16,00</span></p>
-                      <button onclick="AdicionarLanche('CebolaMenuLancheFuncao')">adicionar</button>
-                    </div>
-                    <div class="cocaColaMenuLanche">
-                      <img
-                        src="IMGS/coca lata.png"
-                        alt="Coca Cola"
-                      />
-                      <p>Coca Cola:R$ <span id="valorCoca">5,00</span></p>
-                      <button onclick="AdicionarLanche('CocaMenuLancheFuncao')">adicionar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div id="finalizarCarrinhoMenuLanche">
-              <p id="valorTotalMenuLanche">Valor Total: R$ <span id="ValorTotal">0,00</span></p>
-              <button id="botaoFinalizarMenuLanche" onclick="addProduto('${nome}', '${preco}')">Adicionar ao carrinho</button>
-              <button id="botaoFinalizarMenuLanche"  onclick="fecharBtn()">Sair</button>
-            </div>
-            </div>
-            `;
-            popUps.appendChild(novaDiv);
-            popUps.style.display = "flex";
-        }
+       
+function popUp(nome, descricao, preco, imagem) {
+  const popUps = document.querySelector(".popUps");
+  popUps.innerHTML = "";
+
+  const novaDiv = document.createElement("div");
+  novaDiv.className = "popUp";
+
+  novaDiv.innerHTML = `
+  <div class="mainSamu">
+    <div class="menuLanche">
+      <div class="imagemLancheMenuLanche">
+        <img
+          src="${imagem}"
+          alt="ImagemDoLanche"
+          class="imagemLancheMenuLanche"
+        />
+      </div>
+      <div class="nomeLancheMenuLanche">
+        <h1 class="tituloLancheMenuLanche">${nome}</h1>
+        <div class="descriçãoLanche">
+          <p>
+            ${descricao}
+          </p>
+          <div class="preçoLanche"><p>${preco}</p></div>
+        </div>
+      </div>
+    </div>
+    <div id="adicionaisPai" class="adicionaisPai">
+      <div>
+        <p class="adicionaisTurbinar">Turbine seu Burguer! <br />(escolha até 10 opções)</p>
+        <div class="adicionaisMenuLanche">
+        ${Adicionais.map(itemAdd => `
+          <div class="adicionais">
+            <img
+              src="${itemAdd.Imagem}"
+              alt="Batata"
+            />
+            <p>${itemAdd.Nome}</p>
+            <p>${itemAdd.Preco}</p>
+            <button onclick="AdicionarLanche('BatataMenuLancheFuncao')">adicionar</button>
+          </div>
+        `
+      ).join("")}
+        </div>
+      </div>
+    </div>
+    <div id="finalizarCarrinhoMenuLanche">
+    <p id="valorTotalMenuLanche">Valor Total: R$ <span id="ValorTotal">0,00</span></p>
+    <button id="botaoFinalizarMenuLanche" onclick="addProduto('${nome}', '${preco}', '${descricao}', '${imagem}' )">Adicionar ao carrinho</button>
+    <button id="botaoFinalizarMenuLanche"  onclick="fecharBtn()">Sair</button>
+  </div>
+  </div>
+  `;
+  popUps.appendChild(novaDiv);
+  popUps.style.display = "flex";
+}
 
         function fecharBtn() {
             const popUps = document.querySelector(".popUps");
@@ -184,10 +191,12 @@ categorias.innerHTML = Object.keys(Categorias)
             document.getElementById("ValorTotal").textContent = `R$ ${valorTotalFloat.toFixed(2).replace(".", ",")}`;
         }
 
-        function addProduto(nome, preco, ){
+        function addProduto(nome, preco, descricao, imagem){
           const produto = {
             Nome: nome,
             Preco: preco, 
+            Descricao: descricao,
+            Imagem: imagem, 
           }
           carrinho.push(produto);
 

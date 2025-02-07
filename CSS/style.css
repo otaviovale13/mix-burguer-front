@@ -1,18 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap");
 
+/* Reset de margens, padding e box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilo do corpo da página */
 body {
   background-color: #111;
   font-family: "Open Sans", sans-serif;
   color: #fff;
 }
 
-/* Cabeçalho */
+/* Estilo do cabeçalho */
 header {
   background-color: #fed83c;
   display: flex;
@@ -27,12 +29,16 @@ header {
   z-index: 100;
 }
 
+
+
+/* Estilo do container filho do cabeçalho */
 .headerFilho {
   display: flex;
   gap: 3rem;
   align-items: center;
 }
 
+/* Estilo do logo */
 .logo {
   width: 13rem;
   max-width: 100%;
@@ -45,10 +51,12 @@ header {
   margin-top: -1rem;
 }
 
+/* Efeito hover no logo */
 .logo:hover {
   transform: scale(1.1);
 }
 
+/* Estilo do texto */
 .text {
   display: flex;
   flex-direction: column;
@@ -56,6 +64,7 @@ header {
   margin-left: 16rem;
 }
 
+/* Estilo do subtítulo */
 .sub_titulo {
   margin-top: -0.5rem;
   color: #fff;
@@ -63,12 +72,14 @@ header {
   font-weight: 600;
 }
 
+/* Estilo do container de busca no cabeçalho */
 .headerFilhoBusca {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
+/* Estilo da barra de busca */
 .busca {
   background-color: #222;
   border-radius: 5px;
@@ -80,11 +91,13 @@ header {
   transition: all 0.3s ease;
 }
 
+/* Efeito hover na barra de busca */
 .busca:hover {
   background-color: #333;
   border: solid 2px #fed83c;
 }
 
+/* Estilo do input de busca */
 input {
   background: none;
   border: none;
@@ -97,29 +110,35 @@ input {
   font-family: "Open Sans", sans-serif; 
 }
 
+/* Estilo do input de busca quando focado */
 input:focus {
   outline: none;
 }
 
+/* Estilo dos ícones */
 i {
   color: #fff;
 }
 
+/* Estilo do ícone de pessoa */
 .bi-person-fill {
   font-size: 2.7rem;
   color: #222;
 }
 
+/* Estilo do ícone de sacola */
 .bi-bag-fill {
   font-size: 2rem;
   color: #222;
 }
 
+/* Estilo do ícone de hambúrguer */
 .burger {
   color: #fed83c;
   font-size: 2rem;
 }
 
+/* Estilo do container principal */
 .pai {
   width: 100%; 
   height: 88vh;
@@ -134,10 +153,12 @@ i {
   overflow: hidden; 
 }
 
+/* Estilo dos links */
 a{
   text-decoration: none;
 }
 
+/* Estilo do overlay no container principal */
 .pai::before {
   content: "";
   position: absolute;
@@ -149,6 +170,7 @@ a{
   z-index: 0;
 }
 
+/* Estilo dos textos no container principal */
 .textos {
   margin-left: 3rem;
   line-height: 1.6;
@@ -159,6 +181,7 @@ a{
   max-width: 100%; 
 }
 
+/* Estilo da barra */
 .barra {
   display: flex;
   justify-content: center;
@@ -166,7 +189,7 @@ a{
   height: 7rem;
 }
 
-
+/* Estilo do logo na barra */
 .logoBarra {
   width: 10rem;
   height: 10rem;
@@ -176,6 +199,7 @@ a{
   z-index: 1;
 }
 
+/* Estilo da seção "quem somos" */
 .quem {
   width: 100%;
   background: url("https://invexo.com.br/blog/wp-content/uploads/2021/06/Hamburgueria-da-Alf%C3%A2ndega-Ipanema.jpg")
@@ -190,6 +214,7 @@ a{
   margin-top: 0rem;
 }
 
+/* Estilo do overlay na seção "quem somos" */
 .quem::before {
   content: "";
   position: absolute;
@@ -201,6 +226,7 @@ a{
   z-index: 0;
 }
 
+/* Estilo do container filho da seção "quem somos" */
 .quemFilho {
   display: flex;
   justify-content: center;
@@ -211,6 +237,7 @@ a{
   z-index: 1;
 }
 
+/* Estilo das fotos na seção "quem somos" */
 .foto {
   width: 34rem;
   height: auto;
@@ -219,11 +246,13 @@ a{
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efeito hover nas fotos */
 .foto:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo do texto na seção "quem somos" */
 .texto {
   font-size: 2rem;
   color: #fff;
@@ -234,6 +263,7 @@ a{
   font-family: "Open Sans", sans-serif;
 }
 
+/* Estilo do título "quem somos" */
 .quemSomos {
   font-weight: 600;
   margin-bottom: 2rem;
@@ -241,6 +271,7 @@ a{
   font-family: "Montserrat", sans-serif;
 }
 
+/* Estilo do texto na seção "quem somos" */
 .textoQuem {
   background-color: #000000ce;
   padding: 5rem;
@@ -252,13 +283,14 @@ a{
   text-align: left;
 }
 
-
+/* Animação de fade in na seção "quem somos" */
 .quemFilho {
   opacity: 0;
   transform: translateY(50px);
   animation: fadeInUp 1s forwards;
 }
 
+/* Keyframes para a animação de fade in */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -270,7 +302,7 @@ a{
   }
 }
 
-
+/* Estilo do botão de call to action */
 .cta {
   background-color: var(--cor-primaria);
   color: var(--cor-fundo);
@@ -286,10 +318,12 @@ a{
   font-family: "Poppins", sans-serif;
 }
 
+/* Efeito hover no botão de call to action */
 .cta:hover {
   background-color: darken(var(--cor-primaria), 10%);
 }
 
+/* Estilo da seção de contato */
 .contato {
   display: flex;
   justify-content: center;
@@ -298,11 +332,13 @@ a{
   background-color: #fed83c;
 }
 
+/* Estilo do container filho da seção de contato */
 .contatoFilho {
   max-width: 1200px;
   width: 100%;
 }
 
+/* Estilo dos logos de contato */
 .logosContatos {
   display: flex;
   justify-content: space-between;
@@ -310,12 +346,14 @@ a{
   gap: 2rem;
 }
 
+/* Estilo das categorias de contato */
 .contatoCategoria {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
+/* Estilo dos contatos */
 .contatos {
   display: flex;
   align-items: center;
@@ -325,30 +363,36 @@ a{
   transition: all 0.3s ease-in-out;
 }
 
+/* Estilo dos ícones de contato */
 .contatos i {
   font-size: 4rem;
   color: #000000;
 }
 
+/* Estilo dos títulos de contato */
 .contatos h2 {
   font-size: 1.2rem;
   font-weight: 500;
 }
 
+/* Estilo dos títulos de contato */
 .h2Contatos{
   color: #000000;
   font-size: 2rem;
 }
 
+/* Efeito hover nos contatos */
 .contatos:hover {
   transform: translateY(-5px);
   color: red;
 }
 
+/* Efeito hover nos ícones de contato */
 .contatos i:hover {
   color: red; 
 }
 
+/* Estilo da seção "mais" */
 .mais {
   margin-top: 5rem;
   display: flex;
@@ -356,10 +400,13 @@ a{
   justify-content: center;
   text-align: center;
 }
+
+/* Estilo do título "quem somos" */
 .quemSomos{
   font-size: 2rem;
 }
 
+/* Estilo das imagens na seção "mais" */
 .imgsMais {
   display: flex;
   justify-content: center;
@@ -367,12 +414,14 @@ a{
   margin-top: 2rem;
 }
 
+/* Estilo das imagens e vídeos na seção "mais" */
 .maisImgsEVideos{
   width: 15rem;
   height: 15rem;
   object-fit: cover;
 }
 
+/* Estilo dos vídeos na seção "mais" */
 .videosmais1{
   background-image: url(/IMGS/Captura\ de\ tela\ 2025-01-29\ 134946.png);
   width: 15rem;
@@ -387,6 +436,7 @@ a{
   }
 }
 
+/* Estilo dos vídeos na seção "mais" */
 .videosmais2{
   background-image: url(https://scontent.fcgh11-1.fna.fbcdn.net/v/t39.30808-6/462662881_527838376859035_8414204503142333280_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=TMULVD1qGYkQ7kNvgEyssO7&_nc_zt=23&_nc_ht=scontent.fcgh11-1.fna&_nc_gid=ARQI-cVd-5MB61w_C2IFqWZ&oh=00_AYDE9GLt4VU2OBAD6r4XuBMeY2uj47fxnIXQz9mbUBm3qg&oe=67A82A03);
   width: 15rem;
@@ -401,6 +451,7 @@ a{
   }
 }
 
+/* Estilo dos vídeos na seção "mais" */
 .videosmais3{
   background-image: url(https://scontent.fcgh37-1.fna.fbcdn.net/v/t51.75761-15/464754894_17965116746813748_861147819259864913_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=I_WloDBpnd4Q7kNvgHoaPI-&_nc_zt=23&_nc_ht=scontent.fcgh37-1.fna&_nc_gid=A1LZAyuVsp7UvxeXeJE5lKG&oh=00_AYCKDE11-e7vrPiZuFJ9Tg0wyLedzIjpf4Lkf1VeYwl8yA&oe=67A82CAC);
   width: 15rem;
@@ -415,6 +466,7 @@ a{
   }
 }
 
+/* Estilo dos vídeos na seção "mais" */
 .videosmais4{
   background-image: url(https://scontent.fcgh11-1.fna.fbcdn.net/v/t51.75761-15/463577372_17963794478813748_8504048681605474255_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=aBVfBPKVoHoQ7kNvgHLWxLj&_nc_zt=23&_nc_ht=scontent.fcgh11-1.fna&_nc_gid=A2dR74S11McErqj6xAnCWnA&oh=00_AYDzE5A2NUkvCn_w5ulY-m-DwuQCP5nJ_DHGQ5k6jxZSlg&oe=67A833D7);
   width: 15rem;
@@ -429,6 +481,7 @@ a{
   }
 }
 
+/* Estilo dos pop-ups */
 .popUps {
     position: fixed;
     top: 0;
@@ -442,6 +495,7 @@ a{
     z-index: 1000;
 }
 
+/* Estilo do conteúdo dos pop-ups */
 .popUp {
     background-image: url(/IMGS/fundo_mixburguer.jpg);
     object-fit: cover;
@@ -454,18 +508,21 @@ a{
     overflow-y: auto;
 }
 
+/* Estilo do título dos pop-ups */
 .popUp h1 {
     margin: 0;
     font-size: 24px;
     color: black;
 }
 
+/* Estilo do rodapé */
 footer {
   display: block;
   font-family: Arial, sans-serif;
   margin-top: 5rem;
 }
 
+/* Estilo da seção amarela do rodapé */
 .amarelo {
   background-color: #FED83C;
   padding: 10px 20px;
@@ -475,30 +532,36 @@ footer {
   justify-content: center;
 }
 
+/* Estilo do logo na seção amarela do rodapé */
 .amarelo .logo2 {
   max-width: 70px;
 }
 
+/* Estilo do texto na seção amarela do rodapé */
 .amarelo .text2 {
   margin-left: 10px;
 }
 
+/* Estilo do título na seção amarela do rodapé */
 .amarelo .titulo {
   font-size: 20px;
   color: #000000;
   margin: 0;
 }
 
+/* Estilo do subtítulo na seção amarela do rodapé */
 .amarelo .sub_titulo {
   font-size: 14px;
   color: #000000;
   margin: 5px 0 0 0;
 }
 
+/* Estilo do botão na seção amarela do rodapé */
 .amarelo .btn {
   margin-left: 20px;
 }
 
+/* Estilo do botão na seção amarela do rodapé */
 .amarelo .btn2 {
   background-color: #000000;
   color: #FED83C;
@@ -509,12 +572,14 @@ footer {
   border-radius: 5px;
 }
 
+/* Efeito hover no botão na seção amarela do rodapé */
 .amarelo .btn2:hover {
   background-color: #FED83C;
   color: #000000;
   border: 1px solid #000000;
 }
 
+/* Estilo da seção preta do rodapé */
 .preto {
   background-color: #000000;
   color: #FED83C;
@@ -524,21 +589,25 @@ footer {
   align-items: flex-end; 
 }
 
+/* Estilo do texto na seção preta do rodapé */
 .preto .text4 {
   font-size: 18px; 
   text-align: left; 
   margin-bottom: 0;
 }
 
+/* Estilo do texto na seção preta do rodapé */
 .preto .text5 {
   font-size: 18px;
   text-align: center; 
 }
 
+/* Estilo do container de ícones na seção preta do rodapé */
 .preto .text5 div {
   margin-top: 5px;
 }
 
+/* Estilo dos ícones na seção preta do rodapé */
 .preto .icons {
   display: flex;
   color: white;
@@ -547,9 +616,9 @@ footer {
   margin-right: 18rem;
   gap: 2rem;
   font-size: 2.2rem;
-
 }
 
+/* Estilo do container principal */
 .mainSamu{
     padding: 0;
     margin: 0;
@@ -559,6 +628,7 @@ footer {
     background-size: cover;
 }
 
+/* Estilo da imagem do lanche no menu de lanches */
 .imagemLancheMenuLanche {
   display: flex;
   margin-top: 1.4rem; 
@@ -566,18 +636,21 @@ footer {
  width: 20rem;
   height: 15rem;
   object-fit: cover;
-
 }
+
+/* Estilo do menu de lanches */
 .menuLanche {
     display: flex;
     gap: 1rem;
 }
 
+/* Estilo do nome do lanche no menu de lanches */
 .nomeLancheMenuLanche{
     margin-top: 1rem;
     margin-left: 6rem;
 }
 
+/* Estilo da descrição do lanche */
 .descriçãoLanche {
     font-size: 20px;
     color: rgb(0, 0, 0);
@@ -589,12 +662,15 @@ footer {
     width: 24rem;
     margin-left: 16rem;
 }
+
+/* Estilo do preço do lanche */
 .preçoLanche {
     font-size: 36px;
     color: rgb(255, 255, 255);
     font-family: "Days One";
 }
 
+/* Estilo dos adicionais para turbinar */
 .adicionaisTurbinar{
     text-align: center;
     color: rgb(0, 0, 0);
@@ -603,6 +679,7 @@ footer {
     margin-top: 2rem;
 }
 
+/* Estilo do título do lanche no menu de lanches */
 .tituloLancheMenuLanche {
     font-size: 48px;
     color: rgb(254, 216, 60);
@@ -611,6 +688,8 @@ footer {
     text-align: center;
     margin-bottom: 1rem;
 }
+
+/* Estilo dos botões */
 button {
     font-family: "Days One";
     background-color: #FED83C;
@@ -621,9 +700,13 @@ button {
     padding: 0.5rem 1rem;
     transition: background-color 0.3s ease;
 }
+
+/* Efeito hover nos botões */
 button:hover {
     background-color: #000000;
 }
+
+/* Estilo do container de finalizar carrinho no menu de lanches */
 #finalizarCarrinhoMenuLanche {
     display: flex;
     flex-direction: column;
@@ -631,12 +714,16 @@ button:hover {
     justify-content: center;
     margin-top: 7rem;
 }
+
+/* Estilo do valor total no menu de lanches */
 #valorTotalMenuLanche {
     font-size: 24px;
     color: rgb(254, 216, 60);
     font-family: "Days One";
     margin-top: -5rem;
 }
+
+/* Estilo do botão de finalizar no menu de lanches */
 #botaoFinalizarMenuLanche {
     font-family: "Days One";
     background-color: rgb(0, 0, 0);
@@ -649,14 +736,19 @@ button:hover {
     text-align: center;
     margin-top: 1rem;
 }
+
+/* Efeito hover no botão de finalizar no menu de lanches */
 #botaoFinalizarMenuLanche:hover {
     background-color: #FED83C;
 }
+
+/* Estilo dos botões do cardápio */
 .btnCardapio{
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 1rem;
 }
 
+/* Estilo das categorias */
 .categoria{
   display: flex;
   flex-direction: column;
@@ -667,6 +759,7 @@ button:hover {
   margin-bottom: 5rem
 }
 
+/* Estilo dos produtos */
 .produtos{
   margin-top: 1rem;  
   text-align: left;
@@ -680,6 +773,7 @@ button:hover {
   border-radius: 1rem;
 }
 
+/* Estilo das imagens dos produtos */
 .produtos img {
   width: 15rem;
   height: 200px; 
@@ -687,27 +781,32 @@ button:hover {
   border-radius: 8px; 
 }
 
+/* Estilo do container de imagens */
 .divImg{
   display: flex;
   justify-content: right;
   align-items: end;
 }
 
+/* Estilo do título dos itens */
 .itemTitulo{
   width: 25rem;
 }
 
+/* Estilo da descrição */
 .descricao{
   width: 90%;
   margin-top: 1rem;
   font-size: 1rem;
 }
 
+/* Estilo do preço */
 .preco{
   margin-top: 1rem;
   color: red;
 }
 
+/* Estilo do botão de voltar para home */
 .voltarHome{
   display: flex;
   justify-content: center;
@@ -719,6 +818,7 @@ button:hover {
   }
 }
 
+/* Estilo das alterações */
 .alterações{
   background-color: #fff;
   color: #000000;
@@ -727,8 +827,10 @@ button:hover {
     color: #000000;
   }
 }
+
+/* Estilo do botão de voltar para home */
 .btnVoltarHome {
-  font-family: "Days One";
+  font-family: DM sans;
   background-color: red;
   border-radius: 10px;
   color: white;
@@ -738,8 +840,11 @@ button:hover {
   transition: background-color 0.3s ease;
   margin-top: 5rem;
 }
+
+/* Efeito hover no botão de voltar para home */
 .btnVoltarHome:hover {
   background-color: darkred;
+
 }
 
 /* Para telas menores que 1024px (tablets) */
@@ -1119,6 +1224,7 @@ button:hover {
   button {
     font-size: 18px;
     padding: 0.4rem 0.8rem;
+    font-family: dm-sans;
   }
 
   .categoria {
@@ -1200,11 +1306,15 @@ button:hover {
 .btnsModis{
   display: flex;
   justify-content: center;
+  font-family: dm sans;
+
 }
 
 .btnsRemoveEEdit{
   display: flex;
   gap: 1rem;
+  font-family: dm sans;
+
 }
 
 .popUpsAdicionar {
@@ -1244,6 +1354,8 @@ button:hover {
 .btnsSalvar{
   display: flex;
   gap: 2rem;
+  font-family: dm sans;
+
 }
 
 .btnsInputs{
@@ -1252,6 +1364,7 @@ button:hover {
   gap: 1rem;
   justify-content: center;
   align-items: center;
+  font-family: dm sans;
 }
 
 .imgPreview{

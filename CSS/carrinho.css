@@ -15,6 +15,7 @@ body {
     background-attachment: fixed;
     background-size: auto;
     
+    
     height: 100%;
 }
 
@@ -62,17 +63,18 @@ nav {
 
 
         .text0 {
-            font-size: 35px;
-           margin-left: 50px;
+            font-size: 20px;
+           margin-left: 30px;
            font-family: DM Sans;
 
 
         }
 
         .textValue{
-            font-size: 35px;
-            margin-left: 150px;
+            font-size: 25px;
+            margin-left: 130px;
             font-family: DM Sans;
+            margin-right: 30px;
 
         }
 
@@ -115,9 +117,10 @@ nav {
 
 .total {
     display: flex;
+    text-align: center;
+    background-color: white;
     justify-content: center;
     align-items: center;
-    background-color: white;
     width: 200px;
     height: 60px;
     margin-top: 15px;
@@ -128,6 +131,8 @@ nav {
 
 
 }
+
+
 
 .btnFinish {
     width: 300px;
@@ -160,4 +165,11 @@ nav {
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
     margin-top: 5px;
+}
+
+.pCarrinho{
+    color: white;
+    font-size: 30px;
+    font-family: DM Sans;
+    margin-top: 20px;
 }
