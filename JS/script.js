@@ -24,11 +24,19 @@ function criarModal() {
 }
 
 function trocarRede(){
-  const whats = document.getElementById("whats").textContent
-  const insta = document.getElementById("insta").textContent
-  const tele = document.getElementById("tele").textContent
-  const face = document.getElementById("face").textContent
-  const modal = document.getElementById("popUpsAdicionar");
+  const whats = document.getElementById("whats")?.innerText || "WhatsApp";
+  const insta = document.getElementById("insta")?.innerText || "Instagram";
+  const tele = document.getElementById("tele")?.innerText || "Telegram";
+  const face = document.getElementById("face")?.innerText || "Facebook";
+  
+  let modal = document.getElementById("popUpsAdicionar");
+
+  // Se o modal não existir, criá-lo
+  if (!modal) {
+      criarModal();
+      modal = document.getElementById("popUpsAdicionar");
+  }
+
   modal.style.display = "flex";
   modal.innerHTML = `
       <div class="popUpEdit">
@@ -36,21 +44,32 @@ function trocarRede(){
               <h1>Escolha qual Rede Social deseja Editar?</h1>
           </div>
           <div class="btnsInputs">
-            <select name="redes" id="redes">
-              <option value="Whatzaap">Whatzaap</option>
-              <option value="Telefone">Telefone</option>
-              <option value="Instagram">Instagram</option>
-              <option value="Facebook">Facebook</option>
-            </select>
-          </div>
-          <div class="btnsInputs">
-            <label>Trocar Rede</label>
-            <input type="text" value=
+              <label for="inputRedes">Escolha qual Rede Editar</label>
+              <input list="redes" name="redes" id="inputRedes">
+
+              <datalist id="redes">
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Telegram">Telegram</option>
+                <option value="Facebook">Facebook</option>
+              </datalist>
           </div>
           <div class="btnsSalvar">
-              <button>Sim</button>
-              <button>Não</button>
+              <button onclick="salvarContato()">Sim</button>
+              <button onclick="fecharModal()">Não</button>
           </div>
       </div>
   `;
+}
+
+// Função para fechar o modal
+function fecharModal() {
+    const modal = document.getElementById("popUpsAdicionar");
+    if (modal) modal.style.display = "none";
+}
+
+function salvarContato(){
+  const opiWhats = document.getElementById("inputRedes").value;
+  document.getElementById("whats").innerText = opiWhats;
+  fecharModal();
 }
