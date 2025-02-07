@@ -124,12 +124,14 @@ i {
 .bi-person-fill {
   font-size: 2.7rem;
   color: #222;
+  cursor: pointer;
 }
 
 /* Estilo do ícone de sacola */
 .bi-bag-fill {
   font-size: 2rem;
   color: #222;
+  cursor: pointer;
 }
 
 /* Estilo do ícone de hambúrguer */
@@ -1308,6 +1310,7 @@ button:hover {
   justify-content: center;
   font-family: dm sans;
 
+  gap: 1rem;
 }
 
 .btnsRemoveEEdit{
@@ -1387,4 +1390,8 @@ button:hover {
   img{
     width: 5rem;
   }
+}
+
+.descricaoCarrinho{
+  width: 1rem;
 }

@@ -26,6 +26,7 @@ if (carrinho.length === 0){
             </div>
             <div class="text0">
                 ${item.Nome}
+                <p class="descricaoCarrinho">${item.Descricao}</p>
             </div>
               <div class="text0">
                 ${item.Descricao}

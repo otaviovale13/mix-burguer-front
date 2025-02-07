@@ -107,7 +107,7 @@ function popUp(nome, descricao, preco, imagem) {
     <div class="menuLanche">
       <div class="imagemLancheMenuLanche">
         <img
-          src="${imagem}"
+          srkc="${imagem}"
           alt="ImagemDoLanche"
           class="imagemLancheMenuLanche"
         />
