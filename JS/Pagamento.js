@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       total += parseFloat(item.getAttribute("data-preco"));
     });
     // Atualiza o texto do elemento de preço total
-    precoRealElement.textContent = total.toFixed(2);
+    precoRealElement.textContent = total.toFixed(2).replace(".", ",");
   }
 
   // Função para aplicar cupom de desconto
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cupom === "DESCONTO10") {
       alert("Cupom aplicado: 10% de desconto!");
       // Atualize o preço total com o desconto
-      let total = parseFloat(precoRealElement.textContent);
+      let total = parseFloat(precoRealElement.textContent.replace(",", "."));
       total = total * 0.9;
-      precoRealElement.textContent = total.toFixed(2);
+      precoRealElement.textContent = total.toFixed(2).replace(".", ",");
     } else if (cupom !== "") {
       alert("Cupom inválido.");
     }
@@ -56,6 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Exibe uma mensagem de confirmação de pagamento
     const paymentMethod = selectedPayment.value;
     alert(`Pagamento finalizado com sucesso usando ${paymentMethod}.`);
+
+    // Limpa o carrinho
+    localStorage.removeItem("carrinho");
+
+    // Redireciona para a página de carrinho
+    window.location.href = "/carrinho.html";
   });
 
   // Seleciona todas as opções de pagamento
@@ -72,6 +78,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Inicializa o preço total
-  atualizarPrecoTotal();
+  // Função para exibir os itens do carrinho
+  function exibirItensDoCarrinho() {
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    let itensHTML = "";
+
+    carrinho.forEach(item => {
+      itensHTML += `
+        <div class="itemCarrinho" data-preco="${parseFloat(item.Preco.replace("R$", "").replace(",", "."))}">
+          <p>${item.Nome} - ${item.Preco}</p>
+          ${item.Adicionais.map(adicional => `
+            <p>Adicional: ${adicional.Nome} - R$ ${adicional.Preco.toFixed(2).replace(".", ",")} (x${adicional.Quantidade})</p>
+          `).join("")}
+        </div>
+      `;
+    });
+
+    itensDoCarrinho.innerHTML = itensHTML;
+    atualizarPrecoTotal();
+  }
+
+  // Inicializa o preço total e exibe os itens do carrinho
+  exibirItensDoCarrinho();
 });
+
+function btnVoltar() {
+  window.history.back();
+}
