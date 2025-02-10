@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap");
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+main {
+    width: 100%;
+    max-width: 100%;
+}
+
+.logo {
+    width: 13rem;
+    max-width: 100%;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    z-index: 1;
+    margin-top: -1rem;
+}
+
+    .logo:hover {
+        transform: scale(1.1);
+    }
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Estilo do texto */
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 15rem;
+}
+
+.pai:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.btnCardapio {
+    font-family: "Open Sans", sans-serif;
+    background-color: #fed83c;
+    color: #fff;
+    font-size: 20px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    border: 0;
+    border-radius: 0.75rem;
+}
+
+    .btnCardapio:hover {
+        background-color: #000000;
+    }
+
+    /* Estilo da seção "quem somos" */
+.quem {
+  width: 100%;
+  background: url("https://invexo.com.br/blog/wp-content/uploads/2021/06/Hamburgueria-da-Alf%C3%A2ndega-Ipanema.jpg")
+    no-repeat center center/cover;
+  padding: 5rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  background-attachment: fixed;
+  margin-top: 0rem;
+}
+
+/* Estilo do overlay na seção "quem somos" */
+.quem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+/* Keyframes para a animação de fade in */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.foto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.contatos:hover {
+    transform: translateY(-5px);
+    color: red;
+}
+
+.contatos i:hover {
+    color: red;
+}
+
+.btn2:hover {
+    background-color: #FED83C;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.contatos {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    color: #555;
+    transition: all 0.3s ease-in-out;
+}
+
+    /* Estilo dos ícones de contato */
+    .contatos i {
+        font-size: 4rem;
+        color: #000000;
+    }
+
+    /* Estilo dos títulos de contato */
+    .contatos h2 {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+/* Efeito hover nos contatos */
+.contatos:hover {
+    transform: translateY(-5px);
+    color: red;
+}
+
+/* Efeito hover nos ícones de contato */
+.contatos i:hover {
+    color: red;
+}
+
+.btn2 {
+    background-color: #000000;
+    color: #FED83C;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+/* Efeito hover no botão na seção amarela do rodapé */
+.btn2:hover {
+    background-color: #FED83C;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.btnCardapioA {
+    font-family: "Open Sans", sans-serif;
+    background-color: #fed83c;
+    color: #fff;
+    font-size: 20px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    border: 0;
+    border-radius: 0.75rem;
+    text-decoration: none;
+}
+
+.btnCardapioA:hover {
+    background-color: #000000;
+}
+
+/* Estilo da barra de busca */
+.busca {
+    background-color: #222;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 8px 16px;
+    width: 25rem;
+    transition: all 0.3s ease;
+}
+
+    /* Efeito hover na barra de busca */
+    .busca:hover {
+        background-color: #333;
+        border: solid 2px #fed83c;
+    }
+
+/* Estilo do input de busca */
+input {
+    background: none;
+    border: none;
+    color: #fff;
+    width: 20rem;
+    height: 2rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-family: "Open Sans", sans-serif;
+}
+
+    /* Estilo do input de busca quando focado */
+    input:focus {
+        outline: none;
+    }
+
+/* Estilo do conteúdo dos pop-ups */
+.popUp {
+    background-image: url(/IMGS/fundo_mixburguer.jpg);
+    object-fit: cover;
+    border: 5px solid;
+    width: 80rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 90%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+    /* Estilo do título dos pop-ups */
+    .popUp h1 {
+        margin: 0;
+        font-size: 24px;
+        color: black;
+    }
+
+/* Estilo do botão de finalizar no menu de lanches */
+.botaoFinalizarMenuLanche {
+    font-family: "Days One";
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+    /* Efeito hover no botão de finalizar no menu de lanches */
+    .botaoFinalizarMenuLanche:hover {
+        background-color: #FED83C;
+    }
