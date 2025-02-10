@@ -20,6 +20,10 @@
         {
             @await Html.PartialAsync("HeaderBusca")
         }
+        else if (ViewContext.RouteData.Values["Controller"]?.ToString() == "HomeAriel")
+        {
+            @await Html.PartialAsync("HeaderAriel")
+        }
         else
         {
             @await Html.PartialAsync("Header")
@@ -33,71 +37,25 @@
 
     <footer 
         style="font-family: Arial, sans-serif"
-        class="d-block mt-5">
-        <div 
-            style="background-color: #fed83c; padding: 10px 20px;"
-            class="text-lg-center d-flex align-items-center justify-content-center">
-            <img 
-                style="max-width: 70px;"
-                class=""
-                 src="https://cdn.discordapp.com/attachments/1330955985006886983/1338182213354651668/Logo.png?ex=67aa26cd&is=67a8d54d&hm=db8e6ffa22529e80e0ee8d4181c1ab2ac29bad72b5c1b697d1c15fc776563381&"
-                 alt="" />
-            <div 
-                style="margin-left: 10px;"
-                class="">
-                <h1 
-                    style="font-size: 20px;"
-                    class="text-black m-0">Mix Burger</h1>
-                <h2 
-                    style="font-size: 14px; margin: 5px 0 0 0;"
-                    class="text-black">Hambugeria</h2>
-            </div>
-            <div 
-                style="margin-left: 20px;"
-                class="">
-                <button 
-                    onclick="irSugestão()"
-                    class="btn2">Deixe sua Sugestão</button>
-            </div>
-        </div>
-        <div 
-            style="color: #fed83c; padding: 20px; "
-            class="bg-black d-flex justify-content-between align-items-lg-start">
-            <div 
-                style="font-size: 18px;"
-                class="text-lg-center mb-0">
-                Trabalhe Conosco <br />
-                <br />
-                Mix Burguer 2021 - Todos os Diretos Reservados
-            </div>
-            <div 
-                style="margin-right: 18rem; font-size: 2.2rem; color: white;"
-                class="d-flex text-white gap-5 justify-content-end text-decoration-none">
-                <a style="color: white;"
-                    href="https://www.facebook.com/people/Mix-Burguer/100088986305599/"><i 
-                        class="bi bi-facebook"></i></a>
-                <a style="color: white;"
-                    href="https://wa.me/+5511933878825"><i 
-                        class="bi bi-whatsapp"></i></a>
-                <a style="color: white;"
-                    href="https://www.instagram.com/mixburguer_itupeva/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#"><i class="bi bi-instagram"></i></a>
-            </div>
-            <div 
-                style="font-size: 18px;"
-                class="text-center">
-                <div>Site feito por:</div>
-                <div>Matheus</div>
-                <div>Otavio</div>
-                <div>Mikael</div>
-                <div>Samuel</div>
-            </div>
-
-        </div>
+        class="d-block mt-5"
+        role="menubar">
+        @if (ViewContext.RouteData.Values["Controller"]?.ToString() == "Cardapio")
+        {
+            @await Html.PartialAsync("HeaderBusca")
+        }
+        else if (ViewContext.RouteData.Values["Controller"]?.ToString() == "HomeAriel")
+        {
+            @await Html.PartialAsync("FooterAriel")
+        }
+        else
+        {
+            @await Html.PartialAsync("Footer")
+        }
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="/js/Cardapio.js"></script>
+    <script src="~/js/Cardapio.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

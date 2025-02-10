@@ -97,3 +97,14 @@ C:\Users\Casa\Desktop\Pessoal\Otávio\projetos\mix-burguer-front-VS2022\MixBurgu
 C:\Users\Casa\Desktop\Pessoal\Otávio\projetos\mix-burguer-front-VS2022\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\hodtyiuz73-3r8b2a0bt1.gz
 C:\Users\Casa\Desktop\Pessoal\Otávio\projetos\mix-burguer-front-VS2022\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\7oub9i3dt2-d46lgbt5az.gz
 C:\Users\Casa\Desktop\Pessoal\Otávio\projetos\mix-burguer-front-VS2022\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\rhpk7qy94y-a6hci2ux39.gz
+C:\Users\otavio.apvale\Source\Repos\mix-burguer-front\MixBurguer\obj\Debug\net9.0\MixBurguer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\otavio.apvale\Source\Repos\mix-burguer-front\MixBurguer\obj\Debug\net9.0\MixBurguer.AssemblyInfoInputs.cache
+C:\Users\otavio.apvale\Source\Repos\mix-burguer-front\MixBurguer\obj\Debug\net9.0\MixBurguer.AssemblyInfo.cs
+C:\Users\otavio.apvale\Source\Repos\mix-burguer-front\MixBurguer\obj\Debug\net9.0\MixBurguer.csproj.CoreCompileInputs.cache
+C:\Users\otavio.apvale\Source\Repos\mix-burguer-front\MixBurguer\obj\Debug\net9.0\MixBurguer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\otavio.apvale\Source\Repos\mix-burguer-front\MixBurguer\obj\Debug\net9.0\MixBurguer.RazorAssemblyInfo.cache
+C:\Users\otavio.apvale\Source\Repos\mix-burguer-front\MixBurguer\obj\Debug\net9.0\MixBurguer.RazorAssemblyInfo.cs
+C:\Users\otavio.apvale\Source\Repos\mix-burguer-front\MixBurguer\obj\Debug\net9.0\MixBurguer.sourcelink.json
+C:\Users\otavio.apvale\Source\Repos\mix-burguer-front\MixBurguer\obj\Debug\net9.0\MixBurguer.dll
+C:\Users\otavio.apvale\Source\Repos\mix-burguer-front\MixBurguer\obj\Debug\net9.0\refint\MixBurguer.dll
+C:\Users\otavio.apvale\Source\Repos\mix-burguer-front\MixBurguer\obj\Debug\net9.0\MixBurguer.pdb

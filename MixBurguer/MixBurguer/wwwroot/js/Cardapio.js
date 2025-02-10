@@ -35,17 +35,17 @@ const Adicionais = [
     {
         Nome: "Batata",
         Preco: "R$ 8,90",
-        Imagem: "IMGS/1738688942957-removebg.png",
+        Imagem: "https://github.com/otaviovale13/mix-burguer-front/blob/main/IMGS/1738688942957-removebg.png?raw=true",
     },
     {
         Nome: "Anel de Cebola",
         Preco: "R$ 16,00",
-        Imagem: "IMGS/1738688943009-removebg.png",
+        Imagem: "https://github.com/otaviovale13/mix-burguer-front/blob/main/IMGS/1738688943009-removebg.png?raw=true",
     },
     {
         Nome: "Coca Cola",
         Preco: "R$ 5,00",
-        Imagem: "IMGS/coca lata.png",
+        Imagem: "https://github.com/otaviovale13/mix-burguer-front/blob/main/IMGS/coca%20lata.png?raw=true",
     },
 ]
 
@@ -53,37 +53,30 @@ const categorias = document.getElementById("categorias")
 
 categorias.innerHTML = Object.keys(Categorias)
     .map(categoria => `
-            <div class="d-flex flex-column justify-content-center align-items-center text-center mt-5 mb-5 gap-3 categoria">
-    <h1 style="color: white;">${categoria}</h1>
-    ${Categorias[categoria]
+            <div id="categoria" class="categoria">
+                <h1 style="color: white;">${categoria}</h1>
+                ${Categorias[categoria]
             .map(item => `
-    <div style="text-align: left; color: black; width: 90%;"
-        class="mt-1 d-flex align-items-center justify-content-between bg-white p-3 rounded-4 produtos" 
-        onclick="popUp('${item.Nome}', '${item.Descricao}', '${item.Preco}', '${item.Imagem}',)">
-        <div>
-            <h2 style="width: 30rem;"
-                class="itemTitulo">${item.Nome}</h2>
-            <h3 style="width: 90%; font-size: 1.2rem;"
-                class="mt-1 descricao">${item.Descricao}</h3>
-            <h2 style="color: red;"
-                class="mt-1 preco">${item.Preco}</h2>
-        </div>
-        <div style="justify-content: right;"
-            class="d-flex align-items-end divImg">
-            <img style="width: 18rem; height: 200px; border-radius: 8px;"
-                class="object-fit-cover"
-                src="${item.Imagem}" />
-        </div>
-    </div>
-    `)
+                            <div class="produtos" onclick="popUp('${item.Nome}', '${item.Descricao}', '${item.Preco}', '${item.Imagem}',)"> 
+                                <div>
+                                    <h2 class="itemTitulo">${item.Nome}</h2>
+                                    <h3 class="descricao">${item.Descricao}</h3>
+                                    <h2 class="preco">${item.Preco}</h2>
+                                </div>
+                                <div class="divImg">
+                                    <img src="${item.Imagem}" />
+                                </div>
+                            </div>
+                        `)
             .join("")}
-</div>
+            </div>
         `)
     .join("")
 
 function buscarLanche() {
     const inputBuscar = document.getElementById("inputBuscar").value.toLowerCase()
     const categorias = document.querySelectorAll(".categoria")
+    const mensagem = document.getElementById("mensagem")
 
     categorias.forEach(categoria => {
         const produtos = categoria.querySelectorAll(".produtos");
@@ -93,8 +86,10 @@ function buscarLanche() {
             if (item.textContent.toLowerCase().includes(inputBuscar)) {
                 item.style.display = "";
                 visibilidade = true;
+                mensagem.className = "d-none"
             } else {
                 item.style.display = "none";
+                mensagem.className = "d-flex"
             }
         });
 
@@ -104,6 +99,7 @@ function buscarLanche() {
 
 
 function popUp(nome, descricao, preco, imagem) {
+    console.log("Abrindo popUp:", nome, descricao, preco, imagem);
     const popUps = document.querySelector(".popUps");
     popUps.innerHTML = "";
 
@@ -111,21 +107,21 @@ function popUp(nome, descricao, preco, imagem) {
     novaDiv.className = "popUp";
 
     novaDiv.innerHTML = `
-  <div style="height: 60rem; background-blend-mode: overlay; background-size: cover;"
+  <div style="height: 60rem; background-blend-mode: overlay; background-size: cover; background-image: url(/IMGS/fundo_mixburguer.jpg);"
     class="p-0 m-0 w-100">
     <div class="d-flex gap-1">
-        <div style="margin-top: 1.4rem; margin-left: 4rem; width: 20rem; height: 15rem;"
+        <div style="margin-top: 1.4rem; width: 20rem; height: 15rem;"
             class="d-flex object-fit-cover">
             <img src="${imagem}"
                  alt="ImagemDoLanche"
-                 style="margin-top: 1.4rem; margin-left: 4rem; width: 20rem; height: 15rem;"
-                 class="d-flex object-fit-cover" />
+                 style="margin-top: 1.4rem; margin-left: 4rem; width: 20rem; height: 15rem; border-radius: 10px;"
+                 class="d-flex object-fit-cover r" />
         </div>
-        <div style="margin-left: 6rem;"
-            class="mt-1">
+        <div style="margin-left: 24rem;"
+            class="mt-4 d-flex flex-column align-items-center justify-content-center">
             <h1 style="font-size: 48px; color: rgb(254, 216, 60); font-family: Lily Script One; text-shadow: 2px 2px 4px rgb(0, 0, 0);"
-                class="text-center mb-1">${nome}</h1>
-            <div style="font-size: 20px; color: rgb(0, 0, 0); font-family: Days One; background-color: #fed73ca6; border-radius: 10px; width: 24rem; margin-left: 16rem;"
+                class="mb-1">${nome}</h1>
+            <div style="font-size: 20px; color: rgb(0, 0, 0); font-family: Days One; background-color: #fed73ca6; border-radius: 10px; width: 24rem;"
                 class="text-center p-1">
                 <p>
                     ${descricao}
@@ -139,7 +135,7 @@ function popUp(nome, descricao, preco, imagem) {
         class="adicionaisPai">
         <div>
             <p style="color: rgb(0, 0, 0); font-size: 2rem; font-family: Arial, Helvetica, sans-serif;"
-                class="text-center mt-2">Turbine seu Burguer! <br />(escolha até 10 opções)</p>
+                class="text-center mt-5">Turbine seu Burguer! <br />(escolha até 10 opções)</p>
             <div class="d-flex align-items-center justify-content-evenly">
                 ${Adicionais.map(itemAdd => `
                 <div style="color: #000000; font-size: 1.5rem;"
@@ -148,7 +144,7 @@ function popUp(nome, descricao, preco, imagem) {
                          alt="Batata" />
                     <p>${itemAdd.Nome}</p>
                     <p>${itemAdd.Preco}</p>
-                    <button onclick="AdicionarLanche('BatataMenuLancheFuncao')">adicionar</button>
+                    <button class="btnCardapio" onclick="AdicionarLanche('BatataMenuLancheFuncao')">adicionar</button>
                 </div>
                 `
                 ).join("")}
@@ -161,11 +157,12 @@ function popUp(nome, descricao, preco, imagem) {
         <p style="font-size: 24px; color: rgb(254, 216, 60); font-family: Days One; margin-top: -5rem;"
             id="valorTotalMenuLanche">Valor Total: R$ <span id="ValorTotal">0,00</span></p>
         <button class="botaoFinalizarMenuLanche" id="botaoFinalizarMenuLanche" onclick="addProduto('${nome}', '${preco}', '${descricao}', '${imagem}' )">Adicionar ao carrinho</button>
-        <button class="botaoFinalizarMenuLanche" id="botaoFinalizarMenuLanche" onclick="fecharBtn()">Sair</button>
+        <button class="mb-5 botaoFinalizarMenuLanche" id="botaoFinalizarMenuLanche" onclick="fecharBtn()">Sair</button>
     </div>
 </div>
   `;
     popUps.appendChild(novaDiv);
+    popUps.classList.remove("d-none");
     popUps.style.display = "flex";
 }
 
