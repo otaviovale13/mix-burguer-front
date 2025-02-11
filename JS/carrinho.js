@@ -4,12 +4,14 @@ function btnVoltar(){
 
 const produtosDiv = document.getElementById("produtos");
 const totalDiv = document.getElementById("total");
+const btnFinalizar = document.getElementById("btnFinalizar");
 
 const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
 if (carrinho.length === 0){
     produtosDiv.innerHTML = "<p class='pCarrinho'>Seu carrinho está vazio! </p>";
     totalDiv.style.display = "none";
+    btnFinalizar.style.display = "none"; // Esconde o botão finalizar
 }else {
     let total = 0;
     let produtosHTML = "";
@@ -41,6 +43,7 @@ if (carrinho.length === 0){
     produtosDiv.innerHTML = produtosHTML;
     totalDiv.textContent = `Total: R$ ${total.toFixed(2).replace(".",",")}`
     totalDiv.style.display = "block";
+    btnFinalizar.style.display = "block"; // Mostra o botão finalizar
 
     document.querySelectorAll('.btnRemove0').forEach(button => {
         button.addEventListener('click', (event) => {
@@ -62,7 +65,6 @@ if (carrinho.length === 0){
     });
 }
 
-var btnFinalizar = document.getElementById("btnFinalizar");
 btnFinalizar.addEventListener('click', () => {
     window.location.href = "/pagamento.html";
 });
