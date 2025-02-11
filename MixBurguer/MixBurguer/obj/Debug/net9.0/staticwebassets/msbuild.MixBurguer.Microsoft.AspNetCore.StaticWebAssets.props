@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>4352tc0kjn</Fingerprint>
-      <Integrity>wIy7ZTAUul+oeWfQJ9ikUg3PVPUjBm8gg6MlUVedjqE=</Integrity>
+      <Fingerprint>eexwhxnjd3</Fingerprint>
+      <Integrity>Fna8u0cLiL8Lph5f5XyGYaw8t5s4bJN3KeqMjcwm8lU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
@@ -156,8 +156,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>bjdf80xnjk</Fingerprint>
-      <Integrity>R8pzFZHlQSlJEg8GdBZwEzZPdHDdzW4uXcNXMSnZvaU=</Integrity>
+      <Fingerprint>mk12dhgj0f</Fingerprint>
+      <Integrity>dkW/mK3Asmway7ajcxj0hBYQ8duwhJUBJi4A8jpdhcI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\CardapioAriel.js'))</OriginalItemSpec>
