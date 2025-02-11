@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MixBurguer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c2ad7c83189de82423ea6fd01009be900e07b18")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8b1183092fab069e164bcec3b1a309acbc9139d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MixBurguer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MixBurguer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

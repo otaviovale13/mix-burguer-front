@@ -1,5 +1,22 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<img class="position-absolute logo"
+     src="~/IMGS/Logo.png"
+     alt="Logo" />
+<div class="text">
+    <h1 class="fw-bold">
+        Mix Burger
+    </h1>
+    <h2 class="text-white fs-5 fw-semibold sub_titulo">
+        Hamburgueria
+    </h2>
+</div>
+<div class="d-flex align-items-center gap-3">
+    <div class="d-flex align-items-center gap-3">
+        <div class="busca">
+            <i style="color: #fff;"
+               class="bi bi-search"></i>
+            <input type="text" id="inputBuscar" placeholder="Buscar lanche..." onkeyup="buscarLanche()">
+        </div>
+        <i class="bi bi-person-fill fs-2 text-dark cursor-pointer"></i>
+        <i class="bi bi-bag-fill fs-4 text-dark cursor-pointer" onclick="btnSacola()"></i>
+    </div>
+</div>

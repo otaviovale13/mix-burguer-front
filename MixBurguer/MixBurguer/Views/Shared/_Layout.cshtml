@@ -24,6 +24,10 @@
         {
             @await Html.PartialAsync("HeaderAriel")
         }
+        else if (ViewContext.RouteData.Values["Controller"]?.ToString() == "CardapioAriel")
+        {
+            @await Html.PartialAsync("HeaderBuscaAriel")
+        }
         else
         {
             @await Html.PartialAsync("Header")
@@ -41,11 +45,15 @@
         role="menubar">
         @if (ViewContext.RouteData.Values["Controller"]?.ToString() == "Cardapio")
         {
-            @await Html.PartialAsync("HeaderBusca")
+            @await Html.PartialAsync("FooterCardapio")
         }
         else if (ViewContext.RouteData.Values["Controller"]?.ToString() == "HomeAriel")
         {
             @await Html.PartialAsync("FooterAriel")
+        }
+        else if (ViewContext.RouteData.Values["Controller"]?.ToString() == "CardapioAriel")
+        {
+            @await Html.PartialAsync("FooterCardapioAriel")
         }
         else
         {
@@ -55,7 +63,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/Cardapio.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
