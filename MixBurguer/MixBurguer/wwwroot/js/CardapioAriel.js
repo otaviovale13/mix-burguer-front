@@ -65,7 +65,7 @@ categorias.innerHTML = Object.keys(Categorias)
                                     <img src="${item.Imagem}" />
                                 </div>
                             </div>
-                            <div style="font-family: dm sans;"
+                            <div style="font-family: Arial, Helvetica, sans serif;"
                             class="d-flex gap-1">
                               <button class="btnCardapio">Remover</button>
                               <button class="btnCardapio">Editar</button>
@@ -75,7 +75,7 @@ categorias.innerHTML = Object.keys(Categorias)
                             </div>
                         `)
             .join("")}
-                        <div style="font-family: dm sans;"
+                        <div style="font-family: Arial, Helvetica, sans serif;"
                             class="d-flex gap-1">
                               <button class="btnCardapio">Remover</button>
                         </div>
@@ -130,7 +130,7 @@ function adicionarCate() {
       class="text-center mt-3 mb-3"
       id="inputAdicionais" type="text" />
     </div>
-    <div style="font-family: dm sans;"
+    <div style="font-family: Arial, Helvetica, sans serif;"
             class="d-flex gap-2">
       <button class="btnCardapio"
       onclick="salvarCategoria()">Salvar</button>
@@ -197,7 +197,7 @@ function removerItem(categoria, nomeItem) {
     modal.style.display = "flex";
     modal.innerHTML = `
       <div style=" bg-black padding: 20px; border-radius: 10px; color: black; width: 35rem;"
-           class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
+           class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0 p-4">
           <div style="font-family: Arial, Helvetica, sans-serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
               <h1 style="font-family: Arial, Helvetica, sans-serif;">Tem certeza que deseja remover "${nomeItem}"?</h1>
@@ -235,17 +235,21 @@ function editarItem(categoria, nomeItem, descricaoItem, precoItem, imagemItem) {
            class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
             <h1 style="font-family: Arial, Helvetica, sans-serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">Editar "${nomeItem}"</h1>
-            <div style="font-family: dm sans;"
+            <div style="font-family: font-family: Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
                 <label>Nome:</label>
-                <input id="inputNovoNome" type="text" value="${nomeItem}" />
+                <input style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+                id="inputNovoNome" 
+                type="text"
+                value="${nomeItem}" />
             </div>
-            <div style="font-family: dm sans;"
+            <div style="font-family: Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
                 <label>Descrição:</label>
                 <textarea id="inputNovaDescricao" class="inputNovaDescricao">${descricaoItem}</textarea>
             </div>
-            <div style="font-family: dm sans;"
+            <div style="font-family: Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
                 <label>Preço:</label>
                 <input style="color: black; border: solid 1px black;"
@@ -254,17 +258,25 @@ function editarItem(categoria, nomeItem, descricaoItem, precoItem, imagemItem) {
                 type="text"
                 value="${precoItem}" />
             </div>
-            <div style="font-family: dm sans;"
+            <div style="font-family: Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
                 <label>Imagem Atual:</label>
-                <img id="imagemPreview" src="${imagemItem}" class="imgPreview" />
+                <img style="width: 5rem;"
+                id="imagemPreview"
+                src="${imagemItem}" 
+                class="imgPreview" />
                 <label>Nova Imagem:</label>
-                <input id="inputNovaImagem" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
+                <input style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+                id="inputNovaImagem" 
+                type="file" a
+                ccept="image/*" o
+                nchange="previewNovaImagem(event)" />
             </div>
-            <div style="font-family: dm sans;"
+            <div style="font-family: Arial, Helvetica, sans serif;"
             class="d-flex gap-2">
-                <button onclick="confirmarEdicao('${categoria}', '${nomeItem}')">Salvar</button>
-                <button onclick="fecharModal()">Cancelar</button>
+                <button class="btnCardapio" onclick="confirmarEdicao('${categoria}', '${nomeItem}')">Salvar</button>
+                <button class="btnCardapio" onclick="fecharModal()">Cancelar</button>
             </div>
         </div>
     `;
@@ -400,27 +412,39 @@ function adicionarAdicionais(nomeItem) {
     modal.innerHTML = `
       <div style="padding: 20px; border-radius: 10px; color: black; width: 35rem;"
            class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
-        <h1 style="font-family: dm sans;"
+        <h1 style="font-family: Arial, Helvetica, sanas serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">Adicionar Adicional a "${nomeItem}"</h1>
-        <div style="font-family: dm sans;"
+        <div style="font-family: Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
           <label>Nome:</label>
-          <input id="inputAdicional" type="text" />
+          <input 
+          style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+          id="inputAdicional" 
+          type="text" />
         </div>
-        <div style="font-family: dm sans;"
+        <div style="font-family: Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
           <label>Valor:</label>
-          <input id="inputAdicionalValor" type="text" />
+          <input style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+          id="inputAdicionalValor" 
+          type="text" />
         </div>
-        <div style="font-family: dm sans;"
+        <div style="font-family: Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
           <label>Imagem:</label>
-          <input id="inputAdicionalImagem" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
+          <input style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+          id="inputAdicionalImagem" 
+          type="file"
+          accept="image/*" 
+          onchange="previewNovaImagem(event)" />
        </div>
        <div style="font-family: dm sans;"
             class="d-flex gap-2">
-         <button onclick="salvarAdicional()">Salvar</button>
-         <button onclick="fecharModal()">Cancelar</button>
+         <button class="btnCardapio" onclick="salvarAdicional()">Salvar</button>
+         <button class="btnCardapio" onclick="fecharModal()">Cancelar</button>
        </div>
       </div>
     `;
@@ -486,21 +510,25 @@ function removerAdicionais() {
     modal.innerHTML = `
       <div style="padding: 20px; border-radius: 10px; color: black; width: 35rem;"
            class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
-        <h1 style="font-family: dm sans;"
+        <h1 style="font-family: Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">Remover Adicional</h1>
-        <div style="font-family: dm sans;"
+        <div style="font-family: Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
         ${Adicionais.map((itemAdd, index) => `
               <label>
-                  <input type="checkbox" name="adicionalRemover" value="${index}" />
+                  <input style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+                  type="checkbox"
+                  name="adicionalRemover"
+                  value="${index}" />
                   ${itemAdd.Nome} - ${itemAdd.Preco}
               </label>
             `).join("")}
         </div>
        <div style="font-family: dm sans;"
             class="d-flex gap-2">
-         <button onclick="confirmarRemocaoAdicional()">Remover</button>
-         <button onclick="fecharModal()">Cancelar</button>
+         <button class="btnCardapio" onclick="confirmarRemocaoAdicional()">Remover</button>
+         <button class="btnCardapio" onclick="fecharModal()">Cancelar</button>
        </div>
       </div>
     `;
@@ -535,9 +563,9 @@ function editarAdicionais() {
     modal.innerHTML = `
       <div style="padding: 20px; border-radius: 10px; color: black; width: 35rem;"
            class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
-        <h1 style="font-family: dm sans;"
+        <h1 style="font-family: Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">Editar Adicional</h1>
-        <div style="font-family: dm sans;"
+        <div style="font-family: Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
             <label>Editar Adicional:</label>
             <select id="selectAdicional" onchange="preencherCamposAdicional()">
@@ -547,25 +575,35 @@ function editarAdicionais() {
                 `).join("")}
             </select>
         </div>
-        <div style="font-family: dm sans;"
+        <div style="Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
           <label>Nome:</label>
-          <input id="inputAdicional" type="text" />
+          <input style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+          id="inputAdicional" 
+          type="text" />
         </div>
-        <div style="font-family: dm sans;"
+        <div style="Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
           <label>Valor:</label>
-          <input id="inputAdicionalValor" type="text" />
+          <input style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+          id="inputAdicionalValor" 
+          type="text" />
         </div>
-        <div style="font-family: dm sans;"
+        <div style="Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
           <label>Imagem:</label>
-          <input id="inputAdicionalImagem" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
+          <input style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+          id="inputAdicionalImagem" 
+          type="file" accept="image/*" 
+          onchange="previewNovaImagem(event)" />
         </div>
-       <div style="font-family: dm sans;"
+       <div style="Arial, Helvetica, sans serif;"
             class="d-flex gap-2">
-         <button onclick="salvarAdicional()">Salvar</button>
-         <button onclick="fecharModal()">Cancelar</button>
+         <button class="btnCardapio" onclick="salvarAdicional()">Salvar</button>
+         <button class="btnCardapio" onclick="fecharModal()">Cancelar</button>
        </div>
       </div>
     `;
@@ -589,32 +627,45 @@ function adicionarProduto(categoria) {
     modal.innerHTML = `
       <div style="padding: 20px; border-radius: 10px; color: black; width: 35rem;"
            class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
-        <h1 style="font-family: dm sans;"
+        <h1 style="Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">Adicionar Produto à Categoria "${categoria}"</h1>
-        <div style="font-family: dm sans;"
+        <div style="Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
           <label>Nome do Produto:</label>
-          <input id="inputNomeProduto" type="text" />
+          <input style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+          id="inputNomeProduto" 
+          type="text" />
         </div>
-        <div style="font-family: dm sans;"
+        <div style="Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
           <label>Descrição:</label>
-          <textarea id="inputDescricaoProduto"></textarea>
+          <textarea style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+          id="inputDescricaoProduto"></textarea>
         </div>
-        <div style="font-family: dm sans;"
+        <div style="Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
           <label>Preço:</label>
-          <input id="inputPrecoProduto" type="text" />
+          <input style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+          id="inputPrecoProduto" 
+          type="text" />
         </div>
-        <div style="font-family: dm sans;"
+        <div style="Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
           <label>Imagem:</label>
-          <input id="inputImagemProduto" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
+          <input style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+          id="inputImagemProduto"
+          type="file" 
+          accept="image/*" 
+          onchange="previewNovaImagem(event)" />
         </div>
-        <div style="font-family: dm sans;"
+        <div style="Arial, Helvetica, sans serif;;"
             class="d-flex gap-2">
-          <button onclick="salvarProduto('${categoria}')">Salvar</button>
-          <button onclick="fecharModal()">Cancelar</button>
+          <button class="btnCardapio" onclick="salvarProduto('${categoria}')">Salvar</button>
+          <button class="btnCardapio" onclick="fecharModal()">Cancelar</button>
         </div>
       </div>
     `;
@@ -651,7 +702,7 @@ function removerCate() {
     modal.innerHTML = `
         <div style="padding: 20px; border-radius: 10px; color: black; width: 35rem;"
            class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
-            <div style="font-family: dm sans;"
+            <div style="Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
                 <h1>Deseja excluir qual Categoria?</h1>
                 <select id="selectCate" onchange="excluirSelecionadoCate()">
@@ -661,10 +712,10 @@ function removerCate() {
                     `).join("")}
                 </select>
             </div>
-            <div style="font-family: dm sans;"
+            <div style="Arial, Helvetica, sans serif;"
             class="d-flex gap-2">
-                <button onclick="confirmarRemocaoCate()">Sim</button>
-                <button onclick="fecharModal()">Não</button>
+                <button class="btnCardapio" onclick="confirmarRemocaoCate()">Sim</button>
+                <button class="btnCardapio" onclick="fecharModal()">Não</button>
             </div>
         </div>
     `;
@@ -696,9 +747,9 @@ function editarCate() {
     modal.innerHTML = `
     <div style="padding: 20px; border-radius: 10px; color: black; width: 35rem;"
            class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
-      <h1 style="font-family: dm sans;"
+      <h1 style="Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">Editar Categoria</h1>
-      <div style="font-family: dm sans;"
+      <div style="Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
         <h1>Deseja editar qual Categoria?</h1>
         <select id="selectCateEdit" onchange="preencherInputEditCate()">
@@ -708,15 +759,18 @@ function editarCate() {
             `).join("")}
         </select>
       </div>
-      <div style="font-family: dm sans;"
+      <div style="Arial, Helvetica, sans serif;"
              class="d-flex flex-column gap-1 justify-content-center align-items-center">
         <label>Nome:</label>
-        <input id="inputEditCate" type="text" />
+        <input style="color: black; border: solid 1px black;"
+      class="text-center mt-3 mb-3"
+        id="inputEditCate" 
+        type="text" />
       </div>
-      <div style="font-family: dm sans;"
+      <div style="Arial, Helvetica, sans serif;"
             class="d-flex gap-2">
-        <button onclick="salvarNovaCategoria()">Salvar</button>
-        <button onclick="fecharModal()">Cancelar</button>
+        <button class="btnCardapio" onclick="salvarNovaCategoria()">Salvar</button>
+        <button class="btnCardapio" onclick="fecharModal()">Cancelar</button>
       </div>
     </div>
   `;

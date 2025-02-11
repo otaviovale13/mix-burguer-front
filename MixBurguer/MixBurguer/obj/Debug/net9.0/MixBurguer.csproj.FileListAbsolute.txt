@@ -118,7 +118,6 @@ C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\
 C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\scopedcss\bundle\MixBurguer.styles.css
 C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\scopedcss\projectbundle\MixBurguer.bundle.scp.css
 C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\x8hcc29h5c-61n19gt1b8.gz
-C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\hodtyiuz73-3r8b2a0bt1.gz
 C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\ok5flxl68z-t1cqhe9u97.gz
 C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\vu3tqj35cf-c2jlpeoesf.gz
 C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\i29bkexcp5-sejl45xvog.gz
@@ -195,7 +194,6 @@ C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\
 C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\MixBurguer.pdb
 C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\MixBurguer.genruntimeconfig.cache
 C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\ref\MixBurguer.dll
-C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\7oub9i3dt2-02n9bj6zg5.gz
 C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\rhpk7qy94y-p8j9z8cbd7.gz
 C:\Users\Casa\Desktop\Pessoal\Otávio\projetos\mix-burguer-front\MixBurguer\MixBurguer\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Casa\Desktop\Pessoal\Otávio\projetos\mix-burguer-front\MixBurguer\MixBurguer\bin\Debug\net9.0\appsettings.json
@@ -298,3 +296,6 @@ C:\Users\Casa\Desktop\Pessoal\Otávio\projetos\mix-burguer-front\MixBurguer\MixB
 C:\Users\Casa\Desktop\Pessoal\Otávio\projetos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\7oub9i3dt2-4352tc0kjn.gz
 C:\Users\Casa\Desktop\Pessoal\Otávio\projetos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\hodtyiuz73-web75quh5k.gz
 C:\Users\Casa\Desktop\Pessoal\Otávio\projetos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\fs85g9yn9a-9zd5hjj2ls.gz
+C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\7oub9i3dt2-4352tc0kjn.gz
+C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\fs85g9yn9a-bjdf80xnjk.gz
+C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\obj\Debug\net9.0\compressed\hodtyiuz73-web75quh5k.gz

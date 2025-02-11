@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\MixBurguer.csproj": {}
+    "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\MixBurguer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\MixBurguer.csproj": {
+    "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\MixBurguer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\MixBurguer.csproj",
+        "projectUniqueName": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\MixBurguer.csproj",
         "projectName": "MixBurguer",
-        "projectPath": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\MixBurguer.csproj",
-        "packagesPath": "C:\\Users\\Casa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\",
+        "projectPath": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\MixBurguer.csproj",
+        "packagesPath": "C:\\Users\\otavio.apvale\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Casa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\otavio.apvale\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
