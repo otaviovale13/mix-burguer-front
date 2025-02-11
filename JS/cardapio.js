@@ -107,7 +107,7 @@ function popUp(nome, descricao, preco, imagem) {
     <div class="menuLanche">
       <div class="imagemLancheMenuLanche">
         <img
-          srkc="${imagem}"
+          src="${imagem}"
           alt="ImagemDoLanche"
           class="imagemLancheMenuLanche"
         />
@@ -130,11 +130,13 @@ function popUp(nome, descricao, preco, imagem) {
           <div class="adicionais">
             <img
               src="${itemAdd.Imagem}"
-              alt="Batata"
+              alt="${itemAdd.Nome}"
             />
             <p>${itemAdd.Nome}</p>
             <p>${itemAdd.Preco}</p>
-            <button onclick="AdicionarLanche('BatataMenuLancheFuncao')">adicionar</button>
+            <button data-preco="${itemAdd.Preco}" onclick="adicionarAdicional(this)">adicionar</button>
+            <button class="removeAdicional" data-preco="${itemAdd.Preco}" onclick="removerAdicional(this)" style="background-color: red;">x</button>
+            <span class="quantidade">0</span>
           </div>
         `
       ).join("")}
@@ -143,13 +145,50 @@ function popUp(nome, descricao, preco, imagem) {
     </div>
     <div id="finalizarCarrinhoMenuLanche">
     <p id="valorTotalMenuLanche">Valor Total: R$ <span id="ValorTotal">0,00</span></p>
-    <button id="botaoFinalizarMenuLanche" onclick="addProduto('${nome}', '${preco}', '${descricao}', '${imagem}' )">Adicionar ao carrinho</button>
+    <button id="botaoFinalizarMenuLanche" onclick="AdicionarLanche('${nome}', '${preco}', '${descricao}', '${imagem}')">Adicionar ao carrinho</button>
     <button id="botaoFinalizarMenuLanche"  onclick="fecharBtn()">Sair</button>
   </div>
   </div>
   `;
   popUps.appendChild(novaDiv);
   popUps.style.display = "flex";
+
+  // Inicializa o valor total com o preço base do lanche
+  calcularPrecoTotal(preco);
+}
+
+function adicionarAdicional(button) {
+  const quantidadeSpan = button.nextElementSibling.nextElementSibling;
+  let quantidade = parseInt(quantidadeSpan.textContent);
+  const totalAdicionais = calcularTotalAdicionais();
+
+  if (totalAdicionais < 10) {
+    quantidade++;
+    quantidadeSpan.textContent = quantidade;
+    const precoBase = document.querySelector(".preçoLanche p").textContent;
+    calcularPrecoTotal(precoBase);
+  } else {
+    alert("Você só pode adicionar até 10 adicionais no total.");
+  }
+}
+
+function removerAdicional(button) {
+  const quantidadeSpan = button.nextElementSibling;
+  let quantidade = parseInt(quantidadeSpan.textContent);
+  if (quantidade > 0) {
+    quantidade--;
+    quantidadeSpan.textContent = quantidade;
+    const precoBase = document.querySelector(".preçoLanche p").textContent;
+    calcularPrecoTotal(precoBase);
+  }
+}
+
+function calcularTotalAdicionais() {
+  let total = 0;
+  document.querySelectorAll(".adicionais .quantidade").forEach(span => {
+    total += parseInt(span.textContent);
+  });
+  return total;
 }
 
         function fecharBtn() {
@@ -164,32 +203,55 @@ function popUp(nome, descricao, preco, imagem) {
             window.location.href = "/sugestoes.html"
           }
           
-          function AdicionarLanche(LancheMenuLancheFuncao) {
-            let valorTotal = document.getElementById("ValorTotal").textContent;
-        
-            // Remove "R$" e espaços extras, depois substitui vírgula por ponto
-            valorTotal = valorTotal.replace("R$", "").trim().replace(",", ".");
-            let valorTotalFloat = parseFloat(valorTotal) || 0; // Se der NaN, assume 0
-        
-            let valorAdicional = 0;
-        
-            if (LancheMenuLancheFuncao === "BatataMenuLancheFuncao") {
-                valorAdicional = parseFloat(document.getElementById("valorBatata").textContent.replace(",", ".")) || 0;
-            } else if (LancheMenuLancheFuncao === "CebolaMenuLancheFuncao") {
-                valorAdicional = parseFloat(document.getElementById("valorCebola").textContent.replace(",", ".")) || 0;
-            } else if (LancheMenuLancheFuncao === "CocaMenuLancheFuncao") {
-                valorAdicional = parseFloat(document.getElementById("valorCoca").textContent.replace(",", ".")) || 0;
-            } else if (LancheMenuLancheFuncao === "LancheMenuLancheFuncao") {
-                // Pega o preço do lanche diretamente do pop-up
-                valorAdicional = parseFloat(document.querySelector(".preçoLanche p").textContent.replace("R$", "").trim().replace(",", ".")) || 0;
-            }
-        
-            // Soma os valores
-            valorTotalFloat += valorAdicional;
-        
-            // Formata corretamente como moeda brasileira
-            document.getElementById("ValorTotal").textContent = `R$ ${valorTotalFloat.toFixed(2).replace(".", ",")}`;
-        }
+function AdicionarLanche(nome, preco, descricao, imagem) {
+  let valorTotalFloat = parseFloat(preco.replace("R$", "").trim().replace(",", ".")) || 0;
+
+  // Adiciona o valor dos adicionais selecionados
+  const adicionaisSelecionados = [];
+  document.querySelectorAll(".adicionais").forEach(adicionalDiv => {
+    const quantidade = parseInt(adicionalDiv.querySelector(".quantidade").textContent);
+    const adicionalNome = adicionalDiv.querySelector("p").textContent;
+    const adicionalPreco = parseFloat(adicionalDiv.querySelector("button[data-preco]").dataset.preco.replace("R$", "").trim().replace(",", ".")) || 0;
+    if (quantidade > 0) {
+      valorTotalFloat += adicionalPreco * quantidade;
+      adicionaisSelecionados.push({ Nome: adicionalNome, Preco: adicionalPreco, Quantidade: quantidade });
+    }
+  });
+
+  const produto = {
+    Nome: nome,
+    Preco: `R$ ${valorTotalFloat.toFixed(2).replace(".", ",")}`,
+    Descricao: descricao,
+    Imagem: imagem,
+    Adicionais: adicionaisSelecionados
+  };
+  carrinho.push(produto);
+
+  console.log("carrinho atualizado:", carrinho);
+
+  // Exibir alerta informando que o produto foi adicionado ao carrinho
+  alert(`${nome} foi adicionado ao carrinho.`);
+}
+
+function toggleAdicional(button) {
+  button.classList.toggle("selected");
+  const precoBase = document.querySelector(".preçoLanche p").textContent;
+  calcularPrecoTotal(precoBase);
+}
+
+function calcularPrecoTotal(precoBase) {
+  let valorTotalFloat = parseFloat(precoBase.replace("R$", "").trim().replace(",", ".")) || 0;
+
+  // Adiciona o valor dos adicionais selecionados
+  document.querySelectorAll(".adicionais").forEach(adicionalDiv => {
+    const quantidade = parseInt(adicionalDiv.querySelector(".quantidade").textContent);
+    const adicionalPreco = parseFloat(adicionalDiv.querySelector("button[data-preco]").dataset.preco.replace("R$", "").trim().replace(",", ".")) || 0;
+    valorTotalFloat += adicionalPreco * quantidade;
+  });
+
+  // Formata corretamente como moeda brasileira
+  document.getElementById("ValorTotal").textContent = `R$ ${valorTotalFloat.toFixed(2).replace(".", ",")}`;
+}
 
         function addProduto(nome, preco, descricao, imagem){
           const produto = {
@@ -202,11 +264,10 @@ function popUp(nome, descricao, preco, imagem) {
 
           console.log("carrinho atualizado:", carrinho);
 
-          fecharBtn();
+          
         }
 
         function salvarCarrinho(){
           localStorage.setItem("carrinho", JSON.stringify(carrinho));
           window.location.href = "/carrinho.html";
         }
-        

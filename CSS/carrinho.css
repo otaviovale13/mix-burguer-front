@@ -59,23 +59,20 @@ nav {
         height: 215px;
         margin-top: 10px;
         border-radius: 5px;
+        overflow: hidden; /* Adicionado para evitar estouro de texto */
         
-
-
         .text0 {
             font-size: 20px;
-           margin-left: 30px;
-           font-family: DM Sans;
-
-
+            margin-left: 30px;
+            font-family: DM Sans;
+            width: 60%; /* Ajuste para dar mais espaço à descrição */
         }
 
         .textValue{
             font-size: 25px;
-            margin-left: 130px;
-            font-family: DM Sans;
+            margin-left: auto; /* Ajuste para mover o valor mais para a direita */
             margin-right: 30px;
-
+            font-family: DM Sans;
         }
 
         .img00 {
@@ -83,12 +80,7 @@ nav {
             width: 190px;
             height: 215px;
             border-radius: 5px;
-
         }
-       
-
-
-
     }
 
     .btnRemove0 {
@@ -108,50 +100,61 @@ nav {
         background-color: red;
         color: white;
     }
+
+    .btnDuplicar0 {
+        background-color: #FED83C;
+        margin-left: 10px;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
     
-
-
-
-    
+    .btnDuplicar0:hover {
+        background-color: green;
+        color: white;
+    }
 }
 
 .total {
     display: flex;
+    flex-direction: column;
     text-align: center;
     background-color: white;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 60px;
-    margin-top: 15px;
+    width: 200px; /* Reduzir o tamanho da caixa */
+    height: 30px; /* Reduzir a altura da caixa */
+    margin-top: 30px; /* Aumentar a distância dos lanches */
     font-size: 20px;
     font-weight: bold;
     border-radius: 5px;
     font-family: DM Sans;
-
-
+    
+    padding-top: 3.5px;
 }
 
-
-
 .btnFinish {
-    width: 300px;
-    height: 60px;
+    width: 250px; /* Diminuir a largura do botão */
+    height: 50px; /* Diminuir a altura do botão */
     background-color: #FED83C;
     font-weight: bold;
     border-radius: 5px;
-
     color: black;
     cursor: pointer;
     margin-top: 5px;
-    font-size: 20px;
-
-
+    font-size: 18px; /* Ajustar o tamanho da fonte */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adicionar transição para animação */
 }
 
 .btnFinish:hover {
-    background-color: green;
+    background-color: #FFA500; /* Cor de fundo ao passar o mouse */
     color: white;
+    transform: scale(1.05); /* Adicionar animação de escala */
 }
 
 .btnVoltar {
@@ -163,8 +166,14 @@ nav {
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adicionar transição para animação */
     margin-top: 5px;
+}
+
+.btnVoltar:hover {
+    background-color: #FFA500; /* Cor de fundo ao passar o mouse */
+    color: white;
+    transform: scale(1.05); /* Adicionar animação de escala */
 }
 
 .pCarrinho{

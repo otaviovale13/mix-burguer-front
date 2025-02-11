@@ -28,15 +28,12 @@ if (carrinho.length === 0){
                 ${item.Nome}
                 <p class="descricaoCarrinho">${item.Descricao}</p>
             </div>
-              <div class="text0">
-                ${item.Descricao}
-            </div>
             <div class="textValue">
             ${item.Preco}
             </div>
-           
             </div>
             <button class="btnRemove0" data-index="${index}">Remover</button>
+            <button class="btnDuplicar0" data-index="${index}">Duplicar</button>
         </div>
         `
     });
@@ -53,11 +50,20 @@ if (carrinho.length === 0){
             window.location.reload();
         });
     });
+
+    document.querySelectorAll('.btnDuplicar0').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const index = event.target.getAttribute('data-index');
+            const itemDuplicado = { ...carrinho[index] };
+            carrinho.push(itemDuplicado);
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            window.location.reload();
+        });
+    });
 }
 
 var btnFinalizar = document.getElementById("btnFinalizar");
 btnFinalizar.addEventListener('click', () => {
     window.location.href = "/pagamento.html";
-}
-);
+});
 

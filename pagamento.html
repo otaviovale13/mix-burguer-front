@@ -59,7 +59,10 @@
           </div>
           <div id="FinalizarPagamento">
             <input type="text" id="cupomDesconto" placeholder="Insira seu cupom de desconto" />
-            <button onclick="FinalizarPagamento()">Finalizar Pagamento</button>
+            <div style="display: flex; justify-content: center; gap: 10px;">
+              <button onclick="FinalizarPagamento()">Finalizar Pagamento</button>
+              <button id="VoltarPagamento" onclick="btnVoltar()">Voltar</button>
+            </div>
           </div>
         </div>
       </div>
