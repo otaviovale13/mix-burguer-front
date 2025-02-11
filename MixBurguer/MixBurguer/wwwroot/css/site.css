@@ -57,11 +57,18 @@ main {
 }
 
 /* Estilo do texto */
+.textHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-right: 29rem;
+}
+
 .text {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin-left: 15rem;
+    margin-right: 55rem;
 }
 
 .pai:before {
@@ -325,6 +332,7 @@ input {
     width: 90%;
     padding: 1rem;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
     /* Estilo das imagens dos produtos */
