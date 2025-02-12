@@ -80,6 +80,7 @@ a {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .paiSite:hover, .paiIfood:hover, .paiWhats:hover, .paiCell:hover {
