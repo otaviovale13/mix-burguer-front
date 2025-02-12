@@ -16,17 +16,13 @@ function trocarRede() {
 
     modal.style.display = "flex";
     modal.innerHTML = `
-      <div style="padding: 20px; border-radius: 10px; color: black; width: 35rem;"
-           class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
-        <div style="font-family: dm sans;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
+      <div class="w-35rem text-black rounded-10px p-20px bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
+        <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
             <h1>Editar Rede Social</h1>
         </div>
-        <div style="font-family: dm sans;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
+        <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
             <label for="inputRedes">Escolha qual Rede Editar</label>
-            <input style="color: black; border: solid 1px black"
-                class="text-center"
+            <input class="border-solid-1px-black text-black text-center"
                 list="redes"
                 name="redes"
                 id="inputRedes">
@@ -38,24 +34,19 @@ function trocarRede() {
                 <option value="Facebook">Facebook</option>
             </datalist>
         </div>
-        <div style="font-family: dm sans;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
+        <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
             <label for="inputNome">Mudar o Nome</label>
-            <input style="color: black; border: solid 1px black"
-                   class="text-center"
+            <input class="border-solid-1px-black text-black text-center"
                    type="text"
                    id="inputNome">
         </div>
-        <div style="font-family: dm sans;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
+        <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
             <label for="inputLink">Mudar o Link</label>
-            <input style="color: black; border: solid 1px black"
-                   class="text-center"
+            <input class="border-solid-1px-black text-black text-center"
                    type="text"
                    id="inputLink">
         </div>
-        <div style="font-family: dm sans;"
-            class="d-flex gap-2">
+        <div class="font-arial d-flex gap-2">
             <button class="btnCardapio" onclick="salvarContato()">Sim</button>
             <button class="btnCardapio" onclick="fecharModal()">Não</button>
         </div>
@@ -129,14 +120,11 @@ function trocarVideoEImagem() {
     modal.style.display = "flex";
 
     modal.innerHTML = `
-      <div style="padding: 20px; border-radius: 10px; color: black; width: 35rem;"
-           class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
-          <div style="font-family: dm sans;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
+      <div class="w-35rem text-black rounded-10px p-20px bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0"
+          <div class=" font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
               <h1>Escolha qual item editar</h1>
           </div>
-          <div style="font-family: dm sans;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
+          <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
               <label for="inputRedes">Escolha:</label>
               <select id="selecaoImagemVideo">
                 <option value="videosmais1">Vídeo - 1</option>
@@ -149,26 +137,21 @@ function trocarVideoEImagem() {
                 <option value="foto4">Foto - 4</option>
               </select>
           </div>
-          <div style="font-family: dm sans;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
+          <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
               <label for="inputArquivo">Enviar Arquivo:</label>
-              <input style="color: black; border: solid 1px black"
-                class="text-center"
+              <input class="border-solid-1px-black text-black text-center"
               type="file"
               id="inputArquivo"
               accept="image/*,video/*">
           </div>
-          <div style="font-family: dm sans; display: flex;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center"
+          <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center"
              id="btnLink">
               <label for="inputLink">Enviar Link:</label>
-              <input style="color: black; border: solid 1px black"
-                class="text-center"
+              <input class="border-solid-1px-black text-black text-center"
               type="text"
               id="inputLinkFotos">
           </div>
-          <div style="font-family: dm sans;"
-            class="d-flex gap-2">
+          <div class="font-arial d-flex gap-2">
               <button class="btnCardapio" onclick="salvarAlteracao()">Salvar</button>
               <button class="btnCardapio" onclick="fecharModal()">Fechar</button>
           </div>

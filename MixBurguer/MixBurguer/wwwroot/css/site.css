@@ -61,14 +61,13 @@ main {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin-right: 29rem;
+    margin-right: 7rem;
 }
 
 .text {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin-right: 55rem;
 }
 
 .pai:before {

@@ -6152,6 +6152,46 @@ textarea.form-control-lg {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") /*rtl:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e")*/;
 }
 
+.img-fundo-home {
+    background-image: url(https://cdn.goomer.com.br/website/base/fe1/31d/7f5/jonathan-borba-8l8yl2ruusg-unsplash-scaled.jpg);
+}
+
+.img-video-1 {
+    background-image: url(https://media-cdn.tripadvisor.com/media/photo-p/16/eb/25/22/burgueria.jpg);
+}
+
+.img-video-2 {
+    background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/eb/25/22/burgueria.jpg?w=900&h=500&s=1);
+}
+
+.img-video-3 {
+    background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/b6/75/45/lugar-agradavel.jpg?w=900&h=500&s=1);
+}
+
+.img-video-4 {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWy10SlSzarz9y_pjcR_8doCpZO_DI9kHlxJ819EJDqubcmsio5SxvsQ8YryDZrI3PfOM&usqp=CAU);
+}
+
+.img-fundo-popup {
+    background-image: url(/IMGS/fundo_mixburguer.jpg);
+}
+
+.bg-size{
+    background-size: cover;
+}
+
+.bg-position {
+    background-position: center;
+}
+
+.bg-attachment {
+    background-attachment: fixed;
+}
+
+.bg-blend-mode {
+    background-blend-mode: overlay;
+}
+
 .carousel-indicators {
   position: absolute;
   right: 0;
@@ -7385,6 +7425,10 @@ textarea.form-control-lg {
   box-shadow: var(--bs-box-shadow-lg) !important;
 }
 
+.shadow-0-4px-12px {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
 .shadow-none {
   box-shadow: none !important;
 }
@@ -7482,6 +7526,10 @@ textarea.form-control-lg {
   right: 0 !important;
 }
 
+.end-44-5 {
+    right: 44.5% !important;
+}
+
 .end-50 {
   right: 50% !important;
 }
@@ -7502,8 +7550,16 @@ textarea.form-control-lg {
   transform: translateY(-50%) !important;
 }
 
+.transition-t-0-3s {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
 .border {
   border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+}
+
+.border-solid-1px-black {
+    border: solid 1px black !important;
 }
 
 .border-0 {
@@ -7680,12 +7736,52 @@ textarea.form-control-lg {
   width: 100% !important;
 }
 
+.w-5rem {
+    width: 5rem !important;
+}
+
+.w-10rem {
+    width: 10rem !important;
+}
+
+.w-15rem {
+    width: 15rem !important;
+}
+
+.w-20rem {
+    width: 20rem !important;
+}
+
+.w-24rem {
+    width: 24rem !important;
+}
+
+.w-35rem {
+    width: 35rem !important;
+}
+
+.w-34rem {
+    width: 34rem !important;
+}
+
 .w-auto {
   width: auto !important;
 }
 
 .mw-100 {
   max-width: 100% !important;
+}
+
+.mw-70px {
+    max-width: 70px !important;
+}
+
+.mw-45rem {
+    max-width: 45rem !important;
+}
+
+.mw-1200px {
+    max-width: 1200px !important;
 }
 
 .vw-100 {
@@ -7712,6 +7808,26 @@ textarea.form-control-lg {
   height: 100% !important;
 }
 
+.h-7rem {
+    height: 7rem !important;
+}
+
+.h-10rem {
+    height: 10rem !important;
+}
+
+.h-15rem {
+    height: 15rem !important;
+}
+
+.h-50rem {
+    height: 50rem !important;
+}
+
+.h-60rem {
+    height: 60rem !important;
+}
+
 .h-auto {
   height: auto !important;
 }
@@ -7722,6 +7838,10 @@ textarea.form-control-lg {
 
 .vh-100 {
   height: 100vh !important;
+}
+
+.vh-88 {
+    height: 88vh !important;
 }
 
 .min-vh-100 {
@@ -7924,6 +8044,14 @@ textarea.form-control-lg {
   margin: 3rem !important;
 }
 
+.m-5px-0-0-0 {
+    margin: 5px 0 0 0 !important;
+}
+
+.m-0-5rem {
+    margin: 0 5rem !important;
+}
+
 .m-auto {
   margin: auto !important;
 }
@@ -8014,12 +8142,28 @@ textarea.form-control-lg {
   margin-top: 1rem !important;
 }
 
+.mt-1-4 {
+    margin-top: 1.4rem !important;
+}
+
 .mt-4 {
   margin-top: 1.5rem !important;
 }
 
 .mt-5 {
   margin-top: 3rem !important;
+}
+
+.mt-7rem { 
+    margin-top: 7rem !important;
+}
+
+.mt-menos-3 {
+    margin-top: -3rem !important;
+}
+
+.mt-menos-5 {
+    margin-top: -5rem !important;
 }
 
 .mt-auto {
@@ -8048,6 +8192,14 @@ textarea.form-control-lg {
 
 .me-5 {
   margin-right: 3rem !important;
+}
+
+.me-18rem {
+    margin-right: 18rem !important;
+}
+
+.me-33rem {
+    margin-right: 33rem !important;
 }
 
 .me-auto {
@@ -8106,6 +8258,26 @@ textarea.form-control-lg {
   margin-left: 3rem !important;
 }
 
+.ms-4rem {
+    margin-left: 4rem !important;
+}
+
+.ms-15rem {
+    margin-left: 15rem !important;
+}
+
+.ms-24rem {
+    margin-left: 24rem !important;
+}
+
+.ms-10px {
+    margin-left: 10px !important;
+}
+
+.ms-20px {
+    margin-left: 20px !important;
+}
+
 .ms-auto {
   margin-left: auto !important;
 }
@@ -8132,6 +8304,18 @@ textarea.form-control-lg {
 
 .p-5 {
   padding: 3rem !important;
+}
+
+.p-20px {
+    padding: 20px !important;
+}
+
+.p-10-20 {
+    padding: 10px 20px !important;
+}
+
+.p-4rem-1rem {
+    padding: 4rem 1rem !important;
 }
 
 .px-0 {
@@ -8314,6 +8498,10 @@ textarea.form-control-lg {
   gap: 3rem !important;
 }
 
+.gap-20rem {
+    gap: 20rem !important;
+}
+
 .row-gap-0 {
   row-gap: 0 !important;
 }
@@ -8372,6 +8560,34 @@ textarea.form-control-lg {
   font-family: var(--bs-font-monospace) !important;
 }
 
+.font-arial {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.font-open {
+    font-family: Open Sans, sans-serif !important;
+}
+
+.font-popp {
+    font-family: Poppins, sans-serif !important;
+}
+
+.font-mont {
+    font-family: Montserrat, sans-serif !important;
+}
+
+.font-lily {
+    font-family: Lily Script One !important;
+}
+
+.font-days {
+    font-family: Days One !important;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgb(0, 0, 0) !important;
+}
+
 .fs-1 {
   font-size: calc(1.375rem + 1.5vw) !important;
 }
@@ -8394,6 +8610,62 @@ textarea.form-control-lg {
 
 .fs-6 {
   font-size: 1rem !important;
+}
+
+.fs-1-2rem {
+    font-size: 1.2rem !important;
+}
+
+.fs-1-5rem {
+    font-size: 1.5rem !important;
+}
+
+.fs-1-6rem {
+    font-size: 1.6rem !important;
+}
+
+.fs-2rem {
+    font-size: 2rem !important;
+}
+
+.fs-2-2rem {
+    font-size: 2.2rem !important;
+}
+
+.fs-2-5rem {
+    font-size: 2.5rem !important;
+}
+
+.fs-4rem {
+    font-size: 4rem !important;
+}
+
+.fs-7rem {
+    font-size: 7rem !important;
+}
+
+.fs-14px {
+    font-size: 14px !important;
+}
+
+.fs-18px {
+    font-size: 18px !important;
+}
+
+.fs-20px {
+    font-size: 20px!important;
+}
+
+.fs-24px {
+    font-size: 24px !important;
+}
+
+.fs-36px {
+    font-size: 36px !important;
+}
+
+.fs-48px {
+    font-size: 48px !important;
 }
 
 .fst-italic {
@@ -8442,6 +8714,10 @@ textarea.form-control-lg {
 
 .lh-base {
   line-height: 1.5 !important;
+}
+
+.lh-1-6 {
+    line-height: 1.6 !important;
 }
 
 .lh-lg {
@@ -8547,6 +8823,11 @@ textarea.form-control-lg {
 .text-white {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-amarelo-mix {
+    --bs-text-opacity: 1;
+    color: #fed83c !important;
 }
 
 .text-body {
@@ -8853,6 +9134,11 @@ textarea.form-control-lg {
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
 }
 
+.bg-amarelo-mix {
+    --bs-bg-opacity: 1;
+    background-color: #fed83c !important;
+}
+
 .bg-body {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity)) !important;
@@ -8883,6 +9169,10 @@ textarea.form-control-lg {
 
 .bg-opacity-50 {
   --bs-bg-opacity: 0.5;
+}
+
+.bg-opacity-50-black {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .bg-opacity-75 {
@@ -8981,6 +9271,14 @@ textarea.form-control-lg {
 
 .rounded-5 {
   border-radius: var(--bs-border-radius-xxl) !important;
+}
+
+.rounded-10px {
+    border-radius: 10px !important;
+}
+
+.rounded-12px {
+    border-radius: 12px !important;
 }
 
 .rounded-circle {
@@ -9197,6 +9495,10 @@ textarea.form-control-lg {
 
 .z-3 {
   z-index: 3 !important;
+}
+
+.z-1000 {
+    z-index: 1000 !important;
 }
 
 @media (min-width: 576px) {

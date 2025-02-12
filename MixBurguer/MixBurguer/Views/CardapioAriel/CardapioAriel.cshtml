@@ -2,8 +2,7 @@
     ViewData["Title"] = "Cardápio";
 }
 
-<div style="font-family: dm sans; margin-top: 3rem;"
-    class="d-flex justify-content-center gap-3">
+<div class="font-arial d-flex justify-content-center gap-3 mt-5">
     <button class="btnCardapio" onclick="adicionarCate()">Adicionar Categoria</button>
     <button class="btnCardapio" onclick="removerCate()">Remover Categoria</button>
     <button class="btnCardapio" onclick="editarCate()">Editar Categoria</button>
@@ -11,16 +10,13 @@
 <div id="categorias"></div>
 <div class="popUpsAdicionar"></div>
 <div class="popUps"></div>
-<div style="width: 100%;"
-     id="mensagem"
-     class="d-none">
-    <div style="width: 100%;"
-         class="d-flex text-center justify-content-center align-items-center mt-5">
-        <h1 style="color: white;">Nenhum Item encontrado!!!</h1>
+<div id="mensagem"
+     class="d-none w-100">
+    <div class="d-flex text-center justify-content-center align-items-center mt-5 w-100">
+        <h1 class="text-light">Nenhum Item encontrado!!!</h1>
     </div>
 </div>
-<div style="font-family: Arial, Helvetica, sans-serif;"
-     class="d-flex justify-content-center align-items-center mb-5 mt-5">
+<div class="font-arial d-flex justify-content-center align-items-center mb-5 mt-5">
     <a asp-area="" asp-controller="HomeAriel" asp-action="HomeAriel" class="btnCardapioA">Voltar para o Início</a>
 </div>
 
