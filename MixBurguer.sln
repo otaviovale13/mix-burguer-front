@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixBurguer", "MixBurguer\MixBurguer.csproj", "{632DF9AC-04D1-4F67-9389-CCE5628B2B39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixBurguer", "MixBurguer.csproj", "{632DF9AC-04D1-4F67-9389-CCE5628B2B39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
