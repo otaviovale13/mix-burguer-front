@@ -510,6 +510,10 @@ a{
     overflow-y: auto;
 }
 
+.popUpBtn:hover button {
+  cursor: pointer;
+}
+
 /* Estilo do título dos pop-ups */
 .popUp h1 {
     margin: 0;
@@ -706,6 +710,7 @@ button {
 /* Efeito hover nos botões */
 button:hover {
     background-color: #000000;
+    cursor: pointer;
 }
 
 /* Estilo do container de finalizar carrinho no menu de lanches */
@@ -742,6 +747,7 @@ button:hover {
 /* Efeito hover no botão de finalizar no menu de lanches */
 #botaoFinalizarMenuLanche:hover {
     background-color: #FED83C;
+    cursor: pointer;
 }
 
 /* Estilo dos botões do cardápio */
@@ -1395,4 +1401,9 @@ button:hover {
 
 .descricaoCarrinho{
   width: 1rem;
+}
+.removeAdicional{
+  
+  
+  background-color: red;
 }

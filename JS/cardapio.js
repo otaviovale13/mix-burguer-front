@@ -135,7 +135,7 @@ function popUp(nome, descricao, preco, imagem) {
             <p>${itemAdd.Nome}</p>
             <p>${itemAdd.Preco}</p>
             <button data-preco="${itemAdd.Preco}" onclick="adicionarAdicional(this)">adicionar</button>
-            <button class="removeAdicional" data-preco="${itemAdd.Preco}" onclick="removerAdicional(this)" style="background-color: red;">x</button>
+            <button class="removeAdicional" data-preco="${itemAdd.Preco}" onclick="removerAdicional(this)"">x</button>
             <span class="quantidade">0</span>
           </div>
         `
@@ -145,8 +145,8 @@ function popUp(nome, descricao, preco, imagem) {
     </div>
     <div id="finalizarCarrinhoMenuLanche">
     <p id="valorTotalMenuLanche">Valor Total: R$ <span id="ValorTotal">0,00</span></p>
-    <button id="botaoFinalizarMenuLanche" onclick="AdicionarLanche('${nome}', '${preco}', '${descricao}', '${imagem}')">Adicionar ao carrinho</button>
-    <button id="botaoFinalizarMenuLanche"  onclick="fecharBtn()">Sair</button>
+    <button id="botaoFinalizarMenuLanche" class="popUpBtn" onclick="AdicionarLanche('${nome}', '${preco}', '${descricao}', '${imagem}')">Adicionar ao carrinho</button>
+    <button id="botaoFinalizarMenuLanche" class="popUpBtn" onclick="fecharBtn()">Sair</button>
   </div>
   </div>
   `;
