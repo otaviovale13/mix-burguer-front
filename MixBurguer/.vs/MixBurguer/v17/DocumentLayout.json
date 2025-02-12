@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Casa\\Desktop\\Pessoal\\Ot\u00E1vio\\projetos\\mix-burguer-front\\MixBurguer\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|c:\\users\\casa\\desktop\\pessoal\\ot\u00E1vio\\projetos\\mix-burguer-front\\mixburguer\\mixburguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|solutionrelative:mixburguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -19,40 +14,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "346fdff5-b497-41b7-ae1e-6aa7e271124c",
-        "Display": 1,
-        "X": -5,
-        "Y": 161,
-        "Width": 1149,
-        "Height": 516,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "bootstrap.css",
-              "DocumentMoniker": "C:\\Users\\Casa\\Desktop\\Pessoal\\Ot\u00E1vio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-              "RelativeDocumentMoniker": "MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-              "ToolTip": "C:\\Users\\Casa\\Desktop\\Pessoal\\Ot\u00E1vio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-              "RelativeToolTip": "MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-              "ViewState": "AgIAANwfAAAAAAAAAAAAANwfAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-11T23:58:22.006Z",
-              "EditorCaption": ""
             }
           ]
         }
