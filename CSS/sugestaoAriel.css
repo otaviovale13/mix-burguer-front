@@ -50,6 +50,7 @@
     left: 3%; 
     z-index: 1; 
     margin-top: -1rem;
+    cursor: pointer;
   }
   
   /* Efeito hover no logo */
