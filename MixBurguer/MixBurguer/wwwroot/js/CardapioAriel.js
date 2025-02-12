@@ -52,7 +52,7 @@ const categorias = document.getElementById("categorias")
 categorias.innerHTML = Object.keys(Categorias)
     .map(categoria => `
             <div id="categoria" class="categoria">
-                <h1 style="color: white;">${categoria}</h1>
+                <h1 class="text-light">${categoria}</h1>
                 ${Categorias[categoria]
             .map(item => `
                             <div class="produtos" onclick="popUp('${item.Nome}', '${item.Descricao}', '${item.Preco}', '${item.Imagem}',)"> 
@@ -65,8 +65,7 @@ categorias.innerHTML = Object.keys(Categorias)
                                     <img src="${item.Imagem}" />
                                 </div>
                             </div>
-                            <div style="font-family: Arial, Helvetica, sans serif;"
-                            class="d-flex gap-1">
+                            <div class="font-arial d-flex gap-1">
                               <button class="btnCardapio">Remover</button>
                               <button class="btnCardapio">Editar</button>
                               <button class="btnCardapio">Adicionar Adicionais</button>
@@ -75,8 +74,7 @@ categorias.innerHTML = Object.keys(Categorias)
                             </div>
                         `)
             .join("")}
-                        <div style="font-family: Arial, Helvetica, sans serif;"
-                            class="d-flex gap-1">
+                        <div class="font-arial flex gap-1">
                               <button class="btnCardapio">Remover</button>
                         </div>
             </div>
@@ -121,17 +119,13 @@ function adicionarCate() {
     modal.style.display = "flex";
 
     modal.innerHTML = `
-    <div style="padding: 20px; border-radius: 10px; color: black; width: 35rem;"
-           class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
-    <div style="font-family: Arial, Helvetica, sans-serif;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
+    <div class="w-35rem text-black rounded-10px p-20px bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
+    <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
       <label>Nome da Categoria:</label>
-      <input style="color: black; border: solid 1px black;"
-      class="text-center mt-3 mb-3"
+      <input class="border-solid-1px-black text-black text-center mt-3 mb-3"
       id="inputAdicionais" type="text" />
     </div>
-    <div style="font-family: Arial, Helvetica, sans serif;"
-            class="d-flex gap-2">
+    <div class="font-arial d-flex gap-2">
       <button class="btnCardapio"
       onclick="salvarCategoria()">Salvar</button>
       <button class="btnCardapio"
@@ -162,7 +156,7 @@ function atualizarCategorias() {
     categoriasDiv.innerHTML = Object.keys(Categorias)
         .map(categoria => `
             <div id="categoria" class="categoria">
-                <h1 style="color: white;">${categoria}</h1>
+                <h1 class="text-light">${categoria}</h1>
                 ${Categorias[categoria]
                 .map(item => `
                         <div class="produtos" onclick="popUp('${item.Nome}', '${item.Descricao}', '${item.Preco}', '${item.Imagem}')"> 
@@ -175,8 +169,7 @@ function atualizarCategorias() {
                                 <img src="${item.Imagem}" />
                             </div>
                         </div>
-                        <div style="font-family: dm sans;"
-                            class="d-flex gap-3 mt-3">
+                        <div class="font-arial d-flex gap-3 mt-3">
                             <button class="btnCardapio" onclick="removerItem('${categoria}', '${item.Nome}')">Remover</button>
                             <button class="btnCardapio" onclick="editarItem('${categoria}', '${item.Nome}', '${item.Descricao}', '${item.Preco}', '${item.Imagem}')">Editar</button>
                             <button class="btnCardapio" onclick="adicionarAdicionais('${item.Nome}')">Adicionar Adicionais</button>
@@ -184,8 +177,7 @@ function atualizarCategorias() {
                             <button class="btnCardapio" onclick="editarAdicionais()">Editar Adicionais</button>
                         </div>
                     `).join("")}
-                    <div style="font-family: dm sans;"
-                            class="d-flex gap-1 mt-3">
+                    <div class="font-arial d-flex gap-1 mt-3">
                             <button class="btnCardapio" onclick="adicionarProduto('${categoria}')">Adicionar Produto</button>
                     </div>
             </div>
@@ -196,11 +188,9 @@ function removerItem(categoria, nomeItem) {
     const modal = document.getElementById("popUpsAdicionar");
     modal.style.display = "flex";
     modal.innerHTML = `
-      <div style=" bg-black padding: 20px; border-radius: 10px; color: black; width: 35rem;"
-           class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0 p-4">
-          <div style="font-family: Arial, Helvetica, sans-serif;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
-              <h1 style="font-family: Arial, Helvetica, sans-serif;">Tem certeza que deseja remover "${nomeItem}"?</h1>
+      <div class="w-35rem text-black rounded-10px p-20px bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0 p-4">
+          <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
+              <h1 class="font-arial">Tem certeza que deseja remover "${nomeItem}"?</h1>
           </div>
           <div style="font-family: Arial, sans serif;"
             class="d-flex gap-2">
@@ -231,50 +221,39 @@ function editarItem(categoria, nomeItem, descricaoItem, precoItem, imagemItem) {
     modal.style.display = "flex";
 
     modal.innerHTML = `
-        <div style="padding: 20px; border-radius: 10px; color: black; width: 35rem;"
-           class="bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
-            <h1 style="font-family: Arial, Helvetica, sans-serif;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">Editar "${nomeItem}"</h1>
-            <div style="font-family: font-family: Arial, Helvetica, sans serif;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
+        <div class="w-35rem text-black rounded-10px p-20px bg-white text-center d-flex flex-column justify-content-center align-items-center gap-1 border-0">
+            <h1 class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">Editar "${nomeItem}"</h1>
+            <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
                 <label>Nome:</label>
-                <input style="color: black; border: solid 1px black;"
-      class="text-center mt-3 mb-3"
+                <input class="border-solid-1px-black text-black text-center mt-3 mb-3"
                 id="inputNovoNome" 
                 type="text"
                 value="${nomeItem}" />
             </div>
-            <div style="font-family: Arial, Helvetica, sans serif;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
+            <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
                 <label>Descrição:</label>
                 <textarea id="inputNovaDescricao" class="inputNovaDescricao">${descricaoItem}</textarea>
             </div>
-            <div style="font-family: Arial, Helvetica, sans serif;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
+            <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
                 <label>Preço:</label>
-                <input style="color: black; border: solid 1px black;"
-      class="text-center mt-3 mb-3"
+                <input class="border-solid-1px-black text-black text-center mt-3 mb-3"
                 id="inputNovoPreco"
                 type="text"
                 value="${precoItem}" />
             </div>
-            <div style="font-family: Arial, Helvetica, sans serif;"
-             class="d-flex flex-column gap-1 justify-content-center align-items-center">
+            <div class="font-arial d-flex flex-column gap-1 justify-content-center align-items-center">
                 <label>Imagem Atual:</label>
-                <img style="width: 5rem;"
-                id="imagemPreview"
+                <img id="imagemPreview"
                 src="${imagemItem}" 
-                class="imgPreview" />
+                class="imgPreview w-5rem" />
                 <label>Nova Imagem:</label>
-                <input style="color: black; border: solid 1px black;"
-      class="text-center mt-3 mb-3"
+                <input class="border-solid-1px-black text-black text-center mt-3 mb-3"
                 id="inputNovaImagem" 
                 type="file" a
                 ccept="image/*" o
                 nchange="previewNovaImagem(event)" />
             </div>
-            <div style="font-family: Arial, Helvetica, sans serif;"
-            class="d-flex gap-2">
+            <div class="font-arial d-flex gap-2">
                 <button class="btnCardapio" onclick="confirmarEdicao('${categoria}', '${nomeItem}')">Salvar</button>
                 <button class="btnCardapio" onclick="fecharModal()">Cancelar</button>
             </div>
@@ -341,40 +320,32 @@ function popUp(nome, descricao, preco, imagem) {
     novaDiv.className = "popUp";
 
     novaDiv.innerHTML = `
-  <div style="height: 60rem; background-blend-mode: overlay; background-size: cover; background-image: url(/IMGS/fundo_mixburguer.jpg);"
-    class="p-0 m-0 w-100">
+  <div class="img-fundo-popup bg-size bg-blend-mode h-60rem p-0 m-0 w-100">
     <div class="d-flex gap-1">
-        <div style="margin-top: 1.4rem; width: 20rem; height: 15rem;"
-            class="d-flex object-fit-cover">
+        <div class="h-15rem w-20rem mt-1-4 d-flex object-fit-cover">
             <img src="${imagem}"
                  alt="ImagemDoLanche"
-                 style="margin-top: 1.4rem; margin-left: 4rem; width: 20rem; height: 15rem; border-radius: 10px;"
-                 class="d-flex object-fit-cover r" />
+                 class="rounded-10px h-15rem w-20rem ms-4rem mt-1-4 d-flex object-fit-cover" />
         </div>
-        <div style="margin-left: 24rem;"
-            class="mt-4 d-flex flex-column align-items-center justify-content-center">
-            <h1 style="font-size: 48px; color: rgb(254, 216, 60); font-family: Lily Script One; text-shadow: 2px 2px 4px rgb(0, 0, 0);"
-                class="mb-1">${nome}</h1>
-            <div style="font-size: 20px; color: rgb(0, 0, 0); font-family: Days One; background-color: #fed73ca6; border-radius: 10px; width: 24rem;"
-                class="text-center p-1">
+        <div class="ms-24rem mt-4 d-flex flex-column align-items-center justify-content-center">
+            <h1 class="text-shadow font-lily text-amarelo-mix fs-48px mb-1">${nome}</h1>
+            <div class="w-24rem rounded-10px bg-amarelo-mix text-light fs-20px text-center p-1">
                 <p>
                     ${descricao}
                 </p>
-                <div style="font-size: 36px; color: rgb(255, 255, 255); font-family: Days One;"
-                    class="preçoLanche"><p>${preco}</p></div>
+                <div class="font-days text-light fs-36px"><p>${preco}</p></div>
             </div>
         </div>
     </div>
     <div id="adicionaisPai" 
         class="adicionaisPai">
         <div>
-            <p style="color: rgb(0, 0, 0); font-size: 2rem; font-family: Arial, Helvetica, sans-serif;"
-                class="text-center mt-5">Turbine seu Burguer! <br />(escolha até 10 opções)</p>
+            <p class="font-arial fs-2rem text-black text-center mt-5">Turbine seu Burguer! <br />(escolha até 10 opções)</p>
             <div class="d-flex align-items-center justify-content-evenly">
                 ${Adicionais.map(itemAdd => `
-                <div style="color: #000000; font-size: 1.5rem;"
-                    class="adicionais">
-                    <img style="width: 5rem;" src="${itemAdd.Imagem}"
+                <div class="text-black fs-1-5rem">
+                    <img class="w-5rem"
+                    src="${itemAdd.Imagem}"
                          alt="Batata" />
                     <p>${itemAdd.Nome}</p>
                     <p>${itemAdd.Preco}</p>
@@ -385,10 +356,9 @@ function popUp(nome, descricao, preco, imagem) {
             </div>
         </div>
     </div>
-    <div style="margin-top: 7rem;"
-        class="d-flex flex-column align-items-center justify-content-center"
+    <div class="mt-7rem d-flex flex-column align-items-center justify-content-center"
         id="finalizarCarrinhoMenuLanche">
-        <p style="font-size: 24px; color: rgb(254, 216, 60); font-family: Days One; margin-top: -5rem;"
+        <p class="fs-24px text-amarelo-mix font-days mt-menos-5"
             id="valorTotalMenuLanche">Valor Total: R$ <span id="ValorTotal">0,00</span></p>
         <button class="botaoFinalizarMenuLanche" id="botaoFinalizarMenuLanche" onclick="addProduto('${nome}', '${preco}', '${descricao}', '${imagem}' )">Adicionar ao carrinho</button>
         <button class="mb-5 botaoFinalizarMenuLanche" id="botaoFinalizarMenuLanche" onclick="fecharBtn()">Sair</button>

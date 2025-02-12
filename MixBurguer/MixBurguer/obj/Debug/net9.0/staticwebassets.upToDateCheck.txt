@@ -66,6 +66,8 @@ wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\IMGS\1738688942957-removebg.png
 wwwroot\IMGS\1738688943009-removebg.png
+wwwroot\IMGS\5f2f3c64-090c-471a-8481-20987d89c335.jfif
+wwwroot\IMGS\5f2f3c64-090c-471a-8481-20987d89c335.jpeg
 wwwroot\IMGS\coca lata.png
 wwwroot\IMGS\fundo_mixburguer.jpg
 wwwroot\IMGS\Logo.png

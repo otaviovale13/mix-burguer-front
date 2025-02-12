@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9npj8KnIvnUoW0WRCl/cHR8h8Yr/N50uwsA3WIGBUCE=",
+  "Hash": "MJKVJkaVvBy8I3UdJjv5heSlFPP+xQPvX2MqABuuu5g=",
   "Source": "MixBurguer",
   "BasePath": "_content/MixBurguer",
   "Mode": "Default",
@@ -206,12 +206,12 @@
       "OriginalItemSpec": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\7oub9i3dt2-eexwhxnjd3.gz",
+      "Identity": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\7oub9i3dt2-dntd05iad0.gz",
       "SourceId": "MixBurguer",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/MixBurguer",
-      "RelativePath": "css/site#[.{fingerprint=eexwhxnjd3}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=dntd05iad0}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -220,8 +220,8 @@
       "RelatedAsset": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "x6o54lpeqg",
-      "Integrity": "R+6rXZ2Y9DuCMSalTQYHvisvof08BXOzk3UEr+ck3ZI=",
+      "Fingerprint": "is2kdojg99",
+      "Integrity": "Ighqe81SWSYOk62pDMoaXpiE8lz9vbpBBFjVP1IwsRQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\css\\site.css"
@@ -626,12 +626,12 @@
       "OriginalItemSpec": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\h9t8bhxwvf-zub09dkrxp.gz",
+      "Identity": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\h9t8bhxwvf-l10qrnbspe.gz",
       "SourceId": "MixBurguer",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/MixBurguer",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap#[.{fingerprint=zub09dkrxp}]?.css.gz",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap#[.{fingerprint=l10qrnbspe}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -640,8 +640,8 @@
       "RelatedAsset": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ndo96zskmb",
-      "Integrity": "q9WZtmMnJ+oJNgmN0eeT5IvKsKV1/YleuDnjGVjv4ps=",
+      "Fingerprint": "9yet4v4q2p",
+      "Integrity": "D+/1h7TuIJ7rUzTT/TQJwB80jWA0I8zpdkAbNgZ3sUo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
@@ -1459,8 +1459,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "eexwhxnjd3",
-      "Integrity": "Fna8u0cLiL8Lph5f5XyGYaw8t5s4bJN3KeqMjcwm8lU=",
+      "Fingerprint": "dntd05iad0",
+      "Integrity": "p1QWnI+t8uuMIgx6J2IOcIYMBtHrosb15jUbdUXP0oA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1527,6 +1527,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\IMGS\\1738688943009-removebg.png"
+    },
+    {
+      "Identity": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\IMGS\\5f2f3c64-090c-471a-8481-20987d89c335.jfif",
+      "SourceId": "MixBurguer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\",
+      "BasePath": "_content/MixBurguer",
+      "RelativePath": "IMGS/5f2f3c64-090c-471a-8481-20987d89c335#[.{fingerprint}]?.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "go1xa7avdn",
+      "Integrity": "wKybq/WzXVE2KnBTjVTHzVF74HcaxrBjK0LxAbNZ8jM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\IMGS\\5f2f3c64-090c-471a-8481-20987d89c335.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\IMGS\\5f2f3c64-090c-471a-8481-20987d89c335.jpeg",
+      "SourceId": "MixBurguer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\",
+      "BasePath": "_content/MixBurguer",
+      "RelativePath": "IMGS/5f2f3c64-090c-471a-8481-20987d89c335#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "go1xa7avdn",
+      "Integrity": "wKybq/WzXVE2KnBTjVTHzVF74HcaxrBjK0LxAbNZ8jM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\IMGS\\5f2f3c64-090c-471a-8481-20987d89c335.jpeg"
     },
     {
       "Identity": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\IMGS\\coca lata.png",
@@ -1669,8 +1711,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "zub09dkrxp",
-      "Integrity": "CzmECrtXV8BSk/+8SG+Rw7Fr+3hCt2bS2bEkS4YD3PQ=",
+      "Fingerprint": "l10qrnbspe",
+      "Integrity": "Rxbvu08DMWCMqKATiQu0KfCAiCIvQeiF3/I+AJ0Qt+w=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
@@ -2918,12 +2960,12 @@
   "Endpoints": [
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\7oub9i3dt2-eexwhxnjd3.gz",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\7oub9i3dt2-dntd05iad0.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000497017893"
+          "Quality": "0.000497760080"
         }
       ],
       "ResponseHeaders": [
@@ -2933,15 +2975,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2011"
+          "Value": "2008"
         },
         {
           "Name": "ETag",
-          "Value": "\"R+6rXZ2Y9DuCMSalTQYHvisvof08BXOzk3UEr+ck3ZI=\""
+          "Value": "\"Ighqe81SWSYOk62pDMoaXpiE8lz9vbpBBFjVP1IwsRQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 22:49:24 GMT"
+          "Value": "Wed, 12 Feb 2025 14:06:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2961,13 +3003,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Fna8u0cLiL8Lph5f5XyGYaw8t5s4bJN3KeqMjcwm8lU=\""
+          "Value": "W/\"p1QWnI+t8uuMIgx6J2IOcIYMBtHrosb15jUbdUXP0oA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Fna8u0cLiL8Lph5f5XyGYaw8t5s4bJN3KeqMjcwm8lU="
+          "Value": "sha256-p1QWnI+t8uuMIgx6J2IOcIYMBtHrosb15jUbdUXP0oA="
         }
       ]
     },
@@ -2982,7 +3024,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7628"
+          "Value": "7601"
         },
         {
           "Name": "Content-Type",
@@ -2990,11 +3032,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Fna8u0cLiL8Lph5f5XyGYaw8t5s4bJN3KeqMjcwm8lU=\""
+          "Value": "\"p1QWnI+t8uuMIgx6J2IOcIYMBtHrosb15jUbdUXP0oA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 22:49:24 GMT"
+          "Value": "Wed, 12 Feb 2025 14:06:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3004,13 +3046,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Fna8u0cLiL8Lph5f5XyGYaw8t5s4bJN3KeqMjcwm8lU="
+          "Value": "sha256-p1QWnI+t8uuMIgx6J2IOcIYMBtHrosb15jUbdUXP0oA="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\7oub9i3dt2-eexwhxnjd3.gz",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\7oub9i3dt2-dntd05iad0.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3019,7 +3061,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2011"
+          "Value": "2008"
         },
         {
           "Name": "Content-Type",
@@ -3027,11 +3069,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"R+6rXZ2Y9DuCMSalTQYHvisvof08BXOzk3UEr+ck3ZI=\""
+          "Value": "\"Ighqe81SWSYOk62pDMoaXpiE8lz9vbpBBFjVP1IwsRQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 22:49:24 GMT"
+          "Value": "Wed, 12 Feb 2025 14:06:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3049,18 +3091,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-R+6rXZ2Y9DuCMSalTQYHvisvof08BXOzk3UEr+ck3ZI="
+          "Value": "sha256-Ighqe81SWSYOk62pDMoaXpiE8lz9vbpBBFjVP1IwsRQ="
         }
       ]
     },
     {
-      "Route": "css/site.eexwhxnjd3.css",
-      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\7oub9i3dt2-eexwhxnjd3.gz",
+      "Route": "css/site.dntd05iad0.css",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\7oub9i3dt2-dntd05iad0.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000497017893"
+          "Quality": "0.000497760080"
         }
       ],
       "ResponseHeaders": [
@@ -3070,15 +3112,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2011"
+          "Value": "2008"
         },
         {
           "Name": "ETag",
-          "Value": "\"R+6rXZ2Y9DuCMSalTQYHvisvof08BXOzk3UEr+ck3ZI=\""
+          "Value": "\"Ighqe81SWSYOk62pDMoaXpiE8lz9vbpBBFjVP1IwsRQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 22:49:24 GMT"
+          "Value": "Wed, 12 Feb 2025 14:06:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3098,13 +3140,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Fna8u0cLiL8Lph5f5XyGYaw8t5s4bJN3KeqMjcwm8lU=\""
+          "Value": "W/\"p1QWnI+t8uuMIgx6J2IOcIYMBtHrosb15jUbdUXP0oA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "eexwhxnjd3"
+          "Value": "dntd05iad0"
         },
         {
           "Name": "label",
@@ -3112,12 +3154,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Fna8u0cLiL8Lph5f5XyGYaw8t5s4bJN3KeqMjcwm8lU="
+          "Value": "sha256-p1QWnI+t8uuMIgx6J2IOcIYMBtHrosb15jUbdUXP0oA="
         }
       ]
     },
     {
-      "Route": "css/site.eexwhxnjd3.css",
+      "Route": "css/site.dntd05iad0.css",
       "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3127,7 +3169,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7628"
+          "Value": "7601"
         },
         {
           "Name": "Content-Type",
@@ -3135,11 +3177,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Fna8u0cLiL8Lph5f5XyGYaw8t5s4bJN3KeqMjcwm8lU=\""
+          "Value": "\"p1QWnI+t8uuMIgx6J2IOcIYMBtHrosb15jUbdUXP0oA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 22:49:24 GMT"
+          "Value": "Wed, 12 Feb 2025 14:06:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3149,7 +3191,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "eexwhxnjd3"
+          "Value": "dntd05iad0"
         },
         {
           "Name": "label",
@@ -3157,13 +3199,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Fna8u0cLiL8Lph5f5XyGYaw8t5s4bJN3KeqMjcwm8lU="
+          "Value": "sha256-p1QWnI+t8uuMIgx6J2IOcIYMBtHrosb15jUbdUXP0oA="
         }
       ]
     },
     {
-      "Route": "css/site.eexwhxnjd3.css.gz",
-      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\7oub9i3dt2-eexwhxnjd3.gz",
+      "Route": "css/site.dntd05iad0.css.gz",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\7oub9i3dt2-dntd05iad0.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3172,7 +3214,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2011"
+          "Value": "2008"
         },
         {
           "Name": "Content-Type",
@@ -3180,11 +3222,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"R+6rXZ2Y9DuCMSalTQYHvisvof08BXOzk3UEr+ck3ZI=\""
+          "Value": "\"Ighqe81SWSYOk62pDMoaXpiE8lz9vbpBBFjVP1IwsRQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 22:49:24 GMT"
+          "Value": "Wed, 12 Feb 2025 14:06:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3202,7 +3244,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "eexwhxnjd3"
+          "Value": "dntd05iad0"
         },
         {
           "Name": "label",
@@ -3210,7 +3252,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-R+6rXZ2Y9DuCMSalTQYHvisvof08BXOzk3UEr+ck3ZI="
+          "Value": "sha256-Ighqe81SWSYOk62pDMoaXpiE8lz9vbpBBFjVP1IwsRQ="
         }
       ]
     },
@@ -3673,6 +3715,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-IQwrSr8tfcWK4LFRv6Idj7g7M2ClqTVGZmXYK6wZ8NA="
+        }
+      ]
+    },
+    {
+      "Route": "IMGS/5f2f3c64-090c-471a-8481-20987d89c335.go1xa7avdn.jfif",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\IMGS\\5f2f3c64-090c-471a-8481-20987d89c335.jfif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "324270"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/pjpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wKybq/WzXVE2KnBTjVTHzVF74HcaxrBjK0LxAbNZ8jM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Feb 2025 13:53:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "go1xa7avdn"
+        },
+        {
+          "Name": "label",
+          "Value": "IMGS/5f2f3c64-090c-471a-8481-20987d89c335.jfif"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wKybq/WzXVE2KnBTjVTHzVF74HcaxrBjK0LxAbNZ8jM="
+        }
+      ]
+    },
+    {
+      "Route": "IMGS/5f2f3c64-090c-471a-8481-20987d89c335.go1xa7avdn.jpeg",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\IMGS\\5f2f3c64-090c-471a-8481-20987d89c335.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "324270"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wKybq/WzXVE2KnBTjVTHzVF74HcaxrBjK0LxAbNZ8jM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Feb 2025 13:53:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "go1xa7avdn"
+        },
+        {
+          "Name": "label",
+          "Value": "IMGS/5f2f3c64-090c-471a-8481-20987d89c335.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wKybq/WzXVE2KnBTjVTHzVF74HcaxrBjK0LxAbNZ8jM="
+        }
+      ]
+    },
+    {
+      "Route": "IMGS/5f2f3c64-090c-471a-8481-20987d89c335.jfif",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\IMGS\\5f2f3c64-090c-471a-8481-20987d89c335.jfif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "324270"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/pjpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wKybq/WzXVE2KnBTjVTHzVF74HcaxrBjK0LxAbNZ8jM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Feb 2025 13:53:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wKybq/WzXVE2KnBTjVTHzVF74HcaxrBjK0LxAbNZ8jM="
+        }
+      ]
+    },
+    {
+      "Route": "IMGS/5f2f3c64-090c-471a-8481-20987d89c335.jpeg",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\IMGS\\5f2f3c64-090c-471a-8481-20987d89c335.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "324270"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wKybq/WzXVE2KnBTjVTHzVF74HcaxrBjK0LxAbNZ8jM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Feb 2025 13:53:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wKybq/WzXVE2KnBTjVTHzVF74HcaxrBjK0LxAbNZ8jM="
         }
       ]
     },
@@ -4818,12 +5024,12 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.css",
-      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\h9t8bhxwvf-zub09dkrxp.gz",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\h9t8bhxwvf-l10qrnbspe.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000029611205"
+          "Quality": "0.000028824258"
         }
       ],
       "ResponseHeaders": [
@@ -4833,15 +5039,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "33770"
+          "Value": "34692"
         },
         {
           "Name": "ETag",
-          "Value": "\"q9WZtmMnJ+oJNgmN0eeT5IvKsKV1/YleuDnjGVjv4ps=\""
+          "Value": "\"D+/1h7TuIJ7rUzTT/TQJwB80jWA0I8zpdkAbNgZ3sUo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 21:50:24 GMT"
+          "Value": "Wed, 12 Feb 2025 13:57:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4861,13 +5067,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"CzmECrtXV8BSk/+8SG+Rw7Fr+3hCt2bS2bEkS4YD3PQ=\""
+          "Value": "W/\"Rxbvu08DMWCMqKATiQu0KfCAiCIvQeiF3/I+AJ0Qt+w=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-CzmECrtXV8BSk/+8SG+Rw7Fr+3hCt2bS2bEkS4YD3PQ="
+          "Value": "sha256-Rxbvu08DMWCMqKATiQu0KfCAiCIvQeiF3/I+AJ0Qt+w="
         }
       ]
     },
@@ -4882,7 +5088,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "293102"
+          "Value": "296629"
         },
         {
           "Name": "Content-Type",
@@ -4890,11 +5096,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"CzmECrtXV8BSk/+8SG+Rw7Fr+3hCt2bS2bEkS4YD3PQ=\""
+          "Value": "\"Rxbvu08DMWCMqKATiQu0KfCAiCIvQeiF3/I+AJ0Qt+w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 21:50:24 GMT"
+          "Value": "Wed, 12 Feb 2025 13:57:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4904,13 +5110,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-CzmECrtXV8BSk/+8SG+Rw7Fr+3hCt2bS2bEkS4YD3PQ="
+          "Value": "sha256-Rxbvu08DMWCMqKATiQu0KfCAiCIvQeiF3/I+AJ0Qt+w="
         }
       ]
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.css.gz",
-      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\h9t8bhxwvf-zub09dkrxp.gz",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\h9t8bhxwvf-l10qrnbspe.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4919,7 +5125,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "33770"
+          "Value": "34692"
         },
         {
           "Name": "Content-Type",
@@ -4927,11 +5133,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"q9WZtmMnJ+oJNgmN0eeT5IvKsKV1/YleuDnjGVjv4ps=\""
+          "Value": "\"D+/1h7TuIJ7rUzTT/TQJwB80jWA0I8zpdkAbNgZ3sUo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 21:50:24 GMT"
+          "Value": "Wed, 12 Feb 2025 13:57:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4949,7 +5155,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-q9WZtmMnJ+oJNgmN0eeT5IvKsKV1/YleuDnjGVjv4ps="
+          "Value": "sha256-D+/1h7TuIJ7rUzTT/TQJwB80jWA0I8zpdkAbNgZ3sUo="
         }
       ]
     },
@@ -5248,6 +5454,167 @@
         {
           "Name": "integrity",
           "Value": "sha256-pOh8WLH4j3VtIjwkYu8FxMwfZXN1u9bs0TmE+R/LeKU="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.l10qrnbspe.css",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\h9t8bhxwvf-l10qrnbspe.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000028824258"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34692"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"D+/1h7TuIJ7rUzTT/TQJwB80jWA0I8zpdkAbNgZ3sUo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Feb 2025 13:57:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Rxbvu08DMWCMqKATiQu0KfCAiCIvQeiF3/I+AJ0Qt+w=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l10qrnbspe"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rxbvu08DMWCMqKATiQu0KfCAiCIvQeiF3/I+AJ0Qt+w="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.l10qrnbspe.css",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "296629"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Rxbvu08DMWCMqKATiQu0KfCAiCIvQeiF3/I+AJ0Qt+w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Feb 2025 13:57:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l10qrnbspe"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rxbvu08DMWCMqKATiQu0KfCAiCIvQeiF3/I+AJ0Qt+w="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.l10qrnbspe.css.gz",
+      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\h9t8bhxwvf-l10qrnbspe.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34692"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"D+/1h7TuIJ7rUzTT/TQJwB80jWA0I8zpdkAbNgZ3sUo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Feb 2025 13:57:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l10qrnbspe"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-D+/1h7TuIJ7rUzTT/TQJwB80jWA0I8zpdkAbNgZ3sUo="
         }
       ]
     },
@@ -7036,167 +7403,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-EHv6Fxyfhm4sQaIznaio1clpsqF/v/3Le3ecZHQESCc="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.zub09dkrxp.css",
-      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\h9t8bhxwvf-zub09dkrxp.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000029611205"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "33770"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"q9WZtmMnJ+oJNgmN0eeT5IvKsKV1/YleuDnjGVjv4ps=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 21:50:24 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"CzmECrtXV8BSk/+8SG+Rw7Fr+3hCt2bS2bEkS4YD3PQ=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zub09dkrxp"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-CzmECrtXV8BSk/+8SG+Rw7Fr+3hCt2bS2bEkS4YD3PQ="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.zub09dkrxp.css",
-      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "293102"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"CzmECrtXV8BSk/+8SG+Rw7Fr+3hCt2bS2bEkS4YD3PQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 21:50:24 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zub09dkrxp"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-CzmECrtXV8BSk/+8SG+Rw7Fr+3hCt2bS2bEkS4YD3PQ="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.zub09dkrxp.css.gz",
-      "AssetFile": "C:\\Users\\Casa\\Desktop\\Pessoal\\Otávio\\projetos\\mix-burguer-front\\MixBurguer\\MixBurguer\\obj\\Debug\\net9.0\\compressed\\h9t8bhxwvf-zub09dkrxp.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "33770"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"q9WZtmMnJ+oJNgmN0eeT5IvKsKV1/YleuDnjGVjv4ps=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 11 Feb 2025 21:50:24 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zub09dkrxp"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.css.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-q9WZtmMnJ+oJNgmN0eeT5IvKsKV1/YleuDnjGVjv4ps="
         }
       ]
     },
