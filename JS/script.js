@@ -124,7 +124,7 @@ function trocarVideoEImagem() {
               <label for="inputArquivo">Enviar Arquivo:</label>
               <input type="file" id="inputArquivo" accept="image/*,video/*">
           </div>
-          <div class="btnsInputs">
+          <div id="btnLink" class="btnsInputs">
               <label for="inputLink">Enviar Link:</label>
               <input type="text" id="inputLinkFotos">
           </div>
@@ -144,6 +144,7 @@ function salvarAlteracao() {
   let selecao = document.getElementById("selecaoImagemVideo").value;
   let novoLink = document.getElementById("inputLinkFotos").value;
   let novoArquivo = document.getElementById("inputArquivo").files[0];
+  let btnLink = document.getElementById("btnLink");
 
   let elemento = document.getElementById(selecao);
 
@@ -151,6 +152,12 @@ function salvarAlteracao() {
     console.error(`Elemento com ID '${selecao}' não encontrado.`);
     return;
   }
+
+  if (selecao.startsWith("foto")) {
+    btnLink.style.display = "none";
+} else {
+    btnLink.style.display = "flex";
+}
 
   if (selecao.startsWith("video")) {
     if (novoLink) {
