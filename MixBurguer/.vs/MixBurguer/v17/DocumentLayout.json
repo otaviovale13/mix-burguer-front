@@ -1,7 +1,32 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Casa\\Desktop\\Pessoal\\Ot\u00E1vio\\projetos\\mix-burguer-front\\MixBurguer\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|c:\\users\\otavio.apvale\\source\\repos\\mix-burguer-front\\mixburguer\\mixburguer\\views\\home\\footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|solutionrelative:mixburguer\\views\\home\\footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|c:\\users\\otavio.apvale\\source\\repos\\mix-burguer-front\\mixburguer\\mixburguer\\views\\cardapioariel\\headerbuscaariel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|solutionrelative:mixburguer\\views\\cardapioariel\\headerbuscaariel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|c:\\users\\otavio.apvale\\source\\repos\\mix-burguer-front\\mixburguer\\mixburguer\\wwwroot\\js\\cardapioariel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|solutionrelative:mixburguer\\wwwroot\\js\\cardapioariel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|c:\\users\\otavio.apvale\\source\\repos\\mix-burguer-front\\mixburguer\\mixburguer\\wwwroot\\js\\cardapio.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|solutionrelative:mixburguer\\wwwroot\\js\\cardapio.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|c:\\users\\otavio.apvale\\source\\repos\\mix-burguer-front\\mixburguer\\mixburguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|solutionrelative:mixburguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|c:\\users\\otavio.apvale\\source\\repos\\mix-burguer-front\\mixburguer\\mixburguer\\views\\homeariel\\headerariel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{632DF9AC-04D1-4F67-9389-CCE5628B2B39}|MixBurguer\\MixBurguer.csproj|solutionrelative:mixburguer\\views\\homeariel\\headerariel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +34,93 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Footer.cshtml",
+              "DocumentMoniker": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\Views\\Home\\Footer.cshtml",
+              "RelativeDocumentMoniker": "MixBurguer\\Views\\Home\\Footer.cshtml",
+              "ToolTip": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\Views\\Home\\Footer.cshtml",
+              "RelativeToolTip": "MixBurguer\\Views\\Home\\Footer.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-12T19:59:10.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "bootstrap.css",
+              "DocumentMoniker": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "RelativeDocumentMoniker": "MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "ToolTip": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "RelativeToolTip": "MixBurguer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "ViewState": "AgIAAEQwAAAAAAAAAAAQwGUwAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-12T19:51:41.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Cardapio.js",
+              "DocumentMoniker": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\js\\Cardapio.js",
+              "RelativeDocumentMoniker": "MixBurguer\\wwwroot\\js\\Cardapio.js",
+              "ToolTip": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\js\\Cardapio.js",
+              "RelativeToolTip": "MixBurguer\\wwwroot\\js\\Cardapio.js",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-02-12T19:46:24.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CardapioAriel.js",
+              "DocumentMoniker": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\js\\CardapioAriel.js",
+              "RelativeDocumentMoniker": "MixBurguer\\wwwroot\\js\\CardapioAriel.js",
+              "ToolTip": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\wwwroot\\js\\CardapioAriel.js",
+              "RelativeToolTip": "MixBurguer\\wwwroot\\js\\CardapioAriel.js",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-02-12T19:44:24.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HeaderBuscaAriel.cshtml",
+              "DocumentMoniker": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\Views\\CardapioAriel\\HeaderBuscaAriel.cshtml",
+              "RelativeDocumentMoniker": "MixBurguer\\Views\\CardapioAriel\\HeaderBuscaAriel.cshtml",
+              "ToolTip": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\Views\\CardapioAriel\\HeaderBuscaAriel.cshtml",
+              "RelativeToolTip": "MixBurguer\\Views\\CardapioAriel\\HeaderBuscaAriel.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-12T19:42:49.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HeaderAriel.cshtml",
+              "DocumentMoniker": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\Views\\HomeAriel\\HeaderAriel.cshtml",
+              "RelativeDocumentMoniker": "MixBurguer\\Views\\HomeAriel\\HeaderAriel.cshtml",
+              "ToolTip": "C:\\Users\\otavio.apvale\\source\\repos\\mix-burguer-front\\MixBurguer\\MixBurguer\\Views\\HomeAriel\\HeaderAriel.cshtml",
+              "RelativeToolTip": "MixBurguer\\Views\\HomeAriel\\HeaderAriel.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-12T19:42:53.788Z",
+              "EditorCaption": ""
             }
           ]
         }
