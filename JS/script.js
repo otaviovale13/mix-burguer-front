@@ -10,6 +10,10 @@ function btnCardapio(){
     window.location.href = "/sugestoes.html"
   }
 
+  function irSugestãoAriel(){
+    window.location.href = "/sugestaoAriel.html"
+  }
+
 function btnCardapioModis(){
   window.location.href = "/arielCardapio.html"
 }
