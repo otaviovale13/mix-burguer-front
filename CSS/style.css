@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap");
 
+@font-face {
+  font-family: 'Nabana';
+  src: url('Fonts/Nabana.ttf');
+  }
 /* Reset de margens, padding e box-sizing */
 * {
   margin: 0;
@@ -10,7 +14,7 @@
 /* Estilo do corpo da página */
 body {
   background-color: #111;
-  font-family: "Open Sans", sans-serif;
+  font-family: Nabana;
   color: #fff;
 }
 
@@ -20,10 +24,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 7rem;
+  height: 12rem;
   padding: 0 3rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-family: "Montserrat", sans-serif; 
+  font-family: Nabana;
   position: sticky; 
   top: 0; 
   z-index: 100;
@@ -40,15 +44,17 @@ header {
 
 /* Estilo do logo */
 .logo {
-  width: 13rem;
+  width: 17rem;
   max-width: 100%;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease;
   margin-top: 5rem;
   position: absolute; 
   top: 5%; 
   left: 3%; 
   z-index: 1; 
   margin-top: -1rem;
+
+
 }
 
 /* Efeito hover no logo */
@@ -60,16 +66,26 @@ header {
 .text {
   display: flex;
   flex-direction: column;
+  font-size: 22px;
   gap: 0.5rem;
-  margin-left: 16rem;
+  margin-left: 18rem;
+  font-family: Nabana;
+  color: #000000;
+  /* text-shadow: 0.5px 0px rgb(255, 255, 255), -0.5px 0px rgb(255, 255, 255), 0px -0.5px rgb(255, 255, 255),
+  0.5px 0.5px rgb(255, 255, 255),-0.5px -0.5px rgb(255, 255, 255), 0.5px -0.5px rgb(255, 255, 255),-1px 1px rgb(255, 255, 255); */
+
+
+
 }
 
 /* Estilo do subtítulo */
 .sub_titulo {
   margin-top: -0.5rem;
-  color: #fff;
+  color: #000000;
   font-size: 1.2rem;
   font-weight: 600;
+  font-family: Nabana;
+
 }
 
 /* Estilo do container de busca no cabeçalho */
@@ -122,17 +138,30 @@ i {
 
 /* Estilo do ícone de pessoa */
 .bi-person-fill {
-  font-size: 2.7rem;
+  font-size: 3.7rem;
   color: #222;
   cursor: pointer;
+  transition: transform 0.3s ease;
+
+}
+
+.bi-person-fill:hover {
+  transform: scale(1.1);
 }
 
 /* Estilo do ícone de sacola */
 .bi-bag-fill {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #222;
   cursor: pointer;
+  transition: transform 0.3s ease;
+
 }
+
+.bi-bag-fill:hover {
+  transform: scale(1.1);
+}
+
 
 /* Estilo do ícone de hambúrguer */
 .burger {
@@ -143,7 +172,7 @@ i {
 /* Estilo do container principal */
 .pai {
   width: 100%; 
-  height: 88vh;
+  height: 69vh;
   background: url("https://cdn.goomer.com.br/website/base/fe1/31d/7f5/jonathan-borba-8l8yl2ruusg-unsplash-scaled.jpg")
     no-repeat center center/cover;
   background-attachment: fixed; 
@@ -153,6 +182,7 @@ i {
   text-align: left;
   position: relative; 
   overflow: hidden; 
+
 }
 
 /* Estilo dos links */
@@ -181,6 +211,8 @@ a{
   color: #fff; 
   font-family: "Open Sans", sans-serif;
   max-width: 100%; 
+  font-family: Nabana;
+
 }
 
 /* Estilo da barra */
@@ -188,17 +220,17 @@ a{
   display: flex;
   justify-content: center;
   background-color: #fed83c;
-  height: 7rem;
+  height: 12rem;
+  
 }
 
 /* Estilo do logo na barra */
 .logoBarra {
-  width: 10rem;
-  height: 10rem;
+  width: 13rem;
+  justify-content: center;
   margin-top: -3rem;
   position: absolute; 
-  right: 44.5%;
-  z-index: 1;
+ 
 }
 
 /* Estilo da seção "quem somos" */
@@ -256,13 +288,13 @@ a{
 
 /* Estilo do texto na seção "quem somos" */
 .texto {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #fff;
   line-height: 1.6;
   max-width: 45rem;
   position: relative;
   z-index: 1;
-  font-family: "Open Sans", sans-serif;
+  font-family: Nabana;
 }
 
 /* Estilo do título "quem somos" */
@@ -283,6 +315,8 @@ a{
   gap: 3rem;
   color: #fff;
   text-align: left;
+  font-family: Nabana;
+
 }
 
 /* Animação de fade in na seção "quem somos" */
@@ -317,7 +351,7 @@ a{
   display: inline-block;
   margin-top: 3rem;
   transition: background-color 0.3s ease;
-  font-family: "Poppins", sans-serif;
+  font-family: Nabana;
 }
 
 /* Efeito hover no botão de call to action */
@@ -332,6 +366,8 @@ a{
   text-align: center;
   padding: 4rem 1rem;
   background-color: #fed83c;
+  font-family: Nabana;
+
 }
 
 /* Estilo do container filho da seção de contato */
@@ -386,13 +422,9 @@ a{
 /* Efeito hover nos contatos */
 .contatos:hover {
   transform: translateY(-5px);
-  color: red;
 }
 
-/* Efeito hover nos ícones de contato */
-.contatos i:hover {
-  color: red; 
-}
+
 
 /* Estilo da seção "mais" */
 .mais {
@@ -406,6 +438,8 @@ a{
 /* Estilo do título "quem somos" */
 .quemSomos{
   font-size: 2rem;
+  font-family: Nabana;
+
 }
 
 /* Estilo das imagens na seção "mais" */
@@ -524,9 +558,11 @@ a{
 /* Estilo do rodapé */
 footer {
   display: block;
-  font-family: Arial, sans-serif;
+  font-family: Nabana;
   margin-top: 5rem;
 }
+
+
 
 /* Estilo da seção amarela do rodapé */
 .amarelo {
@@ -535,30 +571,49 @@ footer {
   text-align: left;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 10rem;
+  font-size: 22px;
+
+
 }
 
 /* Estilo do logo na seção amarela do rodapé */
-.amarelo .logo2 {
-  max-width: 70px;
+ .logo2 {
+  width: 17rem;
+  max-width: 100%;
+  transition: transform 0.6s ease;
+  margin-top: -1rem;
+  margin-left: 2.9rem;
+  cursor: pointer;
+}
+
+.logo2:hover {
+  transform: scale(1.1);
 }
 
 /* Estilo do texto na seção amarela do rodapé */
 .amarelo .text2 {
   margin-left: 10px;
+  font-size: 22px;
+
 }
 
 /* Estilo do título na seção amarela do rodapé */
 .amarelo .titulo {
-  font-size: 20px;
+  font-size: 29px;
   color: #000000;
+  font-family: Nabana;
   margin: 0;
+  margin-right: 80rem;
 }
 
 /* Estilo do subtítulo na seção amarela do rodapé */
 .amarelo .sub_titulo {
-  font-size: 14px;
+  font-size: 22px;
   color: #000000;
+  font-family: Nabana;
   margin: 5px 0 0 0;
 }
 
@@ -569,30 +624,38 @@ footer {
 
 /* Estilo do botão na seção amarela do rodapé */
 .amarelo .btn2 {
-  background-color: #000000;
-  color: #FED83C;
+  background-color: #0000007a;
+  color: #ffffff;
   border: none;
   padding: 8px 16px; 
   cursor: pointer;
   font-size: 14px;
   border-radius: 5px;
+  transition: transform 0.6s ease;
+  font-family: Nabana;
+
+
+
 }
 
 /* Efeito hover no botão na seção amarela do rodapé */
 .amarelo .btn2:hover {
-  background-color: #FED83C;
-  color: #000000;
-  border: 1px solid #000000;
+  
+    transform: scale(1.1);
+  
+  
 }
 
 /* Estilo da seção preta do rodapé */
 .preto {
-  background-color: #000000;
-  color: #FED83C;
+  background-color: #FED83C;
+  color: #000000;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end; 
+  font-family: Nabana;
+
 }
 
 /* Estilo do texto na seção preta do rodapé */
@@ -600,12 +663,16 @@ footer {
   font-size: 18px; 
   text-align: left; 
   margin-bottom: 0;
+  font-family: Nabana;
+
 }
 
 /* Estilo do texto na seção preta do rodapé */
 .preto .text5 {
   font-size: 18px;
   text-align: center; 
+  font-family: Nabana;
+
 }
 
 /* Estilo do container de ícones na seção preta do rodapé */
@@ -622,6 +689,8 @@ footer {
   margin-right: 18rem;
   gap: 2rem;
   font-size: 2.2rem;
+  font-family: Nabana;
+
 }
 
 /* Estilo do container principal */
@@ -707,11 +776,7 @@ button {
     transition: background-color 0.3s ease;
 }
 
-/* Efeito hover nos botões */
-button:hover {
-    background-color: #000000;
-    cursor: pointer;
-}
+
 
 /* Estilo do container de finalizar carrinho no menu de lanches */
 #finalizarCarrinhoMenuLanche {
@@ -752,10 +817,23 @@ button:hover {
 
 /* Estilo dos botões do cardápio */
 .btnCardapio{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Nabana;
+  /* font-family: Arial, Helvetica, sans-serif; */
   margin-top: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
   cursor: pointer;
+  /* text-shadow: 0.5px 0px rgb(255, 255, 255), -0.5px 0px rgb(255, 255, 255), 0px -0.5px rgb(255, 255, 255),
+  0.5px 0.5px rgb(255, 255, 255),-0.5px -0.5px rgb(255, 255, 255), 0.5px -0.5px rgb(255, 255, 255),-1px 1px rgb(255, 255, 255); */
+  color: black;
 }
+
+.btnCardapio:hover{
+  transform: scale(1.1);
+}
+
+
+
 
 /* Estilo das categorias */
 .categoria{
@@ -864,6 +942,7 @@ button:hover {
 
   .logo {
     width: 10rem;
+
   }
 
   .text {

@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'Nabana';
+  src: url('Fonts/Nabana.ttf');
+  }
 /* PEDIDOS RESPONSIVO */
 
 * {
@@ -17,7 +21,7 @@
 }
 
 main {
-  font-family: Arial, sans-serif;
+  font-family: Nabana;
   background: url(https://minhareceita.com.br/app/uploads/2021/03/shutterstock_1751836019-scaled.jpg) no-repeat center center/cover;
   background-attachment: fixed;
   display: flex;
@@ -33,6 +37,8 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  font-family: Nabana;
+
 }
 
 .papai {
@@ -81,6 +87,8 @@ a {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
   cursor: pointer;
+  font-family: Nabana;
+
 }
 
 .paiSite:hover, .paiIfood:hover, .paiWhats:hover, .paiCell:hover {
@@ -100,12 +108,16 @@ h1 {
   font-size: 1.2rem;
   color: #000000;
   font-weight: 600;
+  font-family: Nabana;
+
 }
 
 .title {
   font-size: 1.2rem;
   color: #ffffff;
   font-weight: 600;
+  font-family: Nabana;
+
 }
 
 @media (max-width: 1024px) {

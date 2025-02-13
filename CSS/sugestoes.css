@@ -1,5 +1,8 @@
 /* SUGESTOES */
-
+@font-face {
+  font-family: 'Nabana';
+  src: url('Fonts/Nabana.ttf');
+  }
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 body {
     padding: 0;
@@ -14,7 +17,7 @@ header {
   height: 7rem;
   padding: 0 3rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-family: "Montserrat", sans-serif; /* Fonte para o cabeçalho */
+  font-family: Nabana;
   position: sticky; /* Torna o cabeçalho fixo */
   top: 0; /* Fixa o cabeçalho no topo da página */
   z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
@@ -49,6 +52,8 @@ header {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  font-family: Nabana;
+
   margin-left: 16rem;
 }
 
@@ -57,6 +62,8 @@ header {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 600;
+  font-family: Nabana;
+
 }
 
 .headerFilhoBusca {
@@ -75,6 +82,8 @@ header {
   width: 25rem;
   transition: all 0.3s ease;
   cursor: pointer;
+  font-family: Nabana;
+
 }
 
 .busca:hover {
@@ -91,7 +100,7 @@ input {
   font-size: 1rem;
   padding: 0.5rem;
   border-radius: 5px;
-  font-family: "Open Sans", sans-serif; /* Fonte para os inputs */
+  font-family: Nabana;
 }
 
 input:focus {
@@ -117,6 +126,8 @@ i {
 .burger {
   color: #fed83c;
   font-size: 2rem;
+  font-family: Nabana;
+
 }
   
 
@@ -125,6 +136,8 @@ i {
     height: 53rem;
 background: url(https://moinhoglobo.com.br/wp-content/uploads/2019/05/16-hamburguer.jpeg) no-repeat center center/cover;
 background-attachment: fixed;
+font-family: Nabana;
+
 
 
   .pai1{
@@ -135,8 +148,8 @@ background-attachment: fixed;
 
 
     .text1 {
-        font-family: Teko;
-        font-size: 3rem;
+      font-family: Nabana;
+      font-size: 3rem;
         display: flex;
         color: white;
         justify-content: center;
@@ -165,6 +178,8 @@ background-attachment: fixed;
         font-size: 1.2rem;
         text-align: left;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        font-family: Nabana;
+
     }
 
     .butao {
@@ -172,6 +187,8 @@ background-attachment: fixed;
         justify-content: center;
         margin-top: 4rem;
         height: 3rem;
+        font-family: Nabana;
+
         
 
         .botao {
@@ -183,6 +200,8 @@ background-attachment: fixed;
             border-radius: 10px; /* Bordas arredondadas */
             cursor: pointer; /* Muda o cursor ao passar sobre o botão */
             transition: background-color 0.3s ease; /* Animação suave para mudança de cor */
+            font-family: Nabana;
+
         }
         
         .botao:hover {
@@ -197,7 +216,7 @@ background-attachment: fixed;
  /* Geral */
 footer {
     display: block;
-    font-family: Arial, sans-serif;
+    font-family: Nabana;
   }
   
   /* Seção amarela */
@@ -208,6 +227,8 @@ footer {
     display: flex;
     align-items: center; /* Alinha logo e texto verticalmente */
     justify-content: center;
+    font-family: Nabana;
+
   }
   
   .amarelo .logo2 {
