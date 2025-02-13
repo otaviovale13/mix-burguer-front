@@ -67,6 +67,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin-left: 15rem;
 }
 
 .pai:before {
@@ -377,4 +378,82 @@ input {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+}
+
+.logoMeio{
+    width: 10rem;
+}
+
+/* Estilos gerais */
+.h-15rem {
+    height: 15rem;
+}
+
+.w-15rem {
+    width: 15rem;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.fs-7rem {
+    font-size: 7rem;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 1200px) {
+    .h-15rem {
+        height: 12rem;
+    }
+
+    .w-15rem {
+        width: 12rem;
+    }
+
+    .fs-7rem {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .h-15rem {
+        height: 10rem;
+    }
+
+    .w-15rem {
+        width: 10rem;
+    }
+
+    .fs-7rem {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .h-15rem {
+        height: 8rem;
+    }
+
+    .w-15rem {
+        width: 8rem;
+    }
+
+    .fs-7rem {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .h-15rem {
+        height: 6rem;
+    }
+
+    .w-15rem {
+        width: 6rem;
+    }
+
+    .fs-7rem {
+        font-size: 2rem;
+    }
 }

@@ -9,85 +9,85 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MixBurguer
 build_property.RootNamespace = MixBurguer
-build_property.ProjectDir = C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer\
+build_property.ProjectDir = C:\Users\Casa\Desktop\Pessoal\Otávio\projetos\mix-burguer-front\MixBurguer\MixBurguer\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\otavio.apvale\source\repos\mix-burguer-front\MixBurguer\MixBurguer
+build_property.MSBuildProjectDirectory = C:\Users\Casa\Desktop\Pessoal\Otávio\projetos\mix-burguer-front\MixBurguer\MixBurguer
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/CardapioAriel/CardapioAriel.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/CardapioAriel/CardapioAriel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9BcmllbFxDYXJkYXBpb0FyaWVsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/CardapioAriel/FooterCardapioAriel.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/CardapioAriel/FooterCardapioAriel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9BcmllbFxGb290ZXJDYXJkYXBpb0FyaWVsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/CardapioAriel/HeaderBuscaAriel.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/CardapioAriel/HeaderBuscaAriel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9BcmllbFxIZWFkZXJCdXNjYUFyaWVsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/Cardapio/Cardapio.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/Cardapio/Cardapio.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cQ2FyZGFwaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/Cardapio/FooterCardapio.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/Cardapio/FooterCardapio.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cRm9vdGVyQ2FyZGFwaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/Cardapio/HeaderBusca.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/Cardapio/HeaderBusca.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cSGVhZGVyQnVzY2EuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/HomeAriel/FooterAriel.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/HomeAriel/FooterAriel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZUFyaWVsXEZvb3RlckFyaWVsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/HomeAriel/HeaderAriel.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/HomeAriel/HeaderAriel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZUFyaWVsXEhlYWRlckFyaWVsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/HomeAriel/HomeAriel.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/HomeAriel/HomeAriel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZUFyaWVsXEhvbWVBcmllbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/Home/Footer.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/Home/Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/Home/Header.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/Home/Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIZWFkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/Home/Index.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/Home/Privacy.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/Shared/Error.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/_ViewImports.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/_ViewStart.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/otavio.apvale/source/repos/mix-burguer-front/MixBurguer/MixBurguer/Views/Shared/_Layout.cshtml]
+[C:/Users/Casa/Desktop/Pessoal/Otávio/projetos/mix-burguer-front/MixBurguer/MixBurguer/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bji7kyj92o

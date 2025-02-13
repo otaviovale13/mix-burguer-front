@@ -1,11 +1,117 @@
 ﻿@{
-    ViewData["Title"] = "Cardápio";
+    ViewData["Title"] = "Home Ariel";
 }
 
-<div id="categorias"></div>
-<div style="left: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;"
-    class="position-fixed top-0 w-100 h-100 d-none justify-content-center align-items-center"></div>
-<div style="font-family: Arial, Helvetica, sans-serif;"
-    class="d-flex justify-content-center align-items-center mb-5 mt-5">
-    <a asp-area="" asp-controller="Home" asp-action="Index" class="btnCardapioA">Voltar Home</a>
+<div class="bg-attachment bg-position bg-size img-fundo-home vh-88 w-100 d-flex flex-column justify-content-center text-start position-relative overflow-hidden bg-image pai">
+    <div class="font-open text-light z-1 ms-2 lh-1 position-relative mw-100 ms-lg-5">
+        <h1 class="mix text">
+            Bem-Vindo --- Ariel
+        </h1>
+        <div class="mt-4">
+            <a asp-area="" asp-controller="CardapioAriel" asp-action="CardapioAriel" class="btnCardapioA">Ir para o Cardápio</a>
+        </div>
+    </div>
 </div>
+<div class="h-7rem bg-amarelo-mix d-flex justify-content-center">
+    <img class="z-1 end-44-5 mt-menos-3 h-10rem w-10rem position-absolute"
+         src="~/IMGS/Logo.png"
+         alt="" />
+</div>
+<div class="bg-amarelo-mix p-4rem-1rem d-flex justify-content-center text-center">
+    <div class="mw-1200px w-100">
+        <h1 class="fs-2rem text-black">
+            Contatos
+        </h1>
+        <div class="d-flex justify-content-between flex-wrap g-2">
+            <div class="d-flex flex-column gap-2">
+                <a id="whatsLink"
+                    class="text-decoration-none" 
+                    href="https://wa.me/+5511933878825">
+                    <div class="contatos">
+                        <i class="bi bi-whatsapp fs-4rem text-black"></i>
+                        <h2 id="whats"
+                            class="fs-1-2rem fw-medium">
+                            +55 11 97360-5684
+                        </h2>
+                    </div>
+                </a>
+                <a id="instaLink"
+                    class="text-decoration-none" 
+                    href="https://www.instagram.com/mixburguer_itupeva/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#">
+                    <div class="contatos">
+                        <i class="bi bi-instagram fs-4rem text-black"></i>
+                        <h2 id="insta"
+                            class="fs-1-2rem fw-medium">
+                            Mixburger_itupeva
+                        </h2>
+                    </div>
+                </a>
+            </div>
+            <div class="d-flex flex-column gap-2">
+                <a id="teleLink"
+                    class="text-decoration-none" 
+                    href="https://www.google.com/search?q=mix+burguer+itupeva&rlz=1C1GCEU_pt-BRBR1147BR1147&oq=MI&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDsyBggCEEUYOzINCAMQLhiDARixAxiABDIQCAQQLhjHARixAxjRAxiABDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDExMjRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#">
+                    <div class="contatos">
+                        <i class="bi bi-telephone-fill fs-4rem text-black"></i>
+                        <h2 id="tele"
+                            class="fs-1-2rem fw-medium">
+                            (11) 93387-8825
+                        </h2>
+                    </div>
+                </a>
+                <a id="faceLink"
+                    class="text-decoration-none" 
+                    href="https://www.facebook.com/people/Mix-Burguer/100088986305599/">
+                    <div class="contatos">
+                        <i class="bi bi-facebook fs-4rem text-black"></i>
+                        <h2 id="face"
+                            class="fs-1-2rem fw-medium">
+                            Mix Burguer
+                        </h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-flex justify-content-center mt-5">
+    <button class="btnCardapio" onclick="trocarRede()">Trocar Redes Sociais</button>
+</div>
+<div class="mt-5 d-flex flex-column gap-2 justify-content-center text-center">
+    <h1 class="text-light fs-2rem">Mais+</h1>
+    <div class="d-flex justify-content-center gap-3 mt-2">
+        <a id="videosmais1"
+           class="h-15rem w-15rem img-video-1 d-flex align-items-center justify-content-center"
+           href="https://www.instagram.com/reel/C6gsvhnOR7t/?utm_source=ig_web_copy_link"><i class="bi bi-play-fill text-black fs-7rem"></i></a>
+        <img id="foto1"
+             class="h-15rem w-15rem object-fit-cover"
+             src="https://firebasestorage.googleapis.com/v0/b/brendi-app.appspot.com/o/public%2Fstores%2FliDYZPGpWDhaJHW0sWIk%2Fimages%2Fproducts%2Fresized%2F6D3H0y7gvVbjla1lTWJ1_900x900.webp?alt=media&token=94da58c9-07f1-456e-8c9a-bb124c83e0ac"
+             alt="" />
+        <a id="videosmais2"
+           class="h-15rem w-15rem img-video-2 d-flex align-items-center justify-content-center"
+           href="https://www.instagram.com/mixburguer_itupeva/reel/C9YXiy-xXj1/"><i class="bi bi-play-fill text-black fs-7rem"></i></a>
+        <img id="foto2"
+             class="h-15rem w-15rem object-fit-cover" 
+             src="https://firebasestorage.googleapis.com/v0/b/brendi-app.appspot.com/o/public%2Fstores%2FliDYZPGpWDhaJHW0sWIk%2Fimages%2Fproducts%2Fresized%2FsQOGG266owKD412TDneW_900x900.webp?alt=media&token=0482d83c-d900-454a-b486-98abb3eae5f9" alt="" />
+    </div>
+    <div class="d-flex justify-content-center gap-3 mt-2">
+        <a id="videosmais3"
+           class="h-15rem w-15rem img-video-3 d-flex align-items-center justify-content-center"
+           href="https://www.instagram.com/mixburguer_itupeva/reel/DFOSAUWhmYR/"><i class="bi bi-play-fill text-black fs-7rem"></i></a>
+        <img id="foto3"
+             class="h-15rem w-15rem object-fit-cover"
+             src="https://firebasestorage.googleapis.com/v0/b/brendi-app.appspot.com/o/public%2Fstores%2FliDYZPGpWDhaJHW0sWIk%2Fimages%2Fproducts%2Fresized%2FbYnIUB2Cw7aEeiwtEO0p_900x900.webp?alt=media&token=c5a55722-772b-4128-bca2-5c1a95f71b21"
+             alt="" />
+        <a id="videosmais4"
+           class="h-15rem w-15rem img-video-4 d-flex align-items-center justify-content-center"
+           href="https://www.instagram.com/mixburguer_itupeva/reel/DEGWWWuBrcO/"><i class="bi bi-play-fill text-black fs-7rem"></i></a>
+        <img id="foto4"
+             class="h-15rem w-15rem object-fit-cover"
+             src="https://firebasestorage.googleapis.com/v0/b/brendi-app.appspot.com/o/public%2Fstores%2FliDYZPGpWDhaJHW0sWIk%2Fimages%2Fproducts%2Fresized%2F0w161zPGbk2lA7IfyKdW_900x900.webp?alt=media&token=381d5c34-bdea-40f9-b12f-f34b9caf41fb"
+             alt="" />
+    </div>
+</div>
+<div class="d-flex justify-content-center mt-5">
+    <button class="btnCardapio" onclick="trocarVideoEImagem()">Trocar Fotos e Vídeos</button>
+</div>
+<div class="popUpsAdicionar"></div>

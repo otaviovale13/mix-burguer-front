@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MixBurguer</title>
     <script type="importmap"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -15,7 +16,7 @@
 <body class="bg-black">
     <header 
         class="d-flex justify-content-between align-items-center position-sticky top-0 shadow-sm px-5"
-        style="background-color: #fed83c; height: 7rem; font-family: 'Montserrat', sans-serif; z-index: 100;"
+        style="background-color: #fed83c; height: auto; font-family: 'Montserrat', sans-serif; z-index: 100;"
         role="rowheader">
         @if (ViewContext.RouteData.Values["Controller"]?.ToString() == "Cardapio")
         {
@@ -35,14 +36,14 @@
         }
     </header>
         <main 
-            role="main" 
-            class="pb-3">
+            role="main"
+          class="pb-3">
             @RenderBody()
         </main>
 
     <footer 
         style="font-family: Arial, sans-serif"
-        class="d-block mt-5"
+            class="d-block mt-5"
         role="menubar">
         @if (ViewContext.RouteData.Values["Controller"]?.ToString() == "Cardapio")
         {

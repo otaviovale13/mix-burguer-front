@@ -2,16 +2,15 @@
     ViewData["Title"] = "Cardápio";
 }
 
-<div id="categorias"></div>
+<div id="categorias" class="container"></div>
 <div class="z-1000 bg-opacity-50-black start-0 position-fixed top-0 w-100 h-100 d-none justify-content-center align-items-center popUps"></div>
-<div id="mensagem" 
-    class="d-none w-100">
+<div id="mensagem" class="d-none w-100">
     <div class="d-flex text-center justify-content-center align-items-center mt-5 w-100">
         <h1 class="text-light">Nenhum Item encontrado!!!</h1>
     </div>
 </div>
-<div class="font-arial d-flex justify-content-center align-items-center mb-5 mt-5">
-    <a asp-area="" asp-controller="Home" asp-action="Index" class="btnCardapioA">Voltar para o Início</a>
+<div class="text-center mt-5 mb-5">
+    <a asp-area="" asp-controller="Home" asp-action="Index" class="btnCardapioA btn btn-primary">Voltar para o Início</a>
 </div>
 
 <script src="~/js/Cardapio.js"></script>
