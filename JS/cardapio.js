@@ -31,12 +31,30 @@ const Categorias = {
 
 const carrinho = []
 
+const Adicionais = [
+  { 
+      Nome: "Batata", 
+      Preco: "R$ 8,90",
+      Imagem: "IMGS/1738688942957-removebg.png",
+  },
+  { 
+      Nome: "Anel de Cebola", 
+      Preco: "R$ 11,90",
+      Imagem: "IMGS/1738688943009-removebg.png",
+  },
+  { 
+      Nome: "Coca Cola", 
+      Preco: "R$ 5,00",
+      Imagem: "https://res.cloudinary.com/piramides/image/upload/c_fill,h_564,w_395/v1/products/3716-coca-cola-lata-350ml-12un.20250131112806.png?_a=BAAAV6GX",
+  },
+]
+
 const categorias = document.getElementById("categorias")
 
 categorias.innerHTML = Object.keys(Categorias)
     .map(categoria => `
             <div class="categoria">
-                <h1>${categoria}</h1>
+                <h1 class="tituloCate">${categoria}</h1>
                 ${Categorias[categoria]
                     .map(item => `
                             <div class="produtos" onclick="popUp('${item.Nome}', '${item.Descricao}', '${item.Preco}', '${item.Imagem}',)"> 
@@ -107,30 +125,18 @@ categorias.innerHTML = Object.keys(Categorias)
                 <div>
                   <p class="adicionaisTurbinar">Turbine seu Burguer! <br />(escolha até 10 opções)</p>
                   <div class="adicionaisMenuLanche">
-                    <div class="batataMenuLanche">
+                  ${Adicionais.map(itemAdd => `
+                    <div class="adicionais">
                       <img
-                        src="IMGS/1738688942957-removebg.png"
+                        src="${itemAdd.Imagem}"
                         alt="Batata"
                       />
-                      <p>Batata:R$ <span id="valorBatata">8,90</span></p>
+                      <p>${itemAdd.Nome}</p>
+                      <p>${itemAdd.Preco}</p>
                       <button onclick="AdicionarLanche('BatataMenuLancheFuncao')">adicionar</button>
                     </div>
-                    <div class="anelDeCebolaMenuLanche">
-                      <img
-                        src="IMGS/1738688943009-removebg.png"
-                        alt="Anel de Cebola"
-                      />
-                      <p>Anel de Cebola:R$ <span id="valorCebola">16,00</span></p>
-                      <button onclick="AdicionarLanche('CebolaMenuLancheFuncao')">adicionar</button>
-                    </div>
-                    <div class="cocaColaMenuLanche">
-                      <img
-                        src="IMGS/coca lata.png"
-                        alt="Coca Cola"
-                      />
-                      <p>Coca Cola:R$ <span id="valorCoca">5,00</span></p>
-                      <button onclick="AdicionarLanche('CocaMenuLancheFuncao')">adicionar</button>
-                    </div>
+                  `
+                ).join("")}
                   </div>
                 </div>
               </div>

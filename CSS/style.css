@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap");
+@font-face { font-family: Nabana; src: url(/CSS/Nabana-ShadowBold\ -\ DEMO.ttf); } 
+@font-face { font-family: NabanaNormal; src: url(/CSS/Nabana.ttf); } 
 
 * {
   margin: 0;
@@ -669,6 +671,10 @@ button:hover {
   margin-bottom: 5rem
 }
 
+.tituloCate{
+  font-family: Nabana;
+}
+
 .produtos{
   margin-top: 1rem;  
   text-align: left;
@@ -677,9 +683,10 @@ button:hover {
   justify-content: space-between;
   background-color: #fff;
   color: #000000;
-  width: 90%;
+  width: 60%;
   padding: 1rem;
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .produtos img {
@@ -697,17 +704,24 @@ button:hover {
 
 .itemTitulo{
   width: 25rem;
+  font-family: Nabana;
 }
 
 .descricao{
-  width: 90%;
   margin-top: 1rem;
   font-size: 1rem;
+  font-family: NabanaNormal;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 50rem;
 }
 
 .preco{
   margin-top: 1rem;
   color: red;
+  font-family: Nabana;
 }
 
 .voltarHome{
