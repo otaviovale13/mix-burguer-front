@@ -66,6 +66,6 @@ if (carrinho.length === 0){
 }
 
 btnFinalizar.addEventListener('click', () => {
-    window.location.href = "/pagamento.html";
+    document.getElementById('popupPagamento').style.display = 'flex';
 });
 
