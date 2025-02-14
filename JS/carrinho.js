@@ -17,8 +17,24 @@ if (carrinho.length === 0){
     let produtosHTML = "";
 
     carrinho.forEach((item, index) => {
-        const precoNumerico = parseFloat(item.Preco.replace("R$", "").replace(",",".")); 
-        total += precoNumerico;
+        if (!item.Preco) {
+            console.error(`Item no índice ${index} não possui a propriedade 'Preco'.`);
+            return;
+        }
+
+        const precoNumerico = parseFloat(item.Preco.replace("R$", "").replace(",", "."));
+        let precoTotalItem = precoNumerico * item.Quantidade;
+
+        let adicionaisHTML = "";
+        item.Adicionais.forEach(adicional => {
+            const precoAdicional = typeof adicional.Preco === 'string' 
+                ? parseFloat(adicional.Preco.replace("R$", "").replace(",", "."))
+                : adicional.Preco;
+            precoTotalItem += precoAdicional * adicional.Quantidade;
+            adicionaisHTML += `<p>Adicional: ${adicional.Nome} - R$ ${precoAdicional.toFixed(2).replace(".", ",")} (x${adicional.Quantidade}) - Total: R$ ${(precoAdicional * adicional.Quantidade).toFixed(2).replace(".", ",")}</p>`;
+        });
+
+        total += precoTotalItem;
 
         produtosHTML += `
            <div class="content">
@@ -27,11 +43,12 @@ if (carrinho.length === 0){
                 <img class="img00" src="${item.Imagem}" alt="" srcset="">
             </div>
             <div class="text0">
-                ${item.Nome}
-                <p class="descricaoCarrinho">${item.Descricao}</p>
+                ${item.Nome} - ${item.Quantidade}x (R$ ${precoNumerico.toFixed(2).replace(".", ",")} cada) - Total: R$ ${(precoNumerico * item.Quantidade).toFixed(2).replace(".", ",")}
+                
+                ${adicionaisHTML}
             </div>
             <div class="textValue">
-            ${item.Preco}
+            R$ ${precoTotalItem.toFixed(2).replace(".", ",")}
             </div>
             </div>
             <button class="btnRemove0" data-index="${index}">Remover</button>
@@ -65,17 +82,62 @@ if (carrinho.length === 0){
     });
 }
 
+const FRETE_VALOR = 10.00;
+
 btnFinalizar.addEventListener('click', () => {
     document.getElementById('popupPagamento').style.display = 'flex';
+    atualizarPrecoTotalPopup();
 });
+
+function atualizarPrecoTotalPopup() {
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    let total = 0;
+
+    carrinho.forEach(item => {
+        const precoNumerico = parseFloat(item.Preco.replace("R$", "").replace(",", "."));
+        let precoTotalItem = precoNumerico * item.Quantidade;
+
+        item.Adicionais.forEach(adicional => {
+            const precoAdicional = typeof adicional.Preco === 'string' 
+                ? parseFloat(adicional.Preco.replace("R$", "").replace(",", "."))
+                : adicional.Preco;
+            precoTotalItem += precoAdicional * adicional.Quantidade;
+        });
+
+        total += precoTotalItem;
+    });
+
+    const formaEntrega = document.querySelector('input[name="formaEntrega"]:checked');
+    if (formaEntrega && formaEntrega.value === 'casa') {
+        total += FRETE_VALOR;
+        document.getElementById('frete').style.display = 'block';
+    } else {
+        document.getElementById('frete').style.display = 'none';
+    }
+
+    document.getElementById('PrecoReal').textContent = total.toFixed(2).replace(".", ",");
+}
 
 function atualizarOpcoesPagamento() {
     const tipoPagamento = document.querySelector('input[name="tipoPagamento"]:checked').value;
     const opcaoDinheiro = document.getElementById('opcaoDinheiro');
+    const pagamentoOpcoes = document.querySelectorAll('input[name="pagamento"]');
+
     if (tipoPagamento === 'online') {
         opcaoDinheiro.style.display = 'none';
+        pagamentoOpcoes.forEach(opcao => {
+            if (opcao.value === 'dinheiro') {
+                opcao.checked = false;
+                opcao.disabled = true;
+            }
+        });
     } else {
         opcaoDinheiro.style.display = 'block';
+        pagamentoOpcoes.forEach(opcao => {
+            if (opcao.value === 'dinheiro') {
+                opcao.disabled = false;
+            }
+        });
     }
 }
 
@@ -90,6 +152,7 @@ function atualizarFormaEntrega() {
         enderecoEntrega.style.display = 'none';
         frete.style.display = 'none'; // Esconde o frete
     }
+    atualizarPrecoTotalPopup();
 }
 
 function buscarEndereco() {
@@ -135,11 +198,7 @@ function aplicarCupomDesconto() {
 function FinalizarPagamento() {
     // Verifica se uma forma de pagamento foi selecionada
     const selectedPayment = document.querySelector('input[name="pagamento"]:checked');
-    if (!selectedPayment) {
-        alert("Por favor, selecione uma forma de pagamento.");
-        return;
-    }
-
+    
     // Exibe uma mensagem de confirmação de pagamento
     const paymentMethod = selectedPayment.value;
     alert(`Pagamento finalizado com sucesso usando ${paymentMethod}.`);
@@ -193,11 +252,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Exibe uma mensagem de confirmação de pagamento
-    const paymentMethod = selectedPayment.value;
-    alert(`Pagamento finalizado com sucesso usando ${paymentMethod}.`);
-
-    // Limpa o carrinho
     localStorage.removeItem("carrinho");
 
     // Redireciona para a página de carrinho
@@ -217,10 +271,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
- 
-
-
- 
 });
 
 function mostrarItens() {
@@ -233,7 +283,7 @@ function mostrarItens() {
             <div class="itemCarrinho" data-preco="${parseFloat(item.Preco.replace("R$", "").replace(",", "."))}">
                 <p>${item.Nome} - ${item.Preco}</p>
                 ${item.Adicionais.map(adicional => `
-                    <p>Adicional: ${adicional.Nome} - R$ ${adicional.Preco.toFixed(2).replace(".", ",")} (x${adicional.Quantidade})</p>
+                    <p>Adicional: ${adicional.Nome} - R$ ${adicional.Preco.toFixed(2).replace(".", ",")} (x${adicional.Quantidade}) - Total: R$ ${(adicional.Preco * adicional.Quantidade).toFixed(2).replace(".", ",")}</p>
                 `).join("")}
             </div>
         `;
