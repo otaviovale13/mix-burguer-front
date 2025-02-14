@@ -201,7 +201,7 @@ function confirmacaoCarinho(nome, descricao, preco, imagem) {
 
     const valDisplay = document.createElement("h3");
     valDisplay.innerText = `Total: R$ ${total.toFixed(2).replace(".", ",")}`;
-    carrinhoPopUp.appendChild(valDisplay);
+    
 
     tituloEscolhas.innerText = "Deseja adicionar Adicionais ao Carrinho?";
 
@@ -261,7 +261,7 @@ function adicionarAdicionais(produto) {
   inputsAdicionais.forEach(input => {
     const quantidade = parseInt(input.value);
     if (quantidade > 0) {
-      const precoAdicional = parseFloat(input.dataset.preco.replace("R$", "").trim().replace(",", "."));
+      const precoAdicional = parseFloat(input.dataset.preco.replace("R$", "").trim().replace(",", ".")); 
       adicionaisSelecionados.push({
         Nome: input.dataset.nome,
         Preco: precoAdicional,
@@ -282,18 +282,18 @@ function adicionarAdicionais(produto) {
   const carrinhoTotalPopUp = document.getElementById("carrinhoTotalPopUp");
   carrinhoTotalPopUp.innerHTML = `<h3>Total: R$ ${totalFinal.toFixed(2).replace(".", ",")}</h3>`;
 
-  console.log("Produto atualizado com adicionais:", produto);
-  alert("Adicionais adicionados ao carrinho!");
-  escolhas.style.display = "none";
+  // Exibir os adicionais no carrinho
+  const carrinhoDisplay = document.getElementById("carrinhoDisplay");
+  carrinhoDisplay.innerHTML = `${produto.Nome} - ${produto.Quantidade}x<br>`;
+  produto.Adicionais.forEach(adicional => {
+    carrinhoDisplay.innerHTML += `${adicional.Nome} - ${adicional.Quantidade}x<br>`;
+  });
 
-  produto.Adicionais = adicionaisSelecionados;
   console.log("Produto atualizado com adicionais:", produto);
-
   alert("Adicionais adicionados ao carrinho!");
   escolhas.style.display = "none";
 
   const adicionaisList = document.querySelector(".adicionaisList");
-
   adicionaisList.style.display = "none";
 }
 
@@ -395,4 +395,28 @@ function calcularPrecoTotal(precoBase) {
 
   // Formata corretamente como moeda brasileira
   document.getElementById("ValorTotal").textContent = `R$ ${valorTotalFloat.toFixed(2).replace(".", ",")}`;
+}
+
+function exibirItensDoCarrinho() {
+  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  let itensHTML = "";
+
+  carrinho.forEach(item => {
+    let adicionaisHTML = "";
+    item.Adicionais.forEach(adicional => {
+      adicionaisHTML += `
+        <p>Adicional: ${adicional.Nome} - R$ ${adicional.Preco.toFixed(2).replace(".", ",")} (x${adicional.Quantidade})</p>
+      `;
+    });
+
+    itensHTML += `
+      <div class="itemCarrinho" data-preco="${parseFloat(item.Preco.replace("R$", "").replace(",", "."))}">
+        <p>${item.Nome} - ${item.Preco}</p>
+        ${adicionaisHTML}
+      </div>
+    `;
+  });
+
+  itensDoCarrinho.innerHTML = itensHTML;
+  atualizarPrecoTotal();
 }
