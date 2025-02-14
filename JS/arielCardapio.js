@@ -37,13 +37,13 @@ const Adicionais = [
         },
         { 
             Nome: "Anel de Cebola", 
-            Preco: "R$ 16,00",
+            Preco: "R$ 11,90",
             Imagem: "IMGS/1738688943009-removebg.png",
         },
         { 
             Nome: "Coca Cola", 
             Preco: "R$ 5,00",
-            Imagem: "IMGS/coca lata.png",
+            Imagem: "https://res.cloudinary.com/piramides/image/upload/c_fill,h_564,w_395/v1/products/3716-coca-cola-lata-350ml-12un.20250131112806.png?_a=BAAAV6GX",
         },
     ]
 

@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap");
+@font-face { font-family: Nabana; src: url(/CSS/Nabana-ShadowBold\ -\ DEMO.ttf); } 
+@font-face { font-family: NabanaNormal; src: url(/CSS/Nabana.ttf); } 
 
 @font-face {
   font-family: 'Nabana';
@@ -847,6 +849,10 @@ button {
 }
 
 /* Estilo dos produtos */
+.tituloCate{
+  font-family: Nabana;
+}
+
 .produtos{
   margin-top: 1rem;  
   text-align: left;
@@ -855,9 +861,10 @@ button {
   justify-content: space-between;
   background-color: #fff;
   color: #000000;
-  width: 90%;
+  width: 60%;
   padding: 1rem;
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 /* Estilo das imagens dos produtos */
@@ -878,19 +885,26 @@ button {
 /* Estilo do título dos itens */
 .itemTitulo{
   width: 25rem;
+  font-family: Nabana;
 }
 
 /* Estilo da descrição */
 .descricao{
-  width: 90%;
   margin-top: 1rem;
   font-size: 1rem;
+  font-family: NabanaNormal;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 50rem;
 }
 
 /* Estilo do preço */
 .preco{
   margin-top: 1rem;
   color: red;
+  font-family: Nabana;
 }
 
 /* Estilo do botão de voltar para home */
