@@ -76,6 +76,7 @@ categorias.innerHTML = Object.keys(Categorias)
 function buscarLanche() {
   const inputBuscar = document.getElementById("inputBuscar").value.toLowerCase()
   const categorias = document.querySelectorAll(".categoria")
+  const mensagem = document.getElementById("mensagem")
 
   categorias.forEach(categoria => {
     const produtos = categoria.querySelectorAll(".produtos");
@@ -85,15 +86,16 @@ function buscarLanche() {
       if (item.textContent.toLowerCase().includes(inputBuscar)) {
         item.style.display = "";
         visibilidade = true;
+        mensagem.style.display = "none";
       } else {
         item.style.display = "none";
+        mensagem.style.display = "flex";
       }
     });
 
     categoria.style.display = visibilidade ? "" : "none";
   });
 }
-
 
 function popUp(nome, descricao, preco, imagem) {
   const popUps = document.querySelector(".popUps");
@@ -112,6 +114,9 @@ function popUp(nome, descricao, preco, imagem) {
           <h2>Carrinho Atual:</h2>
           <h3 id="carrinhoDisplay">Seu Carrinho está Vazio!</h3>
         </div>
+        <div id="carrinhoTotalPopUp" class="carrinhoPopUp">
+          <h3>Total: R$ 0,00</h3>
+        </div>
       </div>
       <div class="colunn-1">
         <h1 class="titulo">${preco}</h1>
@@ -127,6 +132,7 @@ function popUp(nome, descricao, preco, imagem) {
         <button onclick="fecharBtn()">Sair</button>
       </div>
   `;
+
   popUps.appendChild(novaDiv);
   popUps.style.display = "flex";
 }
@@ -149,8 +155,8 @@ function confirmacaoCarinho(nome, descricao, preco, imagem) {
 
   tituloEscolhas.innerText = "Quantos deseja adicionar ao Carrinho?";
 
-  btnConfirmacaoCarrinho.remove();
-  btnRemocaoCarrinho.remove();
+  if (btnConfirmacaoCarrinho) btnConfirmacaoCarrinho.remove();
+  if (btnRemocaoCarrinho) btnRemocaoCarrinho.remove();
 
   const inputQuantidade = document.createElement("input");
   inputQuantidade.type = "number";
@@ -166,116 +172,129 @@ function confirmacaoCarinho(nome, descricao, preco, imagem) {
   botoes.appendChild(btnEnviarPopUp);
 
   btnEnviarPopUp.addEventListener("click", () => {
-    if (inputQuantidade.value === "") {
+    const quantidade = parseInt(inputQuantidade.value);
+
+    if (!quantidade || quantidade < 1) {
       alert("Você precisa adicionar pelo menos 1 item ao carrinho.");
       return;
-    } else {
-      const carrinhoDisplay = document.getElementById("carrinhoDisplay");
-
-      const produto = {
-        Nome: nome,
-        Preco: preco,
-        Descricao: descricao,
-        Imagem: imagem,
-      }
-
-      carrinho.push(produto);
-
-      console.log("carrinho atualizado:", carrinho);
-
-      carrinhoDisplay.innerText = `${nome} - ${inputQuantidade.value}x`;
-
-      const carrinhoPopUp = document.getElementById("carrinhoPopUp");
-
-      const valDisplay = document.createElement("h3");
-
-      valDisplay.innerText = `${preco}`
-
-      valDisplay.id = "precoTotal";
-
-      carrinhoPopUp.appendChild(valDisplay);
-
-      tituloEscolhas.innerText = "Deseja adicionar Adicionais ao Carrinho?";
-
-      inputQuantidade.remove();
-      btnEnviarPopUp.remove();
-
-      const btnAdicionaisSimPopUp = document.createElement("button");
-      btnAdicionaisSimPopUp.innerText = "Sim";
-      btnAdicionaisSimPopUp.id = "btnAdicionaisSimPopUp";
-      botoes.appendChild(btnAdicionaisSimPopUp);
-
-      btnAdicionaisSimPopUp.addEventListener("click", () => {
-        escolhas.style.display = "none";
-
-        const adicionais = document.querySelector(".adicionais");
-        const adicionaisList = document.createElement("div");
-        adicionaisList.className = "adicionaisList";
-        adicionaisList.innerHTML = `
-  <h2>Adicionais - (Escolha no Máximo 10)</h2>
-  <div class="adicionaisOptions">
-    ${Adicionais.map(adicional => `
-      <div class="adicionalItem">
-        <h3 class="tituloAdicional">${adicional.Nome}</h3>
-        <img class="fotoAdicional" src="${adicional.Imagem}" alt="${adicional.Nome}" />
-        <h3>${adicional.Preco}</h3>
-        <input type="number" class="inputQuantidadeAdicional" value="0" min="0" max="10" />
-      </div>
-    `).join("")}
-  </div>
-  <button class="btnAdicionaisEnviarPopUp" id="btnAdicionaisEnviarPopUp" onclick="btnAdicionaisEnviarPopUp()">Enviar</button>
-`;
-
-adicionais.appendChild(adicionaisList);
-      });
-
-      const btnAdicionaisNaoPopUp = document.createElement("button");
-      btnAdicionaisNaoPopUp.innerText = "Não";
-      btnAdicionaisNaoPopUp.id = "btnAdicionaisNaoPopUp";
-      botoes.appendChild(btnAdicionaisNaoPopUp);
-      btnAdicionaisNaoPopUp.addEventListener("click", () => {
-        alert("Carrinho Atualizado!");
-        escolhas.style.display = "none";
-        return;
-      });
     }
+
+    const carrinhoDisplay = document.getElementById("carrinhoDisplay");
+
+    const produto = {
+      Nome: nome,
+      Preco: preco,
+      Descricao: descricao,
+      Imagem: imagem,
+      Quantidade: quantidade,
+      Adicionais: [],
+    };
+
+    carrinho.push(produto);
+    console.log("Carrinho atualizado:", carrinho);
+
+    carrinhoDisplay.innerText = `${nome} - ${quantidade}x`;
+
+    const carrinhoPopUp = document.getElementById("carrinhoPopUp");
+
+    let total = parseFloat(preco.replace("R$", "").trim().replace(",", ".")) * quantidade;
+
+    const valDisplay = document.createElement("h3");
+    valDisplay.innerText = `Total: R$ ${total.toFixed(2).replace(".", ",")}`;
+    carrinhoPopUp.appendChild(valDisplay);
+
+    tituloEscolhas.innerText = "Deseja adicionar Adicionais ao Carrinho?";
+
+    inputQuantidade.remove();
+    btnEnviarPopUp.remove();
+
+    const btnAdicionaisSimPopUp = document.createElement("button");
+    btnAdicionaisSimPopUp.innerText = "Sim";
+    btnAdicionaisSimPopUp.id = "btnAdicionaisSimPopUp";
+    botoes.appendChild(btnAdicionaisSimPopUp);
+
+    btnAdicionaisSimPopUp.addEventListener("click", () => {
+      escolhas.style.display = "none";
+
+      const adicionais = document.querySelector(".adicionais");
+      const adicionaisList = document.createElement("div");
+      adicionaisList.className = "adicionaisList";
+      adicionaisList.innerHTML = `
+        <h2>Adicionais - (Escolha no Máximo 10)</h2>
+        <div class="adicionaisOptions">
+          ${Adicionais.map(adicional => `
+            <div class="adicionalItem">
+              <h3 class="tituloAdicional">${adicional.Nome}</h3>
+              <img class="fotoAdicional" src="${adicional.Imagem}" alt="${adicional.Nome}" />
+              <h3>${adicional.Preco}</h3>
+              <input type="number" class="inputQuantidadeAdicional" value="0" min="0" max="10" data-nome="${adicional.Nome}" data-preco="${adicional.Preco}" />
+            </div>
+          `).join("")}
+        </div>
+        <button class="btnAdicionaisEnviarPopUp" id="btnAdicionaisEnviarPopUp">Enviar</button>
+      `;
+
+      adicionais.appendChild(adicionaisList);
+
+      document.getElementById("btnAdicionaisEnviarPopUp").addEventListener("click", () => {
+        adicionarAdicionais(produto);
+      });
+    });
+
+    const btnAdicionaisNaoPopUp = document.createElement("button");
+    btnAdicionaisNaoPopUp.innerText = "Não";
+    btnAdicionaisNaoPopUp.id = "btnAdicionaisNaoPopUp";
+    botoes.appendChild(btnAdicionaisNaoPopUp);
+
+    btnAdicionaisNaoPopUp.addEventListener("click", () => {
+      alert("Carrinho Atualizado!");
+      escolhas.style.display = "none";
+    });
   });
 }
 
-function btnAdicionaisEnviarPopUp(){
-  const adicionaisOptions = document.querySelectorAll(".adicionalItem");
-  const adicionaisSelecionados = [];
+function adicionarAdicionais(produto) {
+  const inputsAdicionais = document.querySelectorAll(".inputQuantidadeAdicional");
+  let adicionaisSelecionados = [];
+  let totalAdicionais = 0;
 
-  adicionaisOptions.forEach(adicional => {
-    const quantidade = parseInt(adicional.querySelector(".inputQuantidadeAdicional").value);
-    const adicionalNome = adicional.querySelector(".tituloAdicional").textContent;
-    const adicionalPreco = adicional.querySelector("h3").textContent;
+  inputsAdicionais.forEach(input => {
+    const quantidade = parseInt(input.value);
     if (quantidade > 0) {
-      adicionaisSelecionados.push({ Nome: adicionalNome, Preco: adicionalPreco, Quantidade: quantidade });
+      const precoAdicional = parseFloat(input.dataset.preco.replace("R$", "").trim().replace(",", "."));
+      adicionaisSelecionados.push({
+        Nome: input.dataset.nome,
+        Preco: precoAdicional,
+        Quantidade: quantidade,
+      });
+
+      totalAdicionais += precoAdicional * quantidade;
     }
   });
 
-  console.log("adicionaisSelecionados:", adicionaisSelecionados);
+  produto.Adicionais = adicionaisSelecionados;
 
-  const carrinhoDisplay = document.getElementById("carrinhoDisplay");
-  carrinhoDisplay.innerText = `${carrinhoDisplay.innerText} + Adicionais`;
+  // Calcular o total final (lanche + adicionais)
+  let precoLanche = parseFloat(produto.Preco.replace("R$", "").trim().replace(",", "."));
+  let totalFinal = precoLanche * produto.Quantidade + totalAdicionais;
 
-  const carrinhoPopUp = document.getElementById("carrinhoPopUp");
+  // Atualizar a exibição do total
+  const carrinhoTotalPopUp = document.getElementById("carrinhoTotalPopUp");
+  carrinhoTotalPopUp.innerHTML = `<h3>Total: R$ ${totalFinal.toFixed(2).replace(".", ",")}</h3>`;
 
-  const valDisplay = document.createElement("h3");
+  console.log("Produto atualizado com adicionais:", produto);
+  alert("Adicionais adicionados ao carrinho!");
+  escolhas.style.display = "none";
 
-  valDisplay.innerText = `${adicionaisSelecionados.map(adicional => `${adicional.Nome} - ${adicional.Quantidade}x`).join(", ")}`
+  produto.Adicionais = adicionaisSelecionados;
+  console.log("Produto atualizado com adicionais:", produto);
 
-  carrinhoPopUp.appendChild(valDisplay);
+  alert("Adicionais adicionados ao carrinho!");
+  escolhas.style.display = "none";
 
-  const precoTotal = document.getElementById("precoTotal");
-  let valorTotalFloat = parseFloat(precoTotal.innerText.replace("R$", "").trim().replace(",", ".")) || 0;
+  const adicionaisList = document.querySelector(".adicionaisList");
 
-  adicionaisSelecionados.forEach(adicional => {
-    valorTotalFloat += parseFloat(adicional.Preco.replace("R$", "").trim().replace(",", ".")) * adicional.Quantidade;
-  });
-
-  precoTotal.innerText = `R$ ${valorTotalFloat.toFixed(2).replace(".", ",")}`;
+  adicionaisList.style.display = "none";
 }
 
 function salvarCarrinho() {
