@@ -113,8 +113,8 @@ function adicionarCate() {
       <input id="inputAdicionais" type="text" />
     </div>
     <div class="btnsSalvar">
-      <button onclick="salvarCategoria()">Salvar</button>
-      <button onclick="fecharModal()">Fechar</button>
+      <button class="btnCardapioAriel" onclick="salvarCategoria()">Salvar</button>
+      <button class="btnCardapioAriel" onclick="fecharModal()">Fechar</button>
     </div>
     </div>
   `;
@@ -157,9 +157,6 @@ function atualizarCategorias() {
                         <div class="btnsRemoveEEdit">
                             <button class="btnCardapio" onclick="removerItem('${categoria}', '${item.Nome}')">Remover</button>
                             <button class="btnCardapio" onclick="editarItem('${categoria}', '${item.Nome}', '${item.Descricao}', '${item.Preco}', '${item.Imagem}')">Editar</button>
-                            <button class="btnCardapio" onclick="adicionarAdicionais('${item.Nome}')">Adicionar Adicionais</button>
-                            <button class="btnCardapio" onclick="removerAdicionais()">Remover Adicionais</button>
-                            <button class="btnCardapio" onclick="editarAdicionais()">Editar Adicionais</button>
                         </div>
                     `).join("")}
                     <div class="btnsModis">
@@ -178,8 +175,8 @@ function removerItem(categoria, nomeItem) {
               <h1>Tem certeza que deseja remover "${nomeItem}"?</h1>
           </div>
           <div class="btnsSalvar">
-              <button onclick="confirmarRemocao('${categoria}', '${nomeItem}')">Sim</button>
-              <button onclick="fecharModal()">Não</button>
+              <button class="btnCardapioAriel" onclick="confirmarRemocao('${categoria}', '${nomeItem}')">Sim</button>
+              <button class="btnCardapioAriel" onclick="fecharModal()">Não</button>
           </div>
       </div>
   `;
@@ -224,8 +221,8 @@ function editarItem(categoria, nomeItem, descricaoItem, precoItem, imagemItem) {
                 <input id="inputNovaImagem" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
             </div>
             <div class="btnsSalvar">
-                <button onclick="confirmarEdicao('${categoria}', '${nomeItem}')">Salvar</button>
-                <button onclick="fecharModal()">Cancelar</button>
+                <button class="btnCardapioAriel" onclick="confirmarEdicao('${categoria}', '${nomeItem}')">Salvar</button>
+                <button class="btnCardapioAriel" onclick="fecharModal()">Cancelar</button>
             </div>
         </div>
     `;
@@ -291,52 +288,29 @@ function popUp(nome, descricao, preco, imagem) {
     novaDiv.className = "popUp";
 
     novaDiv.innerHTML = `
-    <div class="mainSamu">
-      <div class="menuLanche">
-        <div class="imagemLancheMenuLanche">
-          <img
-            src="${imagem}"
-            alt="ImagemDoLanche"
-            class="imagemLancheMenuLanche"
-          />
-        </div>
-        <div class="nomeLancheMenuLanche">
-          <h1 class="tituloLancheMenuLanche">${nome}</h1>
-          <div class="descriçãoLanche">
-            <p>
-              ${descricao}
-            </p>
-            <div class="preçoLanche"><p>${preco}</p></div>
-          </div>
+    <div class="colunn-1">
+        <h1 class="titulo">${nome}</h1>
+        <img src="${imagem}" />
+        <button onclick="addCarrinho()">Adicionar ao Carrinho</button>
+        <div id="carrinhoPopUp" class="carrinhoPopUp">
+          <i class="bi bi-cart-fill"></i>
+          <h2>Carrinho Atual:</h2>
+          <h3 id="carrinhoDisplay">Seu Carrinho está Vazio!</h3>
         </div>
       </div>
-      <div id="adicionaisPai" class="adicionaisPai">
-        <div>
-          <p class="adicionaisTurbinar">Turbine seu Burguer! <br />(escolha até 10 opções)</p>
-          <div class="adicionaisMenuLanche">
-          ${Adicionais.map(itemAdd => `
-            <div class="adicionais">
-              <img
-                src="${itemAdd.Imagem}"
-                alt="${itemAdd.Nome}"
-              />
-              <p>${itemAdd.Nome}</p>
-              <p>${itemAdd.Preco}</p>
-              <button data-preco="${itemAdd.Preco}" onclick="adicionarAdicional(this)">adicionar</button>
-              <button class="removeAdicional" data-preco="${itemAdd.Preco}" onclick="removerAdicional(this)" style="background-color: red;">x</button>
-              <span class="quantidade">0</span>
-            </div>
-          `
-        ).join("")}
+      <div class="colunn-1">
+        <h1 class="titulo">${preco}</h1>
+        <p class="descricaoPopUp">${descricao}</p>
+        <div id="escolhas" class="escolhas">
+          <h2 id="tituloEscolhas">Tem certeza que deseja adicionar ao carrinho?</h2>
+          <div id="botoes" class="botoes">
+            <button id="btnConfirmacaoCarrinho" onclick="confirmacaoCarinho('${nome}', '${descricao}', '${preco}', '${imagem}')">Sim</button>
+            <button id="btnRemocaoCarrinho" onclick="remocaoCarinho()">Não</button>
           </div>
         </div>
+        <div id="adicionais" class="adicionais"></div>
+        <button onclick="fecharBtn()">Sair</button>
       </div>
-      <div id="finalizarCarrinhoMenuLanche">
-      <p id="valorTotalMenuLanche">Valor Total: R$ <span id="ValorTotal">0,00</span></p>
-      <button id="botaoFinalizarMenuLanche" class="popUpBtn" onclick="AdicionarLanche('${nome}', '${preco}', '${descricao}', '${imagem}')">Adicionar ao carrinho</button>
-      <button id="botaoFinalizarMenuLanche" class="popUpBtn" onclick="fecharBtn()">Sair</button>
-    </div>
-    </div>
     `;
     popUps.appendChild(novaDiv);
     popUps.style.display = "flex";
@@ -433,178 +407,6 @@ function salvarCarrinho() {
   window.location.href = "/carrinho.html";
 }
 
-function adicionarAdicionais(nomeItem) {
-    const modal = document.getElementById("popUpsAdicionar");
-    modal.style.display = "flex";
-
-    modal.innerHTML = `
-      <div class="popUpEdit">
-        <h1 class="titulo">Adicionar Adicional a "${nomeItem}"</h1>
-        <div class="btnsInputs">
-          <label>Nome:</label>
-          <input id="inputAdicional" type="text" />
-        </div>
-        <div class="btnsInputs">
-          <label>Valor:</label>
-          <input id="inputAdicionalValor" type="text" />
-        </div>
-        <div class="btnsInputs">
-          <label>Imagem:</label>
-          <input id="inputAdicionalImagem" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
-       </div>
-       <div class="btnsSalvar">
-         <button onclick="salvarAdicional()">Salvar</button>
-         <button onclick="fecharModal()">Cancelar</button>
-       </div>
-      </div>
-    `;
-}
-
-function salvarAdicional() {
-    const inputAdicional = document.getElementById("inputAdicional").value.trim();
-    const inputAdicionalValor = document.getElementById("inputAdicionalValor").value.trim();
-    const inputAdicionalImagem = document.getElementById("inputAdicionalImagem").files[0];
-
-    if (!inputAdicional || !inputAdicionalValor) {
-        alert("Todos os campos devem ser preenchidos!");
-        return;
-    }
-
-    const index = document.getElementById("selectAdicional")?.value;
-
-    if (index !== undefined && index !== "") {
-        Adicionais[index].Nome = inputAdicional;
-        Adicionais[index].Preco = inputAdicionalValor;
-
-        if (inputAdicionalImagem) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                Adicionais[index].Imagem = e.target.result;
-                fecharModal();
-            };
-            reader.readAsDataURL(inputAdicionalImagem);
-        } else {
-            fecharModal();
-        }
-    } else {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            const novaImagem = e.target.result;
-
-            Adicionais.push({
-                Nome: inputAdicional,
-                Preco: inputAdicionalValor,
-                Imagem: novaImagem,
-            });
-
-            fecharModal();
-        };
-
-        if (inputAdicionalImagem) {
-            reader.readAsDataURL(inputAdicionalImagem);
-        } else {
-            Adicionais.push({
-                Nome: inputAdicional,
-                Preco: inputAdicionalValor,
-                Imagem: "IMGS/default.png",
-            });
-            fecharModal();
-        }
-    }
-}
-
-function removerAdicionais() {
-    const modal = document.getElementById("popUpsAdicionar");
-    modal.style.display = "flex";
-
-    modal.innerHTML = `
-      <div class="popUpEdit">
-        <h1 class="titulo">Remover Adicional</h1>
-        <div class="btnsInputs">
-        ${Adicionais.map((itemAdd, index) => `
-              <label>
-                  <input type="checkbox" name="adicionalRemover" value="${index}" />
-                  ${itemAdd.Nome} - ${itemAdd.Preco}
-              </label>
-            `).join("")}
-        </div>
-       <div class="btnsSalvar">
-         <button onclick="confirmarRemocaoAdicional()">Remover</button>
-         <button onclick="fecharModal()">Cancelar</button>
-       </div>
-      </div>
-    `;
-}
-
-function confirmarRemocaoAdicional() {
-    const selecionados = document.querySelectorAll("input[name='adicionalRemover']:checked");
-
-    if (selecionados.length > 0) {
-        const indicesParaRemover = Array.from(selecionados).map(input => parseInt(input.value)).sort((a, b) => b - a);
-        
-        indicesParaRemover.forEach(index => {
-            Adicionais.splice(index, 1);
-        });
-
-        alert(`Foram removidos ${indicesParaRemover.length} adicionais!`);
-        
-        fecharModal();
-
-        if(Adicionais.length === 0){
-            document.getElementById("adicionaisPai").style.display = "none"
-        }
-    } else {
-        alert("Selecione pelo menos um adicional para remover!");
-    }
-}
-
-function editarAdicionais() {
-    const modal = document.getElementById("popUpsAdicionar");
-    modal.style.display = "flex";
-
-    modal.innerHTML = `
-      <div class="popUpEdit">
-        <h1 class="titulo">Editar Adicional</h1>
-        <div class="btnsInputs">
-            <label>Editar Adicional:</label>
-            <select id="selectAdicional" onchange="preencherCamposAdicional()">
-                <option value="" disabled selected>Selecione um adicional</option>
-                ${Adicionais.map((itemEdit, index) => `
-                    <option value="${index}">${itemEdit.Nome}</option>
-                `).join("")}
-            </select>
-        </div>
-        <div class="btnsInputs">
-          <label>Nome:</label>
-          <input id="inputAdicional" type="text" />
-        </div>
-        <div class="btnsInputs">
-          <label>Valor:</label>
-          <input id="inputAdicionalValor" type="text" />
-        </div>
-        <div class="btnsInputs">
-          <label>Imagem:</label>
-          <input id="inputAdicionalImagem" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
-        </div>
-       <div class="btnsSalvar">
-         <button onclick="salvarAdicional()">Salvar</button>
-         <button onclick="fecharModal()">Cancelar</button>
-       </div>
-      </div>
-    `;
-}
-
-function preencherCamposAdicional() {
-    const select = document.getElementById("selectAdicional");
-    const index = select.value;
-    
-    if (index !== "") {
-        const adicional = Adicionais[index];
-        document.getElementById("inputAdicional").value = adicional.Nome;
-        document.getElementById("inputAdicionalValor").value = adicional.Preco;
-    }
-}
-
 function adicionarProduto(categoria) {
     const modal = document.getElementById("popUpsAdicionar");
     modal.style.display = "flex";
@@ -629,8 +431,8 @@ function adicionarProduto(categoria) {
           <input id="inputImagemProduto" type="file" accept="image/*" onchange="previewNovaImagem(event)" />
         </div>
         <div class="btnsSalvar">
-          <button onclick="salvarProduto('${categoria}')">Salvar</button>
-          <button onclick="fecharModal()">Cancelar</button>
+          <button class="btnCardapioAriel" onclick="salvarProduto('${categoria}')">Salvar</button>
+          <button class="btnCardapioAriel" onclick="fecharModal()">Cancelar</button>
         </div>
       </div>
     `;
@@ -676,8 +478,8 @@ function adicionarProduto(categoria) {
                 </select>
             </div>
             <div class="btnsSalvar">
-                <button onclick="confirmarRemocaoCate()">Sim</button>
-                <button onclick="fecharModal()">Não</button>
+                <button class="btnCardapioAriel" onclick="confirmarRemocaoCate()">Sim</button>
+                <button class="btnCardapioAriel" onclick="fecharModal()">Não</button>
             </div>
         </div>
     `;
@@ -723,8 +525,8 @@ function editarCate() {
         <input id="inputEditCate" type="text" />
       </div>
       <div class="btnsSalvar">
-        <button onclick="salvarNovaCategoria()">Salvar</button>
-        <button onclick="fecharModal()">Cancelar</button>
+        <button class="btnCardapioAriel" onclick="salvarNovaCategoria()">Salvar</button>
+        <button class="btnCardapioAriel" onclick="fecharModal()">Cancelar</button>
       </div>
     </div>
   `;

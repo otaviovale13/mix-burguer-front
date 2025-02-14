@@ -22,17 +22,11 @@ function criarModal() {
   const modal = document.createElement("div");
   modal.id = "popUpsAdicionar";
   modal.className = "popUpsAdicionar";
-  modal.style.display = "none"; 
-
+  modal.style.display = "none";
   document.body.appendChild(modal);
 }
 
-function trocarRede(){
-  const whats = document.getElementById("whats")?.innerText || "WhatsApp";
-  const insta = document.getElementById("insta")?.innerText || "Instagram";
-  const tele = document.getElementById("tele")?.innerText || "Telegram";
-  const face = document.getElementById("face")?.innerText || "Facebook";
-  
+function trocarRede() {
   let modal = document.getElementById("popUpsAdicionar");
 
   if (!modal) {
@@ -42,54 +36,92 @@ function trocarRede(){
 
   modal.style.display = "flex";
   modal.innerHTML = `
-      <div class="popUpEdit">
-          <div class="btnsInputs">
-              <h1>Escolha qual Rede Social deseja Editar?</h1>
-          </div>
-          <div class="btnsInputs">
-              <label for="inputRedes">Escolha qual Rede Editar</label>
-              <input list="redes" name="redes" id="inputRedes">
-
-              <datalist id="redes">
-                <option value="WhatsApp">WhatsApp</option>
-                <option value="Instagram">Instagram</option>
-                <option value="Telefone">Telefone</option>
-                <option value="Facebook">Facebook</option>
-              </datalist>
-          </div>
-          <div class="btnsInputs">
-              <label for="inputRedes">Mudar o Link</label>
-              <input type="text" id="inputLink">
-          </div>
-          <div class="btnsSalvar">
-              <button onclick="salvarContato()">Sim</button>
-              <button onclick="fecharModal()">Não</button>
-          </div>
+    <div class="popUpEdit">
+      <div class="btnsInputs">
+          <h1>Editar Rede Social</h1>
       </div>
+      <div class="btnsInputs">
+          <label for="inputRedes">Escolha qual Rede Editar</label>
+          <input class="border-solid-1px-black text-black text-center"
+              list="redes"
+              name="redes"
+              id="inputRedes">
+
+          <datalist id="redes">
+              <option value="WhatsApp">WhatsApp</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Telefone">Telefone</option>
+              <option value="Facebook">Facebook</option>
+          </datalist>
+      </div>
+      <div class="btnsInputs">
+          <label for="inputNome">Mudar o Nome</label>
+          <input class="border-solid-1px-black text-black text-center"
+                 type="text"
+                 id="inputNome">
+      </div>
+      <div class="btnsInputs">
+          <label for="inputLink">Mudar o Link</label>
+          <input class="border-solid-1px-black text-black text-center"
+                 type="text"
+                 id="inputLink">
+      </div>
+      <div class="btnsSalvar">
+          <button class="btnCardapioAriel" onclick="salvarContato()">Sim</button>
+          <button class="btnCardapioAriel" onclick="fecharModal()">Não</button>
+      </div>
+  </div>
   `;
+
+  // Adiciona um evento para atualizar os campos ao selecionar uma rede
+  document.getElementById("inputRedes").addEventListener("change", atualizarCamposModal);
+}
+
+function atualizarCamposModal() {
+  const redeSelecionada = document.getElementById("inputRedes").value;
+  let nomeAtual = "";
+  let linkAtual = "";
+
+  if (redeSelecionada === "WhatsApp") {
+      nomeAtual = document.getElementById("whats")?.textContent || "WhatsApp";
+      linkAtual = document.getElementById("whatsLink")?.href || "";
+  } else if (redeSelecionada === "Instagram") {
+      nomeAtual = document.getElementById("insta")?.textContent || "Instagram";
+      linkAtual = document.getElementById("instaLink")?.href || "";
+  } else if (redeSelecionada === "Telefone") {
+      nomeAtual = document.getElementById("tele")?.textContent || "Telefone";
+      linkAtual = document.getElementById("teleLink")?.href.replace("tel:", "") || "";
+  } else if (redeSelecionada === "Facebook") {
+      nomeAtual = document.getElementById("face")?.textContent || "Facebook";
+      linkAtual = document.getElementById("faceLink")?.href || "";
+  }
+
+  document.getElementById("inputNome").value = nomeAtual;
+  document.getElementById("inputLink").value = linkAtual;
 }
 
 function fecharModal() {
-    const modal = document.getElementById("popUpsAdicionar");
-    if (modal) modal.style.display = "none";
+  const modal = document.getElementById("popUpsAdicionar");
+  if (modal) modal.style.display = "none";
 }
 
 function salvarContato() {
   const redeSelecionada = document.getElementById("inputRedes").value;
+  const novoNome = document.getElementById("inputNome").value;
   const novoLink = document.getElementById("inputLink").value;
 
   if (redeSelecionada === "WhatsApp") {
-    document.getElementById("whats").innerText = redeSelecionada;
-    document.getElementById("whatsLink").href = novoLink;
+      document.getElementById("whats").textContent = novoNome;
+      document.getElementById("whatsLink").href = novoLink;
   } else if (redeSelecionada === "Instagram") {
-    document.getElementById("insta").innerText = redeSelecionada;
-    document.getElementById("instaLink").href = novoLink;
+      document.getElementById("insta").textContent = novoNome;
+      document.getElementById("instaLink").href = novoLink;
   } else if (redeSelecionada === "Telefone") {
-    document.getElementById("tele").innerText = redeSelecionada;
-    document.getElementById("teleLink").href = `tel:${novoLink}`;
+      document.getElementById("tele").textContent = novoNome;
+      document.getElementById("teleLink").href = `tel:${novoLink}`;
   } else if (redeSelecionada === "Facebook") {
-    document.getElementById("face").innerText = redeSelecionada;
-    document.getElementById("faceLink").href = novoLink;
+      document.getElementById("face").textContent = novoNome;
+      document.getElementById("faceLink").href = novoLink;
   }
 
   fecharModal();
@@ -133,8 +165,8 @@ function trocarVideoEImagem() {
               <input type="text" id="inputLinkFotos">
           </div>
           <div class="btnsSalvar">
-              <button onclick="salvarAlteracao()">Salvar</button>
-              <button onclick="fecharModal()">Fechar</button>
+              <button class="btnCardapioAriel" onclick="salvarAlteracao()">Salvar</button>
+              <button class="btnCardapioAriel" onclick="fecharModal()">Fechar</button>
           </div>
       </div>
   `;
