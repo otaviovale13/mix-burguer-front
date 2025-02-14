@@ -1,77 +1,103 @@
 /* SUGESTOES */
+@font-face { font-family: Nabana; src: url(/CSS/Nabana-ShadowBold\ -\ DEMO.ttf); } 
+@font-face { font-family: NabanaNormal; src: url(/CSS/Nabana.ttf); } 
+
 @font-face {
   font-family: 'Nabana';
   src: url('Fonts/Nabana.ttf');
   }
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
-body {
-    padding: 0;
-    margin: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Estilo do corpo da página */
+body {
+  background-color: #111;
+  font-family: Nabana;
+  color: #fff;
+}
+
+/* Estilo do cabeçalho */
 header {
   background-color: #fed83c;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 7rem;
+  height: 12rem;
   padding: 0 3rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   font-family: Nabana;
-  position: sticky; /* Torna o cabeçalho fixo */
-  top: 0; /* Fixa o cabeçalho no topo da página */
-  z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos */
+  position: sticky; 
+  top: 0; 
+  z-index: 100;
 }
 
-/* Outras classes permanecem inalteradas */
+
+
+/* Estilo do container filho do cabeçalho */
 .headerFilho {
   display: flex;
   gap: 3rem;
   align-items: center;
 }
 
-/* Logo sobre a imagem de fundo */
+/* Estilo do logo */
 .logo {
-  width: 13rem;
+  width: 17rem;
   max-width: 100%;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease;
   margin-top: 5rem;
-  position: absolute; /* Coloca a logo acima da imagem */
-  top: 5%; /* Ajuste a posição de acordo com a sua necessidade */
-  left: 3%; /* Ajuste a posição de acordo com a sua necessidade */
-  z-index: 1; /* Garante que a logo fique acima da imagem */
+  position: absolute; 
+  top: 5%; 
+  left: 3%; 
+  z-index: 1; 
   margin-top: -1rem;
-  cursor: pointer;
+
+
 }
 
+/* Efeito hover no logo */
 .logo:hover {
   transform: scale(1.1);
 }
 
+/* Estilo do texto */
 .text {
   display: flex;
   flex-direction: column;
+  font-size: 22px;
   gap: 0.5rem;
+  margin-left: 18rem;
   font-family: Nabana;
+  color: #000000;
+  /* text-shadow: 0.5px 0px rgb(255, 255, 255), -0.5px 0px rgb(255, 255, 255), 0px -0.5px rgb(255, 255, 255),
+  0.5px 0.5px rgb(255, 255, 255),-0.5px -0.5px rgb(255, 255, 255), 0.5px -0.5px rgb(255, 255, 255),-1px 1px rgb(255, 255, 255); */
 
-  margin-left: 16rem;
+
+
 }
 
+/* Estilo do subtítulo */
 .sub_titulo {
   margin-top: -0.5rem;
-  color: #fff;
+  color: #000000;
   font-size: 1.2rem;
   font-weight: 600;
   font-family: Nabana;
 
 }
 
+/* Estilo do container de busca no cabeçalho */
 .headerFilhoBusca {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
+/* Estilo da barra de busca */
 .busca {
   background-color: #222;
   border-radius: 5px;
@@ -81,16 +107,15 @@ header {
   padding: 8px 16px;
   width: 25rem;
   transition: all 0.3s ease;
-  cursor: pointer;
-  font-family: Nabana;
-
 }
 
+/* Efeito hover na barra de busca */
 .busca:hover {
   background-color: #333;
   border: solid 2px #fed83c;
 }
 
+/* Estilo do input de busca */
 input {
   background: none;
   border: none;
@@ -100,28 +125,46 @@ input {
   font-size: 1rem;
   padding: 0.5rem;
   border-radius: 5px;
-  font-family: Nabana;
+  font-family: "Open Sans", sans-serif; 
 }
 
+/* Estilo do input de busca quando focado */
 input:focus {
   outline: none;
 }
 
+/* Estilo dos ícones */
 i {
   color: #fff;
 }
 
+/* Estilo do ícone de pessoa */
 .bi-person-fill {
-  font-size: 2.7rem;
+  font-size: 3.7rem;
   color: #222;
   cursor: pointer;
+  transition: transform 0.3s ease;
+
 }
 
+.bi-person-fill:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo do ícone de sacola */
 .bi-bag-fill {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #222;
   cursor: pointer;
+  transition: transform 0.3s ease;
+
 }
+
+.bi-bag-fill:hover {
+  transform: scale(1.1);
+}
+
+
 
 .burger {
   color: #fed83c;
@@ -155,7 +198,7 @@ font-family: Nabana;
         justify-content: center;
         align-items: center;
         text-align: center;
-        margin-top: 5rem;
+        margin-top: 2.5rem;
     }
 
     .cx {
@@ -173,7 +216,7 @@ font-family: Nabana;
         background-color: rgba(0, 0, 0, 0.6);
         color: white;
         border-radius: 15px;
-        margin-top: 1rem;
+        margin-top: 0rem;
         padding: 1.5rem;
         font-size: 1.2rem;
         text-align: left;
@@ -185,27 +228,28 @@ font-family: Nabana;
     .butao {
         display: flex;
         justify-content: center;
-        margin-top: 4rem;
-        height: 3rem;
+        margin-top: 1rem;
+        height: 4rem;
         font-family: Nabana;
 
         
 
         .botao {
-            background-color: #D81717; /* Cor de fundo */
-            color: white; /* Cor do texto */
-            font-size: 1.2rem; /* Tamanho da fonte */
-            padding: 0.8rem 1.5rem; /* Espaçamento interno */
-            border: none; /* Remove borda */
-            border-radius: 10px; /* Bordas arredondadas */
-            cursor: pointer; /* Muda o cursor ao passar sobre o botão */
-            transition: background-color 0.3s ease; /* Animação suave para mudança de cor */
-            font-family: Nabana;
+          background-color: #fed83c;
+          text-align: center;
+          color: #000000;
+          border: none;
+          border-radius: 10px;
+          font-size: 1.5rem;
+          font-family: NabanaNormal;
+          transition: transform 0.3s ease;
+          cursor: pointer;
+          margin-top: 1rem;
 
         }
         
         .botao:hover {
-            background-color: #a51212; /* Cor ao passar o mouse */
+          transform: scale(1.1);
         }
         
     }
@@ -214,99 +258,143 @@ font-family: Nabana;
 
 
  /* Geral */
-footer {
-    display: block;
-    font-family: Nabana;
-  }
-  
-  /* Seção amarela */
-  .amarelo {
-    background-color: #FED83C;
-    padding: 10px 20px; /* Diminuir altura */
-    text-align: left;
-    display: flex;
-    align-items: center; /* Alinha logo e texto verticalmente */
-    justify-content: center;
-    font-family: Nabana;
+ footer {
+  display: block;
+  font-family: Nabana;
+}
 
-  }
-  
-  .amarelo .logo2 {
-    max-width: 70px; /* Diminuir o tamanho do logo */
-  }
-  
-  .amarelo .text2 {
-    margin-left: 10px;
-  }
-  
-  .amarelo .titulo {
-    font-size: 20px; /* Reduzir o tamanho do título */
-    color: #000000;
-    margin: 0;
-    /* margin-right: 100rem; */
-  }
-  
-  .amarelo .sub_titulo {
-    font-size: 14px; /* Reduzir o tamanho do subtítulo */
-    color: #000000;
-    margin: 5px 0 0 0;
-  }
-  
-  .amarelo .btn {
-    margin-left: 20px;
-  }
-  
-  .amarelo .btn2 {
-    background-color: #000000;
-    color: #FED83C;
-    border: none;
-    padding: 8px 16px; /* Diminuir o tamanho do botão */
-    cursor: pointer;
-    font-size: 14px; /* Reduzir o tamanho da fonte */
-    border-radius: 5px;
-  }
-  
-  .amarelo .btn2:hover {
-    background-color: #FED83C;
-    color: #000000;
-    border: 1px solid #000000;
-  }
-  
-  /* Seção preta */
-  .preto {
-    background-color: #000000;
-    color: #FED83C;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end; /* Alinhar elementos na parte inferior */
-  }
-  
-  .preto .text4 {
-    font-size: 18px; /* Diminuir o tamanho da fonte */
-    text-align: left; /* Alinhar à esquerda */
-    margin-bottom: 0; /* Remover margens extras */
-  }
-  
-  .preto .text5 {
-    font-size: 18px; /* Diminuir o tamanho da fonte */
-    text-align: center; 
-  }
-  
-  .preto .text5 div {
-    margin-top: 5px;
-  }
 
-  .preto .icons {
-    display: flex;
-    color: white;
-    justify-content: center;
-    align-items: end;
-    margin-right: 18rem;
-    gap: 2rem;
-    font-size: 2.2rem;
 
-  }
+/* Estilo da seção amarela do rodapé */
+.amarelo {
+  background-color: #FED83C;
+  padding: 10px 20px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 10rem;
+  font-size: 22px;
+
+
+}
+
+/* Estilo do logo na seção amarela do rodapé */
+ .logo2 {
+  width: 17rem;
+  max-width: 100%;
+  transition: transform 0.6s ease;
+  margin-top: -1rem;
+  margin-left: 2.9rem;
+  cursor: pointer;
+}
+
+.logo2:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo do texto na seção amarela do rodapé */
+.amarelo .text2 {
+  margin-left: 10px;
+  font-size: 22px;
+
+}
+
+/* Estilo do título na seção amarela do rodapé */
+.amarelo .titulo {
+  font-size: 29px;
+  color: #000000;
+  font-family: Nabana;
+  margin: 0;
+  margin-right: 80rem;
+}
+
+/* Estilo do subtítulo na seção amarela do rodapé */
+.amarelo .sub_titulo {
+  font-size: 22px;
+  color: #000000;
+  font-family: Nabana;
+  margin: 5px 0 0 0;
+}
+
+/* Estilo do botão na seção amarela do rodapé */
+.amarelo .btn {
+  margin-left: 20px;
+}
+
+/* Estilo do botão na seção amarela do rodapé */
+.btn2 {
+  background-color: #0000007a;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px; 
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: transform 0.6s ease;
+  font-family: Nabana;
+
+
+
+}
+
+/* Efeito hover no botão na seção amarela do rodapé */
+ .btn2:hover {
+  
+    transform: scale(1.1);
+  
+  
+}
+
+/* Estilo da seção preta do rodapé */
+.preto {
+  background-color: #FED83C;
+  color: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; 
+  font-family: Nabana;
+  height: 12rem;
+
+}
+
+/* Estilo do texto na seção preta do rodapé */
+.preto .text4 {
+  font-size: 18px; 
+  text-align: left; 
+  margin-bottom: 0;
+  font-family: Nabana;
+
+}
+
+/* Estilo do texto na seção preta do rodapé */
+.preto .text5 {
+  font-size: 18px;
+  text-align: center; 
+  font-family: Nabana;
+
+}
+
+/* Estilo do container de ícones na seção preta do rodapé */
+.preto .text5 div {
+  margin-top: 5px;
+}
+
+/* Estilo dos ícones na seção preta do rodapé */
+.preto .icons {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: end;
+  margin-right: 18rem;
+  gap: 2rem;
+  font-size: 2.2rem;
+  font-family: Nabana;
+
+}
+
 
   /* Ajustes para telas menores */
 @media (max-width: 768px) {

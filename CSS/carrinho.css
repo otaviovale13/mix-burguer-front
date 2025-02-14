@@ -1,8 +1,10 @@
-@font-face {
-    font-family: 'Nabana';
-    src: url('Fonts/Nabana.ttf');
-    }
+@font-face { font-family: Nabana; src: url(/CSS/Nabana-ShadowBold\ -\ DEMO.ttf); } 
+@font-face { font-family: NabanaNormal; src: url(/CSS/Nabana.ttf); } 
 
+@font-face {
+  font-family: 'Nabana';
+  src: url('Fonts/Nabana.ttf');
+  }
 * {
     margin: 0;
     padding: 0;
@@ -108,13 +110,15 @@ nav {
         font-weight: bold;
         cursor: pointer;
         border-radius: 5px;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        font-family: Nabana;
+        font-family: NabanaNormal;
+        transition: transform 0.3s ease;
+       
 
     }
     
     .btnRemove0:hover {
-        color: white;
+        transform: scale(1.1);
+
     }
 
     .btnDuplicar0 {
@@ -127,13 +131,14 @@ nav {
         font-weight: bold;
         cursor: pointer;
         border-radius: 5px;
-        font-family: Nabana;
-
-        transition: background-color 0.3s ease, color 0.3s ease;
+        font-family: NabanaNormal;
+        transition: transform 0.3s ease;
+        
     }
     
     .btnDuplicar0:hover {
-        color: white;
+        transform: scale(1.1);
+
     }
 }
 
@@ -165,17 +170,16 @@ nav {
     cursor: pointer;
     margin-top: 5px;
     font-size: 18px; /* Ajustar o tamanho da fonte */
-    font-family: Nabana;
+    font-family: NabanaNormal;
+    transition: transform 0.3s ease;
 
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Adicionar transição para animação */
+
 }
 
 .btnFinish:hover {
-    background-color: #FFA500; /* Cor de fundo ao passar o mouse */
-    color: white;
-    font-family: Nabana;
+    
+    transform: scale(1.1);
 
-    transform: scale(1.05); /* Adicionar animação de escala */
 }
 
 .btnVoltar {
@@ -186,17 +190,14 @@ nav {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    font-family: Nabana;
-
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Adicionar transição para animação */
     margin-top: 5px;
+    font-family: NabanaNormal;
+    transition: transform 0.3s ease;
 }
 
 .btnVoltar:hover {
-    background-color: #FFA500; /* Cor de fundo ao passar o mouse */
-    color: white;
-    transform: scale(1.05); /* Adicionar animação de escala */
+    transform: scale(1.1);
 }
 
 .pCarrinho{
