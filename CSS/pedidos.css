@@ -2,6 +2,8 @@
   font-family: 'Nabana';
   src: url('Fonts/Nabana.ttf');
   }
+
+@font-face { font-family: NabanaNormal; src: url(/CSS/Nabana.ttf); } 
 /* PEDIDOS RESPONSIVO */
 
 * {
@@ -27,15 +29,32 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   text-align: center;
-  padding: 1rem;
+}
+
+.btnCardapioA{
+  background-color: #fed83c;
+  color: #000000;
+  border: none;
+  width: 25rem;
+  height: 3rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+  font-family: NabanaNormal;
+  margin-top: 1rem;
+}
+
+.btnCardapioA:hover{
+  transform: scale(1.1);
 }
 
 .pai {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   min-height: 100vh;
   font-family: Nabana;
 
