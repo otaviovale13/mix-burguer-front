@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Seleciona o botão de finalizar pagamento
   const finalizarPagamentoButton = document.querySelector(
-    "#FinalizarPagamento button"
+    "#btnFinalizarPagamento"
   );
   // Seleciona o elemento que exibe o preço total
   const precoRealElement = document.getElementById("PrecoReal");
@@ -40,18 +40,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Adiciona um evento de clique ao botão de finalizar pagamento
-  finalizarPagamentoButton.addEventListener("click", () => {
-    aplicarCupomDesconto();
-    // Seleciona a opção de pagamento escolhida
+  finalizarPagamentoButton.addEventListener("click", (event) => {
+    event.preventDefault(); // Evita o comportamento padrão do botão
+
+    // Verifica se uma forma de pagamento foi selecionada
     const selectedPayment = document.querySelector(
       'input[name="pagamento"]:checked'
     );
 
-    // Verifica se nenhuma opção de pagamento foi selecionada
     if (!selectedPayment) {
       alert("Por favor, selecione uma forma de pagamento.");
       return;
     }
+
+    // Aplica o cupom de desconto antes de finalizar o pagamento
+    aplicarCupomDesconto();
 
     // Exibe uma mensagem de confirmação de pagamento
     const paymentMethod = selectedPayment.value;
@@ -73,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // Aplica uma animação de escala e sombra à opção selecionada
         opt.parentElement.style.transition = "transform 0.3s, box-shadow 0.3s";
         opt.parentElement.style.transform = opt.checked ? "scale(1.1)" : "scale(1)";
-        
       });
     });
   });
