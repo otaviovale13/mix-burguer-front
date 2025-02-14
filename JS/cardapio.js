@@ -37,7 +37,7 @@ const Categorias = {
   ],
 };
 
-const carrinho = [];
+let carrinho = [];
 
 const carrinhoTotalPopUp = "R$ 0,00";
 
@@ -134,16 +134,14 @@ function popUp(nome, descricao, preco, imagem) {
               (produto) => `
               <h3>${produto.Nome} - ${produto.Quantidade}x</h3>
               ${produto.Adicionais.map(
-                (adicional) => `
-                <h4>${adicional.Nome} - ${adicional.Quantidade}x</h4>
-              `
+                (adicional) => `<h4>${adicional.Nome} - ${adicional.Quantidade}x</h4>`
               ).join("")}
             `
             )
             .join("")}
         </div>
         <div id="carrinhoTotalPopUp" class="carrinhoPopUp">
-          <h3>${carrinhoTotalPopUp}</h3>
+          <h3>Total: R$ ${localStorage.getItem("carrinhoTotal") || "0,00"}</h3>
         </div>
       </div>
       <div class="colunn-1">
@@ -185,16 +183,14 @@ function popUpEnviar(nome, descricao, preco, imagem) {
               (produto) => `
               <h3>${produto.Nome} - ${produto.Quantidade}x</h3>
               ${produto.Adicionais.map(
-                (adicional) => `
-                <h4>${adicional.Nome} - ${adicional.Quantidade}x</h4>
-              `
+                (adicional) => `<h4>${adicional.Nome} - ${adicional.Quantidade}x</h4>`
               ).join("")}
             `
             )
             .join("")}
         </div>
         <div id="carrinhoTotalPopUp" class="carrinhoPopUp">
-          <h3>${carrinhoTotalPopUp}</h3>
+          <h3>Total: R$ ${localStorage.getItem("carrinhoTotal") || "0,00"}</h3>
         </div>
       </div>
       <div class="colunn-1">
@@ -214,6 +210,32 @@ function popUpEnviar(nome, descricao, preco, imagem) {
 
   popUps.appendChild(novaDiv);
   popUps.style.display = "flex";
+  atualizarTotalCarrinho();
+}
+
+function atualizarTotalCarrinho() {
+  let total = 0;
+
+  carrinho.forEach((produto) => {
+    let preco = parseFloat(produto.Preco.replace("R$", "").trim().replace(",", "."));
+    total += preco * produto.Quantidade;
+
+    produto.Adicionais.forEach((adicional) => {
+      let precoAdicional = parseFloat(adicional.Preco.replace("R$", "").trim().replace(",", "."));
+      total += precoAdicional * adicional.Quantidade;
+    });
+  });
+
+  // Atualiza o total no localStorage
+  localStorage.setItem("carrinhoTotal", total.toFixed(2).replace(".", ","));
+
+  // Atualiza o total no popup
+  const carrinhoTotalPopUp = document.querySelectorAll("#carrinhoTotalPopUp h3");
+  carrinhoTotalPopUp.forEach((elemento) => {
+    elemento.innerText = `Total: R$ ${total.toFixed(2).replace(".", ",")}`;
+  });
+
+  console.log("Valor total do carrinho atualizado:", total);
 }
 
 function addCarrinho() {
@@ -319,76 +341,66 @@ function btnAdicionaisNaoPopUp() {
   escolhas.style.display = "none";
 }
 
-  function atualizarTotalCarrinho() {
-    let total = 0;
-
-    carrinho.forEach((produto) => {
-      let preco = parseFloat(
-        produto.Preco.replace("R$", "").trim().replace(",", ".")
-      );
-      total += preco * produto.Quantidade;
-
-      // Adicionando valor dos adicionais
-      produto.Adicionais.forEach((adicional) => {
-        let precoAdicional = parseFloat(
-          adicional.Preco.replace("R$", "").trim().replace(",", ".")
-        );
-        total += precoAdicional * adicional.Quantidade;
-      });
-    });
-
-    // Atualiza o total no popup e no carrinho geral
-    document.getElementById("carrinhoTotalPopUp").innerHTML = `Total: R$ ${total
-      .toFixed(2)
-      .replace(".", ",")}`;
-  }
-
   function converterPreco(precoString) {
     return parseFloat(precoString.replace("R$", "").trim().replace(",", "."));
   }
   
 
-function adicionarAdicionais(produto) {
-  const inputsAdicionais = document.querySelectorAll(".inputQuantidadeAdicional");
-  let adicionaisSelecionados = [];
-  let totalAdicionais = 0;
-
-  inputsAdicionais.forEach((input) => {
-    const quantidade = parseInt(input.value);
-    if (quantidade > 0) {
-      const precoAdicional = parseFloat(
-        input.dataset.preco.replace("R$", "").trim().replace(",", ".")
-      );
-      adicionaisSelecionados.push({
-        Nome: input.dataset.nome,
-        Preco: precoAdicional,
-        Quantidade: quantidade,
-      });
-
-      totalAdicionais += precoAdicional * quantidade;
+  function adicionarAdicionais(produto) {
+    const inputsAdicionais = document.querySelectorAll(".inputQuantidadeAdicional");
+    let adicionaisSelecionados = [];
+    let totalAdicionais = 0;
+  
+    // Verifica os adicionais selecionados e soma seus valores corretamente
+    inputsAdicionais.forEach((input) => {
+      const quantidade = parseInt(input.value);
+      if (quantidade > 0) {
+        let precoAdicional = input.dataset.preco ? parseFloat(input.dataset.preco.replace("R$", "").trim().replace(",", ".")) : 0;
+        
+        if (!isNaN(precoAdicional)) {
+          adicionaisSelecionados.push({
+            Nome: input.dataset.nome,
+            Preco: precoAdicional,
+            Quantidade: quantidade,
+          });
+  
+          totalAdicionais += precoAdicional * quantidade;
+        }
+      }
+    });
+  
+    // Atualiza os adicionais no produto
+    produto.Adicionais = adicionaisSelecionados;
+  
+    // Obtém o preço atual do carrinho corretamente (já incluindo o lanche)
+    let precoBaseTexto = document.getElementById("carrinhoTotalPopUp").textContent.replace("Total: R$", "").trim().replace(",", ".");
+    let precoBase = isNaN(parseFloat(precoBaseTexto)) ? 0 : parseFloat(precoBaseTexto);
+  
+    // Soma o total dos adicionais ao total do carrinho
+    let novoTotal = precoBase + totalAdicionais;
+  
+    // Atualiza o valor do carrinho corretamente
+    document.getElementById("carrinhoTotalPopUp").textContent = `Total: R$ ${novoTotal.toFixed(2).replace(".", ",")}`;
+  
+    console.log("Produto atualizado com adicionais:", produto);
+    alert("Adicionais adicionados ao carrinho!");
+  
+    // Esconde a interface de escolha de adicionais
+    const escolhas = document.getElementById("escolhas");
+    if (escolhas) {
+      escolhas.style.display = "none";
     }
-  });
+  
+    const adicionaisList = document.querySelector(".adicionaisList");
+    if (adicionaisList) {
+      adicionaisList.style.display = "none";
+    }
 
-  produto.Adicionais = adicionaisSelecionados;
-
-  let precoBase = parseFloat(document.getElementById("carrinhoTotalPopUp").textContent.replace("R$", "").trim().replace(",", "."));
-  precoBase += totalAdicionais;
-
-  document.getElementById("carrinhoTotalPopUp").textContent = `Total: R$ ${precoBase.toFixed(2).replace(".", ",")}`;
-
-  console.log("Produto atualizado com adicionais:", produto);
-  alert("Adicionais adicionados ao carrinho!");
-
-  const escolhas = document.getElementById("escolhas");
-  if (escolhas) {
-    escolhas.style.display = "none";
-  }
-
-  const adicionaisList = document.querySelector(".adicionaisList");
-  if (adicionaisList) {
-    adicionaisList.style.display = "none";
-  }
-}
+    Adicionais.push({
+      Nome: input.dataset.nome,
+      Preco: precoAdicional,
+    })
+  }  
 
 function salvarCarrinho() {
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
