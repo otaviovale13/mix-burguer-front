@@ -1,0 +1,297 @@
+/* Estilo do corpo da página */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  background-image: url(https://cdn.discordapp.com/attachments/1330955985006886983/1336391043578597448/fundo_mixburguer.jpg?ex=67a44b65&is=67a2f9e5&hm=8e6b8d7f0fa91226008bccb98179e80d44770ea95b888ac3d1e4b09d1fb95cbc&);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden; /* Adicionado para remover a rolagem horizontal */
+}
+
+/* Estilo da caixa preta */
+#caixaPreta {
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  width: 800px;
+  height: 950px;
+  background-color: rgba(0, 0, 0, 0.205);
+  position: relative;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden; /* Adicionado para remover a rolagem horizontal */
+}
+
+/* Estilo do contêiner pai do pagamento */
+#paiPagamento {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo do título "Detalhes do Pagamento" */
+#DetalhesdoPagamento {
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Estilo do contêiner dos itens do carrinho */
+#ItensDoCarrinho {
+  width: 100%;
+  min-height: 300px;
+  overflow-y: auto;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* Estilo dos itens do carrinho */
+.itemCarrinho {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* Estilo do valor total do pagamento */
+#ValorTotalPagamento {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Estilo do texto "Forma de Entrega" */
+#textoEntrega {
+  text-align: start;
+  display: flex;
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Estilo do contêiner da forma de entrega */
+#FormadeEntrega {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-self: flex-start;
+  padding-left: 2.5rem;
+}
+
+/* Estilo do contêiner filho do pai */
+#filhoDoPai {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  flex-direction: column;
+}
+
+/* Estilo dos parágrafos dentro do contêiner filho do pai */
+#filhoDoPai p {
+  margin: 0;
+}
+
+/* Estilo do texto "Receber em casa" */
+#ReceberEmCasa {
+  font-size: 24px;
+}
+
+/* Estilo do texto "endereço" */
+#endereçoPagamento {
+  font-size: 24px;
+}
+
+/* Estilo do texto "Formas de Pagamento" */
+#FormasdePagamentoTexto {
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+/* Estilo do texto "Pague Online" */
+#PagueOnline {
+  font-size: 32px;
+}
+
+/* Estilo do contêiner de pagamento online */
+#PagamentoOnline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Estilo das opções de pagamento online */
+#PagamentoOnlineOpcoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 260px;
+}
+
+/* Estilo dos rótulos das opções de pagamento online */
+#PagamentoOnlineOpcoes label {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+}
+
+/* Estilo dos inputs de rádio das opções de pagamento online */
+#PagamentoOnlineOpcoes input[type="radio"] {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* Estilo dos inputs de rádio selecionados */
+#PagamentoOnlineOpcoes input[type="radio"]:checked {
+  accent-color: #333;
+}
+
+/* Estilo do contêiner de pagamento na entrega */
+#PagamentoEntrega {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0;
+}
+
+/* Estilo das opções de pagamento na entrega */
+#PagamentoEntergaOpcoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Estilo dos rótulos das opções de pagamento na entrega */
+#PagamentoEntergaOpcoes label {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+}
+
+/* Estilo dos inputs de rádio das opções de pagamento na entrega */
+#PagamentoEntergaOpcoes input[type="radio"] {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* Estilo dos inputs de rádio selecionados */
+#PagamentoEntergaOpcoes input[type="radio"]:checked {
+  accent-color: #333;
+}
+
+/* Estilo do contêiner de finalizar pagamento */
+#FinalizarPagamento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+#cupomDesconto {
+  width: 400px;
+  height: 40px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+#FinalizarPagamento button {
+  width: 180px; /* Ajustar a largura do botão */
+  height: 50px; /* Ajustar a altura do botão */
+  font-size: 16px; /* Ajustar o tamanho da fonte */
+  border-radius: 10px;
+  text-wrap: nowrap;
+  background-color: rgb(255, 217, 32);
+  color: rgb(0, 0, 0);
+  transition: background-color 0.3s, transform 0.3s;
+  margin-right: 10px; /* Adicionar margem para separar os botões */
+}
+
+#FinalizarPagamento button:hover {
+  background-color: rgb(255, 200, 0);
+  transform: scale(1.05);
+}
+
+#VoltarPagamento {
+  width: 180px; /* Ajustar a largura do botão */
+  height: 50px; /* Ajustar a altura do botão */
+  font-size: 20px; /* Ajustar o tamanho da fonte */
+  border-radius: 10px;
+  background-color: #FED83C;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#VoltarPagamento:hover {
+  background-color: #FFA500;
+  transform: scale(1.05);
+}
+
+/* Estilo das fontes */
+#DetalhesdoPagamento p,
+#ValorTotalPagamento p,
+#textoEntrega,
+#ReceberEmCasa,
+#endereçoPagamento,
+#FormasdePagamentoTexto,
+#PagueOnline,
+#PagamentoOnlineOpcoes label,
+#PagamentoEntergaOpcoes label,
+#FinalizarPagamento button {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Estilo das cores dos textos */
+#DetalhesdoPagamento p,
+#ValorTotalPagamento p,
+#textoEntrega,
+#ReceberEmCasa,
+#endereçoPagamento,
+#FormasdePagamentoTexto,
+#PagueOnline,
+#PagamentoOnlineOpcoes label,
+#PagamentoEntergaOpcoes label {
+  color: white;
+}
+
+/* Estilo do texto "Pague na Entrega" */
+#PagamentoEntrega p {
+  font-size: 32px;
+}
+
+/* Estilo das cores dos maiores textos */
+#DetalhesdoPagamento p,
+#textoEntrega,
+#FormasdePagamentoTexto {
+  color: rgb(85, 82, 68);
+}

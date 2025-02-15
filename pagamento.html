@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/pagamento.css" />
+    <title>MixBurguer</title>
+  </head>
+  <body>
+    <main>
+      <div id="paiPagamento">
+        <div id="caixaPreta">
+          <div id="DetalhesdoPagamento">
+            <p>Detalhes do Pagamento</p>
+          </div>
+          <div id="ItensDoCarrinho"></div>
+          <div id="ValorTotalPagamento">
+            <p>Total: R$ <span id="PrecoReal">00,00</span></p>
+          </div>
+          <div id="FormadeEntrega">
+            <div id="filhoDoPai">
+                <p id="textoEntrega">Forma de Entrega:</p>
+                <p id="ReceberEmCasa">Receber em casa</p>
+                <p id="endereçoPagamento">endereço:</p>
+            </div>
+            </div>
+            <div id="FormasdePagamento">
+                <p id="FormasdePagamentoTexto">Formas de Pagamento</p>
+            <div id="PagamentoOnline">
+              <p id="PagueOnline">Pague Online:</p>
+              <div id="PagamentoOnlineOpcoes">
+                <label>
+                  <input type="radio" name="pagamento" value="pix"  />
+                  Pix
+                </label>
+                <label>
+                  <input type="radio" name="pagamento" value=" credito" id=" creditoOpcao" />
+                  Crédito
+                </label>
+              </div>
+            </div>
+            <div id="PagamentoEntrega">
+              <p>Pague na Entrega:</p>
+              <div id="PagamentoEntergaOpcoes">
+                <label>
+                  <input type="radio" name="pagamento" value="dinheiro" />
+                  Dinheiro
+                </label>
+                <label>
+                  <input type="radio" name="pagamento" value="Débito" />
+                  Débito
+                </label>
+                <label>
+                  <input type="radio" name="pagamento" value="credito" />
+                  Crédito
+                </label>
+              </div>
+            </div>
+          </div>
+          <div id="FinalizarPagamento">
+            <input type="text" id="cupomDesconto" placeholder="Insira seu cupom de desconto" />
+            <div style="display: flex; justify-content: center; gap: 10px;">
+              <button onclick="FinalizarPagamento()">Finalizar Pagamento</button>
+              <button id="VoltarPagamento" onclick="btnVoltar()">Voltar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/JS/Pagamento.js"></script>
+  </body>
+</html>

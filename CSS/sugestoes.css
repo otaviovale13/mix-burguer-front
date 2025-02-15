@@ -1,0 +1,558 @@
+/* SUGESTOES */
+@font-face { font-family: Nabana; src: url(/CSS/Nabana-ShadowBold\ -\ DEMO.ttf); } 
+@font-face { font-family: NabanaNormal; src: url(/CSS/Nabana.ttf); } 
+
+@font-face {
+  font-family: 'Nabana';
+  src: url('Fonts/Nabana.ttf');
+  }
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+  background-color: #111;
+  font-family: Nabana;
+  color: #fff;
+}
+
+/* Estilo do cabeçalho */
+header {
+  background-color: #fed83c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 12rem;
+  padding: 0 3rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: Nabana;
+  position: sticky; 
+  top: 0; 
+  z-index: 100;
+}
+
+
+
+/* Estilo do container filho do cabeçalho */
+.headerFilho {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Estilo do logo */
+.logo {
+  width: 17rem;
+  max-width: 100%;
+  transition: transform 0.6s ease;
+  margin-top: 5rem;
+  position: absolute; 
+  top: 5%; 
+  left: 3%; 
+  z-index: 1; 
+  margin-top: -1rem;
+
+
+}
+
+/* Efeito hover no logo */
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo do texto */
+.text {
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  gap: 0.5rem;
+  margin-left: 18rem;
+  font-family: Nabana;
+  color: #000000;
+  /* text-shadow: 0.5px 0px rgb(255, 255, 255), -0.5px 0px rgb(255, 255, 255), 0px -0.5px rgb(255, 255, 255),
+  0.5px 0.5px rgb(255, 255, 255),-0.5px -0.5px rgb(255, 255, 255), 0.5px -0.5px rgb(255, 255, 255),-1px 1px rgb(255, 255, 255); */
+
+
+
+}
+
+/* Estilo do subtítulo */
+.sub_titulo {
+  margin-top: -0.5rem;
+  color: #000000;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: Nabana;
+
+}
+
+/* Estilo do container de busca no cabeçalho */
+.headerFilhoBusca {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Estilo da barra de busca */
+.busca {
+  background-color: #222;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 8px 16px;
+  width: 25rem;
+  transition: all 0.3s ease;
+}
+
+/* Efeito hover na barra de busca */
+.busca:hover {
+  background-color: #333;
+  border: solid 2px #fed83c;
+}
+
+/* Estilo do input de busca */
+input {
+  background: none;
+  border: none;
+  color: #fff;
+  width: 20rem;
+  height: 2rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif; 
+}
+
+/* Estilo do input de busca quando focado */
+input:focus {
+  outline: none;
+}
+
+/* Estilo dos ícones */
+i {
+  color: #fff;
+}
+
+/* Estilo do ícone de pessoa */
+.bi-person-fill {
+  font-size: 3.7rem;
+  color: #222;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+}
+
+.bi-person-fill:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo do ícone de sacola */
+.bi-bag-fill {
+  font-size: 3rem;
+  color: #222;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+}
+
+.bi-bag-fill:hover {
+  transform: scale(1.1);
+}
+
+
+
+.burger {
+  color: #fed83c;
+  font-size: 2rem;
+  font-family: Nabana;
+
+}
+  
+
+ main {
+    width: 100%;
+    height: 53rem;
+background: url(https://moinhoglobo.com.br/wp-content/uploads/2019/05/16-hamburguer.jpeg) no-repeat center center/cover;
+background-attachment: fixed;
+font-family: Nabana;
+
+
+
+  .pai1{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+    .text1 {
+      font-family: Nabana;
+      font-size: 3rem;
+        display: flex;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 2.5rem;
+    }
+
+    .cx {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: start;
+    }
+
+    
+
+    .caixaTexto {
+        width: 40rem;
+        height: 25rem;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        border-radius: 15px;
+        margin-top: 0rem;
+        padding: 1.5rem;
+        font-size: 1.2rem;
+        text-align: left;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        font-family: Nabana;
+
+    }
+
+    .butao {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        height: 4rem;
+        font-family: Nabana;
+
+        
+
+        .botao {
+          background-color: #fed83c;
+          text-align: center;
+          color: #000000;
+          border: none;
+          border-radius: 10px;
+          font-size: 1.5rem;
+          font-family: NabanaNormal;
+          transition: transform 0.3s ease;
+          cursor: pointer;
+          margin-top: 1rem;
+
+        }
+        
+        .botao:hover {
+          transform: scale(1.1);
+        }
+        
+    }
+  }
+}
+
+
+ /* Geral */
+ footer {
+  display: block;
+  font-family: Nabana;
+}
+
+
+
+/* Estilo da seção amarela do rodapé */
+.amarelo {
+  background-color: #FED83C;
+  padding: 10px 20px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 10rem;
+  font-size: 22px;
+
+
+}
+
+/* Estilo do logo na seção amarela do rodapé */
+ .logo2 {
+  width: 17rem;
+  max-width: 100%;
+  transition: transform 0.6s ease;
+  margin-top: -1rem;
+  margin-left: 2.9rem;
+  cursor: pointer;
+}
+
+.logo2:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo do texto na seção amarela do rodapé */
+.amarelo .text2 {
+  margin-left: 10px;
+  font-size: 22px;
+
+}
+
+/* Estilo do título na seção amarela do rodapé */
+.amarelo .titulo {
+  font-size: 29px;
+  color: #000000;
+  font-family: Nabana;
+  margin: 0;
+  margin-right: 80rem;
+}
+
+/* Estilo do subtítulo na seção amarela do rodapé */
+.amarelo .sub_titulo {
+  font-size: 22px;
+  color: #000000;
+  font-family: Nabana;
+  margin: 5px 0 0 0;
+}
+
+/* Estilo do botão na seção amarela do rodapé */
+.amarelo .btn {
+  margin-left: 20px;
+}
+
+/* Estilo do botão na seção amarela do rodapé */
+.btn2 {
+  background-color: #0000007a;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px; 
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: transform 0.6s ease;
+  font-family: Nabana;
+
+
+
+}
+
+/* Efeito hover no botão na seção amarela do rodapé */
+ .btn2:hover {
+  
+    transform: scale(1.1);
+  
+  
+}
+
+/* Estilo da seção preta do rodapé */
+.preto {
+  background-color: #FED83C;
+  color: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; 
+  font-family: Nabana;
+  height: 12rem;
+
+}
+
+/* Estilo do texto na seção preta do rodapé */
+.preto .text4 {
+  font-size: 18px; 
+  text-align: left; 
+  margin-bottom: 0;
+  font-family: Nabana;
+
+}
+
+/* Estilo do texto na seção preta do rodapé */
+.preto .text5 {
+  font-size: 18px;
+  text-align: center; 
+  font-family: Nabana;
+
+}
+
+/* Estilo do container de ícones na seção preta do rodapé */
+.preto .text5 div {
+  margin-top: 5px;
+}
+
+/* Estilo dos ícones na seção preta do rodapé */
+.preto .icons {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: end;
+  margin-right: 18rem;
+  gap: 2rem;
+  font-size: 2.2rem;
+  font-family: Nabana;
+
+}
+
+
+  /* Ajustes para telas menores */
+@media (max-width: 768px) {
+  header {
+    padding: 0 1.5rem;
+    height: 6rem;
+  }
+
+  .headerFilho {
+    gap: 1rem;
+  }
+
+  .logo {
+    width: 10rem;
+    top: 3%;
+    left: 3%;
+  }
+
+  .text {
+    display: none;
+  }
+
+  .busca {
+    width: 18rem;
+  }
+
+  .headerFilhoBusca {
+    gap: 0.5rem;
+  }
+
+  .busca input {
+    width: 15rem;
+  }
+  
+  .bi-person-fill, .bi-bag-fill {
+    font-size: 1.8rem;
+  }
+
+  .logo {
+    width: 10rem; /* Reduz a largura da logo */
+    top: 3%; /* Ajuste a posição vertical da logo */
+    left: 50%; /* Centraliza a logo horizontalmente */
+    transform: translateX(-50%); /* Compensa o deslocamento da logo */
+  }
+}
+
+/* Ajustes para telas de tablets e celulares */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .logo {
+    width: 8rem;
+    top: 5%;
+    left: 5%;
+  }
+
+  .text {
+    display: none;
+  }
+
+  .headerFilhoBusca {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .busca {
+    width: 100%;
+    padding: 8px 12px;
+  }
+
+  .busca input {
+    width: 100%;
+  }
+
+  .bi-person-fill, .bi-bag-fill {
+    font-size: 1.5rem;
+  }
+
+  .burger {
+    font-size: 2.5rem;
+  }
+
+  .main {
+    height: auto;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .pai1 {
+    padding: 1rem;
+  }
+
+  .caixaTexto {
+    width: 90%;
+    height: auto;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .butao {
+    margin-top: 2rem;
+  }
+
+  .botao {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  /* Ajustes para a seção amarela */
+  .amarelo {
+    flex-direction: column;
+    padding: 5px 10px;
+    align-items: center;
+  }
+
+  .amarelo .logo2 {
+    max-width: 50px;
+  }
+
+  .amarelo .titulo {
+    font-size: 16px;
+  }
+
+  .amarelo .sub_titulo {
+    font-size: 12px;
+  }
+
+  .amarelo .btn2 {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .preto {
+    flex-direction: column;
+    padding: 15px;
+    align-items: center;
+  }
+
+  .preto .text4, .preto .text5 {
+    font-size: 14px;
+  }
+
+  .preto .icons {
+    font-size: 1.8rem;
+    margin-right: 0;
+    gap: 1rem;
+  }
+
+  .logo {
+    width: 8rem; /* Reduz ainda mais a largura da logo */
+    top: 5%; /* Ajuste a posição vertical */
+    left: 50%; /* Centraliza a logo horizontalmente */
+    transform: translateX(-50%); /* Compensa o deslocamento da logo */
+  }
+}
