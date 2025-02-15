@@ -27,7 +27,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   text-align: center;
   padding: 1rem;
 }
@@ -36,7 +35,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 97vh;
   font-family: Nabana;
 
 }
@@ -59,6 +58,11 @@ main {
   height: 150px;
   border-radius: 50%;
   margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover{
+  transform: scale(1.1);
 }
 
 .escolha {
