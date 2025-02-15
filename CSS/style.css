@@ -91,7 +91,7 @@ header{
   gap: 0.5rem;
   margin-left: 18rem;
   font-family: Nabana;
-  color: #000000;
+  color: #111111;
   /* text-shadow: 0.5px 0px rgb(255, 255, 255), -0.5px 0px rgb(255, 255, 255), 0px -0.5px rgb(255, 255, 255),
   0.5px 0.5px rgb(255, 255, 255),-0.5px -0.5px rgb(255, 255, 255), 0.5px -0.5px rgb(255, 255, 255),-1px 1px rgb(255, 255, 255); */
 
@@ -102,7 +102,7 @@ header{
 /* Estilo do subtítulo */
 .sub_titulo {
   margin-top: -0.5rem;
-  color: #000000;
+  color: #111111;
   font-size: 1.2rem;
   font-weight: 600;
   font-family: Nabana;
@@ -478,6 +478,11 @@ a{
   width: 15rem;
   height: 15rem;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.maisImgsEVideos:hover{
+  transform: scale(1.1);
 }
 
 /* Estilo dos vídeos na seção "mais" */
@@ -488,11 +493,16 @@ a{
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
   
   i{
-    color: #000000;
+    color: #111111;
     font-size: 7rem;
   }
+}
+
+.videosmais1:hover{
+  transform: scale(1.1);
 }
 
 /* Estilo dos vídeos na seção "mais" */
@@ -503,11 +513,16 @@ a{
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
   
   i{
-    color: #000000;
+    color: #111111;
     font-size: 7rem;
   }
+}
+
+.videosmais2:hover{
+  transform: scale(1.1);
 }
 
 /* Estilo dos vídeos na seção "mais" */
@@ -518,11 +533,16 @@ a{
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
   
   i{
-    color: #000000;
+    color: #111111;
     font-size: 7rem;
   }
+}
+
+.videosmais3:hover{
+  transform: scale(1.1);
 }
 
 /* Estilo dos vídeos na seção "mais" */
@@ -533,11 +553,16 @@ a{
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
   
   i{
-    color: #000000;
+    color: #111111;
     font-size: 7rem;
   }
+}
+
+.videosmais4:hover{
+  transform: scale(1.1);
 }
 
 /* Estilo dos pop-ups */
@@ -756,7 +781,7 @@ footer {
 /* Estilo do título na seção amarela do rodapé */
 .amarelo .titulo {
   font-size: 29px;
-  color: #000000;
+  color: #111111;
   font-family: Nabana;
   margin: 0;
   margin-right: 80rem;
@@ -765,7 +790,7 @@ footer {
 /* Estilo do subtítulo na seção amarela do rodapé */
 .amarelo .sub_titulo {
   font-size: 22px;
-  color: #000000;
+  color: #111111;
   font-family: Nabana;
   margin: 5px 0 0 0;
 }
@@ -777,18 +802,15 @@ footer {
 
 /* Estilo do botão na seção amarela do rodapé */
 .btn2 {
-  background-color: #0000007a;
-  color: #ffffff;
+  background-color: #111111;
+  color: #fed83c;
   border: none;
   padding: 8px 16px; 
   cursor: pointer;
-  font-size: 14px;
+  font-size: 1rem;
   border-radius: 5px;
   transition: transform 0.6s ease;
   font-family: Nabana;
-
-
-
 }
 
 /* Efeito hover no botão na seção amarela do rodapé */
@@ -824,7 +846,7 @@ footer {
 /* Estilo do texto na seção preta do rodapé */
 .preto .text5 {
   font-size: 18px;
-  text-align: center; 
+  text-align: right; 
   font-family: Nabana;
 
 }
@@ -837,22 +859,65 @@ footer {
 /* Estilo dos ícones na seção preta do rodapé */
 .preto .icons {
   display: flex;
-  color: white;
+  color: rgb(255, 0, 0);
   justify-content: center;
   align-items: end;
-  margin-right: 18rem;
   gap: 2rem;
   font-size: 2.2rem;
   font-family: Nabana;
+}
 
+.trabalhe{
+  color: #111111;
+  text-decoration: none;
+}
+
+.bi-facebook{
+  color: #111111;
+  transition: transform 0.6s ease;
+}
+
+.bi-linkedin{
+  color: #111111;
+  cursor: pointer;
+}
+
+.iconsFooter{
+  transition: transform 0.6s ease;
+}
+
+.iconsFooter:hover{
+  transform: scale(1.1);
+}
+
+.bi-facebook:hover{
+  transform: scale(1.1);
+}
+
+.bi-whatsapp{
+  color: #111111;
+  transition: transform 0.6s ease;
+}
+
+.bi-whatsapp:hover{
+  transform: scale(1.1);
+}
+
+.bi-instagram{
+  color: #111111;
+  transition: transform 0.6s ease;
+}
+
+.bi-instagram:hover{
+  transform: scale(1.1);
 }
 
 /* Estilo dos botões do cardápio */
 .btnCardapio{
   background-color: #fed83c;
-  color: #000000;
+  color: #111111;
   border: none;
-  width: 20rem;
+  width: 25rem;
   height: 3rem;
   border-radius: 10px;
   font-size: 1.5rem;
@@ -869,9 +934,9 @@ footer {
 /* Estilo dos botões do cardápio */
 .btnCardapioA{
   background-color: #fed83c;
-  color: #000000;
+  color: #111111;
   border: none;
-  width: 20rem;
+  width: 25rem;
   height: 3rem;
   border-radius: 10px;
   font-size: 1.5rem;
@@ -913,6 +978,11 @@ footer {
   padding: 1rem;
   border-radius: 1rem;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.produtos:hover{
+  transform: scale(1.1);
 }
 
 /* Estilo das imagens dos produtos */
@@ -961,9 +1031,10 @@ footer {
   justify-content: center;
   align-items: center;
   margin-bottom: 5rem;
+  gap: 3rem;
 
   button{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: NabanaNormal;
   }
 }
 
@@ -1566,4 +1637,15 @@ footer {
 
 .btnCardapioAriel:hover{
   transform: scale(1.1);
+}
+
+.mensagem{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-family: Nabana;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
