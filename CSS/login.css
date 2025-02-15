@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+main .abaLogin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.abaLogin{
+  display: flex;
+}
+
+.background {
+  height: 100vh;
+  width: 100%;
+}
+.background {
+  background-image: url(/IMGS/fundo_mixburguer.jpg);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  z-index: -1;
+}
+
+.container {
+  width: 1120px;
+  height: 850px;
+  background: #ffffff;
+  box-shadow: 0px 4px 76.5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  position: relative;
+}
+.logo {
+  background-image: url(/IMGS/logo\ mix\ burguer.png);
+  background-size: 120px 120px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: solid 3px black;
+  position: absolute;
+  left: 480px;
+  top: -60px;
+}
+.abas {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 164px;
+  margin-inline: 200px;
+  div {
+    font-weight: 700;
+    font-size: 20px;
+    cursor: default;
+    .ativo{
+      border-bottom: solid 5px #fed83c;
+      color: #333;
+    }
+    .inativo {
+      text-decoration: none;
+      color: #999;
+      cursor: pointer;
+    }
+  }
+}
+#formArea {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dados {
+  margin-top: 76px;
+  .input-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 46px;
+    input {
+      width: 418px;
+      height: 40px;
+      border-radius: 30px;
+      padding-left: 15px;
+      border: none;
+      box-shadow: -3px 4px 19.4px -1px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+.btns {
+  display: flex;
+  flex-direction: row;
+  gap: 13%;
+  justify-content: center;
+}
+.EsqueceuSenha {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #17a8c1;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btnLogin {
+  width: 128px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: #fed83c;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+}
+.btnLogin:hover {
+  box-shadow: -3px 4px 19.4px -1px rgba(0, 0, 0, 0.25);
+  background-color: #ffdf5d;
+  color: #999;
+}
+.EsqueceuSenha:hover {
+  text-decoration: underline 3px solid;
+  text-underline-offset: 3px;
+}
+.or {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  gap: 3.5%;
+}
+.hr {
+  min-width: none;
+  width: 168px;
+  max-width: 168px;
+  hr {
+    border: black solid 1px;
+  }
+}
+.orText {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+.redeslogin {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 35px;
+  img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+  }
+}
