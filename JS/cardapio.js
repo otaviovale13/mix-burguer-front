@@ -389,6 +389,11 @@ function fecharBtn() {
 function voltarHome() {
   window.location.href = "/index.html"
 }
+
+function voltarPedido() {
+  window.location.href = "/pedido.html"
+}
+
 function irSugestão() {
   window.location.href = "/sugestoes.html"
 }

@@ -3,6 +3,9 @@
     src: url('Fonts/Nabana.ttf');
     }
 
+    @font-face { font-family: Nabana; src: url(/CSS/Nabana-ShadowBold\ -\ DEMO.ttf); } 
+@font-face { font-family: NabanaNormal; src: url(/CSS/Nabana.ttf); } 
+
 * {
     margin: 0;
     padding: 0;
@@ -45,7 +48,11 @@ nav {
         display: flex;
         width: 130px;
         margin-top: 30px;
-        
+        transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+        transform: scale(1.1);
     }
 
     h1 {
@@ -98,43 +105,43 @@ nav {
         }
     }
 
-    .btnRemove0 {
-        background-color: #FED83C;
-        margin-left: 30px;
-        color: black;
+    .btnRemove0{
+        background-color: #fed83c;
+        color: #111111;
         border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
+        height: 3rem;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        font-family: NabanaNormal;
+        transition: transform 0.3s ease;
         cursor: pointer;
-        border-radius: 5px;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        font-family: Nabana;
-
-    }
-    
-    .btnRemove0:hover {
-        color: white;
-    }
-
-    .btnDuplicar0 {
-        background-color: #FED83C;
+        margin-top: 1rem;
+        padding: 10px 20px;
         margin-left: 10px;
-        color: black;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        border-radius: 5px;
-        font-family: Nabana;
+      }
+      
+      .btnRemove0:hover{
+        transform: scale(1.1);
+      }
 
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    
-    .btnDuplicar0:hover {
-        color: white;
-    }
+      .btnDuplicar0{
+        background-color: #fed83c;
+        color: #111111;
+        border: none;
+        height: 3rem;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        font-family: NabanaNormal;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        margin-top: 1rem;
+        padding: 10px 20px;
+        margin-left: 10px;
+      }
+      
+      .btnDuplicar0:hover{
+        transform: scale(1.1);
+      }
 }
 
 .total {
@@ -144,15 +151,20 @@ nav {
     background-color: white;
     justify-content: center;
     align-items: center;
-    width: 200px; /* Reduzir o tamanho da caixa */
-    height: 30px; /* Reduzir a altura da caixa */
+    width: 20rem; /* Reduzir o tamanho da caixa */
     margin-top: 30px; /* Aumentar a distância dos lanches */
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: bold;
     border-radius: 5px;
     font-family: Nabana;
     
     padding-top: 3.5px;
+}
+
+.btns{
+    display: flex;
+    gap: 3rem;
+    margin-top: 1rem;
 }
 
 .btnFinish {
@@ -178,26 +190,24 @@ nav {
     transform: scale(1.05); /* Adicionar animação de escala */
 }
 
-.btnVoltar {
-    background-color: #FED83C;
-    color: black;
+/* Estilo dos botões do cardápio */
+.btnCardapio{
+    background-color: #fed83c;
+    color: #111111;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
+    width: 25rem;
+    height: 3rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-family: NabanaNormal;
+    transition: transform 0.3s ease;
     cursor: pointer;
-    font-family: Nabana;
-
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Adicionar transição para animação */
-    margin-top: 5px;
-}
-
-.btnVoltar:hover {
-    background-color: #FFA500; /* Cor de fundo ao passar o mouse */
-    color: white;
-    transform: scale(1.05); /* Adicionar animação de escala */
-}
+    margin-top: 1rem;
+  }
+  
+  .btnCardapio:hover{
+    transform: scale(1.1);
+  }
 
 .pCarrinho{
     color: white;

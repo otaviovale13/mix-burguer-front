@@ -82,15 +82,27 @@ categorias.innerHTML = Object.keys(Categorias)
         .join("")
 
         function buscarLanche() {
-            const inputBuscar = document.getElementById("inputBuscar").value.toLowerCase();
-            document.querySelectorAll(".categoria").forEach(categoria => {
-                let visibilidade = false;
-                categoria.querySelectorAll(".produtos").forEach(item => {
-                    item.style.display = item.textContent.toLowerCase().includes(inputBuscar) ? "" : "none";
-                    if (item.style.display === "") visibilidade = true;
-                });
-                categoria.style.display = visibilidade ? "" : "none";
+          const inputBuscar = document.getElementById("inputBuscar").value.toLowerCase()
+          const categorias = document.querySelectorAll(".categoria")
+          const mensagem = document.getElementById("mensagem")
+        
+          categorias.forEach(categoria => {
+            const produtos = categoria.querySelectorAll(".produtos");
+            let visibilidade = false;
+        
+            produtos.forEach(item => {
+              if (item.textContent.toLowerCase().includes(inputBuscar)) {
+                item.style.display = "";
+                visibilidade = true;
+                mensagem.style.display = "none";
+              } else {
+                item.style.display = "none";
+                mensagem.style.display = "flex";
+              }
             });
+        
+            categoria.style.display = visibilidade ? "" : "none";
+          });
         }
 
 function criarModal() {
