@@ -17,24 +17,12 @@ if (carrinho.length === 0){
     let produtosHTML = "";
 
     carrinho.forEach((item, index) => {
-        if (!item.Preco) {
-            console.error(`Item no índice ${index} não possui a propriedade 'Preco'.`);
-            return;
-        }
-
-        const precoNumerico = parseFloat(item.Preco.replace("R$", "").replace(",", "."));
-        let precoTotalItem = precoNumerico * item.Quantidade;
-
-        let adicionaisHTML = "";
+        const precoNumerico = parseFloat(item.Preco.replace("R$", "").replace(",",".")); 
+        let totalItem = precoNumerico * item.Quantidade;
         item.Adicionais.forEach(adicional => {
-            const precoAdicional = typeof adicional.Preco === 'string' 
-                ? parseFloat(adicional.Preco.replace("R$", "").replace(",", "."))
-                : adicional.Preco;
-            precoTotalItem += precoAdicional * adicional.Quantidade;
-            adicionaisHTML += `<p>Adicional: ${adicional.Nome} - R$ ${precoAdicional.toFixed(2).replace(".", ",")} (x${adicional.Quantidade}) - Total: R$ ${(precoAdicional * adicional.Quantidade).toFixed(2).replace(".", ",")}</p>`;
+            totalItem += adicional.Preco * adicional.Quantidade;
         });
-
-        total += precoTotalItem;
+        total += totalItem;
 
         produtosHTML += `
            <div class="content">
@@ -43,12 +31,13 @@ if (carrinho.length === 0){
                 <img class="img00" src="${item.Imagem}" alt="" srcset="">
             </div>
             <div class="text0">
-                ${item.Nome} - ${item.Quantidade}x (R$ ${precoNumerico.toFixed(2).replace(".", ",")} cada) - Total: R$ ${(precoNumerico * item.Quantidade).toFixed(2).replace(".", ",")}
-                
-                ${adicionaisHTML}
+                ${item.Nome} - Quantidade: ${item.Quantidade} - Preço Unitário: R$ ${precoNumerico.toFixed(2).replace(".", ",")}
+                ${item.Adicionais.map(adicional => `
+                    <p>Adicional: ${adicional.Nome} - Preço Unitário: R$ ${adicional.Preco.toFixed(2).replace(".", ",")} (x${adicional.Quantidade})</p>
+                `).join("")}
             </div>
             <div class="textValue">
-            R$ ${precoTotalItem.toFixed(2).replace(".", ",")}
+            Total: R$ ${totalItem.toFixed(2).replace(".", ",")}
             </div>
             </div>
             <button class="btnRemove0" data-index="${index}">Remover</button>
@@ -58,9 +47,21 @@ if (carrinho.length === 0){
     });
 
     produtosDiv.innerHTML = produtosHTML;
-    totalDiv.textContent = `Total: R$ ${total.toFixed(2).replace(".",",")}`
     totalDiv.style.display = "block";
     btnFinalizar.style.display = "block"; // Mostra o botão finalizar
+
+    // Calcular o total incluindo os adicionais
+    let totalComAdicionais = 0;
+    carrinho.forEach(item => {
+        const precoNumerico = parseFloat(item.Preco.replace("R$", "").replace(",", "."));
+        let totalItem = precoNumerico * item.Quantidade;
+        item.Adicionais.forEach(adicional => {
+            totalItem += adicional.Preco * adicional.Quantidade;
+        });
+        totalComAdicionais += totalItem;
+    });
+
+    totalDiv.textContent = `Total: R$ ${totalComAdicionais.toFixed(2).replace(".", ",")}`;
 
     document.querySelectorAll('.btnRemove0').forEach(button => {
         button.addEventListener('click', (event) => {
@@ -82,40 +83,22 @@ if (carrinho.length === 0){
     });
 }
 
-const FRETE_VALOR = 10.00;
-
 btnFinalizar.addEventListener('click', () => {
     document.getElementById('popupPagamento').style.display = 'flex';
-    atualizarPrecoTotalPopup();
+    copiarValorTotal();
 });
 
-function atualizarPrecoTotalPopup() {
-    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    let total = 0;
-
-    carrinho.forEach(item => {
-        const precoNumerico = parseFloat(item.Preco.replace("R$", "").replace(",", "."));
-        let precoTotalItem = precoNumerico * item.Quantidade;
-
-        item.Adicionais.forEach(adicional => {
-            const precoAdicional = typeof adicional.Preco === 'string' 
-                ? parseFloat(adicional.Preco.replace("R$", "").replace(",", "."))
-                : adicional.Preco;
-            precoTotalItem += precoAdicional * adicional.Quantidade;
-        });
-
-        total += precoTotalItem;
-    });
-
+function copiarValorTotal() {
+    const totalDiv = document.getElementById("total");
+    const precoRealElement = document.getElementById("PrecoReal");
+    let total = parseFloat(totalDiv.textContent.replace("Total: R$ ", "").replace(",", "."));
+    
     const formaEntrega = document.querySelector('input[name="formaEntrega"]:checked');
     if (formaEntrega && formaEntrega.value === 'casa') {
-        total += FRETE_VALOR;
-        document.getElementById('frete').style.display = 'block';
-    } else {
-        document.getElementById('frete').style.display = 'none';
+        total += 10; // Adiciona o valor do frete
     }
 
-    document.getElementById('PrecoReal').textContent = total.toFixed(2).replace(".", ",");
+    precoRealElement.textContent = total.toFixed(2).replace(".", ",");
 }
 
 function atualizarOpcoesPagamento() {
@@ -152,7 +135,7 @@ function atualizarFormaEntrega() {
         enderecoEntrega.style.display = 'none';
         frete.style.display = 'none'; // Esconde o frete
     }
-    atualizarPrecoTotalPopup();
+    copiarValorTotal(); // Atualiza o valor total ao mudar a forma de entrega
 }
 
 function buscarEndereco() {
@@ -186,10 +169,6 @@ function aplicarCupomDesconto() {
 
     if (cupom === "DESCONTO10") {
         alert("Cupom aplicado: 10% de desconto!");
-        // Atualize o preço total com o desconto
-        let total = parseFloat(totalDiv.textContent.replace("Total: R$ ", "").replace(",", "."));
-        total = total * 0.9;
-        totalDiv.textContent = `Total: R$ ${total.toFixed(2).replace(".", ",")}`;
     } else if (cupom !== "") {
         alert("Cupom inválido.");
     }
@@ -198,7 +177,14 @@ function aplicarCupomDesconto() {
 function FinalizarPagamento() {
     // Verifica se uma forma de pagamento foi selecionada
     const selectedPayment = document.querySelector('input[name="pagamento"]:checked');
-    
+    const tipoPagamento = document.querySelector('input[name="tipoPagamento"]:checked').value;
+
+  
+    if (tipoPagamento === 'online' && selectedPayment.value === 'dinheiro') {
+        alert("Pagamento em dinheiro não é permitido para pagamentos online.");
+        return;
+    }
+
     // Exibe uma mensagem de confirmação de pagamento
     const paymentMethod = selectedPayment.value;
     alert(`Pagamento finalizado com sucesso usando ${paymentMethod}.`);
@@ -212,65 +198,47 @@ function FinalizarPagamento() {
 
 // Aguarda o carregamento completo do DOM
 document.addEventListener("DOMContentLoaded", () => {
-  // Seleciona o botão de finalizar pagamento
-  const finalizarPagamentoButton = document.querySelector(
-    "#btnFinalizarPagamento"
-  );
-  // Seleciona o elemento que exibe o preço total
-  const precoRealElement = document.getElementById("PrecoReal");
-  // Seleciona o contêiner dos itens do carrinho
-  const itensDoCarrinho = document.getElementById("ItensDoCarrinho");
+    // Seleciona o botão de finalizar pagamento
+    const finalizarPagamentoButton = document.querySelector("#btnFinalizarPagamento");
+    // Seleciona o elemento que exibe o preço total
+    const precoRealElement = document.getElementById("PrecoReal");
+    // Seleciona o contêiner dos itens do carrinho
+    const itensDoCarrinho = document.getElementById("ItensDoCarrinho");
 
-  // Função para atualizar o preço total dinamicamente
-  function atualizarPrecoTotal() {
-    let total = 0;
+    // Adiciona um evento de input ao campo de cupom de desconto
+    document.getElementById('cupomDesconto').addEventListener('input', aplicarCupomDesconto);
 
-    // Seleciona todos os itens do carrinho com o atributo data-preco
-    const itens = itensDoCarrinho.querySelectorAll("[data-preco]");
-    itens.forEach((item) => {
-      // Soma os preços dos itens
-      total += parseFloat(item.getAttribute("data-preco"));
+    // Adiciona um evento de clique ao botão de finalizar pagamento
+    finalizarPagamentoButton.addEventListener("click", (event) => {
+        event.preventDefault(); // Evita o comportamento padrão do botão
+
+        // Verifica se uma forma de pagamento foi selecionada
+        const selectedPayment = document.querySelector('input[name="pagamento"]:checked');
+
+        if (!selectedPayment) {
+            alert("Por favor, selecione uma forma de pagamento.");
+            return;
+        }
+
+        // Limpa o carrinho
+        localStorage.removeItem("carrinho");
+
+        // Redireciona para a página de carrinho
+        window.location.href = "/carrinho.html";
     });
-    // Atualiza o texto do elemento de preço total
-    precoRealElement.textContent = total.toFixed(2).replace(".", ",");
-  }
 
-  // Adiciona um evento de input ao campo de cupom de desconto
-  document.getElementById('cupomDesconto').addEventListener('input', aplicarCupomDesconto);
-
-  // Adiciona um evento de clique ao botão de finalizar pagamento
-  finalizarPagamentoButton.addEventListener("click", (event) => {
-    event.preventDefault(); // Evita o comportamento padrão do botão
-
-    // Verifica se uma forma de pagamento foi selecionada
-    const selectedPayment = document.querySelector(
-      'input[name="pagamento"]:checked'
-    );
-
-    if (!selectedPayment) {
-      alert("Por favor, selecione uma forma de pagamento.");
-      return;
-    }
-
-    localStorage.removeItem("carrinho");
-
-    // Redireciona para a página de carrinho
-    window.location.href = "/carrinho.html";
-  });
-
-  // Seleciona todas as opções de pagamento
-  const paymentOptions = document.querySelectorAll('input[name="pagamento"]');
-  paymentOptions.forEach((option) => {
-    // Adiciona um evento de mudança a cada opção de pagamento
-    option.addEventListener("change", () => {
-      paymentOptions.forEach((opt) => {
-        // Aplica uma animação de escala e sombra à opção selecionada
-        opt.parentElement.style.transition = "transform 0.3s, box-shadow 0.3s";
-        opt.parentElement.style.transform = opt.checked ? "scale(1.1)" : "scale(1)";
-      });
+    // Seleciona todas as opções de pagamento
+    const paymentOptions = document.querySelectorAll('input[name="pagamento"]');
+    paymentOptions.forEach((option) => {
+        // Adiciona um evento de mudança a cada opção de pagamento
+        option.addEventListener("change", () => {
+            paymentOptions.forEach((opt) => {
+                // Aplica uma animação de escala e sombra à opção selecionada
+                opt.parentElement.style.transition = "transform 0.3s, box-shadow 0.3s";
+                opt.parentElement.style.transform = opt.checked ? "scale(1.1)" : "scale(1)";
+            });
+        });
     });
-  });
-
 });
 
 function mostrarItens() {
@@ -279,12 +247,16 @@ function mostrarItens() {
     let itensHTML = "";
 
     carrinho.forEach(item => {
+        const precoNumerico = parseFloat(item.Preco.replace("R$", "").replace(",", "."));
+        const totalItem = precoNumerico * item.Quantidade;
+
         itensHTML += `
-            <div class="itemCarrinho" data-preco="${parseFloat(item.Preco.replace("R$", "").replace(",", "."))}">
-                <p>${item.Nome} - ${item.Preco}</p>
+            <div class="itemCarrinho" data-preco="${totalItem}">
+                <p>${item.Nome} - Quantidade: ${item.Quantidade} - Preço Unitário: R$ ${precoNumerico.toFixed(2).replace(".", ",")}</p>
                 ${item.Adicionais.map(adicional => `
-                    <p>Adicional: ${adicional.Nome} - R$ ${adicional.Preco.toFixed(2).replace(".", ",")} (x${adicional.Quantidade}) - Total: R$ ${(adicional.Preco * adicional.Quantidade).toFixed(2).replace(".", ",")}</p>
+                    <p>Adicional: ${adicional.Nome} - Preço Unitário: R$ ${adicional.Preco.toFixed(2).replace(".", ",")} (x${adicional.Quantidade})}</p>
                 `).join("")}
+                <p>Total: R$ ${totalItem.toFixed(2).replace(".", ",")}</p>
             </div>
         `;
     });

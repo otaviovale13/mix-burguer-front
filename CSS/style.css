@@ -1567,3 +1567,10 @@ footer {
 .btnCardapioAriel:hover{
   transform: scale(1.1);
 }
+#ItensDoCarrinho {
+  max-height: 200px; /* Define a altura máxima da lista */
+  overflow-y: auto; /* Adiciona a barra de rolagem vertical */
+  margin-top: 10px;
+  font-family: Nabana;
+  
+}

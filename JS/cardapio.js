@@ -29,7 +29,8 @@ const Categorias = {
   ],
 }
 
-const carrinho = []
+const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+let estadoPopUp = null;
 
 const Adicionais = [
   {
@@ -135,6 +136,8 @@ function popUp(nome, descricao, preco, imagem) {
 
   popUps.appendChild(novaDiv);
   popUps.style.display = "flex";
+
+  atualizarCarrinhoDisplay();
 }
 
 function addCarrinho() {
@@ -191,6 +194,7 @@ function confirmacaoCarinho(nome, descricao, preco, imagem) {
     };
 
     carrinho.push(produto);
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
     console.log("Carrinho atualizado:", carrinho);
 
     carrinhoDisplay.innerText = `${nome} - ${quantidade}x`;
@@ -250,6 +254,8 @@ function confirmacaoCarinho(nome, descricao, preco, imagem) {
       alert("Carrinho Atualizado!");
       escolhas.style.display = "none";
     });
+
+    salvarEstadoPopUp(nome, descricao, preco, imagem, quantidade);
   });
 }
 
@@ -271,6 +277,13 @@ function adicionarAdicionais(produto) {
       totalAdicionais += precoAdicional * quantidade;
     }
   });
+
+  // Verificar se o total de adicionais excede 10
+  const totalQuantidadeAdicionais = adicionaisSelecionados.reduce((acc, adicional) => acc + adicional.Quantidade, 0);
+  if (totalQuantidadeAdicionais > 10) {
+    alert("Você só pode adicionar até 10 adicionais no total.");
+    return;
+  }
 
   produto.Adicionais = adicionaisSelecionados;
 
@@ -295,6 +308,39 @@ function adicionarAdicionais(produto) {
 
   const adicionaisList = document.querySelector(".adicionaisList");
   adicionaisList.style.display = "none";
+
+  salvarEstadoPopUp(produto.Nome, produto.Descricao, produto.Preco, produto.Imagem, produto.Quantidade, produto.Adicionais);
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+}
+
+function salvarEstadoPopUp(nome, descricao, preco, imagem, quantidade, adicionais = []) {
+  estadoPopUp = { nome, descricao, preco, imagem, quantidade, adicionais };
+}
+
+function atualizarCarrinhoDisplay() {
+  const carrinhoDisplay = document.getElementById("carrinhoDisplay");
+  const carrinhoTotalPopUp = document.getElementById("carrinhoTotalPopUp");
+
+  if (carrinho.length === 0) {
+    carrinhoDisplay.innerText = "Seu Carrinho está Vazio!";
+    carrinhoTotalPopUp.innerHTML = "<h3>Total: R$ 0,00</h3>";
+    return;
+  }
+
+  let total = 0;
+  carrinhoDisplay.innerHTML = "";
+
+  carrinho.forEach(produto => {
+    let totalProduto = parseFloat(produto.Preco.replace("R$", "").trim().replace(",", ".")) * produto.Quantidade;
+    carrinhoDisplay.innerHTML += `${produto.Nome} - ${produto.Quantidade}x<br>`;
+    produto.Adicionais.forEach(adicional => {
+      totalProduto += adicional.Preco * adicional.Quantidade;
+      carrinhoDisplay.innerHTML += `${adicional.Nome} - ${adicional.Quantidade}x<br>`;
+    });
+    total += totalProduto;
+  });
+
+  carrinhoTotalPopUp.innerHTML = `<h3>Total: R$ ${total.toFixed(2).replace(".", ",")}</h3>`;
 }
 
 function salvarCarrinho() {
@@ -370,6 +416,7 @@ function AdicionarLanche(nome, preco, descricao, imagem) {
     Adicionais: adicionaisSelecionados
   };
   carrinho.push(produto);
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
   console.log("carrinho atualizado:", carrinho);
 
