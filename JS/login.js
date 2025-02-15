@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     } else if (email !== "" && senha !== "") {
       alert(`Bem vindo, ${email}`);
-      window.location.href = "home.html";
+      window.location.href = "index.html";
     } else {
       alert("Por favor, preencha todos os campos");
     }
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loginTab.classList.add("inativo");
   });
 
-  // Load the login form initially
+  // Carrega o formulário de login por padrão ao carregar a página
   loadLoginForm();
 });
 
