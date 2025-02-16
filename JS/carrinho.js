@@ -68,17 +68,17 @@ if (carrinho.length === 0){
             const index = event.target.getAttribute('data-index');
             carrinho.splice(index, 1);
             localStorage.setItem('carrinho', JSON.stringify(carrinho));
-            window.location.reload();
+            atualizarCarrinho();
         });
     });
 
     document.querySelectorAll('.btnDuplicar0').forEach(button => {
         button.addEventListener('click', (event) => {
             const index = event.target.getAttribute('data-index');
-            const itemDuplicado = { ...carrinho[index] };
+            const itemDuplicado = JSON.parse(JSON.stringify(carrinho[index])); // Corrigir a duplicação do item
             carrinho.push(itemDuplicado);
             localStorage.setItem('carrinho', JSON.stringify(carrinho));
-            window.location.reload();
+            atualizarCarrinho();
         });
     });
 }
@@ -196,6 +196,44 @@ function FinalizarPagamento() {
     window.location.href = "/carrinho.html";
 }
 
+function alternarVisibilidadeItens() {
+    const itensDoCarrinho = document.getElementById('ItensDoCarrinho');
+    const btnMostrarItens = document.getElementById('btnMostrarItens');
+    const btnEsconderItens = document.getElementById('btnEsconderItens');
+
+    if (itensDoCarrinho.style.display === 'none' || itensDoCarrinho.style.display === '') {
+        const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        let itensHTML = "";
+
+        carrinho.forEach(item => {
+            const precoNumerico = parseFloat(item.Preco.replace("R$", "").replace(",", "."));
+            let totalItem = precoNumerico * item.Quantidade;
+            item.Adicionais.forEach(adicional => {
+                totalItem += adicional.Preco * adicional.Quantidade;
+            });
+
+            itensHTML += `
+                <div class="itemCarrinho" data-preco="${totalItem}">
+                    <p>${item.Nome} - Quantidade: ${item.Quantidade} - Preço Unitário: R$ ${precoNumerico.toFixed(2).replace(".", ",")}</p>
+                    ${item.Adicionais.map(adicional => `
+                        <p>Adicional: ${adicional.Nome} - Preço Unitário: R$ ${adicional.Preco.toFixed(2).replace(".", ",")} (x${adicional.Quantidade})}</p>
+                    `).join("")}
+                    <p>Total: R$ ${totalItem.toFixed(2).replace(".", ",")}</p>
+                </div>
+            `;
+        });
+
+        itensDoCarrinho.innerHTML = itensHTML;
+        itensDoCarrinho.style.display = 'block';
+        btnMostrarItens.style.display = 'none';
+        btnEsconderItens.style.display = 'block';
+    } else {
+        itensDoCarrinho.style.display = 'none';
+        btnMostrarItens.style.display = 'block';
+        btnEsconderItens.style.display = 'none';
+    }
+}
+
 // Aguarda o carregamento completo do DOM
 document.addEventListener("DOMContentLoaded", () => {
     // Seleciona o botão de finalizar pagamento
@@ -205,8 +243,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Seleciona o contêiner dos itens do carrinho
     const itensDoCarrinho = document.getElementById("ItensDoCarrinho");
 
-    // Adiciona um evento de input ao campo de cupom de desconto
-    document.getElementById('cupomDesconto').addEventListener('input', aplicarCupomDesconto);
+    // Remover o evento de input no campo de cupom de desconto
+    // document.getElementById('cupomDesconto').addEventListener('input', aplicarCupomDesconto);
+
+    // Adicionar evento de clique ao botão de aplicar cupom
+    document.getElementById('btnAplicarCupom').addEventListener('click', aplicarCupomDesconto);
+
+    // Adicionar evento de tecla ao campo de cupom de desconto
+    document.getElementById('cupomDesconto').addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            aplicarCupomDesconto();
+        }
+    });
 
     // Adiciona um evento de clique ao botão de finalizar pagamento
     finalizarPagamentoButton.addEventListener("click", (event) => {
@@ -239,40 +287,73 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+
+    document.getElementById('btnMostrarItens').addEventListener('click', alternarVisibilidadeItens);
+    document.getElementById('btnEsconderItens').addEventListener('click', alternarVisibilidadeItens);
 });
 
-function mostrarItens() {
-    const itensDoCarrinho = document.getElementById('ItensDoCarrinho');
-    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    let itensHTML = "";
+function atualizarCarrinho() {
+    if (carrinho.length === 0) {
+        produtosDiv.innerHTML = "<p class='pCarrinho'>Seu carrinho está vazio! </p>";
+        totalDiv.style.display = "none";
+        btnFinalizar.style.display = "none"; // Esconde o botão finalizar
+    } else {
+        let total = 0;
+        let produtosHTML = "";
 
-    carrinho.forEach(item => {
-        const precoNumerico = parseFloat(item.Preco.replace("R$", "").replace(",", "."));
-        let totalItem = precoNumerico * item.Quantidade;
-        item.Adicionais.forEach(adicional => {
-            totalItem += adicional.Preco * adicional.Quantidade;
+        carrinho.forEach((item, index) => {
+            const precoNumerico = parseFloat(item.Preco.replace("R$", "").replace(",", "."));
+            let totalItem = precoNumerico * item.Quantidade;
+            item.Adicionais.forEach(adicional => {
+                totalItem += adicional.Preco * adicional.Quantidade;
+            });
+            total += totalItem;
+
+            produtosHTML += `
+                <div class="content">
+                    <div class="quadrado">
+                        <div class="imgs">
+                            <img class="img00" src="${item.Imagem}" alt="" srcset="">
+                        </div>
+                        <div class="text0">
+                            ${item.Nome} - Quantidade: ${item.Quantidade} - Preço Unitário: R$ ${precoNumerico.toFixed(2).replace(".", ",")}
+                            ${item.Adicionais.map(adicional => `
+                                <p>Adicional: ${adicional.Nome} - Preço Unitário: R$ ${adicional.Preco.toFixed(2).replace(".", ",")} (x${adicional.Quantidade})}</p>
+                            `).join("")}
+                        </div>
+                        <div class="textValue">
+                            Total: R$ ${totalItem.toFixed(2).replace(".", ",")}
+                        </div>
+                    </div>
+                    <button class="btnRemove0" data-index="${index}">Remover</button>
+                    <button class="btnDuplicar0" data-index="${index}">Duplicar</button>
+                </div>
+            `;
         });
 
-        itensHTML += `
-            <div class="itemCarrinho" data-preco="${totalItem}">
-                <p>${item.Nome} - Quantidade: ${item.Quantidade} - Preço Unitário: R$ ${precoNumerico.toFixed(2).replace(".", ",")}</p>
-                ${item.Adicionais.map(adicional => `
-                    <p>Adicional: ${adicional.Nome} - Preço Unitário: R$ ${adicional.Preco.toFixed(2).replace(".", ",")} (x${adicional.Quantidade})}</p>
-                `).join("")}
-                <p>Total: R$ ${totalItem.toFixed(2).replace(".", ",")}</p>
-            </div>
-        `;
-    });
+        produtosDiv.innerHTML = produtosHTML;
+        totalDiv.style.display = "block";
+        btnFinalizar.style.display = "block"; // Mostra o botão finalizar
 
-    itensDoCarrinho.innerHTML = itensHTML;
-  
-    itensDoCarrinho.style.display = 'block';
-    document.getElementById('btnMostrarItens').style.display = 'none';
-    document.getElementById('btnEsconderItens').style.display = 'block';
-}
+        totalDiv.textContent = `Total: R$ ${total.toFixed(2).replace(".", ",")}`;
 
-function esconderItens() {
-    document.getElementById('ItensDoCarrinho').style.display = 'none';
-    document.getElementById('btnMostrarItens').style.display = 'block';
-    document.getElementById('btnEsconderItens').style.display = 'none';
+        document.querySelectorAll('.btnRemove0').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const index = event.target.getAttribute('data-index');
+                carrinho.splice(index, 1);
+                localStorage.setItem('carrinho', JSON.stringify(carrinho));
+                atualizarCarrinho();
+            });
+        });
+
+        document.querySelectorAll('.btnDuplicar0').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const index = event.target.getAttribute('data-index');
+                const itemDuplicado = JSON.parse(JSON.stringify(carrinho[index])); // Corrigir a duplicação do item
+                carrinho.push(itemDuplicado);
+                localStorage.setItem('carrinho', JSON.stringify(carrinho));
+                atualizarCarrinho();
+            });
+        });
+    }
 }
