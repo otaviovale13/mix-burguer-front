@@ -248,7 +248,10 @@ function mostrarItens() {
 
     carrinho.forEach(item => {
         const precoNumerico = parseFloat(item.Preco.replace("R$", "").replace(",", "."));
-        const totalItem = precoNumerico * item.Quantidade;
+        let totalItem = precoNumerico * item.Quantidade;
+        item.Adicionais.forEach(adicional => {
+            totalItem += adicional.Preco * adicional.Quantidade;
+        });
 
         itensHTML += `
             <div class="itemCarrinho" data-preco="${totalItem}">
