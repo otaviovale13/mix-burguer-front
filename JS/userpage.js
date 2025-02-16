@@ -8,9 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
   var pedidosTab = document.getElementById("pedidos");
   var favoritosTab = document.getElementById("favoritos");
   var sugestoesTab = document.getElementById("sugestoes");
+  
+  var voltarIndex = document.getElementById("voltarIndex");
   var local = document.getElementById("local");
   var voltarHome = document.getElementById("voltarHome");
 
+  voltarIndex.addEventListener("click", function () {
+    return (window.location.href = "index.html");
+  });
   const menuToggle = document.createElement("div");
   menuToggle.classList.add("menuToggle");
   menuToggle.innerHTML = `<span></span><span></span><span></span>`;

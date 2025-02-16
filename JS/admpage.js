@@ -6,10 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
   var sugestoesTab = document.getElementById("sugestoes");
   var avaliacoesTab = document.getElementById("avaliacoes");
 
+  var voltarIndex = document.getElementById("voltarIndex");
   var local = document.getElementById("local");
   var voltarHome = document.getElementById("voltarHome");
 
   var mainCaixaBranca = document.getElementById("mainCaixaBranca");
+
+  voltarIndex.addEventListener("click", function () {
+    return (window.location.href = "index.html");
+  });
 
   function loadVendas() {
     local.innerHTML = `<i class="bi bi-cart"></i> Vendas`;

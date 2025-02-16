@@ -307,7 +307,15 @@ button#editarEndereco:hover, button#editarCartao:hover {
   background-color: #00c8ff;
   color: white;
 }
-
+p#voltarIndex{
+  cursor: pointer;
+  color: white;
+  transition: 250ms;
+}
+p#voltarIndex:hover{
+  color: #fed83c;
+  font-size: 20px;
+}
 button#salvarEndereco, button#salvarCartao {
   border: 1px solid #ffbb00;
   color: #ffbb00;
