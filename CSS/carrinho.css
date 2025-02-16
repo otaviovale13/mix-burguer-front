@@ -244,18 +244,23 @@ nav {
     flex-direction: column;
     align-items: center;
     font-family: Nabana;
+    gap: 20px; /* Adicionado para espaçamento entre os elementos */
 }
 
 #DetalhesdoPagamento p {
     font-size: 24px;
     color: #000000;
     font-family: Nabana;
+    margin-bottom: 10px; /* Adicionado para espaçamento abaixo do título */
 }
 
 #ItensDoCarrinho {
     width: 100%;
     margin-top: 10px;
     font-family: Nabana;
+    padding: 10px; /* Adicionado para espaçamento interno */
+    border: 1px solid #000000; /* Adicionado para borda */
+    border-radius: 5px; /* Adicionado para borda arredondada */
 }
 
 #btnMostrarItens, #btnEsconderItens {
@@ -278,12 +283,16 @@ nav {
     margin-top: 20px;
     width: 100%;
     font-family: Nabana;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adicionado para espaçamento entre os elementos */
 }
 
 #textoEntrega {
     font-size: 20px;
     color: #000000;
     font-family: Nabana;
+    margin-bottom: 10px; /* Adicionado para espaçamento abaixo do título */
 }
 
 #filhoDoPai label {
@@ -313,12 +322,16 @@ nav {
     margin-top: 20px;
     width: 100%;
     font-family: Nabana;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adicionado para espaçamento entre os elementos */
 }
 
 #FormasdePagamentoTexto {
     font-size: 20px;
     color: #000000;
     font-family: Nabana;
+    margin-bottom: 10px; /* Adicionado para espaçamento abaixo do título */
 }
 
 #TipoPagamento label {
@@ -340,6 +353,10 @@ nav {
     margin-top: 20px;
     width: 100%;
     font-family: Nabana;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Adicionado para espaçamento entre os elementos */
 }
 
 #frete {
@@ -361,6 +378,7 @@ nav {
     flex-direction: column;
     align-items: center;
     font-family: Nabana;
+    gap: 10px; /* Adicionado para espaçamento entre os elementos */
 }
 
 #btnAplicarCupom, #btnCancelarCupom, #btnFinalizarPagamento, #VoltarPagamento {

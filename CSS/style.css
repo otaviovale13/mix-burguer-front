@@ -1561,50 +1561,43 @@ footer {
     font-size: 0.8rem;
     width: 20rem;
   }
-
-  .preto .icons {
-    display: none;
-  }
 }
 
-@media (max-width: 540px) {
-  .logo{
-    display: none;
-  }
+.descricaoCarrinho{
+  width: 1rem;
+}
+.removeAdicional{
+  
+  
+  background-color: red;
+}
 
-  .headerFilho{
-    gap: 0;
-    margin-left: -10rem;
-  }
+/* Estilo dos botões do cardápio */
+.btnCardapioAriel{
+  background-color: #fed83c;
+  color: #000000;
+  border: none;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-family: NabanaNormal;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  margin-top: 1rem;
+}
 
-  .text{
-    font-size: 0.6rem;
-  }
+.btnCardapioAriel:hover{
+  transform: scale(1.1);
+}
 
-  .texto{
-    font-size: 0.6rem;
-    width: 10rem;
-  }
-
-  .busca{
-    display: none;
-  }
-
-  .produtos{
-    width: 20rem;
-  }
-
-  .itemTitulo{
-    width: 20rem;
-  }
-
-  .preco{
-    width: 20rem;
-  }
-
-  .descricao{
-    width: 15rem;
-    font-size: 1rem;
-    text-align: center;
-  }
+.mensagem{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-family: Nabana;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
