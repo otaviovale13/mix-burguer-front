@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .addEventListener("click", SalvarPerfil);
   });
   pedidosTab.addEventListener("click", function () {
-    local.innerHTML = `<i class="bi bi-cart"></i> Meus Pedidos`;
+    local.innerHTML = `<i class="bi bi-cart"></i>Pedidos`;
     mainCaixaBranca.innerHTML = `
           <div class="tabelas">
         <div class="infoUsuario">
