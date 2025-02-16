@@ -46,8 +46,9 @@ nav {
 
     .logo {
         display: flex;
-        width: 130px;
-        margin-top: 30px;
+        width: 10rem;
+        height: 10rem;
+        margin-top: 3rem;
         transition: transform 0.3s ease;
     }
 
@@ -81,7 +82,7 @@ nav {
         border-radius: 5px;
         overflow: hidden; /* Adicionado para evitar estouro de texto */
         font-family: Nabana;
-
+        transition: transform 0.3s ease;
         
         .text0 {
             font-size: 20px;
@@ -103,6 +104,10 @@ nav {
             height: 215px;
             border-radius: 5px;
         }
+    }
+
+    .quadrado:hover {
+        transform: scale(1.02);
     }
 
     .btnRemove0{
@@ -381,4 +386,142 @@ nav {
     border-radius: 5px;
     font-family: Nabana;
     margin-top: 10px;
+}
+
+@media (max-width: 1400px) {
+    nav .logo {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    nav h1{
+        font-size: 2rem;
+    }
+
+    .content{
+        .quadrado{
+            width: 40rem;
+            height: 10rem;
+
+            .text0{
+                width: 40rem;
+                font-size: 0.7rem;
+            }
+
+            .textValue{
+                width: 15rem;
+                font-size: 1.1rem;
+                margin-left: 2rem;
+            }
+        }
+
+        .btnRemove0{
+            font-size: 1rem;
+            padding: 5px 10px;
+        }
+
+        .btnDuplicar0{
+            font-size: 1rem;
+            padding: 5px 10px;
+        }
+    }
+
+    .total{
+        width: 10rem;
+        font-size: 1rem;
+    }
+
+    .btnCardapio{
+        width: 15rem;
+        font-size: 1rem;
+        height: 2rem;
+    }
+}
+
+@media (max-width: 826px) {
+    nav .logo {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    nav h1{
+        font-size: 1rem;
+    }
+
+    .content{
+        .quadrado{
+            width: 20rem;
+            height: 5rem;
+            
+            .img00{
+                display: none;
+            }
+
+            .text0{
+                width: 40rem;
+                font-size: 0.4rem;
+            }
+
+            .textValue{
+                width: 15rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        .btnRemove0{
+            font-size: 0.6rem;
+            height: 2rem;
+        }
+
+        .btnDuplicar0{
+            font-size: 0.6rem;
+            height: 2rem;
+        }
+    }
+
+    .total{
+        width: 5rem;
+        font-size: 0.6rem;
+    }
+
+    .btnCardapio{
+        width: 7rem;
+        font-size: 0.7rem;
+        height: 1rem;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 540px) {
+    .content{
+        flex-direction: column;
+        .quadrado{
+            width: 20rem;
+            height: 5rem;
+            
+            .img00{
+                display: none;
+            }
+
+            .text0{
+                width: 60rem;
+                font-size: 0.4rem;
+            }
+
+            .textValue{
+                width: 20rem;
+                font-size: 0.7rem;
+            }
+        }
+
+        .btnRemove0{
+            font-size: 0.6rem;
+            height: 2rem;
+        }
+
+        .btnDuplicar0{
+            font-size: 0.6rem;
+            height: 2rem;
+        }
+    }
 }

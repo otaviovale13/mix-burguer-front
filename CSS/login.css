@@ -36,6 +36,7 @@ main .abaLogin{
   border-radius: 15px;
   position: relative;
 }
+
 .logo {
   background-image: url(/IMGS/logo\ mix\ burguer.png);
   background-size: 120px 120px;
@@ -181,5 +182,106 @@ main .abaLogin{
     width: 35px;
     height: 35px;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 1400px) {
+  .container {
+    width: 40rem;
+    height: auto;
+    margin-top: 2rem;
+  }
+
+  .logo {
+    left: 51%;
+    transform: translateX(-50%);
+  }
+
+  .abas {
+    margin-top: 7rem;
+  }
+
+  .dados {
+    margin-top: 3rem;
+    
+    .input-group{
+      margin-bottom: -1rem;
+      input{
+        margin-bottom: 46px;
+        width: 20rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  .btns{
+    margin-top: 0rem;
+  }
+
+  .btnLogin{
+    width: 6rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .or{
+    margin-top: 1rem;
+  }
+
+  .redeslogin{
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 662px) {
+  .container {
+    width: 20rem;
+    height: auto;
+    margin-top: 2rem;
+  }
+
+  .logo {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .abas {
+    margin-top: 7rem;
+    margin-inline: 40px;
+  }
+
+  .dados {
+    margin-top: 3rem;
+    
+    .input-group{
+      margin-bottom: -1rem;
+      input{
+        margin-bottom: 46px;
+        width: 15rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  .btns{
+    margin-top: 0rem;
+  }
+
+  .btnLogin{
+    width: 6rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .or{
+    margin-top: 1rem;
+  }
+
+  .hr{
+    width: 6rem;
+  }
+
+  .redeslogin{
+    margin-bottom: 2rem;
   }
 }

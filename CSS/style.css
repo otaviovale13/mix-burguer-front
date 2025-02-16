@@ -335,7 +335,7 @@ a{
   border-radius: 5rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
   color: #fff;
   text-align: left;
   font-family: Nabana;
@@ -840,7 +840,6 @@ footer {
   text-align: left; 
   margin-bottom: 0;
   font-family: Nabana;
-
 }
 
 /* Estilo do texto na seção preta do rodapé */
@@ -848,7 +847,6 @@ footer {
   font-size: 18px;
   text-align: right; 
   font-family: Nabana;
-
 }
 
 /* Estilo do container de ícones na seção preta do rodapé */
@@ -1067,461 +1065,6 @@ footer {
 
 }
 
-/* Para telas menores que 1024px (tablets) */
-@media (max-width: 1024px) {
-  header {
-    padding: 0 2rem;
-  }
-
-  .logo {
-    width: 10rem;
-
-  }
-
-  .text {
-    margin-left: 12rem;
-  }
-
-  .busca {
-    width: 20rem;
-  }
-
-  input {
-    width: 15rem;
-  }
-
-  .headerFilho {
-    gap: 2rem;
-  }
-
-  .quemFilho {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 3rem;
-    margin: 0 3rem;
-  }
-
-  .foto {
-    width: 28rem;
-  }
-
-  .texto {
-    font-size: 1.8rem;
-    max-width: 40rem;
-  }
-
-  .logoBarra {
-    right: 40%;
-  }
-
-  .busca {
-    width: 18rem;
-  }
-
-  .maisImgsEVideos{
-    width: 10rem;
-  }
-
-  header {
-    height: 5rem;
-    padding: 0 1.5rem;
-  }
-
-  .headerFilho {
-    gap: 1.5rem;
-  }
-
-  .logo {
-    width: 10rem;
-    left: 2%;
-  }
-
-  .text {
-    margin-left: 10rem;
-  }
-
-  .busca {
-    width: 18rem;
-  }
-
-  input {
-    width: 15rem;
-  }
-
-  .quemFilho {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  .foto {
-    width: 80%;
-  }
-
-  .texto {
-    font-size: 1.5rem;
-    max-width: 80%;
-  }
-
-  .menuLanche {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .imagemLancheMenuLanche {
-    width: 80%;
-    height: auto;
-  }
-
-  .adicionaisMenuLanche {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .categoria {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-
-  .produtos {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 95%;
-    padding: 1.5rem;
-  }
-
-  .produtos img {
-    width: 100%;
-    height: auto;
-    max-width: 20rem;
-  }
-
-  .itemTitulo {
-    width: 100%;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .descricao {
-    width: 100%;
-    text-align: center;
-  }
-
-  .preco {
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  .divImg {
-    justify-content: center;
-  }
-
-  .btnCardapio {
-    font-size: 1.1rem;
-  }
-
-  .amarelo {
-    flex-direction: column;
-    text-align: center;
-    padding: 15px;
-  }
-
-  .amarelo .logo2 {
-    max-width: 60px;
-  }
-
-  .amarelo .text2 {
-    margin-left: 0;
-    margin-top: 10px;
-  }
-
-  .amarelo .titulo {
-    font-size: 18px;
-  }
-
-  .amarelo .sub_titulo {
-    font-size: 13px;
-  }
-
-  .amarelo .btn {
-    margin-left: 0;
-    margin-top: 10px;
-  }
-
-  .preto {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px;
-  }
-
-  .preto .text4,
-  .preto .text5 {
-    font-size: 16px;
-  }
-
-  .preto .icons {
-    margin-right: 0;
-    gap: 1.5rem;
-    font-size: 2rem;
-    margin-top: 10px;
-  }
-}
-
-/* Para telas menores que 768px (celulares) */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    height: auto;
-    padding: 1rem;
-  }
-
-  .headerFilho {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    align-items: center;
-  }
-
-  .logo {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 9rem;
-    margin-top: 0;
-  }
-
-  .text {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .busca {
-    width: 100%;
-    max-width: 18rem;
-  }
-
-  input {
-    width: 100%;
-  }
-
-  .bi-person-fill,
-  .bi-bag-fill {
-    font-size: 2rem;
-  }
-
-  .burger {
-    display: block;
-  }
-
-  .pai {
-    height: 60vh;
-    background-attachment: scroll;
-  }
-
-  .textos {
-    margin-left: 1rem;
-    text-align: center;
-  }
-
-  .quemFilho {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin: 0 2rem;
-  }
-
-  .foto {
-    width: 100%;
-    max-width: 22rem;
-  }
-
-  .texto {
-    font-size: 1.5rem;
-    max-width: 100%;
-  }
-
-  .logoBarra {
-    width: 5rem;
-    height: 5rem;
-    margin-top: 5rem;
-  }
-
-  .contato {
-    padding: 3rem 1rem;
-  }
-
-  .logosContatos {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .maisImgsEVideos {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  header {
-    flex-direction: column;
-    height: auto;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .headerFilho {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .logo {
-    width: 8rem;
-    position: static;
-    margin: 0 auto;
-  }
-
-  .text {
-    margin: 0;
-    text-align: center;
-  }
-
-  .busca {
-    width: 90%;
-    padding: 6px 12px;
-  }
-
-  input {
-    width: 80%;
-  }
-
-  .quem {
-    padding: 3rem 1rem;
-  }
-
-  .quemFilho {
-    margin: 0;
-    text-align: center;
-  }
-
-  .foto {
-    width: 90%;
-  }
-
-  .texto {
-    font-size: 1.2rem;
-    max-width: 100%;
-  }
-
-  .contato {
-    flex-direction: column;
-    padding: 3rem 1rem;
-  }
-
-  .contatos {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .menuLanche {
-    flex-direction: column;
-  }
-
-  .imagemLancheMenuLanche {
-    width: 90%;
-  }
-
-  .adicionaisMenuLanche {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .adicionaisMenuLanche img {
-    width: 7rem;
-  }
-
-  button {
-    font-size: 18px;
-    padding: 0.4rem 0.8rem;
-    font-family: dm-sans;
-  }
-
-  .categoria {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .produtos {
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem;
-  }
-
-  .produtos img {
-    width: 100%;
-    height: auto;
-    max-width: 18rem;
-  }
-
-  .itemTitulo {
-    font-size: 1.3rem;
-  }
-
-  .descricao {
-    font-size: 0.95rem;
-  }
-
-  .preco {
-    font-size: 1.2rem;
-  }
-
-  .voltarHome {
-    margin-bottom: 3rem;
-  }
-
-  .voltarHome button {
-    font-size: 1rem;
-    padding: 0.6rem 1.2rem;
-  }
-
-  .amarelo {
-    padding: 10px;
-  }
-
-  .amarelo .logo2 {
-    max-width: 50px;
-  }
-
-  .amarelo .titulo {
-    font-size: 16px;
-  }
-
-  .amarelo .sub_titulo {
-    font-size: 12px;
-  }
-
-  .amarelo .btn2 {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  .preto {
-    padding: 10px;
-  }
-
-  .preto .text4,
-  .preto .text5 {
-    font-size: 14px;
-  }
-
-  .preto .icons {
-    font-size: 1.8rem;
-    gap: 1rem;
-  }
-}
-
 /* ARIEL */
 
 .btnsModis{
@@ -1648,4 +1191,420 @@ footer {
   color: #ffffff;
   margin-top: 3rem;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 1400px) {
+  header{
+    height: 6rem;
+  }
+
+  .logo{
+    width: 9rem;
+    left: 5%; 
+    margin-top: 1rem;
+  }
+
+  .text{
+    font-size: 0.8rem;
+    margin-left: 10rem;
+  }
+
+  .sub_titulo{
+    font-size: 0.8rem;
+  }
+
+  .bi-person-fill {
+    font-size: 2.7rem;
+  }
+
+  .bi-bag-fill {
+    font-size: 2.1rem;
+  }
+
+  .burger{
+    font-size: 1.5rem;
+  }
+
+  .pai{
+    height: 74vh;
+  }
+
+  .textos{
+    font-size: 0.8rem;
+  }
+
+  .barra{
+    height: 6rem;
+  }  
+
+  .logoBarra{
+    width: 7rem;
+  }
+
+  .foto{
+    width: 24rem;
+    height: 20rem;
+  }
+
+  .texto{
+    font-size: 1rem;
+  }
+
+  .quemSomos{
+    margin-bottom: 0rem;
+    font-size: 1.5rem;
+  }
+
+  .btnCardapio{
+    width: 15rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .btnCardapioA{
+    width: 15rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .maisImgsEVideos{
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .videosmais1{
+    width: 10rem;
+    height: 10rem;
+
+    i{
+      font-size: 4rem;
+    }
+  }
+
+  .videosmais2{
+    width: 10rem;
+    height: 10rem;
+
+    i{
+      font-size: 4rem;
+    }
+  }
+
+  .videosmais3{
+    width: 10rem;
+    height: 10rem;
+
+    i{
+      font-size: 4rem;
+    }
+  }
+
+  .videosmais4{
+    width: 10rem;
+    height: 10rem;
+
+    i{
+      font-size: 4rem;
+    }
+  }
+
+  .popUp{
+    width: 40%;
+    height: auto;
+    justify-content: center;
+    gap: 3rem;
+    padding: 5rem 20rem 5rem 20rem;
+  }
+
+  .colunn-1 .titulo{
+    font-size: 1.5rem;
+  }
+
+  .colunn-1 img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .colunn-1 button{
+    width: 10rem;
+    height: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .colunn-1 .carrinhoPopUp{
+    width: 10rem;
+    height: auto;
+    font-size: 0.6rem;
+  }
+
+  .carrinhoPopUp .bi-cart-fill{
+    font-size: 1.5rem;
+  }
+
+  .colunn-1 .descricaoPopUp{
+    max-width: 20rem;
+    font-size: 0.7rem;
+    color: #000000;
+  }
+
+  .colunn-1 .escolhas{
+    display: none;
+    width: 20rem;
+    height: 5rem;
+    gap: 1rem;
+    font-size: 0.5rem;
+  }
+
+  .escolhas button{
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .botoes .inputQuantidade{
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .adicionaisList {
+    max-width: 20rem;
+    font-size: 0.7rem;
+  }
+
+  .adicionaisOptions img {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .adicionaisOptions .inputQuantidadeAdicional {
+    width: 6rem;
+  }
+
+  .btn2{
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+
+  .preto{
+    height: 6rem;
+  }
+
+  .preto .text4 {
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    br{
+      display: none;
+    }
+  }
+
+  .preto .text5 {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7rem;
+    gap: 0.4rem;
+
+    br{
+      display: none;
+    }
+  }
+
+  .preto .icons {
+    font-size: 1.5rem;
+  }
+
+  .busca{
+    width: 10rem;
+    height: 2rem;
+    font-size: 1.3rem;
+    gap: 0.8rem;
+  }
+
+  .bi-search{
+    font-size: 1rem;
+  }
+
+  input{
+    width: 6rem;
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .produtos{
+    width: 40%;
+  }
+
+  .produtos img {
+    width: 10rem;
+    height: 10rem; 
+  }
+
+  .itemTitulo{
+    width: 10rem;
+  }
+
+  .preco{
+    width: 10rem;
+  }
+
+  .descricao{
+    width: 10rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 840px) {
+  .texto{
+    font-size: 0.5rem;
+  }
+
+  .maisImgsEVideos{
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .videosmais1{
+    width: 5rem;
+    height: 5rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+  .videosmais2{
+    width: 5rem;
+    height: 5rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+  .videosmais3{
+    width: 5rem;
+    height: 5rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+  .videosmais4{
+    width: 5rem;
+    height: 5rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+  .btn2{
+    padding: 4px 8px;
+    font-size: 0.6rem;
+  }
+
+  .preto .text4 {
+    font-size: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    br{
+      display: none;
+    }
+  }
+
+  .preto .text5 {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.5rem;
+    gap: 0.4rem;
+
+    br{
+      display: none;
+    }
+  }
+
+  .preto .icons {
+    font-size: 1rem;
+  }
+
+  .produtos img {
+    display: none;
+  }
+
+  .itemTitulo{
+    width: 20rem;
+  }
+
+  .preco{
+    width: 20rem;
+  }
+
+  .descricao{
+    width: 15rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .foto{
+    display: none;
+  }
+
+  .texto{
+    font-size: 0.8rem;
+    width: 20rem;
+  }
+
+  .preto .icons {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .logo{
+    display: none;
+  }
+
+  .headerFilho{
+    gap: 0;
+    margin-left: -10rem;
+  }
+
+  .text{
+    font-size: 0.6rem;
+  }
+
+  .texto{
+    font-size: 0.6rem;
+    width: 10rem;
+  }
+
+  .busca{
+    display: none;
+  }
+
+  .produtos{
+    width: 20rem;
+  }
+
+  .itemTitulo{
+    width: 20rem;
+  }
+
+  .preco{
+    width: 20rem;
+  }
+
+  .descricao{
+    width: 15rem;
+    font-size: 1rem;
+    text-align: center;
+  }
 }
