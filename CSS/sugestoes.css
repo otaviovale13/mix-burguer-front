@@ -15,9 +15,11 @@
 
 /* Estilo do corpo da página */
 body {
+  background: url(https://moinhoglobo.com.br/wp-content/uploads/2019/05/16-hamburguer.jpeg) no-repeat center center/cover;
   background-color: #111;
   font-family: Nabana;
   color: #fff;
+  height: 100vh;
 }
 
 /* Estilo do cabeçalho */
@@ -177,7 +179,6 @@ i {
  main {
     width: 100%;
     height: 64.4vh;
-background: url(https://moinhoglobo.com.br/wp-content/uploads/2019/05/16-hamburguer.jpeg) no-repeat center center/cover;
 background-attachment: fixed;
 font-family: Nabana;
 
@@ -473,164 +474,436 @@ footer {
   transform: scale(1.1);
 }
 
+@media (max-width: 1400px) {
+  .text{
+    font-size: 1rem;
+  }
 
-  /* Ajustes para telas menores */
-@media (max-width: 768px) {
-  header {
-    padding: 0 1.5rem;
+  header{
     height: 6rem;
   }
 
-  .headerFilho {
-    gap: 1rem;
-  }
-
-  .logo {
-    width: 10rem;
-    top: 3%;
-    left: 3%;
-  }
-
-  .text {
-    display: none;
-  }
-
-  .busca {
-    width: 18rem;
-  }
-
-  .headerFilhoBusca {
-    gap: 0.5rem;
-  }
-
-  .busca input {
-    width: 15rem;
-  }
-  
-  .bi-person-fill, .bi-bag-fill {
-    font-size: 1.8rem;
-  }
-
-  .logo {
-    width: 10rem; /* Reduz a largura da logo */
-    top: 3%; /* Ajuste a posição vertical da logo */
-    left: 50%; /* Centraliza a logo horizontalmente */
-    transform: translateX(-50%); /* Compensa o deslocamento da logo */
-  }
-}
-
-/* Ajustes para telas de tablets e celulares */
-@media (max-width: 480px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    padding: 1rem;
-  }
-
-  .logo {
-    width: 8rem;
-    top: 5%;
-    left: 5%;
-  }
-
-  .text {
-    display: none;
-  }
-
-  .headerFilhoBusca {
-    width: 100%;
-    justify-content: center;
+  .logo{
+    width: 9rem;
+    left: 5%; 
     margin-top: 1rem;
   }
 
-  .busca {
-    width: 100%;
-    padding: 8px 12px;
+  .text{
+    font-size: 0.8rem;
+    margin-left: 10rem;
   }
 
-  .busca input {
-    width: 100%;
+  .sub_titulo{
+    font-size: 0.8rem;
   }
 
-  .bi-person-fill, .bi-bag-fill {
+  .bi-person-fill {
+    font-size: 2.7rem;
+  }
+
+  .bi-bag-fill {
+    font-size: 2.1rem;
+  }
+
+  .burger{
     font-size: 1.5rem;
   }
 
-  .burger {
-    font-size: 2.5rem;
+  .pai{
+    height: 74vh;
   }
 
-  .main {
-    height: auto;
-    background-size: cover;
-    background-attachment: scroll;
+  .textos{
+    font-size: 0.8rem;
   }
 
-  .pai1 {
-    padding: 1rem;
+  .barra{
+    height: 6rem;
+  }  
+
+  .logoBarra{
+    width: 7rem;
   }
 
-  .caixaTexto {
-    width: 90%;
-    height: auto;
-    padding: 1rem;
+  .foto{
+    width: 24rem;
+    height: 20rem;
+  }
+
+  .texto{
     font-size: 1rem;
   }
 
-  .butao {
-    margin-top: 2rem;
+  .quemSomos{
+    margin-bottom: 0rem;
+    font-size: 1.5rem;
   }
 
-  .botao {
+  .btnCardapio{
+    width: 15rem;
+    height: 2rem;
     font-size: 1rem;
-    padding: 0.6rem 1.2rem;
   }
 
-  /* Ajustes para a seção amarela */
-  .amarelo {
+  .btnCardapioA{
+    width: 15rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .maisImgsEVideos{
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .videosmais1{
+    width: 10rem;
+    height: 10rem;
+
+    i{
+      font-size: 4rem;
+    }
+  }
+
+  .videosmais2{
+    width: 10rem;
+    height: 10rem;
+
+    i{
+      font-size: 4rem;
+    }
+  }
+
+  .videosmais3{
+    width: 10rem;
+    height: 10rem;
+
+    i{
+      font-size: 4rem;
+    }
+  }
+
+  .videosmais4{
+    width: 10rem;
+    height: 10rem;
+
+    i{
+      font-size: 4rem;
+    }
+  }
+
+  .popUp{
+    width: 40%;
+    height: auto;
+    justify-content: center;
+    gap: 3rem;
+    padding: 5rem 20rem 5rem 20rem;
+  }
+
+  .colunn-1 .titulo{
+    font-size: 1.5rem;
+  }
+
+  .colunn-1 img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .colunn-1 button{
+    width: 10rem;
+    height: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .colunn-1 .carrinhoPopUp{
+    width: 10rem;
+    height: auto;
+    font-size: 0.6rem;
+  }
+
+  .carrinhoPopUp .bi-cart-fill{
+    font-size: 1.5rem;
+  }
+
+  .colunn-1 .descricaoPopUp{
+    max-width: 20rem;
+    font-size: 0.7rem;
+    color: #000000;
+  }
+
+  .colunn-1 .escolhas{
+    display: none;
+    width: 20rem;
+    height: 5rem;
+    gap: 1rem;
+    font-size: 0.5rem;
+  }
+
+  .escolhas button{
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .botoes .inputQuantidade{
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .adicionaisList {
+    max-width: 20rem;
+    font-size: 0.7rem;
+  }
+
+  .adicionaisOptions img {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .adicionaisOptions .inputQuantidadeAdicional {
+    width: 6rem;
+  }
+
+  .btn2{
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+
+  .preto{
+    height: 6rem;
+  }
+
+  .preto .text4 {
+    font-size: 0.7rem;
+    display: flex;
     flex-direction: column;
-    padding: 5px 10px;
-    align-items: center;
+    gap: 0.4rem;
+
+    br{
+      display: none;
+    }
   }
 
-  .amarelo .logo2 {
-    max-width: 50px;
-  }
-
-  .amarelo .titulo {
-    font-size: 16px;
-  }
-
-  .amarelo .sub_titulo {
-    font-size: 12px;
-  }
-
-  .amarelo .btn2 {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  .preto {
+  .preto .text5 {
+    display: flex;
     flex-direction: column;
-    padding: 15px;
-    align-items: center;
-  }
+    font-size: 0.7rem;
+    gap: 0.4rem;
 
-  .preto .text4, .preto .text5 {
-    font-size: 14px;
+    br{
+      display: none;
+    }
   }
 
   .preto .icons {
-    font-size: 1.8rem;
-    margin-right: 0;
-    gap: 1rem;
+    font-size: 1.5rem;
   }
 
-  .logo {
-    width: 8rem; /* Reduz ainda mais a largura da logo */
-    top: 5%; /* Ajuste a posição vertical */
-    left: 50%; /* Centraliza a logo horizontalmente */
-    transform: translateX(-50%); /* Compensa o deslocamento da logo */
+  .busca{
+    width: 10rem;
+    height: 2rem;
+    font-size: 1.3rem;
+    gap: 0.8rem;
+  }
+
+  .bi-search{
+    font-size: 1rem;
+  }
+
+  input{
+    width: 6rem;
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .produtos{
+    width: 40%;
+  }
+
+  .produtos img {
+    width: 10rem;
+    height: 10rem; 
+  }
+
+  .itemTitulo{
+    width: 10rem;
+  }
+
+  .preco{
+    width: 10rem;
+  }
+
+  .descricao{
+    width: 10rem;
+    font-size: 1rem;
+  }
+
+  main{
+    .pai1{
+      .text1{
+        font-size: 1.5rem;
+      }
+
+      .caixaTexto{
+        width: 20rem;
+        height: 15rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 840px) {
+  .texto{
+    font-size: 0.5rem;
+  }
+
+  .maisImgsEVideos{
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .videosmais1{
+    width: 5rem;
+    height: 5rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+  .videosmais2{
+    width: 5rem;
+    height: 5rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+  .videosmais3{
+    width: 5rem;
+    height: 5rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+  .videosmais4{
+    width: 5rem;
+    height: 5rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+  .btn2{
+    padding: 4px 8px;
+    font-size: 0.6rem;
+  }
+
+  .preto .text4 {
+    font-size: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    br{
+      display: none;
+    }
+  }
+
+  .preto .text5 {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.5rem;
+    gap: 0.4rem;
+
+    br{
+      display: none;
+    }
+  }
+
+  .preto .icons {
+    font-size: 1rem;
+  }
+
+  .produtos img {
+    display: none;
+  }
+
+  .itemTitulo{
+    width: 20rem;
+  }
+
+  .preco{
+    width: 20rem;
+  }
+
+  .descricao{
+    width: 15rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .foto{
+    display: none;
+  }
+
+  .texto{
+    font-size: 0.8rem;
+    width: 20rem;
+  }
+
+  .preto .icons {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .logo{
+    display: none;
+  }
+
+  .headerFilho{
+    gap: 0;
+    margin-left: -10rem;
+  }
+
+  .text{
+    font-size: 0.6rem;
+  }
+
+  .texto{
+    font-size: 0.6rem;
+    width: 10rem;
+  }
+
+  .busca{
+    display: none;
+  }
+
+  .produtos{
+    width: 20rem;
+  }
+
+  .itemTitulo{
+    width: 20rem;
+  }
+
+  .preco{
+    width: 20rem;
+  }
+
+  .descricao{
+    width: 15rem;
+    font-size: 1rem;
+    text-align: center;
   }
 }

@@ -124,6 +124,16 @@ h1 {
 
 }
 
+@media (max-width: 1400px) {
+  .pai {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95.6vh;
+    font-family: Nabana;
+  }
+}
+
 @media (max-width: 1024px) {
   .escolha {
       grid-template-columns: repeat(2, 1fr);

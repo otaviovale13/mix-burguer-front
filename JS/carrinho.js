@@ -51,8 +51,10 @@ if (carrinho.length === 0){
             R$ ${precoTotalItem.toFixed(2).replace(".", ",")}
             </div>
             </div>
-            <button class="btnRemove0" data-index="${index}">Remover</button>
+            <div class="btnsDuplicar">
+              <button class="btnRemove0" data-index="${index}">Remover</button>
             <button class="btnDuplicar0" data-index="${index}">Duplicar</button>
+            </div>
         </div>
         `
     });

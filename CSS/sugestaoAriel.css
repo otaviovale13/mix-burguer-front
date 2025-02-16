@@ -1,3 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap");
+@font-face { font-family: Nabana; src: url(/CSS/Nabana-ShadowBold\ -\ DEMO.ttf); } 
+@font-face { font-family: NabanaNormal; src: url(/CSS/Nabana.ttf); } 
+
+@font-face {
+  font-family: 'Nabana';
+  src: url('Fonts/Nabana.ttf');
+  }
+
+  html, body {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,123 +37,149 @@
   }
   
   /* Estilo do cabeçalho */
-  header {
-    background-color: #fed83c;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 7rem;
-    padding: 0 3rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    font-family: "Montserrat", sans-serif; 
-    position: sticky; 
-    top: 0; 
-    z-index: 100;
-  }
-  
-  /* Estilo do container filho do cabeçalho */
-  .headerFilho {
-    display: flex;
-    gap: 3rem;
-    align-items: center;
-  }
-  
-  /* Estilo do logo */
-  .logo {
-    width: 13rem;
-    max-width: 100%;
-    transition: transform 0.3s ease;
-    margin-top: 5rem;
-    position: absolute; 
-    top: 5%; 
-    left: 3%; 
-    z-index: 1; 
-    margin-top: -1rem;
-    cursor: pointer;
-  }
-  
-  /* Efeito hover no logo */
-  .logo:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Estilo do texto */
-  .text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-left: 16rem;
-  }
-  
-  /* Estilo do subtítulo */
-  .sub_titulo {
-    margin-top: -0.5rem;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
-  
-  /* Estilo do container de busca no cabeçalho */
-  .headerFilhoBusca {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  /* Estilo da barra de busca */
-  .busca {
-    background-color: #222;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 8px 16px;
-    width: 25rem;
-    transition: all 0.3s ease;
-  }
-  
-  /* Efeito hover na barra de busca */
-  .busca:hover {
-    background-color: #333;
-    border: solid 2px #fed83c;
-  }
-  
-  /* Estilo do input de busca */
-  input {
-    background: none;
-    border: none;
-    color: #fff;
-    width: 20rem;
-    height: 2rem;
-    font-size: 1rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    font-family: "Open Sans", sans-serif; 
-  }
-  
-  /* Estilo do input de busca quando focado */
-  input:focus {
-    outline: none;
-  }
-  
-  /* Estilo dos ícones */
-  i {
-    color: #fff;
-  }
-  
-  /* Estilo do ícone de pessoa */
-  .bi-person-fill {
-    font-size: 2.7rem;
-    color: #222;
-    cursor: pointer;
-  }
-  
-  /* Estilo do ícone de sacola */
-  .bi-bag-fill {
-    font-size: 2rem;
-    color: #222;
-    cursor: pointer;
-  }
+header{
+  background-color: #fed83c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 12rem;
+  padding: 0 3rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: Nabana;
+  position: sticky; 
+  top: 0; 
+  z-index: 100;
+}
+
+
+
+/* Estilo do container filho do cabeçalho */
+.headerFilho {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Estilo do logo */
+.logo {
+  width: 17rem;
+  max-width: 100%;
+  transition: transform 0.6s ease;
+  margin-top: 5rem;
+  position: absolute; 
+  top: 5%; 
+  left: 3%; 
+  z-index: 1; 
+  margin-top: -1rem;
+
+
+}
+
+/* Efeito hover no logo */
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo do texto */
+.text {
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  gap: 0.5rem;
+  margin-left: 18rem;
+  font-family: Nabana;
+  color: #111111;
+  /* text-shadow: 0.5px 0px rgb(255, 255, 255), -0.5px 0px rgb(255, 255, 255), 0px -0.5px rgb(255, 255, 255),
+  0.5px 0.5px rgb(255, 255, 255),-0.5px -0.5px rgb(255, 255, 255), 0.5px -0.5px rgb(255, 255, 255),-1px 1px rgb(255, 255, 255); */
+
+
+
+}
+
+/* Estilo do subtítulo */
+.sub_titulo {
+  margin-top: -0.5rem;
+  color: #111111;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: Nabana;
+
+}
+
+/* Estilo do container de busca no cabeçalho */
+.headerFilhoBusca {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Estilo da barra de busca */
+.busca {
+  background-color: #222;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 8px 16px;
+  width: 25rem;
+  transition: all 0.3s ease;
+}
+
+/* Efeito hover na barra de busca */
+.busca:hover {
+  background-color: #333;
+  border: solid 2px #fed83c;
+}
+
+/* Estilo do input de busca */
+input {
+  background: none;
+  border: none;
+  color: #fff;
+  width: 20rem;
+  height: 2rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif; 
+  font-family: NabanaNormal;
+}
+
+/* Estilo do input de busca quando focado */
+input:focus {
+  outline: none;
+}
+
+/* Estilo dos ícones */
+i {
+  color: #fff;
+}
+
+/* Estilo do ícone de pessoa */
+.bi-person-fill {
+  font-size: 3.7rem;
+  color: #222;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+}
+
+.bi-person-fill:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo do ícone de sacola */
+.bi-bag-fill {
+  font-size: 3rem;
+  color: #222;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+}
+
+.bi-bag-fill:hover {
+  transform: scale(1.1);
+}
   
   /* Estilo do ícone de hambúrguer */
   .burger {
@@ -218,3 +263,598 @@
  }
 }
   
+/* Estilo do rodapé */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  display: block;
+  font-family: Nabana;
+  margin-top: 5rem;
+}
+
+
+
+/* Estilo da seção amarela do rodapé */
+.amarelo {
+  background-color: #FED83C;
+  padding: 10px 20px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 10rem;
+  font-size: 22px;
+
+
+}
+
+/* Estilo do logo na seção amarela do rodapé */
+ .logo2 {
+  width: 17rem;
+  max-width: 100%;
+  transition: transform 0.6s ease;
+  margin-top: -1rem;
+  margin-left: 2.9rem;
+  cursor: pointer;
+}
+
+.logo2:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo do texto na seção amarela do rodapé */
+.amarelo .text2 {
+  margin-left: 10px;
+  font-size: 22px;
+
+}
+
+/* Estilo do título na seção amarela do rodapé */
+.amarelo .titulo {
+  font-size: 29px;
+  color: #111111;
+  font-family: Nabana;
+  margin: 0;
+  margin-right: 80rem;
+}
+
+/* Estilo do subtítulo na seção amarela do rodapé */
+.amarelo .sub_titulo {
+  font-size: 22px;
+  color: #111111;
+  font-family: Nabana;
+  margin: 5px 0 0 0;
+}
+
+/* Estilo do botão na seção amarela do rodapé */
+.amarelo .btn {
+  margin-left: 20px;
+}
+
+/* Estilo do botão na seção amarela do rodapé */
+.btn2 {
+  background-color: #111111;
+  color: #fed83c;
+  border: none;
+  padding: 8px 16px; 
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: transform 0.6s ease;
+  font-family: Nabana;
+}
+
+/* Efeito hover no botão na seção amarela do rodapé */
+ .btn2:hover {
+  
+    transform: scale(1.1);
+  
+  
+}
+
+/* Estilo da seção preta do rodapé */
+.preto {
+  background-color: #FED83C;
+  color: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; 
+  font-family: Nabana;
+  height: 12rem;
+
+}
+
+/* Estilo do texto na seção preta do rodapé */
+.preto .text4 {
+  font-size: 18px; 
+  text-align: left; 
+  margin-bottom: 0;
+  font-family: Nabana;
+}
+
+/* Estilo do texto na seção preta do rodapé */
+.preto .text5 {
+  font-size: 18px;
+  text-align: right; 
+  font-family: Nabana;
+}
+
+/* Estilo do container de ícones na seção preta do rodapé */
+.preto .text5 div {
+  margin-top: 5px;
+}
+
+/* Estilo dos ícones na seção preta do rodapé */
+.preto .icons {
+  display: flex;
+  color: rgb(255, 0, 0);
+  justify-content: center;
+  align-items: end;
+  gap: 2rem;
+  font-size: 2.2rem;
+  font-family: Nabana;
+}
+
+.trabalhe{
+  color: #111111;
+  text-decoration: none;
+}
+
+.bi-facebook{
+  color: #111111;
+  transition: transform 0.6s ease;
+}
+
+.bi-linkedin{
+  color: #111111;
+  cursor: pointer;
+}
+
+.iconsFooter{
+  transition: transform 0.6s ease;
+}
+
+.iconsFooter:hover{
+  transform: scale(1.1);
+}
+
+.bi-facebook:hover{
+  transform: scale(1.1);
+}
+
+.bi-whatsapp{
+  color: #111111;
+  transition: transform 0.6s ease;
+}
+
+.bi-whatsapp:hover{
+  transform: scale(1.1);
+}
+
+.bi-instagram{
+  color: #111111;
+  transition: transform 0.6s ease;
+}
+
+.bi-instagram:hover{
+  transform: scale(1.1);
+}
+
+@media (max-width: 1400px) {
+  header{
+    height: 6rem;
+  }
+
+  .logo{
+    width: 9rem;
+    left: 5%; 
+    margin-top: 1rem;
+  }
+
+  .text{
+    font-size: 0.8rem;
+    margin-left: 10rem;
+  }
+
+  .sub_titulo{
+    font-size: 0.8rem;
+  }
+
+  .bi-person-fill {
+    font-size: 2.7rem;
+  }
+
+  .bi-bag-fill {
+    font-size: 2.1rem;
+  }
+
+  .burger{
+    font-size: 1.5rem;
+  }
+
+  .pai{
+    height: 74vh;
+  }
+
+  .textos{
+    font-size: 0.8rem;
+  }
+
+  .barra{
+    height: 6rem;
+  }  
+
+  .logoBarra{
+    width: 7rem;
+  }
+
+  .foto{
+    width: 24rem;
+    height: 20rem;
+  }
+
+  .texto{
+    font-size: 1rem;
+  }
+
+  .quemSomos{
+    margin-bottom: 0rem;
+    font-size: 1.5rem;
+  }
+
+  .btnCardapio{
+    width: 15rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .btnCardapioA{
+    width: 15rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .maisImgsEVideos{
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .videosmais1{
+    width: 10rem;
+    height: 10rem;
+
+    i{
+      font-size: 4rem;
+    }
+  }
+
+  .videosmais2{
+    width: 10rem;
+    height: 10rem;
+
+    i{
+      font-size: 4rem;
+    }
+  }
+
+  .videosmais3{
+    width: 10rem;
+    height: 10rem;
+
+    i{
+      font-size: 4rem;
+    }
+  }
+
+  .videosmais4{
+    width: 10rem;
+    height: 10rem;
+
+    i{
+      font-size: 4rem;
+    }
+  }
+
+  .popUp{
+    width: 40%;
+    height: auto;
+    justify-content: center;
+    gap: 3rem;
+    padding: 5rem 20rem 5rem 20rem;
+  }
+
+  .colunn-1 .titulo{
+    font-size: 1.5rem;
+  }
+
+  .colunn-1 img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .colunn-1 button{
+    width: 10rem;
+    height: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .colunn-1 .carrinhoPopUp{
+    width: 10rem;
+    height: auto;
+    font-size: 0.6rem;
+  }
+
+  .carrinhoPopUp .bi-cart-fill{
+    font-size: 1.5rem;
+  }
+
+  .colunn-1 .descricaoPopUp{
+    max-width: 20rem;
+    font-size: 0.7rem;
+    color: #000000;
+  }
+
+  .colunn-1 .escolhas{
+    display: none;
+    width: 20rem;
+    height: 5rem;
+    gap: 1rem;
+    font-size: 0.5rem;
+  }
+
+  .escolhas button{
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .botoes .inputQuantidade{
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .adicionaisList {
+    max-width: 20rem;
+    font-size: 0.7rem;
+  }
+
+  .adicionaisOptions img {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .adicionaisOptions .inputQuantidadeAdicional {
+    width: 6rem;
+  }
+
+  .btn2{
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+
+  .preto{
+    height: 6rem;
+  }
+
+  .preto .text4 {
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    br{
+      display: none;
+    }
+  }
+
+  .preto .text5 {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7rem;
+    gap: 0.4rem;
+
+    br{
+      display: none;
+    }
+  }
+
+  .preto .icons {
+    font-size: 1.5rem;
+  }
+
+  .busca{
+    width: 10rem;
+    height: 2rem;
+    font-size: 1.3rem;
+    gap: 0.8rem;
+  }
+
+  .bi-search{
+    font-size: 1rem;
+  }
+
+  input{
+    width: 6rem;
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .produtos{
+    width: 40%;
+  }
+
+  .produtos img {
+    width: 10rem;
+    height: 10rem; 
+  }
+
+  .itemTitulo{
+    width: 10rem;
+  }
+
+  .preco{
+    width: 10rem;
+  }
+
+  .descricao{
+    width: 10rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 840px) {
+  .texto{
+    font-size: 0.5rem;
+  }
+
+  .maisImgsEVideos{
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .videosmais1{
+    width: 5rem;
+    height: 5rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+  .videosmais2{
+    width: 5rem;
+    height: 5rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+  .videosmais3{
+    width: 5rem;
+    height: 5rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+  .videosmais4{
+    width: 5rem;
+    height: 5rem;
+
+    i{
+      font-size: 2rem;
+    }
+  }
+
+  .btn2{
+    padding: 4px 8px;
+    font-size: 0.6rem;
+  }
+
+  .preto .text4 {
+    font-size: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    br{
+      display: none;
+    }
+  }
+
+  .preto .text5 {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.5rem;
+    gap: 0.4rem;
+
+    br{
+      display: none;
+    }
+  }
+
+  .preto .icons {
+    font-size: 1rem;
+  }
+
+  .produtos img {
+    display: none;
+  }
+
+  .itemTitulo{
+    width: 20rem;
+  }
+
+  .preco{
+    width: 20rem;
+  }
+
+  .descricao{
+    width: 15rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .foto{
+    display: none;
+  }
+
+  .texto{
+    font-size: 0.8rem;
+    width: 20rem;
+  }
+
+  .preto .icons {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .logo{
+    display: none;
+  }
+
+  .headerFilho{
+    gap: 0;
+    margin-left: -10rem;
+  }
+
+  .text{
+    font-size: 0.6rem;
+  }
+
+  .texto{
+    font-size: 0.6rem;
+    width: 10rem;
+  }
+
+  .busca{
+    display: none;
+  }
+
+  .produtos{
+    width: 20rem;
+  }
+
+  .itemTitulo{
+    width: 20rem;
+  }
+
+  .preco{
+    width: 20rem;
+  }
+
+  .descricao{
+    width: 15rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
