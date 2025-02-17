@@ -295,3 +295,9 @@ body {
 #FormasdePagamentoTexto {
   color: rgb(85, 82, 68);
 }
+
+#descontoMensagem {
+  font-size: 24px;
+  color: #ff0000; /* Cor vermelha para destacar o desconto */
+  margin-top: 10px;
+}

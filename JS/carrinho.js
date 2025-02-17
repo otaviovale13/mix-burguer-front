@@ -87,10 +87,10 @@ if (carrinho.length === 0){
 
 btnFinalizar.addEventListener('click', () => {
     document.getElementById('popupPagamento').style.display = 'flex';
-    copiarValorTotal();
+    copiarValorTotal(descontoAplicado); // Atualiza o valor total com o desconto aplicado
 });
 
-function copiarValorTotal() {
+function copiarValorTotal(desconto = 0) {
     const totalDiv = document.getElementById("total");
     const precoRealElement = document.getElementById("PrecoReal");
     let total = parseFloat(totalDiv.textContent.replace("Total: R$ ", "").replace(",", "."));
@@ -99,6 +99,8 @@ function copiarValorTotal() {
     if (formaEntrega && formaEntrega.value === 'casa') {
         total += 10; // Adiciona o valor do frete
     }
+
+    total = total - (total * desconto); // Aplica o desconto, se houver
 
     precoRealElement.textContent = total.toFixed(2).replace(".", ",");
 }
@@ -165,15 +167,66 @@ function fecharPopup() {
     document.getElementById('popupPagamento').style.display = 'none';
 }
 
+let cupomUsado = false;
+let descontoAplicado = 0;
+
 function aplicarCupomDesconto() {
+    if (cupomUsado) {
+        alert("Você já usou um cupom de desconto.");
+        return;
+    }
+
     const cupomInput = document.getElementById('cupomDesconto');
     const cupom = cupomInput.value.trim();
+    const descontoDiv = document.getElementById('descontoAplicado'); // Elemento no popup
 
+    let desconto = 0;
     if (cupom === "DESCONTO10") {
+        desconto = 0.10; // 10% de desconto
+        if (descontoDiv) {
+            descontoDiv.textContent = "Desconto aplicado: 10%";
+            descontoDiv.style.display = "block"; // Exibe no popup de pagamento
+        }
         alert("Cupom aplicado: 10% de desconto!");
+        cupomUsado = true;
     } else if (cupom !== "") {
+        if (descontoDiv) {
+            descontoDiv.textContent = "";
+            descontoDiv.style.display = "none"; // Oculta se não for válido
+        }
         alert("Cupom inválido.");
+        return;
     }
+
+    descontoAplicado = desconto; // Atualiza o desconto aplicado
+    // Atualizar o valor total com o desconto
+    atualizarTotalComDesconto(desconto);
+}
+
+function atualizarTotalComDesconto(desconto) {
+    const totalDiv = document.getElementById("total");
+    const precoRealElement = document.getElementById("PrecoReal");
+    const descontoMensagem = document.getElementById("descontoMensagem"); // Elemento para a mensagem de desconto
+    
+    let total = parseFloat(totalDiv.textContent.replace("Total: R$ ", "").replace(",", "."));
+    
+    // Calcular o valor do desconto
+    const valorDesconto = total * desconto;
+    total = total - valorDesconto;
+
+    // Verifica se há frete
+    const formaEntrega = document.querySelector('input[name="formaEntrega"]:checked');
+    if (formaEntrega && formaEntrega.value === 'casa') {
+        total += 10; // Adiciona o frete
+    }
+
+    // Atualiza a mensagem de desconto
+    if (descontoMensagem) {
+        descontoMensagem.textContent = `Desconto - R$ ${valorDesconto.toFixed(2).replace(".", ",")}`;
+        descontoMensagem.style.display = "block";
+    }
+
+    precoRealElement.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
 }
 
 function FinalizarPagamento() {
@@ -257,6 +310,9 @@ document.addEventListener("DOMContentLoaded", () => {
             aplicarCupomDesconto();
         }
     });
+
+    // Adicionar evento de perda de foco ao campo de cupom de desconto
+    document.getElementById('cupomDesconto').addEventListener('blur', aplicarCupomDesconto);
 
     // Adiciona um evento de clique ao botão de finalizar pagamento
     finalizarPagamentoButton.addEventListener("click", (event) => {
@@ -357,5 +413,8 @@ function atualizarCarrinho() {
                 atualizarCarrinho();
             });
         });
+
+        // Atualizar o valor total com o desconto, se houver
+        copiarValorTotal(descontoAplicado);
     }
 }

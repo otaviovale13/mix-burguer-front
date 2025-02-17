@@ -7,7 +7,7 @@ const Categorias = {
       Imagem: "https://firebasestorage.googleapis.com/v0/b/brendi-app.appspot.com/o/public%2Fstores%2FliDYZPGpWDhaJHW0sWIk%2Fimages%2Fproducts%2Fresized%2FLUGWlenr9ACZhRV86ec1_900x900.webp?alt=media&token=7b4acc66-64f5-4bd0-86d5-bb82b0350f38",
     },
     {
-      Nome: "COMBO FAMILIA",
+      Nome: "COMBO FAMILIA : 2 Classic + 2 Mix + 1 Refrigerante 1,5L",
       Descricao: "Aproveite este combo com dois hambúrgueres Classic e dois Mix, acompanhado de um refrigerante de 1,5 litros para completar sua refeição!Perfeito para compartilhar com amigos e família.",
       Preco: "R$ 80,00",
       Imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8ZzTc6D3nHxSlyt6PMJY6V_CHolPuGPfnXA&s",
@@ -75,27 +75,28 @@ categorias.innerHTML = Object.keys(Categorias)
   .join("")
 
 function buscarLanche() {
-  const inputBuscar = document.getElementById("inputBuscar").value.toLowerCase()
-  const categorias = document.querySelectorAll(".categoria")
-  const mensagem = document.getElementById("mensagem")
+  const inputBuscar = document.getElementById("inputBuscar").value.toLowerCase();
+  const categorias = document.querySelectorAll(".categoria");
+  let encontrou = false;
 
   categorias.forEach(categoria => {
     const produtos = categoria.querySelectorAll(".produtos");
-    let visibilidade = false;
+    let visivel = false;
 
     produtos.forEach(item => {
       if (item.textContent.toLowerCase().includes(inputBuscar)) {
         item.style.display = "";
-        visibilidade = true;
-        mensagem.style.display = "none";
+        visivel = true;
+        encontrou = true;
       } else {
         item.style.display = "none";
-        mensagem.style.display = "flex";
       }
     });
 
-    categoria.style.display = visibilidade ? "" : "none";
+    categoria.style.display = visivel ? "" : "none";
   });
+
+  document.getElementById("mensagem").style.display = encontrou ? "none" : "flex";
 }
 
 function popUp(nome, descricao, preco, imagem) {
@@ -198,6 +199,9 @@ function confirmacaoCarinho(nome, descricao, preco, imagem) {
     console.log("Carrinho atualizado:", carrinho);
 
     carrinhoDisplay.innerText = `${nome} - ${quantidade}x`;
+
+    // Atualizar o valor do carrinho atual no popup
+    atualizarCarrinhoDisplay();
 
     const carrinhoPopUp = document.getElementById("carrinhoPopUp");
 
@@ -308,6 +312,9 @@ function adicionarAdicionais(produto) {
 
   const adicionaisList = document.querySelector(".adicionaisList");
   adicionaisList.style.display = "none";
+
+  // Atualizar o valor do carrinho atual no popup
+  atualizarCarrinhoDisplay();
 
   salvarEstadoPopUp(produto.Nome, produto.Descricao, produto.Preco, produto.Imagem, produto.Quantidade, produto.Adicionais);
   localStorage.setItem("carrinho", JSON.stringify(carrinho));

@@ -1,13 +1,12 @@
 // Aguarda o carregamento completo do DOM
 document.addEventListener("DOMContentLoaded", () => {
   // Seleciona o botão de finalizar pagamento
-  const finalizarPagamentoButton = document.querySelector(
-    "#btnFinalizarPagamento"
-  );
+  const finalizarPagamentoButton = document.querySelector("#btnFinalizarPagamento");
   // Seleciona o elemento que exibe o preço total
   const precoRealElement = document.getElementById("PrecoReal");
   // Seleciona o contêiner dos itens do carrinho
   const itensDoCarrinho = document.getElementById("ItensDoCarrinho");
+  const descontoMensagem = document.getElementById("descontoMensagem"); // Elemento para a mensagem de desconto
 
   // Função para atualizar o preço total dinamicamente
   function atualizarPrecoTotal() {
@@ -32,8 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Cupom aplicado: 10% de desconto!");
       // Atualize o preço total com o desconto
       let total = parseFloat(precoRealElement.textContent.replace(",", "."));
-      total = total * 0.9;
+      const valorDesconto = total * 0.10;
+      total = total * 0.90;
       precoRealElement.textContent = total.toFixed(2).replace(".", ",");
+
+      // Atualiza a mensagem de desconto
+      if (descontoMensagem) {
+        descontoMensagem.textContent = `Desconto - R$ ${valorDesconto.toFixed(2).replace(".", ",")}`;
+        descontoMensagem.style.display = "block";
+      }
     } else if (cupom !== "") {
       alert("Cupom inválido.");
     }
@@ -44,9 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault(); // Evita o comportamento padrão do botão
 
     // Verifica se uma forma de pagamento foi selecionada
-    const selectedPayment = document.querySelector(
-      'input[name="pagamento"]:checked'
-    );
+    const selectedPayment = document.querySelector('input[name="pagamento"]:checked');
 
     if (!selectedPayment) {
       alert("Por favor, selecione uma forma de pagamento.");
