@@ -5,3 +5,7 @@ function irCardapio(){
 function irSugestão(){
     window.location.href = "/sugestoes.html"
   }
+
+  function voltarHome() {
+    window.location.href = "/index.html"
+  }

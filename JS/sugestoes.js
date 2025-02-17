@@ -17,3 +17,10 @@ function btnSacola(){
     function irSugestão(){
       window.location.href = "/sugestoes.html"
     }
+    function btnPerfil(){
+      window.location.href = "/userpage.html"
+    }
+    
+    function btnPerfilAdm(){
+      window.location.href = "/admpage.html"
+    }
