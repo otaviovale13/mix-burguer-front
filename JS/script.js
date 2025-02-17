@@ -42,17 +42,14 @@ function trocarRede() {
       </div>
       <div class="btnsInputs">
           <label for="inputRedes">Escolha qual Rede Editar</label>
-          <input class="border-solid-1px-black text-black text-center"
-              list="redes"
-              name="redes"
-              id="inputRedes">
+<select class="border-solid-1px-black text-black text-center"
+        id="inputRedes">
+    <option value="WhatsApp">WhatsApp</option>
+    <option value="Instagram">Instagram</option>
+    <option value="Telefone">Telefone</option>
+    <option value="Facebook">Facebook</option>
+</select>
 
-          <datalist id="redes">
-              <option value="WhatsApp">WhatsApp</option>
-              <option value="Instagram">Instagram</option>
-              <option value="Telefone">Telefone</option>
-              <option value="Facebook">Facebook</option>
-          </datalist>
       </div>
       <div class="btnsInputs">
           <label for="inputNome">Mudar o Nome</label>

@@ -223,52 +223,59 @@ categorias.innerHTML = Object.keys(Categorias)
     mensagem.style.display = encontrouAlgumProduto ? "none" : "flex";
   }
 
-function popUp(nome, descricao, preco, imagem) {
-  const popUps = document.querySelector(".popUps");
-  popUps.innerHTML = "";
-
-  const novaDiv = document.createElement("div");
-  novaDiv.className = "popUp";
-
-  novaDiv.innerHTML = `
-      <div class="colunn-1">
-        <h1 class="titulo">${nome}</h1>
-        <img src="${imagem}" />
-        <button onclick="addCarrinho()">Adicionar ao Carrinho</button>
-        <div id="carrinhoPopUp" class="carrinhoPopUp">
-          <i class="bi bi-cart-fill"></i>
-          <h2>Carrinho Atual:</h2>
-          <h3 id="carrinhoDisplay">Seu Carrinho está Vazio!</h3>
-        </div>
-        <div id="carrinhoTotalPopUp" class="carrinhoPopUp">
-          <h3>Total: R$ 0,00</h3>
-        </div>
-      </div>
-      <div class="colunn-1">
-        <h1 class="titulo">${preco}</h1>
-        <p class="descricaoPopUp">${descricao}</p>
-        <div id="escolhas" class="escolhas">
-          <h2 id="tituloEscolhas">Tem certeza que deseja adicionar ao carrinho?</h2>
-          <div id="botoes" class="botoes">
-            <button id="btnConfirmacaoCarrinho" onclick="confirmacaoCarinho('${nome}', '${descricao}', '${preco}', '${imagem}')">Sim</button>
-            <button id="btnRemocaoCarrinho" onclick="remocaoCarinho()">Não</button>
+  function popUp(nome, descricao, preco, imagem) {
+    const popUps = document.querySelector(".popUps");
+    popUps.innerHTML = "";
+  
+    const novaDiv = document.createElement("div");
+    novaDiv.className = "popUp";
+  
+    novaDiv.innerHTML = `
+        <div class="colunn-1">
+          <h1 class="titulo">${nome}</h1>
+          <img src="${imagem}" />
+          <button onclick="addCarrinho('${nome}', '${descricao}', '${preco}', '${imagem}')">Adicionar ao Carrinho</button>
+          <div id="carrinhoPopUp" class="carrinhoPopUp">
+            <i class="bi bi-cart-fill"></i>
+            <h2>Carrinho Atual:</h2>
+            <h3 id="carrinhoDisplay">Seu Carrinho está Vazio!</h3>
+          </div>
+          <div id="carrinhoTotalPopUp" class="carrinhoPopUp">
+            <h3>Total: R$ 0,00</h3>
           </div>
         </div>
-        <div id="adicionais" class="adicionais"></div>
-        <button onclick="fecharBtn()">Sair</button>
-      </div>
-  `;
-
-  popUps.appendChild(novaDiv);
-  popUps.style.display = "flex";
-
-  atualizarCarrinhoDisplay();
-}
-
-function addCarrinho() {
-  const escolhas = document.getElementById("escolhas");
-  escolhas.style.display = "flex";
-}
+        <div class="colunn-1">
+          <h1 class="titulo">${preco}</h1>
+          <p class="descricaoPopUp">${descricao}</p>
+          <div id="escolhas" class="escolhas">
+            <h2 id="tituloEscolhas">Tem certeza que deseja adicionar ao carrinho?</h2>
+            <div id="botoes" class="botoes">
+              <button id="btnConfirmacaoCarrinho" onclick="confirmacaoCarinho('${nome}', '${descricao}', '${preco}', '${imagem}')">Sim</button>
+              <button id="btnRemocaoCarrinho" onclick="remocaoCarinho()">Não</button>
+            </div>
+          </div>
+          <div id="adicionais" class="adicionais"></div>
+          <button onclick="fecharBtn()">Sair</button>
+        </div>
+    `;
+  
+    popUps.appendChild(novaDiv);
+    popUps.style.display = "flex";
+  
+    atualizarCarrinhoDisplay();
+  }
+  
+  function addCarrinho(nome, descricao, preco, imagem) {
+    const escolhas = document.getElementById("escolhas");
+    escolhas.innerHTML = `
+     <h2 id="tituloEscolhas">Tem certeza que deseja adicionar ao carrinho?</h2>
+     <div id="botoes" class="botoes">
+        <button id="btnConfirmacaoCarrinho" onclick="confirmacaoCarinho('${nome}', '${descricao}', '${preco}', '${imagem}')">Sim</button>
+        <button id="btnRemocaoCarrinho" onclick="remocaoCarinho()">Não</button>
+     </div>
+    `;
+    escolhas.style.display = "flex";
+  }  
 
 function remocaoCarinho() {
   const escolhas = document.getElementById("escolhas");
@@ -303,7 +310,17 @@ function confirmacaoCarinho(nome, descricao, preco, imagem) {
     const quantidade = parseInt(inputQuantidade.value);
 
     if (!quantidade || quantidade < 1) {
-      alert("Você precisa adicionar pelo menos 1 item ao carrinho.");
+      const alerts = document.querySelector(".alerts");
+      alerts.innerHTML = ""
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
+        <h1>Erro!</h1>
+        <p>Você precisa adicionar pelo menos 1 item ao carrinho.</p>
+        <button class="btnCardapio" onclick="esconder()">Ok</button>
+      `
+      alerts.appendChild(alert);
+      alerts.style.display = "flex"
       return;
     }
 
@@ -379,12 +396,43 @@ function confirmacaoCarinho(nome, descricao, preco, imagem) {
     botoes.appendChild(btnAdicionaisNaoPopUp);
 
     btnAdicionaisNaoPopUp.addEventListener("click", () => {
-      alert("Carrinho Atualizado!");
+      const alerts = document.querySelector(".alerts");
+      alerts.innerHTML = "";
+      
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
+          <h1>Carrinho Atualizado!</h1>
+          <button class="btnCardapio" onclick="esconder()">Ok</button>
+      `;
+      alerts.appendChild(alert);
+      alerts.style.display = "flex";
+  
+      // Obtendo a referência antes de escondê-lo
+      const escolhas = document.getElementById("escolhas");
+  
+      // Escondendo antes de alterar o conteúdo
       escolhas.style.display = "none";
-    });
+  
+      // Substituindo o conteúdo corretamente
+      setTimeout(() => {
+          escolhas.innerHTML = `
+              <h2 id="tituloEscolhas">Tem certeza que deseja adicionar ao carrinho?</h2>
+              <div id="botoes" class="botoes">
+                  <button id="btnConfirmacaoCarrinho" onclick="confirmacaoCarrinho('${nome}', '${descricao}', '${preco}', '${imagem}')">Sim</button>
+                  <button id="btnRemocaoCarrinho" onclick="remocaoCarinho()">Não</button>
+              </div>
+          `;
+      }); // Pequeno delay para evitar conflitos visuais
+  });  
 
     salvarEstadoPopUp(nome, descricao, preco, imagem, quantidade);
   });
+}
+
+function esconder(){
+  const alerts = document.querySelector(".alerts");
+  alerts.style.display = "none"
 }
 
 function adicionarAdicionais(produto) {
@@ -409,7 +457,17 @@ function adicionarAdicionais(produto) {
   // Verificar se o total de adicionais excede 10
   const totalQuantidadeAdicionais = adicionaisSelecionados.reduce((acc, adicional) => acc + adicional.Quantidade, 0);
   if (totalQuantidadeAdicionais > 10) {
-    alert("Você só pode adicionar até 10 adicionais no total.");
+    const alerts = document.querySelector(".alerts");
+      alerts.innerHTML = ""
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
+        <h1>Erro!</h1>
+        <p>Você só pode adicionar 10 adicionais no total!.</p>
+        <button class="btnCardapio" onclick="esconder()">Ok</button>
+      `
+      alerts.appendChild(alert);
+      alerts.style.display = "flex"
     return;
   }
 
@@ -431,7 +489,16 @@ function adicionarAdicionais(produto) {
   });
 
   console.log("Produto atualizado com adicionais:", produto);
-  alert("Adicionais adicionados ao carrinho!");
+  const alerts = document.querySelector(".alerts");
+      alerts.innerHTML = ""
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
+        <h1>Adicionais adicionados ao Carrinho!</h1>
+        <button class="btnCardapio" onclick="esconder()">Ok</button>
+      `
+      alerts.appendChild(alert);
+      alerts.style.display = "flex"
   escolhas.style.display = "none";
 
   const adicionaisList = document.querySelector(".adicionaisList");
