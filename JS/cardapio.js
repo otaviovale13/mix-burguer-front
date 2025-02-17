@@ -611,3 +611,7 @@ function btnPerfil(){
 function btnPerfilAdm(){
   window.location.href = "/admpage.html"
 }
+
+function btnSacola(){
+  window.location.href = "/carrinho.html"
+}
