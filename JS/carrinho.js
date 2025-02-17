@@ -90,19 +90,31 @@ btnFinalizar.addEventListener('click', () => {
     copiarValorTotal(descontoAplicado); // Atualiza o valor total com o desconto aplicado
 });
 
-function copiarValorTotal(desconto = 0) {
+function aplicarDesconto(total, desconto) {
+    return total - (total * desconto);
+}
+
+function copiarValorTotal(desconto = descontoAplicado) {
     const totalDiv = document.getElementById("total");
     const precoRealElement = document.getElementById("PrecoReal");
     let total = parseFloat(totalDiv.textContent.replace("Total: R$ ", "").replace(",", "."));
-    
+
+    // Verifica a forma de entrega e adiciona o frete antes de aplicar o desconto
     const formaEntrega = document.querySelector('input[name="formaEntrega"]:checked');
     if (formaEntrega && formaEntrega.value === 'casa') {
         total += 10; // Adiciona o valor do frete
     }
 
-    total = total - (total * desconto); // Aplica o desconto, se houver
+    // Verifica se o desconto é um valor fixo ou percentual
+    if (desconto < 1) { 
+        // Se for menor que 1, assume que é uma porcentagem (ex: 0.10 para 10%)
+        total -= (total * desconto);
+    } else {
+        // Se for maior ou igual a 1, assume que é um valor fixo
+        total -= desconto;
+    }
 
-    precoRealElement.textContent = total.toFixed(2).replace(".", ",");
+    precoRealElement.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
 }
 
 function atualizarOpcoesPagamento() {
@@ -114,7 +126,7 @@ function atualizarOpcoesPagamento() {
         opcaoDinheiro.style.display = 'none';
         pagamentoOpcoes.forEach(opcao => {
             if (opcao.value === 'dinheiro') {
-                opcao.checked = false;
+                opcoao.checked = false;
                 opcao.disabled = true;
             }
         });
@@ -139,7 +151,7 @@ function atualizarFormaEntrega() {
         enderecoEntrega.style.display = 'none';
         frete.style.display = 'none'; // Esconde o frete
     }
-    copiarValorTotal(); // Atualiza o valor total ao mudar a forma de entrega
+    copiarValorTotal(descontoAplicado); // Atualiza o valor total ao mudar a forma de entrega
 }
 
 function buscarEndereco() {
@@ -211,7 +223,12 @@ function atualizarTotalComDesconto(desconto) {
     let total = parseFloat(totalDiv.textContent.replace("Total: R$ ", "").replace(",", "."));
     
     // Calcular o valor do desconto
-    const valorDesconto = total * desconto;
+    let valorDesconto;
+    if (desconto < 1) {
+        valorDesconto = total * desconto;
+    } else {
+        valorDesconto = desconto;
+    }
     total = total - valorDesconto;
 
     // Verifica se há frete
