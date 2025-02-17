@@ -2,12 +2,33 @@
   font-family: 'Nabana';
   src: url('Fonts/Nabana.ttf');
   }
+
+  @font-face { font-family: Nabana; src: url(/CSS/Nabana-ShadowBold\ -\ DEMO.ttf); } 
+@font-face { font-family: NabanaNormal; src: url(/CSS/Nabana.ttf); } 
 /* PEDIDOS RESPONSIVO */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.btnCardapioA{
+  background-color: #fed83c;
+  color: #111111;
+  border: none;
+  width: 25rem;
+  height: 3rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+  font-family: NabanaNormal;
+  margin-top: 1rem;
+}
+
+.btnCardapioA:hover{
+  transform: scale(1.1);
 }
 
 .logoEBtn{
@@ -34,6 +55,7 @@ main {
 .pai {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   min-height: 97vh;
   font-family: Nabana;

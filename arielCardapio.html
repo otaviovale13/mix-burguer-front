@@ -12,10 +12,11 @@
     />
 </head>
 <body>
-    
     <header>
         <div class="headerFilho">
-          <img class="logo" src="/IMGS/Logo.png" alt="" />
+          <a href="/arielHome.html">
+            <img class="logo" src="/IMGS/Logo.png" alt="" />
+          </a>
           <div class="text">
             <h1 class="titulo">Mix Burger</h1>
             <h2 class="sub_titulo">Hamburgueria</h2>
@@ -26,7 +27,9 @@
                 <i class="bi bi-search"></i>
                 <input id="inputBuscar" onkeyup="buscarLanche()" type="text" placeholder="Pesquise seu lanche...">
             </div>
-          <i class="bi bi-person-fill"></i>
+            <div class="headerFilhoBusca">
+              <i class="bi bi-person-fill" onclick="btnPerfilAdm()"></i>
+            </div>
         </div>
       </header>
       <main>
