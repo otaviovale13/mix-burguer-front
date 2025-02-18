@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap");
-@font-face { font-family: Nabana; src: url(/CSS/Nabana-ShadowBold\ -\ DEMO.ttf); } 
-@font-face { font-family: NabanaNormal; src: url(/CSS/Nabana.ttf); } 
+@font-face { font-family: Nabana; src: url(./Nabana-ShadowBold\ -\ DEMO.ttf); } 
+@font-face { font-family: NabanaNormal; src: url(./Nabana.ttf); } 
 
 @font-face {
   font-family: 'Nabana';
-  src: url('Fonts/Nabana.ttf');
+  src: url('./Fonts/Nabana.ttf');
   }
 /* Reset de margens, padding e box-sizing */
 * {
@@ -491,7 +491,7 @@ a{
 
 /* Estilo dos vídeos na seção "mais" */
 .videosmais1{
-  background-image: url(/IMGS/Captura\ de\ tela\ 2025-01-29\ 134946.png);
+  background-image: url(../IMGS/Captura\ de\ tela\ 2025-01-29\ 134946.png);
   width: 15rem;
   height: 15rem;
   display: flex;

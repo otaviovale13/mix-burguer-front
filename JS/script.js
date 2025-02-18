@@ -1,21 +1,21 @@
 function btnSacola(){
-  window.location.href = "/carrinho.html"
+  window.location.href = "./carrinho.html"
 }
 
 function btnCardapio(){
-    window.location.href = "/pedido.html"
+    window.location.href = "./pedido.html"
   }
 
   function irSugestão(){
-    window.location.href = "/sugestoes.html"
+    window.location.href = "./sugestoes.html"
   }
 
   function irSugestãoAriel(){
-    window.location.href = "/sugestaoAriel.html"
+    window.location.href = "./sugestaoAriel.html"
   }
 
 function btnCardapioModis(){
-  window.location.href = "/arielCardapio.html"
+  window.location.href = "./arielCardapio.html"
 }
 
 function criarModal() {
@@ -225,9 +225,9 @@ function salvarAlteracao() {
 }
 
 function btnPerfil(){
-  window.location.href = "/userpage.html"
+  window.location.href = "./userpage.html"
 }
 
 function btnPerfilAdm(){
-  window.location.href = "/admpage.html"
+  window.location.href = "./admpage.html"
 }

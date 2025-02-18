@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var senha = document.getElementById("senha").value;
     if (email === "ariel" && senha === "1234") {
       alert("Bem vindo Administrador Ariel");
-      window.location.href = "/arielHome.html";
+      window.location.href = "./arielHome.html";
 
     } else if (email !== "" && senha !== "") {
       alert(`Bem vindo, ${email}`);
-      window.location.href = "/index.html";
+      window.location.href = "./index.html";
     } else {
       alert("Por favor, preencha todos os campos");
     }

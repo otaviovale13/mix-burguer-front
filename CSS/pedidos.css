@@ -3,8 +3,8 @@
   src: url('Fonts/Nabana.ttf');
   }
 
-  @font-face { font-family: Nabana; src: url(/CSS/Nabana-ShadowBold\ -\ DEMO.ttf); } 
-@font-face { font-family: NabanaNormal; src: url(/CSS/Nabana.ttf); } 
+  @font-face { font-family: Nabana; src: url(./Nabana-ShadowBold\ -\ DEMO.ttf); } 
+@font-face { font-family: NabanaNormal; src: url(./Nabana.ttf); } 
 /* PEDIDOS RESPONSIVO */
 
 * {

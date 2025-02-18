@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem("carrinho");
 
     // Redireciona para a página de carrinho
-    window.location.href = "/carrinho.html";
+    window.location.href = "./carrinho.html";
   });
 
   // Seleciona todas as opções de pagamento
