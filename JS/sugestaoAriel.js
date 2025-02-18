@@ -1,11 +1,11 @@
 function btnPerfil(){
-    window.location.href = "/userpage.html"
+    window.location.href = "./userpage.html"
   }
   
   function btnPerfilAdm(){
-    window.location.href = "/admpage.html"
+    window.location.href = "./admpage.html"
   }
 
   function voltarHome() {
-    window.location.href = "/arielHome.html"
+    window.location.href = "./arielHome.html"
   }

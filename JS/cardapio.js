@@ -543,7 +543,7 @@ function atualizarCarrinhoDisplay() {
 
 function salvarCarrinho() {
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
-  window.location.href = "/carrinho.html";
+  window.location.href = "./carrinho.html";
 }
 
 function adicionarAdicional(button) {
@@ -585,15 +585,15 @@ function fecharBtn() {
 }
 
 function voltarHome() {
-  window.location.href = "/index.html"
+  window.location.href = "./index.html"
 }
 
 function voltarPedido() {
-  window.location.href = "/pedido.html"
+  window.location.href = "./pedido.html"
 }
 
 function irSugestão() {
-  window.location.href = "/sugestoes.html"
+  window.location.href = "./sugestoes.html"
 }
 
 function AdicionarLanche(nome, preco, descricao, imagem) {
@@ -672,13 +672,13 @@ function exibirItensDoCarrinho() {
 }
 
 function btnPerfil(){
-  window.location.href = "/userpage.html"
+  window.location.href = "./userpage.html"
 }
 
 function btnPerfilAdm(){
-  window.location.href = "/admpage.html"
+  window.location.href = "./admpage.html"
 }
 
 function btnSacola(){
-  window.location.href = "/carrinho.html"
+  window.location.href = "./carrinho.html"
 }

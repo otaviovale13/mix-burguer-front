@@ -21,7 +21,7 @@ main .abaLogin{
   width: 100%;
 }
 .background {
-  background-image: url(/IMGS/fundo_mixburguer.jpg);
+  background-image: url(../IMGS/fundo_mixburguer.jpg);
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -38,7 +38,7 @@ main .abaLogin{
 }
 
 .logo {
-  background-image: url(/IMGS/logo\ mix\ burguer.png);
+  background-image: url(../IMGS/logo\ mix\ burguer.png);
   background-size: 120px 120px;
   width: 120px;
   height: 120px;
