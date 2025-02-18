@@ -4,23 +4,23 @@ function btn(){
 }
 
 function voltarHome(){
-    window.location.href = "/index.html"
+    window.location.href = "./index.html"
 }
 function btnSacola(){
-    window.location.href = "/carrinho.html"
+    window.location.href = "./carrinho.html"
   }
   
   function btnCardapio(){
-      window.location.href = "/pedido.html"
+      window.location.href = "./pedido.html"
     }
   
     function irSugestão(){
-      window.location.href = "/sugestoes.html"
+      window.location.href = "./sugestoes.html"
     }
     function btnPerfil(){
-      window.location.href = "/userpage.html"
+      window.location.href = "./userpage.html"
     }
     
     function btnPerfilAdm(){
-      window.location.href = "/admpage.html"
+      window.location.href = "./admpage.html"
     }
