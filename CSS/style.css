@@ -13,6 +13,10 @@
   box-sizing: border-box;
 }
 
+.linkedin{
+  color: #111111;
+}
+
 html, body {
   height: 100%;
   margin: 0;
