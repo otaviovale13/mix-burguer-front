@@ -266,11 +266,27 @@ function salvarCategoria() {
       fecharModal();
       atualizarCategorias();
     } else {
-      alert("Essa categoria já existe!")
+      const alerts = document.querySelector(".alerts");
+      alerts.innerHTML = ""
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
+        <h1>Erro!</h1>
+        <p>Essa categoria já existe.</p>
+        <button class="btnCardapio" onclick="esconder()">Ok</button>
+      `
+      alerts.appendChild(alert);
+      alerts.style.display = "flex"
+      return;
     }
   } else {
     alert("O nome da ctegoria não pode estar vazio!");
   }
+}
+
+function esconder(){
+  const alerts = document.querySelector(".alerts");
+  alerts.style.display = "none"
 }
 
 function atualizarCategorias() {
