@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var mainCaixaBranca = document.getElementById("mainCaixaBranca");
 
   voltarIndex.addEventListener("click", function () {
-    return (window.location.href = "arielHome.html");
+    return (window.location.href = "./arielHome.html");
   });
 
   function loadVendas() {

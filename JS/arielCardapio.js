@@ -565,7 +565,7 @@ function calcularPrecoTotal(precoBase) {
 
 function salvarCarrinho() {
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
-  window.location.href = "/carrinho.html";
+  window.location.href = "./carrinho.html";
 }
 
 function adicionarProduto(categoria) {
@@ -748,17 +748,17 @@ function salvarNovaCategoria() {
 }
 
 function voltarHome() {
-  window.location.href = "/arielHome.html"
+  window.location.href = "./arielHome.html"
 }
 
 function irSugestãoAriel() {
-  window.location.href = "/sugestaoAriel.html"
+  window.location.href = "./sugestaoAriel.html"
 }
 
 function btnPerfil() {
-  window.location.href = "/userpage.html"
+  window.location.href = "./userpage.html"
 }
 
 function btnPerfilAdm() {
-  window.location.href = "/admpage.html"
+  window.location.href = "./admpage.html"
 }

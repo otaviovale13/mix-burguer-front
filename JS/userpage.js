@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var voltarHome = document.getElementById("voltarHome");
 
   voltarIndex.addEventListener("click", function () {
-    return (window.location.href = "index.html");
+    return (window.location.href = "./index.html");
   });
   const menuToggle = document.createElement("div");
   menuToggle.classList.add("menuToggle");
