@@ -243,45 +243,85 @@ function adicionarCate() {
   const modal = document.getElementById("popUpsAdicionar");
   modal.style.display = "flex";
 
+  // Pegamos todas as categorias já existentes para exibir no <select>
+  const categoriasExistentes = Object.keys(Categorias);
+  let options = `<option value="-1">No final</option>`; // Opção para adicionar no final
+
+  categoriasExistentes.forEach((categoria, index) => {
+    options += `<option value="${index}">${categoria}</option>`;
+  });
+
   modal.innerHTML = `
     <div class="popUpEdit">
-    <div class="btnsInputs">
-      <label>Nome da Categoria:</label>
-      <input id="inputAdicionais" type="text" />
-    </div>
-    <div class="btnsSalvar">
-      <button class="btnCardapioAriel" onclick="salvarCategoria()">Salvar</button>
-      <button class="btnCardapioAriel" onclick="fecharModal()">Fechar</button>
-    </div>
+      <div class="btnsInputs">
+        <label>Nome da Categoria:</label>
+        <input id="inputAdicionais" type="text" />
+      </div>
+      <div class="btnsInputs">
+        <label>Posição da Categoria:</label>
+        <select id="posicaoCategoria">${options}</select>
+      </div>
+      <div class="btnsSalvar">
+        <button class="btnCardapioAriel" onclick="salvarCategoria()">Salvar</button>
+        <button class="btnCardapioAriel" onclick="fecharModal()">Fechar</button>
+      </div>
     </div>
   `;
 }
 
 function salvarCategoria() {
-  const inputAdicionais = document.getElementById("inputAdicionais").value.trim();
+  const nomeCategoria = document.getElementById("inputAdicionais").value.trim();
+  const posicaoSelecionada = document.getElementById("posicaoCategoria").value;
 
-  if (inputAdicionais !== "") {
-    if (!Categorias[inputAdicionais]) {
-      Categorias[inputAdicionais] = [];
-      fecharModal();
-      atualizarCategorias();
-    } else {
-      const alerts = document.querySelector(".alerts");
-      alerts.innerHTML = ""
-      const alert = document.createElement("div");
-      alert.className = "alert";
-      alert.innerHTML = `
-        <h1>Erro!</h1>
-        <p>Essa categoria já existe.</p>
-        <button class="btnCardapio" onclick="esconder()">Ok</button>
-      `
-      alerts.appendChild(alert);
-      alerts.style.display = "flex"
-      return;
-    }
-  } else {
-    alert("O nome da ctegoria não pode estar vazio!");
+  if (nomeCategoria === "") {
+    exibirAlerta("O nome da categoria não pode estar vazio!");
+    return;
   }
+
+  if (Categorias[nomeCategoria]) {
+    exibirAlerta("Essa categoria já existe.");
+    return;
+  }
+
+  // Criamos um array das chaves do objeto Categorias
+  let categoriasArray = Object.keys(Categorias);
+
+  // Adicionamos a nova categoria na posição correta
+  if (posicaoSelecionada === "-1") {
+    // Se o usuário escolheu "No final"
+    categoriasArray.push(nomeCategoria);
+  } else {
+    // Inserimos a categoria na posição escolhida
+    categoriasArray.splice(Number(posicaoSelecionada), 0, nomeCategoria);
+  }
+
+  // Criamos um novo objeto Categorias com a ordem correta
+  let novoCategorias = {};
+  categoriasArray.forEach((categoria) => {
+    novoCategorias[categoria] = Categorias[categoria] || [];
+  });
+
+  // Atualizamos o objeto global Categorias
+  Categorias = novoCategorias;
+
+  fecharModal();
+  atualizarCategorias();
+}
+
+function exibirAlerta(mensagem) {
+  const alerts = document.querySelector(".alerts");
+  alerts.innerHTML = "";
+
+  const alert = document.createElement("div");
+  alert.className = "alert";
+  alert.innerHTML = `
+    <h1>Erro!</h1>
+    <p>${mensagem}</p>
+    <button class="btnCardapio" onclick="esconder()">Ok</button>
+  `;
+
+  alerts.appendChild(alert);
+  alerts.style.display = "flex";
 }
 
 function esconder(){
@@ -396,15 +436,35 @@ function confirmarEdicao(categoria, nomeItem) {
   const novaImagemInput = document.getElementById("inputNovaImagem").files[0];
 
   if (!novoNome || !novaDescricao || !novoPreco) {
-    alert("Todos os campos devem ser preenchidos!");
-    return;
+    const alerts = document.querySelector(".alerts");
+      alerts.innerHTML = ""
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
+        <h1>Erro!</h1>
+        <p>Todos os campos devem ser preenchidos!</p>
+        <button class="btnCardapio" onclick="esconder()">Ok</button>
+      `
+      alerts.appendChild(alert);
+      alerts.style.display = "flex"
+      return;
   }
 
   // Regex para validar que o preço tem o formato correto
   const precoValido = /^R\$ ?\d+(\,\d{2})?$/.test(novoPreco);
 
   if (!precoValido) {
-    alert("O campo preço deve estar no formato correto (ex: R$ 10,00)!");
+    const alerts = document.querySelector(".alerts");
+      alerts.innerHTML = ""
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
+        <h1>Erro!</h1>
+        <p>O campo preço deve estar no formato correto (ex: R$ 10,00)!</p>
+        <button class="btnCardapio" onclick="esconder()">Ok</button>
+      `
+      alerts.appendChild(alert);
+      alerts.style.display = "flex"
     return;
   }
 
@@ -491,7 +551,17 @@ function adicionarAdicional(button) {
     const precoBase = document.querySelector(".preçoLanche p").textContent;
     calcularPrecoTotal(precoBase);
   } else {
-    alert("Você só pode adicionar até 10 adicionais no total.");
+    const alerts = document.querySelector(".alerts");
+      alerts.innerHTML = ""
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
+        <h1>Erro!</h1>
+        <p>Você só pode adicionar até 10 adicionais no total.</p>
+        <button class="btnCardapio" onclick="esconder()">Ok</button>
+      `
+      alerts.appendChild(alert);
+      alerts.style.display = "flex"
   }
 }
 
@@ -546,7 +616,17 @@ function AdicionarLanche(nome, preco, descricao, imagem) {
   console.log("carrinho atualizado:", carrinho);
 
   // Exibir alerta informando que o produto foi adicionado ao carrinho
-  alert(`${nome} foi adicionado ao carrinho.`);
+  const alerts = document.querySelector(".alerts");
+      alerts.innerHTML = ""
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
+        <h1>Erro!</h1>
+        <p>${nome} foi adicionado ao carrinho.</p>
+        <button class="btnCardapio" onclick="esconder()">Ok</button>
+      `
+      alerts.appendChild(alert);
+      alerts.style.display = "flex"
 }
 
 function calcularPrecoTotal(precoBase) {
@@ -606,7 +686,17 @@ function salvarProduto(categoria) {
   const imagemProduto = document.getElementById("inputImagemProduto").files[0];
 
   if (!nomeProduto || !descricaoProduto || !precoProduto) {
-    alert("Todos os campos devem ser preenchidos!");
+    const alerts = document.querySelector(".alerts");
+      alerts.innerHTML = ""
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
+        <h1>Erro!</h1>
+        <p>Todos os campos devem ser preenchidos!</p>
+        <button class="btnCardapio" onclick="esconder()">Ok</button>
+      `
+      alerts.appendChild(alert);
+      alerts.style.display = "flex"
     return;
   }
 
@@ -614,7 +704,17 @@ function salvarProduto(categoria) {
   const precoValido = /^R\$ ?\d+(\,\d{2})?$/.test(precoProduto);
 
   if (!precoValido) {
-    alert("O campo preço deve estar no formato correto (ex: R$ 10,00)!");
+    const alerts = document.querySelector(".alerts");
+      alerts.innerHTML = ""
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
+        <h1>Erro!</h1>
+        <p>O campo preço deve estar no formato correto (ex: R$ 10,00)!</p>
+        <button class="btnCardapio" onclick="esconder()">Ok</button>
+      `
+      alerts.appendChild(alert);
+      alerts.style.display = "flex"
     return;
   }
 
@@ -722,6 +822,20 @@ function salvarNovaCategoria() {
   const selectCateEdit = document.getElementById("selectCateEdit");
   const categoriaSelecionadaEdit = selectCateEdit.value;
   const novoNomeCategoria = document.getElementById("inputEditCate").value.trim();
+
+  if(novoNomeCategoria === ""){
+    const alerts = document.querySelector(".alerts");
+      alerts.innerHTML = ""
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
+        <h1>Erro!</h1>
+        <p>O campo do nome deve estar preenchido!</p>
+        <button class="btnCardapio" onclick="esconder()">Ok</button>
+      `
+      alerts.appendChild(alert);
+      alerts.style.display = "flex"
+  }
 
   if (categoriaSelecionadaEdit && novoNomeCategoria && categoriaSelecionadaEdit !== novoNomeCategoria) {
     // Criamos um array com a ordem original das categorias

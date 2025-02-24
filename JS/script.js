@@ -42,14 +42,13 @@ function trocarRede() {
       </div>
       <div class="btnsInputs">
           <label for="inputRedes">Escolha qual Rede Editar</label>
-<select class="border-solid-1px-black text-black text-center"
-        id="inputRedes">
-    <option value="WhatsApp">WhatsApp</option>
-    <option value="Instagram">Instagram</option>
-    <option value="Telefone">Telefone</option>
-    <option value="Facebook">Facebook</option>
-</select>
-
+          <select class="border-solid-1px-black text-black text-center"
+                  id="inputRedes">
+              <option value="WhatsApp">WhatsApp</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Telefone">Telefone</option>
+              <option value="Facebook">Facebook</option>
+          </select>
       </div>
       <div class="btnsInputs">
           <label for="inputNome">Mudar o Nome</label>
@@ -67,11 +66,14 @@ function trocarRede() {
           <button class="btnCardapioAriel" onclick="salvarContato()">Sim</button>
           <button class="btnCardapioAriel" onclick="fecharModal()">Não</button>
       </div>
-  </div>
+    </div>
   `;
 
-  // Adiciona um evento para atualizar os campos ao selecionar uma rede
+  // Adiciona evento para atualizar os campos ao trocar a rede
   document.getElementById("inputRedes").addEventListener("change", atualizarCamposModal);
+
+  // Chama a função para preencher os campos inicialmente
+  atualizarCamposModal();
 }
 
 function atualizarCamposModal() {
@@ -141,23 +143,23 @@ function trocarVideoEImagem() {
               <h1>Escolha qual item editar</h1>
           </div>
           <div class="btnsInputs">
-              <label for="inputRedes">Escolha:</label>
-              <select id="selecaoImagemVideo">
-                <option value="videosmais1">Vídeo - 1</option>
-                <option value="foto1">Foto - 1</option>
-                <option value="videosmais2">Vídeo - 2</option>
-                <option value="foto2">Foto - 2</option>
-                <option value="videosmais3">Vídeo - 3</option>
-                <option value="foto3">Foto - 3</option>
-                <option value="videosmais4">Vídeo - 4</option>
-                <option value="foto4">Foto - 4</option>
+              <label for="selecaoImagemVideo">Escolha:</label>
+              <select id="selecaoImagemVideo" onchange="verificarTipo()">
+                  <option value="videosmais1">Vídeo - 1</option>
+                  <option value="foto1">Foto - 1</option>
+                  <option value="videosmais2">Vídeo - 2</option>
+                  <option value="foto2">Foto - 2</option>
+                  <option value="videosmais3">Vídeo - 3</option>
+                  <option value="foto3">Foto - 3</option>
+                  <option value="videosmais4">Vídeo - 4</option>
+                  <option value="foto4">Foto - 4</option>
               </select>
           </div>
           <div class="btnsInputs">
               <label for="inputArquivo">Enviar Arquivo:</label>
               <input type="file" id="inputArquivo" accept="image/*,video/*">
           </div>
-          <div id="btnLink" class="btnsInputs">
+          <div id="btnLink" class="btnLink">
               <label for="inputLink">Enviar Link:</label>
               <input type="text" id="inputLinkFotos">
           </div>
@@ -167,58 +169,63 @@ function trocarVideoEImagem() {
           </div>
       </div>
   `;
+
+  verificarTipo();
 }
 
 function fecharModal() {
   document.getElementById("popUpsAdicionar").style.display = "none";
 }
 
+function verificarTipo() {
+  let selecao = document.getElementById("selecaoImagemVideo").value;
+  let btnLink = document.getElementById("btnLink");
+
+  if (selecao.includes("video")) {
+      btnLink.style.display = "flex";
+  } else {
+      btnLink.style.display = "none";
+  }
+}
+
 function salvarAlteracao() {
   let selecao = document.getElementById("selecaoImagemVideo").value;
   let novoLink = document.getElementById("inputLinkFotos").value;
   let novoArquivo = document.getElementById("inputArquivo").files[0];
-  let btnLink = document.getElementById("btnLink");
 
   let elemento = document.getElementById(selecao);
 
   if (!elemento) {
-    console.error(`Elemento com ID '${selecao}' não encontrado.`);
-    return;
+      console.error(`Elemento com ID '${selecao}' não encontrado.`);
+      return;
   }
 
-  if (selecao.startsWith("foto")) {
-    btnLink.style.display = "none";
-} else {
-    btnLink.style.display = "flex";
-}
+  if (selecao.includes("video")) {
+      if (novoLink) {
+          elemento.href = novoLink;
+      }
 
-  if (selecao.startsWith("video")) {
-    if (novoLink) {
-      elemento.href = novoLink;
-    }
+      if (novoArquivo && novoArquivo.type.startsWith("image/")) {
+          let reader = new FileReader();
+          reader.onload = function (e) {
+              elemento.style.backgroundImage = `url('${e.target.result}')`;
+              elemento.style.backgroundSize = "cover";
+              elemento.style.backgroundPosition = "center";
+          };
+          reader.readAsDataURL(novoArquivo);
+      }
+  } else if (selecao.includes("foto")) {
+      if (novoLink) {
+          elemento.src = novoLink;
+      }
 
-    if (novoArquivo && novoArquivo.type.startsWith("image/")) {
-      let reader = new FileReader();
-      reader.onload = function (e) {
-        elemento.style.backgroundImage = `url('${e.target.result}')`;
-        elemento.style.backgroundSize = "cover";
-        elemento.style.backgroundPosition = "center";
-      };
-      reader.readAsDataURL(novoArquivo);
-    }
-  } 
-  else if (selecao.startsWith("foto")) {
-    if (novoLink) {
-      elemento.src = novoLink;
-    }
-
-    if (novoArquivo && novoArquivo.type.startsWith("image/")) {
-      let reader = new FileReader();
-      reader.onload = function (e) {
-        elemento.src = e.target.result;
-      };
-      reader.readAsDataURL(novoArquivo);
-    }
+      if (novoArquivo && novoArquivo.type.startsWith("image/")) {
+          let reader = new FileReader();
+          reader.onload = function (e) {
+              elemento.src = e.target.result;
+          };
+          reader.readAsDataURL(novoArquivo);
+      }
   }
 
   fecharModal();
