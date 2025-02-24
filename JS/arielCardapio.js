@@ -334,7 +334,7 @@ function atualizarCategorias() {
   categoriasDiv.innerHTML = Object.keys(Categorias)
     .map(categoria => `
             <div class="categoria">
-                <h1>${categoria}</h1>
+                <h1 class="nomeCate">${categoria}</h1>
                 ${Categorias[categoria]
         .map(item => `
                         <div class="produtos" onclick="popUp('${item.Nome}', '${item.Descricao}', '${item.Preco}', '${item.Imagem}')"> 

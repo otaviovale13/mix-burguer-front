@@ -1502,6 +1502,10 @@ footer {
     width: 10rem;
     font-size: 1rem;
   }
+
+  .textMensagem{
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 840px) {
@@ -1654,5 +1658,50 @@ footer {
     width: 15rem;
     font-size: 1rem;
     text-align: center;
+  }
+
+  .btnCardapio{
+    width: 5rem;
+    font-size: 0.6rem;
+  }
+
+  .nomeCate{
+    font-size: 1.5rem;
+  }
+
+  .preto .text5 {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.4rem;
+    gap: 0.4rem;
+
+    br{
+      display: none;
+    }
+  }
+
+  .popUp{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 20rem;
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .alert{
+    padding: 0;
+    width: 20rem;
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .colunn-1{
+    text-align: center;
+    img{
+      display: none;
+    }
   }
 }
